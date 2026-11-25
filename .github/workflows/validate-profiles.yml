@@ -22,8 +22,8 @@ permissions:
 
 env:
   TOOLS_REPO: eiraman/tools
-  # TODO-at-publication: full commit SHA of the first tools release. The all-zero value makes the job fail on purpose.
-  TOOLS_REF: "0000000000000000000000000000000000000000"
+  # Full commit SHA of the tools release used to validate profiles.
+  TOOLS_REF: "558ddb21136ff7f2ef1c67a7574398f11465be25"
 
 jobs:
   validate:
