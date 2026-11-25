@@ -1,0 +1,295 @@
+{
+  "id": "analista-funzionale",
+  "famiglia": "analisi-funzionale",
+  "nome": "Analista funzionale",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "alto",
+  "fasi": [
+    "Scoperta",
+    "POC",
+    "Design e planning",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Conduce la convergenza del Design Thinking, redige Visione e Scope Management, deriva backlog e criteri eseguibili e prepara UAT e test con utente simulato.",
+  "competenze_fonti": [
+    {
+      "fonte": "IIBA BABOK Guide v3",
+      "riferimento": "sei aree di conoscenza: Planning and Monitoring, Elicitation and Collaboration, Requirements Life Cycle Management, Strategy Analysis, Requirements Analysis and Design Definition, Solution Evaluation",
+      "url": "https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/"
+    },
+    {
+      "fonte": "Stanford d.school, Design Thinking",
+      "riferimento": "modello a cinque fasi: Empathize, Define, Ideate, Prototype, Test",
+      "url": "https://dschool.stanford.edu/resources"
+    },
+    {
+      "fonte": "IDEO, Design Thinking",
+      "riferimento": "spazi Inspiration, Ideation, Implementation",
+      "url": "https://designthinking.ideo.com/"
+    },
+    {
+      "fonte": "ISO/IEC 25010:2023",
+      "riferimento": "modello di qualità del prodotto e caratteristiche di qualità",
+      "url": "https://www.iso.org/standard/78176.html"
+    },
+    {
+      "fonte": "ISO/IEC/IEEE 29148:2018",
+      "riferimento": "§5.2 caratteristiche dei requisiti singoli e dell'insieme",
+      "url": "https://www.iso.org/standard/72089.html"
+    },
+    {
+      "fonte": "Scrum Guide 2020",
+      "riferimento": "Scrum Artifacts: Product Backlog, Product Goal, refinement; Definition of Done",
+      "url": "https://scrumguides.org/scrum-guide.html"
+    },
+    {
+      "fonte": "Cucumber, riferimento Gherkin",
+      "riferimento": "parole chiave Given/When/Then",
+      "url": "https://cucumber.io/docs/gherkin/reference/"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§1, §4 K1-K2, §4 bis, §5, §6 P2, §6 bis, §8, §10, §11",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri, contesto di almeno 64k token; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo, scarti compresi"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo, scarti compresi"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo, scarti compresi"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo, scarti compresi"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "parser o linter Gherkin",
+      "uso": "Obbligatorio prima di dichiarare pronto un Work Package: ogni file .feature deve essere sintatticamente valido. Esito non zero blocca la consegna."
+    },
+    {
+      "strumento": "controllo di tracciabilità requisito-criterio-Work Package",
+      "uso": "Obbligatorio a ogni refinement: nessun requisito senza criterio e nessun criterio senza requisito. Le righe orfane sono riportate come punti aperti. Convenzione del profilo."
+    },
+    {
+      "strumento": "ricerca di dati personali nei dati di prova",
+      "uso": "Obbligatoria prima di consegnare scenari di utente simulato o UAT: un riscontro positivo blocca la consegna finché il dato non è sostituito con un dato sintetico."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/analisi/",
+    "docs/requisiti/",
+    "docs/uat/piano/",
+    "test/accettazione/*.feature"
+  ],
+  "do_riservati": [
+    "approvazione o cambiamento della Visione",
+    "rilancio o chiusura di un giro di esplorazione",
+    "cambi di scopo, Principi o criteri di successo",
+    "cambi di Decisione",
+    "esito negativo del POC o POC che richiede nuovi accessi o spesa",
+    "uso di dati personali di terzi",
+    "spesa oltre soglia",
+    "accettazione UAT"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-03",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Functional analyst",
+  "descrizione_breve_en": "Leads Design Thinking convergence, drafts Vision and Scope Management, derives backlog and executable acceptance criteria.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Ruolo alto della piramide: la convergenza, la fattibilità e le schede Do richiedono SD4; i lavori su specifica chiara scendono a SD2."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Convergenza del Design Thinking",
+      "deliverable": "sintesi di convergenza con ipotesi scartate e registro di diversità",
+      "seniority": "SD4",
+      "note": "Un solo modello, diverso da quelli della divergenza quando possibile (spec §4, K1-K2)."
+    },
+    {
+      "id": "T02",
+      "task": "Bozza della Visione e prima versione dello Scope Management",
+      "deliverable": "bozza di Visione con Principi, criteri di successo, criteri di arresto e punti aperti",
+      "seniority": "SD4",
+      "note": "Base delle decisioni del Manager umano, effetti difficili da annullare."
+    },
+    {
+      "id": "T03",
+      "task": "Elicitazione e analisi delle evidenze degli utenti",
+      "deliverable": "sintesi delle evidenze collegate alle fonti",
+      "seniority": "SD3",
+      "note": "Con dati di terzi solo motori ammessi per la classe."
+    },
+    {
+      "id": "T04",
+      "task": "Input al gate di applicabilità",
+      "deliverable": "segnalazione di classi di dati, utenti, esposizione e indizi di esclusione",
+      "seniority": "SD4",
+      "note": "Giudizio su criteri di esclusione del §10."
+    },
+    {
+      "id": "T05",
+      "task": "Validazione di fattibilità del POC",
+      "deliverable": "esito di fattibilità con incertezza, prova o ragionamento, risorse e accessi",
+      "seniority": "SD4",
+      "note": "Un esito negativo o nuovi accessi sono Do."
+    },
+    {
+      "id": "T06",
+      "task": "Product Backlog e workstream etichettati per componente",
+      "deliverable": "backlog ordinato per componente e priorità (spec §6 bis)",
+      "seniority": "SD3",
+      "note": "Con l'architetto applicativo."
+    },
+    {
+      "id": "T07",
+      "task": "Criteri Dato/Quando/Allora e criteri non funzionali ISO/IEC 25010",
+      "deliverable": "file .feature e criteri non funzionali con soglia e misura",
+      "seniority": "SD2",
+      "note": "Su requisiti chiari; la forma è verificata dal linter Gherkin."
+    },
+    {
+      "id": "T08",
+      "task": "Matrice di tracciabilità requisito-criterio-Work Package",
+      "deliverable": "matrice aggiornata con righe orfane come punti aperti",
+      "seniority": "SD1",
+      "note": "Esito verificato dal controllo deterministico di tracciabilità."
+    },
+    {
+      "id": "T09",
+      "task": "Scenari dei test con utente simulato",
+      "deliverable": "scenari con persona, compito, dati sintetici ed esito atteso",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T10",
+      "task": "Piano di UAT",
+      "deliverable": "piano UAT in docs/uat/piano/",
+      "seniority": "SD3",
+      "note": "L'UAT lo esegue una persona; il tester funzionale assiste."
+    },
+    {
+      "id": "T11",
+      "task": "Contenuti funzionali delle schede decisione",
+      "deliverable": "opzioni funzionali tradotte in funzioni, costi, tempi e impatto",
+      "seniority": "SD4",
+      "note": "Schede Do."
+    }
+  ]
+}

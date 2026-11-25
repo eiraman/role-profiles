@@ -1,0 +1,239 @@
+{
+  "id": "technical-writer",
+  "famiglia": "analisi-funzionale",
+  "nome": "Technical writer",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Redige manuale di installazione e uso, Executive Description e documenti per il Manager umano, con prova di comprensione e controllo di completezza.",
+  "competenze_fonti": [
+    {
+      "fonte": "ISO/IEC/IEEE 26514:2022",
+      "riferimento": "progettazione e sviluppo dell'informazione per gli utenti",
+      "url": "https://www.iso.org/search.html?q=26514"
+    },
+    {
+      "fonte": "ISO 24495-1:2023",
+      "riferimento": "principi e linee guida del linguaggio chiaro",
+      "url": "https://www.iso.org/search.html?q=24495-1"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§8 regole di redazione 1-12, Rilascio, Artefatti di governo, Misura; §10 set minimo; §11 pubblicazione",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri con buona resa in italiano; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per documento consegnato",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run, comprese le prove di comprensione"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per documento consegnato",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run, comprese le prove di comprensione"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per documento consegnato",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run, comprese le prove di comprensione"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per documento consegnato",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run, comprese le prove di comprensione"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "controllo di completezza tra documento e registri (esiti, Do, rifiuti, dissensi)",
+      "uso": "Obbligatorio prima della consegna; ogni voce del registro non citata blocca la consegna."
+    },
+    {
+      "strumento": "controllo dei collegamenti alle evidenze",
+      "uso": "Obbligatorio: ogni affermazione verificabile ha un collegamento valido."
+    },
+    {
+      "strumento": "indice di leggibilità per l'italiano (per esempio Gulpease)",
+      "uso": "Indicativo, soglia da tarare; non sostituisce la prova di comprensione."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/manuali/",
+    "docs/manager/bozze/"
+  ],
+  "do_riservati": [
+    "pubblicazione esterna di manuali o Executive Description",
+    "cambi di forma degli artefatti di controllo"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-03",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Technical writer",
+  "descrizione_breve_en": "Writes the installation and user manual, the Executive Description and documents for the Human Manager, with a comprehension test.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Le revisioni del ciclo e le schede per il Manager umano sono SD4; manuali e controlli sono livelli inferiori."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Manuale di installazione e uso",
+      "deliverable": "manuale in docs/manuali/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Executive Description",
+      "deliverable": "descrizione del prodotto per chi non è del mestiere",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Bozza della revisione del ciclo e del rendiconto",
+      "deliverable": "bozza in docs/manager/bozze/",
+      "seniority": "SD4",
+      "note": "Cattive notizie e costi: giudizio e completezza."
+    },
+    {
+      "id": "T04",
+      "task": "Bozze di scheda di progetto, esito UAT e sintesi di sicurezza e prestazioni",
+      "deliverable": "bozze in docs/manager/bozze/",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "Prova di comprensione con il profilo del Manager umano",
+      "deliverable": "esito della prova con punti da riscrivere",
+      "seniority": "SD3",
+      "note": "Motore diverso da quello che ha scritto il documento."
+    },
+    {
+      "id": "T06",
+      "task": "Controllo di completezza rispetto ai registri",
+      "deliverable": "elenco delle omissioni o esito positivo",
+      "seniority": "SD1",
+      "note": "Controllo deterministico."
+    },
+    {
+      "id": "T07",
+      "task": "Controllo dei collegamenti alle evidenze",
+      "deliverable": "elenco dei collegamenti non validi",
+      "seniority": "SD1",
+      "note": "Controllo deterministico."
+    },
+    {
+      "id": "T08",
+      "task": "Verifica di una procedura del manuale in ambiente di prova",
+      "deliverable": "esito della verifica con passi errati",
+      "seniority": "SD2",
+      "note": ""
+    }
+  ]
+}

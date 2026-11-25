@@ -1,0 +1,112 @@
+# SPDX-FileCopyrightText: 2026 Paolo Ungari and contributors
+# SPDX-License-Identifier: Apache-2.0
+#
+# Runs the profile validator of the tools repository on new or changed Role Profiles.
+# How it calls the tools repository:
+#   1. checks out eiraman/tools at TOOLS_REF, a full commit SHA of a reviewed tools release (never a branch);
+#   2. copies valida_profilo.py and attiva_profilo.py into _strumenti/ of this checkout, the layout the
+#      tools expect (<registry>/_strumenti/ next to <registry>/_seniority/); _strumenti/ is git-ignored;
+#   3. runs the validator on the profile folders touched by the pull request. A change to _seniority/,
+#      _modello/ or a FAMIGLIA.md file validates every profile it can affect.
+# The organisation deny-list comes from the optional secret EIRAMAN_DENY_PATTERNS (never committed).
+# Updating TOOLS_REF is a reviewed change to this file (CODEOWNERS: devsecops-tooling).
+name: validate-profiles
+
+on:
+  pull_request:
+    paths: ["**/PROFILO.md", "**/profilo.json", "**/FAMIGLIA.md", "_modello/**", "_seniority/**", "controllore/**", ".github/workflows/validate-profiles.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  TOOLS_REPO: eiraman/tools
+  # TODO-at-publication: full commit SHA of the first tools release. The all-zero value makes the job fail on purpose.
+  TOOLS_REF: "0000000000000000000000000000000000000000"
+
+jobs:
+  validate:
+    name: Role Profile validator
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Tools reference is pinned
+        run: |
+          if ! printf '%s' "$TOOLS_REF" | grep -Eq '^[0-9a-f]{40}$' || [ "$TOOLS_REF" = "0000000000000000000000000000000000000000" ]; then
+            echo "::error::TOOLS_REF must be the full commit SHA of a tools release"; exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: ${{ env.TOOLS_REPO }}
+          ref: ${{ env.TOOLS_REF }}
+          path: _tools
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Install the tools in the registry layout
+        run: |
+          mkdir -p _strumenti
+          cp _tools/valida_profilo.py _tools/attiva_profilo.py _strumenti/
+          rm -rf _tools
+      - name: Select the profiles to validate
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          all() { find . -mindepth 3 -maxdepth 3 -name PROFILO.md -not -path './_*' -printf '%h\n' | sed 's#^\./##' | sort; }
+          if [ "$EVENT" != "pull_request" ]; then all > "$RUNNER_TEMP/profiles.txt"; else
+            git diff --name-only "$BASE_SHA...$HEAD_SHA" > "$RUNNER_TEMP/changed.txt"
+            if grep -Eq '^(_seniority|_modello)/' "$RUNNER_TEMP/changed.txt"; then all > "$RUNNER_TEMP/profiles.txt"; else
+              : > "$RUNNER_TEMP/profiles.txt"
+              while IFS= read -r f; do
+                case "$f" in
+                  */FAMIGLIA.md) fam=$(dirname "$f"); all | grep "^$fam/" >> "$RUNNER_TEMP/profiles.txt" || true ;;
+                  */*/PROFILO.md|*/*/profilo.json) d=$(dirname "$f"); [ -f "$d/PROFILO.md" ] || [ -f "$d/profilo.json" ] && echo "$d" >> "$RUNNER_TEMP/profiles.txt" ;;
+                esac
+              done < "$RUNNER_TEMP/changed.txt"
+              sort -u -o "$RUNNER_TEMP/profiles.txt" "$RUNNER_TEMP/profiles.txt"
+            fi
+          fi
+          echo "Profiles to validate:"; cat "$RUNNER_TEMP/profiles.txt"
+      - name: Validate
+        env:
+          DENY_PATTERNS: ${{ secrets.EIRAMAN_DENY_PATTERNS }}
+        run: |
+          set -euo pipefail
+          if [ ! -s "$RUNNER_TEMP/profiles.txt" ]; then echo "No profile changed."; exit 0; fi
+          if [ -n "${DENY_PATTERNS:-}" ]; then
+            printf '%s\n' "$DENY_PATTERNS" > "$RUNNER_TEMP/deny.local"; export EIRAMAN_DENY_FILE="$RUNNER_TEMP/deny.local"
+          else
+            echo "::warning::EIRAMAN_DENY_PATTERNS is not set: the validator applies only its generic patterns"
+          fi
+          # A deleted profile folder is not validated. Paths are read one per line and never passed to a shell.
+          dirs=()
+          while IFS= read -r d; do
+            if [ -n "$d" ] && [ -d "$d" ]; then dirs+=("$d"); fi
+          done < "$RUNNER_TEMP/profiles.txt"
+          status=0
+          if [ "${#dirs[@]}" -eq 0 ]; then echo "No existing profile to validate."
+          else python3 -I _strumenti/valida_profilo.py "${dirs[@]}" || status=$?; fi
+          # The AI Coordinator profile (controllore/) does not follow the PROFILO.md structure (README.md): only the
+          # validator's forbidden-content patterns apply to it.
+          python3 -I - <<'PY' || status=1
+          import pathlib, re, sys
+          sys.path.insert(0, "_strumenti"); import valida_profilo as v
+          bad = 0
+          for f in sorted(pathlib.Path("controllore").rglob("*")):
+              if not f.is_file(): continue
+              text = f.read_text(encoding="utf-8", errors="replace")
+              for rx, label in v.vietati():
+                  if re.search(rx, text):
+                      print(f"::error file={f}::{label}"); bad = 1
+          print("controllore/: forbidden-content check", "FAILED" if bad else "passed"); sys.exit(bad)
+          PY
+          rm -f "$RUNNER_TEMP/deny.local"
+          exit $status

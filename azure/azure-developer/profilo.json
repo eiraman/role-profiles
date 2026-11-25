@@ -1,0 +1,267 @@
+{
+  "id": "azure-developer",
+  "nome": "Sviluppatore Azure",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "basso",
+  "fasi": [
+    "POC",
+    "Scale"
+  ],
+  "descrizione_breve": "Scrive e testa il codice applicativo e crea PaaS applicativo solo in sandbox e sviluppo, entro un limite di spesa e con Do approvato.",
+  "competenze_fonti": [
+    {
+      "fonte": "Guida ufficiale d'esame AZ-104",
+      "riferimento": "area Deploy and manage Azure compute resources (App Service, container)",
+      "url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-104"
+    },
+    {
+      "fonte": "Guida ufficiale d'esame AZ-305",
+      "riferimento": "area Design identity, governance, and monitoring solutions: identità delle applicazioni",
+      "url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-305"
+    },
+    {
+      "fonte": "OWASP Application Security Verification Standard",
+      "riferimento": "requisiti di verifica per livello",
+      "url": "https://owasp.org/www-project-application-security-verification-standard/"
+    },
+    {
+      "fonte": "Microsoft Azure Well-Architected Framework",
+      "riferimento": "cinque pilastri e guide di servizio",
+      "url": "https://learn.microsoft.com/azure/well-architected/"
+    },
+    {
+      "fonte": "Famiglia Azure, regole comuni",
+      "riferimento": "FAMIGLIA.md §1-§9",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§6 (DevSecOps e test), §6 bis, §7",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 32B parametri, addestrato per il codice, finestra di contesto da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso il cloud; verifica preliminare prima di ogni scrittura; un Deny si spiega e si instrada, mai si aggira; ogni decisione resta nel registro del guard"
+    },
+    {
+      "strumento": "test automatici del progetto",
+      "uso": "a ogni candidata; si riporta che cosa è stato eseguito e che cosa no"
+    },
+    {
+      "strumento": "analisi statica (SAST) e analisi di dipendenze e licenze (SCA)",
+      "uso": "prima di proporre il merge; un riscontro alto blocca la consegna"
+    },
+    {
+      "strumento": "ricerca di segreti",
+      "uso": "su ogni deliverable e ogni candidata prima della consegna; un riscontro blocca la consegna"
+    },
+    {
+      "strumento": "scansione dell'immagine container",
+      "uso": "prima di ogni push al registro"
+    },
+    {
+      "strumento": "rilettura dall'ambiente (show, list)",
+      "uso": "dopo ogni scrittura; registra stato atteso e osservato; senza rilettura il pacchetto resta aperto"
+    }
+  ],
+  "scritture_consentite": [
+    "codice applicativo, test e CI del progetto",
+    "docs/changes/azure-developer/"
+  ],
+  "do_riservati": [
+    "creare una risorsa cloud o avviare una spesa: approvazione esplicita e specifica con risorsa, ambiente, regione e stima mensile in euro con base di prezzo",
+    "qualsiasi scrittura in produzione",
+    "promozione a test, uat o produzione (passa al release engineer)",
+    "nuove dipendenze con licenza non ammessa dal mandato"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-01",
+    "revisore": "da assegnare (dominio architettura applicativa e dati)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Azure developer",
+  "descrizione_breve_en": "Writes and tests application code and creates application PaaS only in sandbox and development.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Lavoro corrente su specifica; i componenti di sicurezza salgono a SD4."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Funzione applicativa con test unitari su criteri dati",
+      "deliverable": "candidata con commit e test",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Componente di sicurezza (autenticazione, dati personali)",
+      "deliverable": "candidata con test e revisione indipendente",
+      "seniority": "SD4",
+      "note": "revisione con modello diverso (P6)"
+    },
+    {
+      "id": "T03",
+      "task": "Configurazione applicativa, Dockerfile e pipeline CI",
+      "deliverable": "file di configurazione e CI",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Debug di un difetto non banale",
+      "deliverable": "correzione con test di regressione",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "Correzione di errori grossolani segnalati dai test",
+      "deliverable": "commit di correzione",
+      "seniority": "SD1",
+      "note": "esito verificato dai test automatici"
+    },
+    {
+      "id": "T06",
+      "task": "Registro della modifica",
+      "deliverable": "file in docs/changes/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Scheda tecnica per un Do di spesa in sandbox o sviluppo",
+      "deliverable": "scheda con risorsa, ambiente, regione, stima e base di prezzo",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Esecuzione di SAST, SCA, ricerca di segreti e lettura degli esiti",
+      "deliverable": "rapporto degli esiti",
+      "seniority": "SD1",
+      "note": "controlli deterministici"
+    }
+  ]
+}

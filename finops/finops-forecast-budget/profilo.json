@@ -1,0 +1,265 @@
+{
+  "id": "finops-forecast-budget",
+  "nome": "Forecast e budget (FinOps)",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "famiglia": "finops",
+  "piramide": "medio",
+  "fasi": [
+    "Scoperta",
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Stima, prevede e propone i budget, sorveglia le soglie dell'80% e del 100% e tiene il budget di deriva.",
+  "competenze_fonti": [
+    {
+      "fonte": "Famiglia FinOps, regole comuni",
+      "riferimento": "FAMIGLIA.md, R1–R10",
+      "url": "../FAMIGLIA.md"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§5 Wave, soglie 80% e 100%, criteri di arresto; §3 E5 budget di deriva",
+      "url": "registro del metodo, framework/Eiraman.md"
+    },
+    {
+      "fonte": "FinOps Framework · Planning & Estimating",
+      "riferimento": "dominio Quantify Business Value",
+      "url": "https://www.finops.org/framework/capabilities/planning-estimating/"
+    },
+    {
+      "fonte": "FinOps Framework · Forecasting",
+      "riferimento": "dominio Quantify Business Value",
+      "url": "https://www.finops.org/framework/capabilities/forecasting/"
+    },
+    {
+      "fonte": "FinOps Framework · Budgeting",
+      "riferimento": "dominio Quantify Business Value",
+      "url": "https://www.finops.org/framework/capabilities/budgeting/"
+    },
+    {
+      "fonte": "FinOps Framework · Persona Finance",
+      "riferimento": "budgeting and forecasting support",
+      "url": "https://www.finops.org/framework/persona/finance/"
+    },
+    {
+      "fonte": "FinOps Framework · Maturità",
+      "riferimento": "scarto tra previsione e consuntivo per livello",
+      "url": "https://www.finops.org/framework/maturity-model/"
+    },
+    {
+      "fonte": "Microsoft Cost Management + Billing · budget",
+      "riferimento": "Tutorial: Create and manage budgets",
+      "url": "https://learn.microsoft.com/azure/cost-management-billing/costs/tutorial-acm-create-budgets"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri, contesto di almeno 64k; solo compiti a ragionamento basso o medio (da tarare)",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "controllo soglie a SD1; deriva e previsioni a SD2-SD3; stime e proposte di budget a SD4"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "controllo delle soglie 80% e 100% e segnalazione",
+      "deliverable": "messaggio con spesa, budget, percentuale e previsione",
+      "seniority": "SD1",
+      "note": "esito dello strumento di controllo delle soglie"
+    },
+    {
+      "id": "T02",
+      "task": "riepilogo di consuntivo e budget residuo",
+      "deliverable": "tabella per Wave e per ambiente",
+      "seniority": "SD1",
+      "note": "verificabile con il registro"
+    },
+    {
+      "id": "T03",
+      "task": "aggiornamento del budget di deriva",
+      "deliverable": "registro della deriva in valori assoluti",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "confronto tra stima e consuntivo",
+      "deliverable": "tabella degli scarti per Work Package o modifica",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "previsione a finire di Wave e progetto",
+      "deliverable": "previsione con intervallo e ipotesi",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "stima dei costi di sviluppo e utilizzo in Design e planning",
+      "deliverable": "stima con base, ipotesi e intervallo",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "proposta di budget e scheda Do al 100% o su criterio di arresto",
+      "deliverable": "proposta di budget o scheda di una pagina",
+      "seniority": "SD4",
+      "note": "scheda Do"
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "query o export di costo (API o CLI del provider, export FOCUS)",
+      "uso": "obbligatorio per ogni cifra di utilizzo; si legge perimetro, periodo, valuta e data di aggiornamento; un export mancante rende la voce sconosciuta"
+    },
+    {
+      "strumento": "somma dei costi dei run dal registro",
+      "uso": "obbligatorio per ogni consuntivo di sviluppo; esito = totale, numero di run, numero di voci sconosciute"
+    },
+    {
+      "strumento": "confronto tra stima e consuntivo",
+      "uso": "obbligatorio a chiusura di Work Package e dopo 30 giorni per le modifiche di infrastruttura; esito = scarto percentuale per voce"
+    },
+    {
+      "strumento": "controllo delle soglie di budget",
+      "uso": "a ogni aggiornamento del consuntivo; esito = percentuale consumata e soglia superata"
+    }
+  ],
+  "scritture_consentite": [
+    "eiraman/finops/budget/",
+    "cloud: budget e allarmi con importi approvati, se delegato dal mandato"
+  ],
+  "do_riservati": [
+    "importo dei budget, soglie e criteri di arresto, e ogni loro modifica",
+    "spesa oltre mandato o oltre il budget di Wave",
+    "acquisti e impegni: prenotazioni, savings plan, crediti, contratti",
+    "nuovi fornitori e nuovi accessi ai dati di fatturazione",
+    "revisione del mandato oltre la soglia del budget di deriva",
+    "prosecuzione dopo un criterio di arresto"
+  ],
+  "qualificazione": {
+    "curatore": "agente esecutore del WP-RP-02, su incarico del Coordinatore AI",
+    "revisore": "da assegnare (dominio FinOps, diverso dall'autore)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  }
+}

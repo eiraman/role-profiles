@@ -1,0 +1,267 @@
+{
+  "id": "azure-dba",
+  "nome": "DBA Azure",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "basso",
+  "fasi": [
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Amministra le piattaforme dati relazionali su Azure: provisioning, autenticazione solo Entra, prestazioni, backup e continuità; non stampa mai dati di business.",
+  "competenze_fonti": [
+    {
+      "fonte": "Guida ufficiale d'esame DP-300",
+      "riferimento": "aree pianificazione e implementazione; ambiente sicuro; monitoraggio e ottimizzazione; prestazioni delle query; automazione; alta disponibilità e disaster recovery",
+      "url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/dp-300"
+    },
+    {
+      "fonte": "Documentazione Azure SQL e Azure Database for PostgreSQL",
+      "riferimento": "sicurezza, continuità operativa, monitoraggio",
+      "url": "https://learn.microsoft.com/azure/azure-sql/"
+    },
+    {
+      "fonte": "Microsoft Azure Well-Architected Framework",
+      "riferimento": "cinque pilastri e guide di servizio",
+      "url": "https://learn.microsoft.com/azure/well-architected/"
+    },
+    {
+      "fonte": "Famiglia Azure, regole comuni",
+      "riferimento": "FAMIGLIA.md §1-§9",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§6, §7 (classi di dati)",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 32B parametri, finestra di contesto da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio del livello dati",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio del livello dati",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio del livello dati",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio del livello dati",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso il cloud; verifica preliminare prima di ogni scrittura; un Deny si spiega e si instrada, mai si aggira; ogni decisione resta nel registro del guard"
+    },
+    {
+      "strumento": "Query Store e viste di gestione dinamica",
+      "uso": "diagnostica; si riportano solo metadati e metriche"
+    },
+    {
+      "strumento": "vulnerability assessment e Defender per i database",
+      "uso": "a ogni modifica di sicurezza; i riscontri alti aperti sono KRI"
+    },
+    {
+      "strumento": "prova di ripristino",
+      "uso": "prima di ogni modifica distruttiva e periodicamente; registra RPO e RTO osservati"
+    },
+    {
+      "strumento": "ricerca di segreti",
+      "uso": "su ogni deliverable e ogni candidata prima della consegna; un riscontro blocca la consegna"
+    },
+    {
+      "strumento": "rilettura dall'ambiente (show, list)",
+      "uso": "dopo ogni scrittura; registra stato atteso e osservato; senza rilettura il pacchetto resta aperto"
+    }
+  ],
+  "scritture_consentite": [
+    "db/",
+    "docs/dba/",
+    "infra/data/",
+    "docs/changes/azure-dba/"
+  ],
+  "do_riservati": [
+    "creare una risorsa cloud o avviare una spesa: approvazione esplicita e specifica con risorsa, ambiente, regione e stima mensile in euro con base di prezzo",
+    "qualsiasi scrittura in produzione",
+    "modifiche di prestazioni in produzione (indici, hint, configurazione)",
+    "drop o cancellazione di database, schemi, tabelle o dati in qualunque ambiente",
+    "GRANT, REVOKE e ruoli a livello di database",
+    "ripristino sopra un database, failover, scala con riavvio o riduzione della conservazione in produzione"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-01",
+    "revisore": "da assegnare (dominio architettura applicativa e dati)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Azure DBA",
+  "descrizione_breve_en": "Administers relational data platforms on Azure: provisioning, identity-only authentication, backup, tuning and recovery.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Amministrazione corrente a SD2-SD3; scelte di piattaforma, DR e schede Do a SD4."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Scelta e dimensionamento dell'offerta di database",
+      "deliverable": "decisione proposta con alternative",
+      "seniority": "SD4",
+      "note": "in accordo con la decisione architetturale"
+    },
+    {
+      "id": "T02",
+      "task": "Piano di backup, ripristino e prova di DR",
+      "deliverable": "piano e rapporto della prova con RPO e RTO osservati",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Scheda tecnica per un Do (produzione, cancellazioni, GRANT e REVOKE)",
+      "deliverable": "scheda Do con rollback",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Script di amministrazione con rollback",
+      "deliverable": "script in db/",
+      "seniority": "SD2",
+      "note": "solo metadati e salute"
+    },
+    {
+      "id": "T05",
+      "task": "Analisi delle prestazioni e degli indici",
+      "deliverable": "rapporto con baseline e intervento proposto",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "Script di GRANT, REVOKE o ruoli di database",
+      "deliverable": "script in db/ con rollback, eseguito solo con Do",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "IaC del livello dati",
+      "deliverable": "file in infra/data/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Inventari e controlli di configurazione (auditing, sola autenticazione Entra)",
+      "deliverable": "elenco di controllo compilato",
+      "seniority": "SD1",
+      "note": "verifica deterministica"
+    }
+  ]
+}

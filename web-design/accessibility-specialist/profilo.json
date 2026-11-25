@@ -1,0 +1,264 @@
+{
+  "id": "accessibility-specialist",
+  "nome": "Accessibility specialist",
+  "nome_en": "Accessibility specialist",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Verifica in modo indipendente l'accessibilità rispetto a WCAG 2.2 AA, con controlli automatici e manuali e tecnologie assistive.",
+  "descrizione_breve_en": "Independently verifies accessibility against WCAG 2.2 AA, with automated and manual checks and assistive technologies.",
+  "competenze_fonti": [
+    {
+      "fonte": "W3C WCAG 2.2",
+      "riferimento": "criteri di successo di livello A e AA",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "fonte": "W3C Understanding WCAG 2.2",
+      "riferimento": "definizioni ed eccezioni per criterio",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/"
+    },
+    {
+      "fonte": "W3C WCAG-EM 1.0",
+      "riferimento": "fasi della metodologia di valutazione",
+      "url": "https://www.w3.org/TR/WCAG-EM/"
+    },
+    {
+      "fonte": "WAI-ARIA Authoring Practices Guide",
+      "riferimento": "schemi Tabs, Dialog (Modal), Disclosure",
+      "url": "https://www.w3.org/WAI/ARIA/apg/"
+    },
+    {
+      "fonte": "W3C Selecting Web Accessibility Evaluation Tools",
+      "riferimento": "limiti degli strumenti automatici",
+      "url": "https://www.w3.org/WAI/test-evaluate/tools/selecting/"
+    },
+    {
+      "fonte": "ETSI EN 301 549 V3.2.1",
+      "riferimento": "capitolo 9, requisiti per il web",
+      "url": "https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§2 e §4 bis indipendenza del verificatore; §6 chiusura",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri con capacità visiva; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "verificatore indipendente: lavora almeno al livello dell'esecutore verificato"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Matrice WCAG 2.2 A/AA e regole A del manuale",
+      "deliverable": "matrice e voci A in docs/ui/, validate",
+      "seniority": "SD4",
+      "note": "base della dichiarazione di conformità"
+    },
+    {
+      "id": "T02",
+      "task": "Piano di copertura schermata, stato, configurazione e dati",
+      "deliverable": "piano di copertura",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Esecuzione delle verifiche automatiche e lettura degli esiti",
+      "deliverable": "esiti in test/esiti/accessibilita/",
+      "seniority": "SD1",
+      "note": "esito dato dallo strumento"
+    },
+    {
+      "id": "T04",
+      "task": "Ricalcolo dei contrasti sui colori effettivi nei temi",
+      "deliverable": "tabella con valori osservati e attesi",
+      "seniority": "SD1",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "Verifica assistita: tastiera, focus, ordine di lettura, alternative testuali",
+      "deliverable": "esiti per asserzione con passi di riproduzione",
+      "seniority": "SD3",
+      "note": "almeno al livello del frontend developer verificato"
+    },
+    {
+      "id": "T06",
+      "task": "Verifica di componenti con schemi APG complessi",
+      "deliverable": "esiti per componente",
+      "seniority": "SD4",
+      "note": "verifica lavoro eseguito a SD4"
+    },
+    {
+      "id": "T07",
+      "task": "Diagnosi di una barriera segnalata in UAT",
+      "deliverable": "barriera classificata con criterio e gravità",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Rapporto di release con esiti, limiti e etichetta di sintesi",
+      "deliverable": "rapporto per il Coordinatore AI, prima i fallimenti",
+      "seniority": "SD4",
+      "note": "effetto sul gate di release"
+    },
+    {
+      "id": "T09",
+      "task": "Scheda Do: livello di conformità dichiarato o deroga",
+      "deliverable": "scheda Do di una pagina",
+      "seniority": "SD4",
+      "note": ""
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per schermata verificata",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per schermata verificata",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per schermata verificata",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "motore di regole di accessibilità versionato eseguito nel browser",
+      "uso": "Obbligatorio per ogni schermata e stato del piano: le violazioni sono fallimenti; l'assenza di violazioni non è conformità."
+    },
+    {
+      "strumento": "calcolatore di contrasto sui colori effettivi e compositati",
+      "uso": "Obbligatorio nei due temi e con contrasto aumentato."
+    },
+    {
+      "strumento": "automazione del browser con eventi di tastiera reali e larghezze 320 e 1280 px",
+      "uso": "Obbligatoria per tastiera, focus, ridisposizione e ingrandimento al 200 %."
+    },
+    {
+      "strumento": "validatore della matrice WCAG del manuale",
+      "uso": "Obbligatorio: ogni criterio A/AA collegato o dichiarato non applicabile con motivo."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/ui/",
+    "test/esiti/accessibilita/"
+  ],
+  "do_riservati": [
+    "livello di conformità dichiarato al pubblico",
+    "deroga a un requisito mandatorio",
+    "pubblicazione della dichiarazione di accessibilità",
+    "prove con persone con disabilità"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-06",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  }
+}

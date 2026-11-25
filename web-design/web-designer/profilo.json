@@ -1,0 +1,257 @@
+{
+  "id": "web-designer",
+  "nome": "Web designer",
+  "nome_en": "Web designer",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "POC",
+    "Design e planning",
+    "Scale"
+  ],
+  "descrizione_breve": "Cura sistema di design, gerarchia visiva, palette sobria e comportamento responsive in tema chiaro e scuro.",
+  "descrizione_breve_en": "Owns the design system, visual hierarchy, restrained palette and responsive behaviour in light and dark themes.",
+  "competenze_fonti": [
+    {
+      "fonte": "W3C WCAG 2.2",
+      "riferimento": "SC 1.4.1, 1.4.3, 1.4.4, 1.4.10, 1.4.11, 1.4.12, 1.3.4, 2.4.7, 2.4.11, 2.5.8",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "fonte": "W3C Media Queries Level 5",
+      "riferimento": "prefers-color-scheme, prefers-reduced-motion",
+      "url": "https://www.w3.org/TR/mediaqueries-5/"
+    },
+    {
+      "fonte": "W3C Design Tokens Community Group",
+      "riferimento": "formato delle variabili di design, bozza di comunità",
+      "url": "https://www.designtokens.org/"
+    },
+    {
+      "fonte": "Nielsen Norman Group",
+      "riferimento": "euristica 8, design estetico e minimalista",
+      "url": "https://www.nngroup.com/articles/ten-usability-heuristics/"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§8 regole di redazione per il Manager umano",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri con capacità visiva; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "SD1 solo per ricalcoli deterministici; impianto del sistema di design a SD4"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Impianto del sistema di design e della palette nei due temi",
+      "deliverable": "variabili di colore, tipografia e spaziatura in design/",
+      "seniority": "SD4",
+      "note": "fondazione condivisa costosa da cambiare"
+    },
+    {
+      "id": "T02",
+      "task": "Componente di base nel sistema di design",
+      "deliverable": "specifica visiva del componente nei due temi",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Schermate di riferimento da contratto per tema e larghezza",
+      "deliverable": "schermate a 320, 390, 900 e 1280 px, chiaro e scuro",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Ricalcolo dei contrasti dopo un cambio di variabile",
+      "deliverable": "tabella dei contrasti aggiornata",
+      "seniority": "SD1",
+      "note": "esito dato dal calcolatore deterministico"
+    },
+    {
+      "id": "T05",
+      "task": "Ricerca di colori esadecimali e stili in linea",
+      "deliverable": "elenco delle occorrenze",
+      "seniority": "SD1",
+      "note": "controllo deterministico"
+    },
+    {
+      "id": "T06",
+      "task": "Regole D del manuale dell'interfaccia",
+      "deliverable": "voci D del manuale in docs/ui/",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Revisione euristica indipendente di un prototipo altrui",
+      "deliverable": "rapporto per euristica con gravità",
+      "seniority": "SD3",
+      "note": "almeno al livello di chi ha prodotto il prototipo"
+    },
+    {
+      "id": "T08",
+      "task": "Regole d'uso del marchio e icone",
+      "deliverable": "regole d'uso e set di icone con nome accessibile",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T09",
+      "task": "Varianti visive per il Manager umano come scheda Do",
+      "deliverable": "anteprima privata con due o tre varianti affiancate",
+      "seniority": "SD4",
+      "note": ""
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "calcolatore di contrasto WCAG sui colori effettivi, nei due temi",
+      "uso": "Obbligatorio a ogni cambio di variabile di colore: un valore sotto soglia blocca la consegna."
+    },
+    {
+      "strumento": "ricerca di colori esadecimali e stili in linea nei componenti",
+      "uso": "Obbligatoria: ogni occorrenza fuori dalle variabili condivise blocca la consegna. Convenzione del profilo."
+    },
+    {
+      "strumento": "acquisizione di schermate a 320, 390, 900 e 1280 px di larghezza nei due temi",
+      "uso": "Obbligatoria per ogni schermata di riferimento; il confronto visivo segnala le differenze."
+    }
+  ],
+  "scritture_consentite": [
+    "design/",
+    "variabili di stile condivise del progetto, se previste dal Work Package"
+  ],
+  "do_riservati": [
+    "identità del marchio, palette di riferimento e logo",
+    "pubblicazione di pagine pubbliche",
+    "deroga a un contrasto mandatorio"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-06",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  }
+}

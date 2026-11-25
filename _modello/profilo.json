@@ -1,0 +1,96 @@
+{
+  "id": "slug-del-ruolo",
+  "nome": "Nome del ruolo",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "alto | medio | basso",
+  "fasi": [
+    "Scoperta",
+    "POC",
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Una frase per l'elenco pubblico dei profili.",
+  "competenze_fonti": [
+    {
+      "fonte": "nome dello standard o della guida",
+      "riferimento": "sezione",
+      "url": "https://…"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Opus",
+      "tipo": "cloud",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "parametri minimi, per esempio 30B",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente o file CLAUDE.md con @PROFILO.md",
+      "note": ""
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "AGENTS.md con il contenuto di PROFILO.md",
+      "note": ""
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Opus",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "come si misura"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "nome",
+      "uso": "quando è obbligatorio e come si legge l'esito"
+    }
+  ],
+  "scritture_consentite": [
+    "percorsi relativi in cui il ruolo può scrivere"
+  ],
+  "do_riservati": [
+    "azioni che sono sempre Do del Manager umano"
+  ],
+  "qualificazione": {
+    "curatore": "",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "seniority": {
+    "minima": "SD2",
+    "massima": "SD4",
+    "nota": "intervallo tipico del ruolo; il livello effettivo è quello del task"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "descrizione del task",
+      "deliverable": "che cosa produce",
+      "seniority": "SD2",
+      "note": ""
+    }
+  ]
+}

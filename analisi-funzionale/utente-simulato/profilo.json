@@ -1,0 +1,225 @@
+{
+  "id": "utente-simulato",
+  "famiglia": "analisi-funzionale",
+  "nome": "Utente simulato",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "basso",
+  "fasi": [
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Impersona un utente tipo e usa l'applicazione dalle sue interfacce, in ambienti stabili, registrando esiti e osservazioni.",
+  "competenze_fonti": [
+    {
+      "fonte": "ISO 9241-11:2018",
+      "riferimento": "definizione di usabilità: efficacia, efficienza, soddisfazione nel contesto d'uso",
+      "url": "https://www.iso.org/standard/63500.html"
+    },
+    {
+      "fonte": "ISO/IEC 25010:2023",
+      "riferimento": "caratteristica capacità di interazione",
+      "url": "https://www.iso.org/standard/78176.html"
+    },
+    {
+      "fonte": "W3C WCAG 2.2",
+      "riferimento": "principi percepibile, utilizzabile, comprensibile, robusto",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§6 DevSecOps e test, test funzionale con utente simulato; §4 bis indipendenza del tester",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri con capacità visiva; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per scenario eseguito",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per scenario eseguito",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per scenario eseguito",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per scenario eseguito",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "automazione del browser o di dispositivi simulati con registrazione dei passi",
+      "uso": "Obbligatoria: ogni esito ha la traccia dei passi; senza traccia l'esito è «non concluso»."
+    },
+    {
+      "strumento": "controllo dello stato dell'ambiente prima della sessione",
+      "uso": "Obbligatorio: un ambiente non stabile blocca la sessione. Convenzione del profilo."
+    }
+  ],
+  "scritture_consentite": [
+    "test/esiti/utente-simulato/"
+  ],
+  "do_riservati": [
+    "uso di un ambiente diverso da quello di prova autorizzato",
+    "azioni irreversibili su sistemi esterni"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-03",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Simulated user",
+  "descrizione_breve_en": "Acts as a typical user and uses the application through its interfaces in stable environments, recording what blocks the task.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD3",
+    "nota": "Profilo basso: esegue scenari dati; le osservazioni con giudizio di gravità salgono a SD3."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Controllo di stabilità dell'ambiente",
+      "deliverable": "esito del controllo prima della sessione",
+      "seniority": "SD1",
+      "note": "Controllo deterministico."
+    },
+    {
+      "id": "T02",
+      "task": "Esecuzione di uno scenario come persona tipo",
+      "deliverable": "diario di sessione con passi, tempo ed esito",
+      "seniority": "SD2",
+      "note": "Livello almeno pari a quello dell'esecutore se il pacchetto tocca sicurezza o dati personali (regola 4)."
+    },
+    {
+      "id": "T03",
+      "task": "Ripetizione di scenari di regressione stabili",
+      "deliverable": "esito per scenario con traccia dei passi",
+      "seniority": "SD1",
+      "note": "Esito confrontato con la traccia attesa."
+    },
+    {
+      "id": "T04",
+      "task": "Osservazioni collegate a ISO/IEC 25010",
+      "deliverable": "osservazioni con caratteristica, criterio e gravità proposta",
+      "seniority": "SD3",
+      "note": "Giudizio di revisione."
+    },
+    {
+      "id": "T05",
+      "task": "Segnalazione di difetti riproducibili",
+      "deliverable": "scheda difetto con passi di riproduzione",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "Registro delle informazioni mancanti",
+      "deliverable": "elenco dei punti in cui la persona non saprebbe procedere",
+      "seniority": "SD2",
+      "note": ""
+    }
+  ]
+}

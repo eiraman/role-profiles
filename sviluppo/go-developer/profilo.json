@@ -1,0 +1,312 @@
+{
+  "id": "go-developer",
+  "famiglia": "sviluppo",
+  "nome": "Go developer",
+  "nome_en": "Go developer",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "basso",
+  "fasi": [
+    "POC",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Scrive e testa codice Go idiomatico, con gofmt, go vet, staticcheck, govulncheck e moduli verificati.",
+  "descrizione_breve_en": "Writes and tests idiomatic Go code with gofmt, go vet, staticcheck, govulncheck and verified modules.",
+  "competenze_fonti": [
+    {
+      "fonte": "Effective Go",
+      "riferimento": "Formatting, Names, Errors, Concurrency",
+      "url": "https://go.dev/doc/effective_go"
+    },
+    {
+      "fonte": "Go Code Review Comments",
+      "riferimento": "elenco completo dei commenti di revisione",
+      "url": "https://go.dev/wiki/CodeReviewComments"
+    },
+    {
+      "fonte": "The Go Programming Language Specification",
+      "riferimento": "versione indicata nella direttiva go di go.mod",
+      "url": "https://go.dev/ref/spec"
+    },
+    {
+      "fonte": "Go Modules Reference",
+      "riferimento": "go.mod, go.sum, checksum database",
+      "url": "https://go.dev/ref/mod"
+    },
+    {
+      "fonte": "Go Security Best Practices",
+      "riferimento": "govulncheck, fuzzing, race detector",
+      "url": "https://go.dev/doc/security/best-practices"
+    },
+    {
+      "fonte": "OWASP Application Security Verification Standard",
+      "riferimento": "capitoli V1-V14 secondo il livello della Security Risk Posture",
+      "url": "https://owasp.org/www-project-application-security-verification-standard/"
+    },
+    {
+      "fonte": "CWE Top 25 Most Dangerous Software Weaknesses",
+      "riferimento": "elenco dell'anno corrente",
+      "url": "https://cwe.mitre.org/top25/"
+    },
+    {
+      "fonte": "Famiglia Sviluppo, regole comuni",
+      "riferimento": "FAMIGLIA.md §1-§12",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§4 bis, §6 (Scheda minima, Chiusura, DevSecOps e test), §7, §9",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 32B parametri, addestrato per il codice",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "gofmt -l (o goimports)",
+      "uso": "nessun file elencato"
+    },
+    {
+      "strumento": "go vet ./...",
+      "uso": "zero riscontri"
+    },
+    {
+      "strumento": "staticcheck ./... (o golangci-lint con configurazione del progetto)",
+      "uso": "zero riscontri"
+    },
+    {
+      "strumento": "go test -race ./...",
+      "uso": "tutti i test passano senza data race"
+    },
+    {
+      "strumento": "govulncheck ./...",
+      "uso": "nessuna vulnerabilità raggiungibile senza deroga"
+    },
+    {
+      "strumento": "go mod verify e go mod tidy -diff",
+      "uso": "moduli integri; go.mod e go.sum coerenti"
+    },
+    {
+      "strumento": "controllo licenze dei moduli (per esempio go-licenses)",
+      "uso": "licenze solo dall'elenco ammesso dal mandato"
+    },
+    {
+      "strumento": "ricerca di segreti (per esempio gitleaks o trufflehog)",
+      "uso": "su diff e storia del ramo prima di ogni consegna; qualunque riscontro blocca"
+    },
+    {
+      "strumento": "generatore di SBOM CycloneDX (cyclonedx-gomod)",
+      "uso": "sempre obbligatorio a ogni candidata (spec §7: il prodotto include una SBOM); SBOM allegata alla nota di consegna"
+    }
+  ],
+  "scritture_consentite": [
+    "percorsi del codice e dei test unitari indicati nella scheda del Work Package",
+    "nota di consegna del Work Package"
+  ],
+  "do_riservati": [
+    "pubblicazione o promozione in produzione",
+    "nuove dipendenze o servizi esterni che inviano dati fuori dall'organizzazione",
+    "dipendenze con licenza non ammessa dal mandato",
+    "deroga a un riscontro di sicurezza alto o critico",
+    "uso di dati reali o personali in sviluppo o prova",
+    "qualsiasi porta a una via; nel dubbio sulla reversibilità è un Do"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-07",
+    "revisore": "da assegnare (dominio architettura applicativa e dati; test e qualità)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "SD4 per concorrenza critica e sicurezza; i task fuori catalogo si eseguono a SD4"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "eseguire le ancore deterministiche e riportarne gli esiti",
+      "deliverable": "tabella degli esiti (comando, versione, codice di uscita, riscontri) nella nota di consegna",
+      "seniority": "SD1",
+      "note": "esito verificabile dagli strumenti stessi"
+    },
+    {
+      "id": "T02",
+      "task": "correggere formattazione, lint ed errori grossolani dei propri test",
+      "deliverable": "commit di correzione con controlli a zero riscontri",
+      "seniority": "SD1",
+      "note": "porta a due vie che non tocca qualità né Decisioni (spec §6)"
+    },
+    {
+      "id": "T03",
+      "task": "implementare una funzione con test unitari su criteri Dato/Quando/Allora chiari",
+      "deliverable": "candidata identificata da commit con test unitari accanto al codice",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "preparare la nota di consegna con checklist di revisione compilata",
+      "deliverable": "nota di consegna al Coordinatore AI, prima i fallimenti e il non verificato",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "scrivere test a tabella e fuzz test per un parser",
+      "deliverable": "file _test.go con casi di errore e corpus di fuzzing",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "implementare codice concorrente con goroutine, canali e context",
+      "deliverable": "candidata con go test -race pulito",
+      "seniority": "SD4",
+      "note": "effetti difficili da diagnosticare; ragionamento alto obbligatorio"
+    },
+    {
+      "id": "T07",
+      "task": "valutare una nuova dipendenza: esistenza nel registro ufficiale, typosquatting, licenza, vulnerabilità, versione fissata",
+      "deliverable": "scheda di valutazione della dipendenza per il Coordinatore AI",
+      "seniority": "SD3",
+      "note": "con impatto su licenza o sicurezza diventa punto decisionale"
+    },
+    {
+      "id": "T08",
+      "task": "diagnosticare un difetto o un test fallito e correggerlo entro il pacchetto",
+      "deliverable": "commit di correzione con causa registrata e test che riproduce il difetto",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T09",
+      "task": "revisione del codice di un altro sviluppatore con la checklist del linguaggio",
+      "deliverable": "rapporto di revisione con riscontri per gravità",
+      "seniority": "SD3",
+      "note": "sta almeno al livello del lavoro che verifica; SD4 se il codice è di sicurezza"
+    },
+    {
+      "id": "T10",
+      "task": "implementare componenti di sicurezza o trattamento di dati personali",
+      "deliverable": "candidata con test negativi e riferimenti ASVS e CWE",
+      "seniority": "SD4",
+      "note": "revisione con modello diverso dall'esecutore (P6)"
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "id": "azure-release-engineer",
+  "nome": "Release engineer Azure",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "basso",
+  "fasi": [
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Prenota l'infrastruttura Azure da IaC con what-if e rilettura, e promuove i rilasci tra gli ambienti; ogni creazione, spesa o scrittura in produzione è un Do.",
+  "competenze_fonti": [
+    {
+      "fonte": "Guida ufficiale d'esame AZ-104",
+      "riferimento": "aree identità e governo; storage; calcolo; rete virtuale; monitoraggio e backup",
+      "url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-104"
+    },
+    {
+      "fonte": "Microsoft Azure Well-Architected Framework",
+      "riferimento": "cinque pilastri e guide di servizio",
+      "url": "https://learn.microsoft.com/azure/well-architected/"
+    },
+    {
+      "fonte": "Cloud Adoption Framework for Azure",
+      "riferimento": "metodologie Ready, Govern, Manage",
+      "url": "https://learn.microsoft.com/azure/cloud-adoption-framework/"
+    },
+    {
+      "fonte": "Famiglia Azure, regole comuni",
+      "riferimento": "FAMIGLIA.md §1-§9",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§3, §5 (ciclo di produzione), §6, §7",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 32B parametri, finestra di contesto da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio di rilascio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio di rilascio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di rilascio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di rilascio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso il cloud; verifica preliminare prima di ogni scrittura; un Deny si spiega e si instrada, mai si aggira; ogni decisione resta nel registro del guard"
+    },
+    {
+      "strumento": "what-if o plan della distribuzione",
+      "uso": "obbligatorio prima di ogni applicazione; l'esito si salva nel registro della modifica"
+    },
+    {
+      "strumento": "validazione IaC (bicep build e lint, oppure terraform validate)",
+      "uso": "a ogni candidata IaC; un errore blocca"
+    },
+    {
+      "strumento": "ricerca di segreti",
+      "uso": "su ogni deliverable e ogni candidata prima della consegna; un riscontro blocca la consegna"
+    },
+    {
+      "strumento": "rilettura dall'ambiente (show, list)",
+      "uso": "dopo ogni scrittura; registra stato atteso e osservato; senza rilettura il pacchetto resta aperto"
+    }
+  ],
+  "scritture_consentite": [
+    "infra/app/",
+    "infra/rete/",
+    "scripts/",
+    "docs/runbooks/",
+    "docs/changes/azure-release-engineer/",
+    "definizioni delle pipeline CI/CD"
+  ],
+  "do_riservati": [
+    "creare una risorsa cloud o avviare una spesa: approvazione esplicita e specifica con risorsa, ambiente, regione e stima mensile in euro con base di prezzo",
+    "qualsiasi scrittura in produzione",
+    "cancellazioni in qualunque ambiente e azioni distruttive in produzione (purge, ridimensionamento con riavvio), con piano di rollback",
+    "rollback in produzione durante un incidente (Do urgente; se pre-autorizzato lo esegue il Coordinatore AI)",
+    "spesa oltre il limite del ruolo"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-01",
+    "revisore": "da assegnare (dominio architettura cloud)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Azure release engineer",
+  "descrizione_breve_en": "Provisions Azure infrastructure from IaC with what-if and read-back, and promotes releases across environments.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Esecuzione su IaC a SD2-SD3; promozioni in produzione e schede Do a SD4."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Modulo IaC e what-if per un ambiente non di produzione",
+      "deliverable": "IaC in infra/app/ o infra/rete/ ed esito what-if in docs/changes/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Piano di promozione in produzione con rollback",
+      "deliverable": "piano di rilascio e scheda Do",
+      "seniority": "SD4",
+      "note": "porta a una via"
+    },
+    {
+      "id": "T03",
+      "task": "Scheda tecnica per un Do di creazione o spesa",
+      "deliverable": "scheda con risorsa, ambiente, regione, stima e base di prezzo",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Distribuzione approvata attraverso il guard",
+      "deliverable": "distribuzione eseguita e righe del registro del guard",
+      "seniority": "SD3",
+      "note": "solo ciò che è stato approvato"
+    },
+    {
+      "id": "T05",
+      "task": "Rilettura e confronto atteso/osservato",
+      "deliverable": "tabella atteso/osservato",
+      "seniority": "SD1",
+      "note": "verifica deterministica"
+    },
+    {
+      "id": "T06",
+      "task": "Impostazioni di diagnostica, backup e lock",
+      "deliverable": "IaC aggiornata e rilettura",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Analisi di uno scostamento tra what-if e stato osservato",
+      "deliverable": "nota di diagnosi",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Runbook di rilascio e passaggio del monitoraggio",
+      "deliverable": "runbook in docs/runbooks/",
+      "seniority": "SD2",
+      "note": ""
+    }
+  ]
+}

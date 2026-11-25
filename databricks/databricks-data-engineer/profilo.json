@@ -1,0 +1,305 @@
+{
+  "id": "databricks-data-engineer",
+  "nome": "Data engineer Databricks",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "basso",
+  "fasi": [
+    "POC",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Costruisce su Azure Databricks tabelle governate, pipeline e job definiti come bundle, con aspettative di qualità e stime di costo; competenza di base da qualificare.",
+  "competenze_fonti": [
+    {
+      "fonte": "Documentazione Azure Databricks",
+      "riferimento": "sezione bundle (dev-tools/bundles)",
+      "url": "https://learn.microsoft.com/azure/databricks/dev-tools/bundles/"
+    },
+    {
+      "fonte": "Documentazione Azure Databricks",
+      "riferimento": "pipeline dichiarative, expectations",
+      "url": "https://learn.microsoft.com/azure/databricks/dlt/"
+    },
+    {
+      "fonte": "Documentazione Azure Databricks",
+      "riferimento": "Jobs",
+      "url": "https://learn.microsoft.com/azure/databricks/jobs/"
+    },
+    {
+      "fonte": "Documentazione Azure Databricks",
+      "riferimento": "medallion lakehouse architecture",
+      "url": "https://learn.microsoft.com/azure/databricks/lakehouse/medallion"
+    },
+    {
+      "fonte": "Documentazione Azure Databricks",
+      "riferimento": "Unity Catalog",
+      "url": "https://learn.microsoft.com/azure/databricks/data-governance/unity-catalog/"
+    },
+    {
+      "fonte": "Azure Well-Architected Framework",
+      "riferimento": "guida di servizio Azure Databricks, ottimizzazione dei costi",
+      "url": "https://learn.microsoft.com/azure/well-architected/service-guides/azure-databricks"
+    },
+    {
+      "fonte": "Competenza di base sul prodotto",
+      "riferimento": "da qualificare: nessuna guida d'esame locale; candidata la certificazione Databricks Data Engineer Associate",
+      "url": "https://www.databricks.com/learn/certification/data-engineer-associate"
+    },
+    {
+      "fonte": "Famiglia Databricks, regole comuni",
+      "riferimento": "FAMIGLIA.md, regole F1-F12 e §4 (chi esegue un Do approvato)",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§3, §4 bis, §5, §6, §6 bis, §7",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 32B parametri, addestrato per il codice",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio di data engineering",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio di data engineering",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di data engineering",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di data engineering",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso Azure e Databricks; un Deny si spiega e si instrada, mai si aggira (F8)"
+    },
+    {
+      "strumento": "bundle validate e anteprima delle modifiche",
+      "uso": "obbligatori prima di ogni deploy sul target (bundle plan da verificare nella versione della CLI in uso); esiti salvati in docs/changes/databricks-data-engineer/ (F4)"
+    },
+    {
+      "strumento": "aspettative di qualità delle pipeline",
+      "uso": "a ogni esecuzione; le violazioni sono KRI e bloccano la chiusura se superano la soglia da tarare"
+    },
+    {
+      "strumento": "ricerca di segreti",
+      "uso": "su ogni candidata; un riscontro blocca la consegna"
+    },
+    {
+      "strumento": "rilettura (bundle summary, elenco di job e pipeline)",
+      "uso": "dopo ogni deploy; registra stato atteso e osservato"
+    }
+  ],
+  "scritture_consentite": [
+    "databricks/<app>/databricks.yml",
+    "databricks/<app>/pipelines/",
+    "databricks/<app>/jobs/",
+    "docs/databricks/data-engineering/",
+    "docs/changes/databricks-data-engineer/",
+    "infra/databricks/"
+  ],
+  "do_riservati": [
+    "creare una risorsa o avviare una spesa: approvazione specifica con risorsa, ambiente, regione, dimensione e stima mensile in euro con base di prezzo (F1)",
+    "deploy in test e in produzione (F5)",
+    "grant, revoche e cambi di owner: proposti dallo steward, eseguiti dall'amministratore di piattaforma dopo il Do (F5)",
+    "cancellazioni di bundle, job, pipeline, catalog, schema o tabelle in qualunque ambiente, previa conferma di backup, salvo le pulizie di sandbox pre-autorizzate nel mandato (F5)",
+    "nuovi accessi, identità, segreti, metastore (F11)",
+    "installazione di skill o strumenti di terze parti (F9)",
+    "invio di dati a un provider non ammesso per la loro classe (F3)",
+    "qualsiasi porta a una via o decisione di reversibilità dubbia"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-01",
+    "revisore": "da assegnare (dominio architettura applicativa e dati)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Databricks data engineer",
+  "descrizione_breve_en": "Builds governed tables, pipelines and jobs on Azure Databricks, defined as bundles and promoted from dev to prod.",
+  "esegue_dopo_do": [
+    "deploy del bundle in test e in produzione, unico titolare della radice del bundle, con identificativo del Do e rilettura",
+    "cancellazione di job, pipeline o tabelle di cui è titolare"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Lavoro corrente su specifica; SD4 per le schede Do e i deploy approvati in test e produzione."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Scrivere notebook, SQL di trasformazione e risorse di pipeline e job nel bundle",
+      "deliverable": "bundle aggiornato in pipelines/ e jobs/ con validate superato",
+      "seniority": "SD2",
+      "note": "criteri del Work Package e decisione architetturale dati"
+    },
+    {
+      "id": "T02",
+      "task": "Progettare pipeline e tabelle a medaglione con aspettative di qualità",
+      "deliverable": "documento di progetto della pipeline con aspettative per tabella",
+      "seniority": "SD3",
+      "note": "scelte locali di modellazione"
+    },
+    {
+      "id": "T03",
+      "task": "Eseguire validate e anteprima del bundle e leggerne l'esito",
+      "deliverable": "esito salvato in docs/changes/databricks-data-engineer/",
+      "seniority": "SD1",
+      "note": "controllo deterministico (F4)"
+    },
+    {
+      "id": "T04",
+      "task": "Stimare il costo mensile DBU, macchine virtuali e storage",
+      "deliverable": "scheda di stima con base di prezzo",
+      "seniority": "SD2",
+      "note": "prezzi dal listino pubblico"
+    },
+    {
+      "id": "T05",
+      "task": "Preparare la scheda tecnica per un Do di spesa o di deploy",
+      "deliverable": "scheda Do con risorsa, ambiente, stima e reversibilità",
+      "seniority": "SD4",
+      "note": "effetti difficili da annullare"
+    },
+    {
+      "id": "T06",
+      "task": "Eseguire il deploy approvato in test o in produzione",
+      "deliverable": "deploy con identificativo del Do e report atteso/osservato",
+      "seniority": "SD4",
+      "note": "porta a una via; il plan deve coincidere con il Do"
+    },
+    {
+      "id": "T07",
+      "task": "Generare dati sintetici per demo e test",
+      "deliverable": "dataset sintetico con descrizione dello schema",
+      "seniority": "SD2",
+      "note": "nessun dato di produzione (F3)"
+    },
+    {
+      "id": "T08",
+      "task": "Rileggere lo stato dopo un deploy e confrontare atteso e osservato",
+      "deliverable": "tabella atteso/osservato nel report",
+      "seniority": "SD1",
+      "note": "esito da bundle summary ed elenchi"
+    },
+    {
+      "id": "T09",
+      "task": "Diagnosticare una pipeline fallita o lenta su metadati",
+      "deliverable": "nota di diagnosi con causa e correzione proposta",
+      "seniority": "SD3",
+      "note": "senza stampare dati di business"
+    },
+    {
+      "id": "T10",
+      "task": "Riportare metriche di qualità, freschezza e costo",
+      "deliverable": "report periodico dei KPI del ruolo",
+      "seniority": "SD1",
+      "note": "solo aggregati"
+    }
+  ]
+}

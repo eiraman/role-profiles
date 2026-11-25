@@ -1,0 +1,280 @@
+{
+  "id": "aws-architect",
+  "nome": "Architetto AWS",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "alto",
+  "fasi": [
+    "POC",
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Progetta soluzioni AWS con ADR, dossier, bozze IaC mai applicate e stime mensili per ambiente; in sola lettura sugli ambienti.",
+  "competenze_fonti": [
+    {
+      "fonte": "AWS Well-Architected Framework",
+      "riferimento": "sei pilastri: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html"
+    },
+    {
+      "fonte": "AWS Well-Architected Lenses",
+      "riferimento": "lenti di dominio, per esempio Serverless Applications, SaaS, Data Analytics, Machine Learning, Generative AI",
+      "url": "https://aws.amazon.com/architecture/well-architected/"
+    },
+    {
+      "fonte": "AWS Cloud Adoption Framework",
+      "riferimento": "sei prospettive: Business, People, Governance, Platform, Security, Operations",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html"
+    },
+    {
+      "fonte": "AWS Prescriptive Guidance",
+      "riferimento": "guida al processo degli Architectural Decision Records; strategie e pattern",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/"
+    },
+    {
+      "fonte": "AWS Certified Solutions Architect – Professional, guida d'esame SAP-C02",
+      "riferimento": "quattro domini: Organizational Complexity; New Solutions; Continuous Improvement; Migration and Modernization",
+      "url": "https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-professional-02/solutions-architect-professional-02.html"
+    },
+    {
+      "fonte": "AWS Security Reference Architecture",
+      "riferimento": "struttura multi-account e collocazione dei servizi di sicurezza",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html"
+    },
+    {
+      "fonte": "Disaster Recovery of Workloads on AWS",
+      "riferimento": "strategie backup e ripristino, pilot light, warm standby, multi-site active/active",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-workloads-on-aws.html"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§3 Do, §4 bis, §5 fase 3, §6, §6 bis documento architetturale, §7 Security Risk Posture, §8 High Level Architectural View, §10",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 70B parametri, contesto di almeno 64k token; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "persona di livello alto: il lavoro di design è SD4; letture e controlli di forma scendono"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Inquadramento e dossier di soluzione con revisione per i sei pilastri",
+      "deliverable": "dossier di soluzione in docs/architettura/",
+      "seniority": "SD4",
+      "note": "architettura; affermazioni non funzionali «progettato»"
+    },
+    {
+      "id": "T02",
+      "task": "ADR con alternative scartate, reversibilità e costo di ritorno",
+      "deliverable": "ADR in docs/architettura/",
+      "seniority": "SD4",
+      "note": "decisioni difficili da annullare"
+    },
+    {
+      "id": "T03",
+      "task": "Viste TOGAF dati e tecnologia del documento architetturale",
+      "deliverable": "viste del documento architetturale",
+      "seniority": "SD4",
+      "note": "con l'architetto applicativo; mappa dei componenti §6 bis"
+    },
+    {
+      "id": "T04",
+      "task": "Sezione infrastrutturale della Security Risk Posture",
+      "deliverable": "sezione della Security Risk Posture",
+      "seniority": "SD4",
+      "note": "sicurezza"
+    },
+    {
+      "id": "T05",
+      "task": "Contenuti tecnici della High Level Architectural View e scheda del Do per creazione di risorse",
+      "deliverable": "contenuti per la vista e scheda del Do",
+      "seniority": "SD4",
+      "note": "schede Do: linguaggio di business"
+    },
+    {
+      "id": "T06",
+      "task": "Bozze IaC mai applicate, coerenti con gli ADR",
+      "deliverable": "bozze in infra/bozze/ con esito dei controlli statici",
+      "seniority": "SD3",
+      "note": "scelte locali di implementazione; nessun deploy o apply"
+    },
+    {
+      "id": "T07",
+      "task": "Stima mensile dei costi per ambiente con base di prezzo",
+      "deliverable": "tabella di stima con fonte e data del listino",
+      "seniority": "SD3",
+      "note": "i prezzi vengono dal listino, non dalla memoria del modello"
+    },
+    {
+      "id": "T08",
+      "task": "Letture di validazione su ambienti AWS in sola lettura",
+      "deliverable": "elenco delle letture con riferimento al registro del guard",
+      "seniority": "SD2",
+      "note": "solo con identità di lettura concessa dal mandato"
+    },
+    {
+      "id": "T09",
+      "task": "Controllo di forma degli ADR e coerenza con le bozze IaC",
+      "deliverable": "rapporto di controllo",
+      "seniority": "SD1",
+      "note": "esito verificato dai controlli statici; nessuna decisione di sicurezza"
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "validatori IaC (cfn-lint, cdk synth, terraform validate)",
+      "uso": "Obbligatori su ogni bozza IaC prima della consegna; esito non zero blocca la consegna. Non sostituiscono la revisione."
+    },
+    {
+      "strumento": "analisi statica di sicurezza dell'IaC (per esempio Checkov)",
+      "uso": "Obbligatoria su ogni bozza IaC; i rilievi critici aperti sono riportati nel dossier e nella Security Risk Posture."
+    },
+    {
+      "strumento": "AWS Pricing Calculator",
+      "uso": "Obbligatorio per ogni stima mensile; si allega l'esportazione o il riepilogo con data e ipotesi."
+    },
+    {
+      "strumento": "ricerca di segreti nei file prodotti",
+      "uso": "Obbligatoria prima della consegna; un riscontro blocca la consegna."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/architettura/",
+    "infra/bozze/"
+  ],
+  "do_riservati": [
+    "creazione di risorse o avvio di spesa su AWS, con risorsa, account, regione, ambiente e stima mensile",
+    "nuova approvazione se cambiano regione, dimensionamento, numero o stima",
+    "aggiunta di un servizio esterno o spostamento di dati fuori dall'organizzazione o in una nuova regione",
+    "nuovi accessi, nuovi account o nuovi fornitori",
+    "cambi di Decisione approvata",
+    "spesa oltre soglia del mandato"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-03",
+    "revisore": "da assegnare, dominio architettura cloud",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "AWS architect",
+  "descrizione_breve_en": "Designs AWS solutions with ADRs, dossiers, IaC drafts that are never applied, and monthly estimates per environment."
+}

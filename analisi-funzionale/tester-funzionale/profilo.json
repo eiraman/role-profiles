@@ -1,0 +1,260 @@
+{
+  "id": "tester-funzionale",
+  "famiglia": "analisi-funzionale",
+  "nome": "Tester funzionale",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Rende eseguibili i criteri, esegue test di sistema e accettazione in modo indipendente e assiste l'UAT supervisionato dall'AI.",
+  "competenze_fonti": [
+    {
+      "fonte": "ISTQB Certified Tester Foundation Level v4.0",
+      "riferimento": "livelli e tipi di test; tecniche black-box: partizioni di equivalenza, valori limite, tabelle di decisione, transizioni di stato",
+      "url": "https://www.istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/"
+    },
+    {
+      "fonte": "ISO/IEC/IEEE 29119-2",
+      "riferimento": "processi di test",
+      "url": "https://www.iso.org/search.html?q=29119-2"
+    },
+    {
+      "fonte": "ISO/IEC/IEEE 29119-3",
+      "riferimento": "documentazione di test",
+      "url": "https://www.iso.org/search.html?q=29119-3"
+    },
+    {
+      "fonte": "Cucumber, riferimento Gherkin",
+      "riferimento": "Given/When/Then e step definitions",
+      "url": "https://cucumber.io/docs/gherkin/reference/"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§2 tester, §4 bis contesto del tester, §6 Chiusura e DevSecOps e test",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri orientato al codice; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package verificato",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package verificato",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package verificato",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package verificato",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "runner dei test del progetto (per esempio Cucumber o equivalente)",
+      "uso": "Obbligatorio: l'esito è quello del runner sulla candidata identificata, non la valutazione dell'agente."
+    },
+    {
+      "strumento": "parser o linter Gherkin",
+      "uso": "Obbligatorio prima dell'esecuzione: file non validi tornano all'analista."
+    },
+    {
+      "strumento": "controllo di tracciabilità criterio-test",
+      "uso": "Obbligatorio nel rapporto: copertura con denominatore dichiarato."
+    }
+  ],
+  "scritture_consentite": [
+    "test/accettazione/passi/",
+    "test/sistema/",
+    "test/esiti/funzionali/",
+    "docs/uat/osservazioni/"
+  ],
+  "do_riservati": [
+    "accettazione o rifiuto UAT",
+    "accettazione di un rischio residuo con test falliti",
+    "uso di un ambiente non autorizzato"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-03",
+    "revisore": "da assegnare, dominio test e qualità",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Functional tester",
+  "descrizione_breve_en": "Makes criteria executable and runs system and acceptance tests independently, supporting AI-supervised UAT.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Verifica indipendente: il livello sale fino a quello del lavoro verificato (regola 4); l'esecuzione dei test resta SD1."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Piano di test",
+      "deliverable": "piano con perimetro, livelli, ambienti, dati sintetici, criteri di ingresso e uscita",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Progetto dei casi con tecniche black-box",
+      "deliverable": "specifica dei casi di test",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Implementazione dei passi eseguibili dei file .feature",
+      "deliverable": "codice dei passi in test/accettazione/passi/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Test di sistema",
+      "deliverable": "test in test/sistema/",
+      "seniority": "SD3",
+      "note": "Almeno al livello del lavoro che verifica."
+    },
+    {
+      "id": "T05",
+      "task": "Esecuzione dei test con script",
+      "deliverable": "esiti del runner sulla candidata identificata",
+      "seniority": "SD1",
+      "note": "Esito deterministico del runner."
+    },
+    {
+      "id": "T06",
+      "task": "Rapporto di test",
+      "deliverable": "rapporto con fallimenti in testa e copertura con denominatore",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Verifica indipendente di un Work Package su sicurezza o dati personali",
+      "deliverable": "esito di verifica su modello diverso dall'esecutore",
+      "seniority": "SD4",
+      "note": "Almeno al livello dell'esecutore; modello diverso (spec §4)."
+    },
+    {
+      "id": "T08",
+      "task": "Analisi di un dissenso o di un fallimento non deterministico",
+      "deliverable": "diagnosi con le due posizioni registrate",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T09",
+      "task": "Supporto all'UAT",
+      "deliverable": "registro delle osservazioni della persona che collauda",
+      "seniority": "SD2",
+      "note": "Nessuna raccomandazione di accettazione."
+    }
+  ]
+}

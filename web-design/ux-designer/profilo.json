@@ -1,0 +1,260 @@
+{
+  "id": "ux-designer",
+  "nome": "UX designer",
+  "nome_en": "UX designer",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "alto",
+  "fasi": [
+    "Scoperta",
+    "POC",
+    "Design e planning",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Progetta flussi, architettura dell'informazione, contratti di schermata e prototipi, con criteri di usabilità misurabili.",
+  "descrizione_breve_en": "Designs flows, information architecture, screen contracts and prototypes, with measurable usability criteria.",
+  "competenze_fonti": [
+    {
+      "fonte": "ISO 9241-210:2019",
+      "riferimento": "attività della progettazione centrata sull'utente",
+      "url": "https://www.iso.org/standard/77520.html"
+    },
+    {
+      "fonte": "ISO 9241-11:2018",
+      "riferimento": "definizione di usabilità: efficacia, efficienza, soddisfazione nel contesto d'uso",
+      "url": "https://www.iso.org/standard/63500.html"
+    },
+    {
+      "fonte": "ISO 9241-110:2020",
+      "riferimento": "sette principi di interazione",
+      "url": "https://www.iso.org/standard/75258.html"
+    },
+    {
+      "fonte": "Nielsen Norman Group",
+      "riferimento": "10 euristiche di usabilità; divulgazione progressiva",
+      "url": "https://www.nngroup.com/articles/ten-usability-heuristics/"
+    },
+    {
+      "fonte": "W3C COGA",
+      "riferimento": "obiettivi di progettazione per disabilità cognitive e di apprendimento",
+      "url": "https://www.w3.org/TR/coga-usable/"
+    },
+    {
+      "fonte": "GOV.UK Design System",
+      "riferimento": "schemi Check answers ed Error summary",
+      "url": "https://design-system.service.gov.uk/patterns/"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§5 fasi, §6 criteri e UAT, §8 regole di redazione",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri con capacità visiva; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD2",
+    "massima": "SD4",
+    "nota": "ruolo di livello alto: architettura dell'informazione e schede Do a SD4, lavoro su contratto a SD2-SD3"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Mappa del contesto d'uso: persone, compiti, ambienti e dispositivi",
+      "deliverable": "mappa del contesto d'uso in docs/ui/",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Architettura dell'informazione e navigazione",
+      "deliverable": "struttura delle pagine e schema di navigazione",
+      "seniority": "SD4",
+      "note": "scelta strutturale costosa da annullare"
+    },
+    {
+      "id": "T03",
+      "task": "Flussi dei compiti principali con budget di azioni",
+      "deliverable": "diagrammi di flusso in docs/ui/flussi/",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Contratto di schermata da flusso approvato",
+      "deliverable": "contratto in docs/ui/contratti/, validato dallo schema",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "Criteri di usabilità misurabili per un Work Package",
+      "deliverable": "criteri con utente, compito, contesto, misura e soglia",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "Prototipo navigabile con dati sintetici",
+      "deliverable": "prototipo in docs/ui/prototipi/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Revisione euristica indipendente di un prototipo altrui",
+      "deliverable": "rapporto per euristica con gravità",
+      "seniority": "SD3",
+      "note": "almeno al livello di chi ha prodotto il prototipo"
+    },
+    {
+      "id": "T08",
+      "task": "Scenari per utente simulato e UAT con oracolo finale",
+      "deliverable": "scenari in docs/ui/scenari/",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T09",
+      "task": "Regole U del manuale dell'interfaccia",
+      "deliverable": "voci U del manuale in docs/ui/",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T10",
+      "task": "Sintesi degli esiti di utente simulato e UAT per il Manager umano",
+      "deliverable": "pagina con problemi per gravità, prima le cattive notizie",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T11",
+      "task": "Scheda Do: pubblico, lingue, ricerche con persone reali, cambio di flusso approvato",
+      "deliverable": "scheda Do di una pagina con impatto e alternative",
+      "seniority": "SD4",
+      "note": ""
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "validatore del contratto di schermata (schema JSON)",
+      "uso": "Obbligatorio: un contratto senza azione primaria, stati o focus non passa."
+    },
+    {
+      "strumento": "conteggio delle azioni di primo livello e del budget di percorso sul prototipo",
+      "uso": "Obbligatorio: oltre 7 azioni o oltre il budget richiede motivazione nel contratto. Convenzione del profilo."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/ui/flussi/",
+    "docs/ui/contratti/",
+    "docs/ui/prototipi/",
+    "docs/ui/scenari/",
+    "docs/ui/"
+  ],
+  "do_riservati": [
+    "pubblico di riferimento e lingue",
+    "ricerche o test con persone reali",
+    "cambio di un flusso approvato che tocca i criteri di successo",
+    "accettazione UAT"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-06",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  }
+}

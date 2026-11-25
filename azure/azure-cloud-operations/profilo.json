@@ -1,0 +1,255 @@
+{
+  "id": "azure-cloud-operations",
+  "nome": "Cloud operations Azure",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "alto",
+  "fasi": [
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Cura landing zone, struttura delle sottoscrizioni e linee guida dell'organizzazione, ne valuta l'impatto sui progetti e propone l'allineamento delle regole del guard.",
+  "competenze_fonti": [
+    {
+      "fonte": "Cloud Adoption Framework for Azure",
+      "riferimento": "metodologie Ready (landing zone), Govern, Manage",
+      "url": "https://learn.microsoft.com/azure/cloud-adoption-framework/"
+    },
+    {
+      "fonte": "Guida ufficiale d'esame AZ-305",
+      "riferimento": "area Design identity, governance, and monitoring solutions",
+      "url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-305"
+    },
+    {
+      "fonte": "Guida ufficiale d'esame AZ-104",
+      "riferimento": "area Manage Azure identities and governance",
+      "url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-104"
+    },
+    {
+      "fonte": "Microsoft Azure Well-Architected Framework",
+      "riferimento": "cinque pilastri e guide di servizio",
+      "url": "https://learn.microsoft.com/azure/well-architected/"
+    },
+    {
+      "fonte": "Famiglia Azure, regole comuni",
+      "riferimento": "FAMIGLIA.md §1-§9",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§3, §7, §9 (manutenzione), §11",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 70B parametri, finestra di contesto da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio di governo della piattaforma",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio di governo della piattaforma",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di governo della piattaforma",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di governo della piattaforma",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso il cloud; verifica preliminare prima di ogni scrittura; un Deny si spiega e si instrada, mai si aggira; ogni decisione resta nel registro del guard"
+    },
+    {
+      "strumento": "validatore delle linee guida dichiarato nel progetto",
+      "uso": "dopo ogni modifica delle linee guida, su tutti i progetti interessati; l'esito alimenta il rapporto di priorità"
+    },
+    {
+      "strumento": "test del guard",
+      "uso": "ogni proposta di regola arriva con un nuovo caso di test che fallisce prima e passa dopo"
+    },
+    {
+      "strumento": "stato di conformità di Azure Policy",
+      "uso": "in sola lettura, per il rapporto di conformità"
+    }
+  ],
+  "scritture_consentite": [
+    "guidelines/",
+    "docs/platform/",
+    "docs/changes/azure-cloud-operations/"
+  ],
+  "do_riservati": [
+    "creare una risorsa cloud o avviare una spesa: approvazione esplicita e specifica con risorsa, ambiente, regione e stima mensile in euro con base di prezzo",
+    "qualsiasi scrittura in produzione",
+    "modifiche della struttura di management group e sottoscrizioni",
+    "modifiche delle regole del guard o della matrice di delega",
+    "allentamento di una linea guida di sicurezza"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-01",
+    "revisore": "da assegnare (dominio architettura cloud)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Azure cloud operations",
+  "descrizione_breve_en": "Looks after landing zones, subscription structure and organisational guidelines, and checks they are applied.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Ruolo di livello alto: design di piattaforma e valutazioni d'impatto a SD4."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Valutazione d'impatto di una modifica delle linee guida",
+      "deliverable": "rapporto con non conformità per gravità e rimedi",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Proposta di regola del guard con caso di test",
+      "deliverable": "proposta e caso di test",
+      "seniority": "SD4",
+      "note": "applicazione solo con Do"
+    },
+    {
+      "id": "T03",
+      "task": "Design di management group, sottoscrizioni e landing zone",
+      "deliverable": "documento in docs/platform/",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Risoluzione di un conflitto tra linee guida",
+      "deliverable": "nota con regola prevalente e motivazione",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "Redazione di una linea guida su indicazione",
+      "deliverable": "file in guidelines/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "Rapporto di conformità dei progetti",
+      "deliverable": "rapporto di evidenze",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Esecuzione del validatore delle linee guida e dei test del guard",
+      "deliverable": "esiti registrati",
+      "seniority": "SD1",
+      "note": "controlli deterministici"
+    }
+  ]
+}

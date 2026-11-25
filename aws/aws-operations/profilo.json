@@ -1,0 +1,288 @@
+{
+  "id": "aws-operations",
+  "nome": "Operations AWS",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Presidia monitoraggio, incidenti, problemi e continuità su AWS; ripristina con l'azione reversibile più piccola e instrada le correzioni.",
+  "competenze_fonti": [
+    {
+      "fonte": "Regole comuni della famiglia AWS",
+      "riferimento": "../FAMIGLIA.md, §1-§13",
+      "url": null
+    },
+    {
+      "fonte": "Guida d'esame AWS Certified SysOps Administrator – Associate (SOA-C02), con nuova edizione CloudOps Engineer – Associate da verificare",
+      "riferimento": "domini: Monitoring, Logging, and Remediation; Reliability and Business Continuity; Deployment, Provisioning, and Automation; Security and Compliance; Networking and Content Delivery; Cost and Performance Optimization",
+      "url": "https://docs.aws.amazon.com/aws-certification/"
+    },
+    {
+      "fonte": "AWS Well-Architected Framework",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "riferimento": "pilastri Operational Excellence (Prepare, Operate, Evolve) e Reliability (Failure management); Operational Readiness Reviews"
+    },
+    {
+      "fonte": "AWS Cloud Adoption Framework",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html",
+      "riferimento": "prospettiva Operations: osservabilità, gestione di eventi, incidenti e problemi, continuità"
+    },
+    {
+      "fonte": "Disaster Recovery of Workloads on AWS",
+      "riferimento": "strategie di continuità",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-workloads-on-aws.html"
+    },
+    {
+      "fonte": "ITIL 4",
+      "riferimento": "pratiche Incident management e Problem management",
+      "url": "https://www.axelos.com/certifications/itil-service-management"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "url": null,
+      "riferimento": "§3, §4, §4 bis, §6, §7, §9"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "30B parametri; finestra di contesto di almeno 128k token; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "diagnosi a SD3; coordinamento di incidenti gravi e proposte di contenimento a SD4"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Coordinamento di un incidente Sev1 o Sev2 con fatti, ipotesi e azioni",
+      "deliverable": "registro dell'incidente in docs/incidenti/",
+      "seniority": "SD4",
+      "note": "coordinamento ad alto impatto"
+    },
+    {
+      "id": "T02",
+      "task": "Proposta di contenimento urgente e scheda del Do urgente",
+      "deliverable": "proposta verificata in sola verifica dal guard e scheda",
+      "seniority": "SD4",
+      "note": "lo esegue il Coordinatore AI"
+    },
+    {
+      "id": "T03",
+      "task": "Diagnosi di un incidente Sev3 o Sev4",
+      "deliverable": "registro dell'incidente",
+      "seniority": "SD3",
+      "note": "diagnosi"
+    },
+    {
+      "id": "T04",
+      "task": "Revisione dopo l'incidente e registro del problema",
+      "deliverable": "registro in docs/problemi/ con azioni e responsabili",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "Allarmi e dashboard come codice",
+      "deliverable": "definizioni in infra/monitoraggio/",
+      "seniority": "SD2",
+      "note": "ogni allarme con responsabile, gravità e runbook"
+    },
+    {
+      "id": "T06",
+      "task": "Runbook operativi",
+      "deliverable": "runbook in docs/runbook/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Pianificazione e rapporto delle prove di continuità",
+      "deliverable": "rapporto in docs/continuita/ con RTO e RPO osservati",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Sintesi di log, metriche e KPI operativi",
+      "deliverable": "riepilogo e indicatori",
+      "seniority": "SD1",
+      "note": "il modello locale per log con dati non ammessi ai provider esterni"
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per incidente o Work Package medio operativo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per incidente o Work Package medio operativo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per incidente o Work Package medio operativo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per incidente o Work Package medio operativo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso AWS, con il ruolo del profilo; la modalità di sola verifica prepara la scheda del Do; un Deny si spiega e si instrada, mai si aggira; ogni decisione resta nel registro di audit"
+    },
+    {
+      "strumento": "allarmi CloudWatch e rilettura dello stato di salute",
+      "uso": "la chiusura di un incidente richiede la rilettura e la verifica visibile all'utente"
+    },
+    {
+      "strumento": "prova di ripristino o di failover",
+      "uso": "unica evidenza ammessa per marcare RTO e RPO come testati"
+    },
+    {
+      "strumento": "eventi CloudTrail",
+      "uso": "obbligatori nella diagnosi per individuare modifiche precedenti all'incidente"
+    },
+    {
+      "strumento": "ricerca di segreti",
+      "uso": "su ogni deliverable e commit prima della consegna; un riscontro blocca la consegna"
+    },
+    {
+      "strumento": "rilettura dall'ambiente (describe, get, list)",
+      "uso": "dopo ogni scrittura; lo stato atteso e quello osservato vanno nel record di modifica"
+    },
+    {
+      "strumento": "validatore dei Role Profile",
+      "uso": "sul profilo stesso prima di ogni revisione"
+    }
+  ],
+  "scritture_consentite": [
+    "docs/incidenti/",
+    "docs/problemi/",
+    "docs/runbook/",
+    "docs/continuita/",
+    "infra/monitoraggio/",
+    "docs/modifiche/"
+  ],
+  "do_riservati": [
+    "creare una risorsa AWS o avviare una spesa: Do specifico con risorsa, account, regione, ambiente e stima mensile in euro con base di prezzo",
+    "qualsiasi scrittura in produzione, salvo il contenimento urgente elencato nel mandato, eseguito dal Coordinatore AI",
+    "IAM e accessi: utenti, ruoli, policy, permission set, SCP, policy di chiave e di risorsa; GRANT, REVOKE, utenti e ruoli del database",
+    "cancellazioni di risorse o dati in qualsiasi ambiente, salvo le pulizie di sandbox pre-autorizzate nel mandato, e riduzione di retention o backup",
+    "modifiche di rete critiche ed esposizione pubblica",
+    "impegni di spesa, modifiche di account, AWS Organizations, fatturazione o budget",
+    "nuovo account, nuova regione, nuovo servizio esterno o dati fuori dall'organizzazione",
+    "qualsiasi porta a una via o decisione di reversibilità dubbia",
+    "ogni azione in produzione; il contenimento urgente del mandato lo esegue il Coordinatore AI su proposta del ruolo",
+    "failover verso un'altra regione",
+    "cancellazione di allarmi, log o backup",
+    "comunicazioni a clienti, autorità o terze parti"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-05",
+    "revisore": "da assegnare (dominio architettura cloud)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "AWS operations",
+  "descrizione_breve_en": "Covers monitoring, incidents, problems and continuity on AWS; restores with the smallest reversible action."
+}

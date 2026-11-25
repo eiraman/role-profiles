@@ -1,0 +1,308 @@
+{
+  "id": "java-developer",
+  "famiglia": "sviluppo",
+  "nome": "Java developer",
+  "nome_en": "Java developer",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "basso",
+  "fasi": [
+    "POC",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Scrive e testa codice Java su versione LTS, con stile di progetto o Google Java Style, analisi statica e dipendenze verificate.",
+  "descrizione_breve_en": "Writes and tests Java code on an LTS release, with project or Google Java Style, static analysis and verified dependencies.",
+  "competenze_fonti": [
+    {
+      "fonte": "Google Java Style Guide",
+      "riferimento": "sezioni 2-7: struttura, formattazione, nomi, Javadoc",
+      "url": "https://google.github.io/styleguide/javaguide.html"
+    },
+    {
+      "fonte": "Oracle Code Conventions for the Java Programming Language",
+      "riferimento": "convenzioni di nomi e organizzazione, se adottate dal progetto",
+      "url": "https://www.oracle.com/java/technologies/javase/codeconventions-contents.html"
+    },
+    {
+      "fonte": "Effective Java, terza edizione (J. Bloch)",
+      "riferimento": "Items 10-14 (equals, hashCode), 17 (immutabilità), 69-77 (eccezioni)",
+      "url": null
+    },
+    {
+      "fonte": "SEI CERT Oracle Coding Standard for Java",
+      "riferimento": "regole IDS (input), ERR (errori), SER (serializzazione)",
+      "url": "https://wiki.sei.cmu.edu/confluence/display/java"
+    },
+    {
+      "fonte": "Java SE API Specification",
+      "riferimento": "javadoc della versione LTS fissata",
+      "url": "https://docs.oracle.com/en/java/javase/"
+    },
+    {
+      "fonte": "OWASP Application Security Verification Standard",
+      "riferimento": "capitoli V1-V14 secondo il livello della Security Risk Posture",
+      "url": "https://owasp.org/www-project-application-security-verification-standard/"
+    },
+    {
+      "fonte": "CWE Top 25 Most Dangerous Software Weaknesses",
+      "riferimento": "elenco dell'anno corrente",
+      "url": "https://cwe.mitre.org/top25/"
+    },
+    {
+      "fonte": "Famiglia Sviluppo, regole comuni",
+      "riferimento": "FAMIGLIA.md §1-§12",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§4 bis, §6 (Scheda minima, Chiusura, DevSecOps e test), §7, §9",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 32B parametri, addestrato per il codice",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di sviluppo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "Spotless (google-java-format) o Checkstyle",
+      "uso": "spotless:check o checkstyle:check senza violazioni"
+    },
+    {
+      "strumento": "compilazione con -Xlint:all -Werror",
+      "uso": "zero avvisi del compilatore sul codice del pacchetto"
+    },
+    {
+      "strumento": "SpotBugs con Find Security Bugs, o Error Prone",
+      "uso": "zero riscontri di priorità alta"
+    },
+    {
+      "strumento": "JUnit 5 con Surefire e JaCoCo",
+      "uso": "tutti i test passano; nessun @Disabled senza motivo; copertura delle righe modificate da tarare"
+    },
+    {
+      "strumento": "OWASP Dependency-Check o osv-scanner",
+      "uso": "zero CVE alte o critiche senza deroga"
+    },
+    {
+      "strumento": "plugin di licenze di Maven o Gradle",
+      "uso": "licenze solo dall'elenco ammesso dal mandato"
+    },
+    {
+      "strumento": "ricerca di segreti (per esempio gitleaks o trufflehog)",
+      "uso": "su diff e storia del ramo prima di ogni consegna; qualunque riscontro blocca"
+    },
+    {
+      "strumento": "generatore di SBOM CycloneDX (cyclonedx-maven-plugin o plugin CycloneDX di Gradle)",
+      "uso": "sempre obbligatorio a ogni candidata (spec §7: il prodotto include una SBOM); SBOM allegata alla nota di consegna"
+    }
+  ],
+  "scritture_consentite": [
+    "percorsi del codice e dei test unitari indicati nella scheda del Work Package",
+    "nota di consegna del Work Package"
+  ],
+  "do_riservati": [
+    "pubblicazione o promozione in produzione",
+    "nuove dipendenze o servizi esterni che inviano dati fuori dall'organizzazione",
+    "dipendenze con licenza non ammessa dal mandato",
+    "deroga a un riscontro di sicurezza alto o critico",
+    "uso di dati reali o personali in sviluppo o prova",
+    "qualsiasi porta a una via; nel dubbio sulla reversibilità è un Do"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-07",
+    "revisore": "da assegnare (dominio architettura applicativa e dati; test e qualità)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "SD4 per sicurezza, deserializzazione e dati personali; i task fuori catalogo si eseguono a SD4"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "eseguire le ancore deterministiche e riportarne gli esiti",
+      "deliverable": "tabella degli esiti (comando, versione, codice di uscita, riscontri) nella nota di consegna",
+      "seniority": "SD1",
+      "note": "esito verificabile dagli strumenti stessi"
+    },
+    {
+      "id": "T02",
+      "task": "correggere formattazione, lint ed errori grossolani dei propri test",
+      "deliverable": "commit di correzione con controlli a zero riscontri",
+      "seniority": "SD1",
+      "note": "porta a due vie che non tocca qualità né Decisioni (spec §6)"
+    },
+    {
+      "id": "T03",
+      "task": "implementare una funzione con test unitari su criteri Dato/Quando/Allora chiari",
+      "deliverable": "candidata identificata da commit con test unitari accanto al codice",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "preparare la nota di consegna con checklist di revisione compilata",
+      "deliverable": "nota di consegna al Coordinatore AI, prima i fallimenti e il non verificato",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "aggiornare la build Maven o Gradle per dipendenze approvate",
+      "deliverable": "pom.xml o build.gradle con versioni esatte e build verde",
+      "seniority": "SD2",
+      "note": "la configurazione dei controlli non si cambia nel pacchetto"
+    },
+    {
+      "id": "T06",
+      "task": "implementare codice concorrente o con transazioni",
+      "deliverable": "candidata con test di concorrenza e analisi SpotBugs pulita",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "valutare una nuova dipendenza: esistenza nel registro ufficiale, typosquatting, licenza, vulnerabilità, versione fissata",
+      "deliverable": "scheda di valutazione della dipendenza per il Coordinatore AI",
+      "seniority": "SD3",
+      "note": "con impatto su licenza o sicurezza diventa punto decisionale"
+    },
+    {
+      "id": "T08",
+      "task": "diagnosticare un difetto o un test fallito e correggerlo entro il pacchetto",
+      "deliverable": "commit di correzione con causa registrata e test che riproduce il difetto",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T09",
+      "task": "revisione del codice di un altro sviluppatore con la checklist del linguaggio",
+      "deliverable": "rapporto di revisione con riscontri per gravità",
+      "seniority": "SD3",
+      "note": "sta almeno al livello del lavoro che verifica; SD4 se il codice è di sicurezza"
+    },
+    {
+      "id": "T10",
+      "task": "implementare componenti di sicurezza o trattamento di dati personali",
+      "deliverable": "candidata con test negativi e riferimenti ASVS e CWE",
+      "seniority": "SD4",
+      "note": "revisione con modello diverso dall'esecutore (P6)"
+    }
+  ]
+}

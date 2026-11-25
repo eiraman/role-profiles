@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: 2026 Paolo Ungari and contributors
+# SPDX-License-Identifier: CC-BY-4.0
+# REUSE Specification 3.3. The profile files carry no in-file header, so that they stay
+# byte-identical to the registry they were imported from; their licence is declared here.
+version = 1
+
+[[annotations]]
+path = [
+  "**/PROFILO.md",
+  "**/profilo.json",
+  "**/FAMIGLIA.md",
+  "_modello/**",
+  "_seniority/**",
+  "controllore/*.md",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Paolo Ungari and contributors"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["CODEOWNERS", ".gitignore"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Paolo Ungari and contributors"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# The AI Coordinator's Manager View generator is code: it carries its own SPDX header (Apache-2.0).

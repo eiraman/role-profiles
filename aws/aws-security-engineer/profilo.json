@@ -1,0 +1,268 @@
+{
+  "id": "aws-security-engineer",
+  "nome": "Security engineer AWS",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Possiede la baseline di sicurezza AWS, rivede le modifiche degli altri ruoli, contribuisce alla Security Risk Posture e guida gli incidenti di sicurezza.",
+  "competenze_fonti": [
+    {
+      "fonte": "Regole comuni della famiglia AWS",
+      "riferimento": "../FAMIGLIA.md, §1-§13",
+      "url": null
+    },
+    {
+      "fonte": "Guida d'esame AWS Certified Security – Specialty (SCS-C02)",
+      "riferimento": "domini: Threat Detection and Incident Response; Security Logging and Monitoring; Infrastructure Security; Identity and Access Management; Data Protection; Management and Security Governance",
+      "url": "https://docs.aws.amazon.com/aws-certification/"
+    },
+    {
+      "fonte": "AWS Security Reference Architecture",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/welcome.html",
+      "riferimento": "account di Security Tooling e Log Archive, collocazione dei servizi di sicurezza"
+    },
+    {
+      "fonte": "AWS Well-Architected Framework",
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html",
+      "riferimento": "pilastro Security, tutte le aree"
+    },
+    {
+      "fonte": "AWS Cloud Adoption Framework",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html",
+      "riferimento": "prospettiva Security"
+    },
+    {
+      "fonte": "AWS Security Incident Response Guide",
+      "riferimento": "fasi di preparazione, rilevamento, contenimento, recupero",
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-security-incident-response-guide/welcome.html"
+    },
+    {
+      "fonte": "OWASP Top 10 per LLM e applicazioni agentiche",
+      "riferimento": "sezione Agenti della Security Risk Posture",
+      "url": "https://genai.owasp.org/"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "url": null,
+      "riferimento": "§3, §4, §4 bis, §6 DevSecOps e test, §7, §9"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "70B parametri; finestra di contesto di almeno 128k token; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD2",
+    "massima": "SD4",
+    "nota": "ruolo di sicurezza: quasi tutto a SD4; inventari dei riscontri scendono"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Security Risk Posture e sezione Agenti",
+      "deliverable": "sezioni della Security Risk Posture",
+      "seniority": "SD4",
+      "note": "sicurezza e dati personali; revisore con modello diverso"
+    },
+    {
+      "id": "T02",
+      "task": "Revisione di sicurezza di una modifica di un altro ruolo",
+      "deliverable": "revisione in docs/sicurezza/ con gravità, evidenza, correzione, responsabile",
+      "seniority": "SD4",
+      "note": "verifica: almeno al livello del lavoro verificato"
+    },
+    {
+      "id": "T03",
+      "task": "Baseline come codice: policy IAM, SCP, permission set, regole di Config",
+      "deliverable": "codice in infra/sicurezza/ con esito di IAM Access Analyzer",
+      "seniority": "SD4",
+      "note": "accessi: effetti difficili da annullare"
+    },
+    {
+      "id": "T04",
+      "task": "Scheda del Do per una modifica di accesso o un'eccezione alla baseline",
+      "deliverable": "scheda del Do",
+      "seniority": "SD4",
+      "note": "schede Do"
+    },
+    {
+      "id": "T05",
+      "task": "Proposta del contenimento pre-autorizzato durante un incidente di sicurezza",
+      "deliverable": "proposta verificata in sola verifica dal guard ed evidenze conservate",
+      "seniority": "SD4",
+      "note": "lo esegue il Coordinatore AI"
+    },
+    {
+      "id": "T06",
+      "task": "Triage dei riscontri di GuardDuty e Security Hub",
+      "deliverable": "elenco dei riscontri classificati per gravità",
+      "seniority": "SD3",
+      "note": "diagnosi"
+    },
+    {
+      "id": "T07",
+      "task": "Verifica dei permission set degli agenti rispetto alla matrice delle deleghe",
+      "deliverable": "rapporto di scostamento",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Inventario dei riscontri aperti e KPI di sicurezza",
+      "deliverable": "tabella dei riscontri e indicatori",
+      "seniority": "SD2",
+      "note": "il modello locale per evidenze con dati non ammessi ai provider esterni"
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per revisione o Work Package medio di sicurezza",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per revisione o Work Package medio di sicurezza",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per revisione o Work Package medio di sicurezza",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso AWS, con il ruolo del profilo; la modalità di sola verifica prepara la scheda del Do; un Deny si spiega e si instrada, mai si aggira; ogni decisione resta nel registro di audit"
+    },
+    {
+      "strumento": "IAM Access Analyzer, validazione delle policy e analisi dei permessi non usati",
+      "uso": "obbligatoria su ogni policy proposta; un riscontro di errore o di accesso pubblico blocca"
+    },
+    {
+      "strumento": "controlli di policy sull'IaC",
+      "uso": "su ogni change set rivisto; gli esiti entrano nella revisione"
+    },
+    {
+      "strumento": "AWS Security Hub e AWS Config",
+      "uso": "stato della baseline prima e dopo ogni modifica"
+    },
+    {
+      "strumento": "ricerca di segreti",
+      "uso": "su ogni deliverable e commit prima della consegna; un riscontro blocca la consegna"
+    },
+    {
+      "strumento": "rilettura dall'ambiente (describe, get, list)",
+      "uso": "dopo ogni scrittura; lo stato atteso e quello osservato vanno nel record di modifica"
+    },
+    {
+      "strumento": "validatore dei Role Profile",
+      "uso": "sul profilo stesso prima di ogni revisione"
+    }
+  ],
+  "scritture_consentite": [
+    "docs/sicurezza/",
+    "infra/sicurezza/",
+    "docs/modifiche/"
+  ],
+  "do_riservati": [
+    "creare una risorsa AWS o avviare una spesa: Do specifico con risorsa, account, regione, ambiente e stima mensile in euro con base di prezzo",
+    "qualsiasi scrittura in produzione, salvo il contenimento urgente elencato nel mandato, eseguito dal Coordinatore AI",
+    "IAM e accessi: utenti, ruoli, policy, permission set, SCP, policy di chiave e di risorsa; GRANT, REVOKE, utenti e ruoli del database",
+    "cancellazioni di risorse o dati in qualsiasi ambiente, salvo le pulizie di sandbox pre-autorizzate nel mandato, e riduzione di retention o backup",
+    "modifiche di rete critiche ed esposizione pubblica",
+    "impegni di spesa, modifiche di account, AWS Organizations, fatturazione o budget",
+    "nuovo account, nuova regione, nuovo servizio esterno o dati fuori dall'organizzazione",
+    "qualsiasi porta a una via o decisione di reversibilità dubbia",
+    "cancellazione o pianificazione della cancellazione di chiavi KMS",
+    "eccezioni alla baseline di sicurezza",
+    "modifiche alle identità delle persone e all'identity provider dell'organizzazione (eseguite da persone)"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-05",
+    "revisore": "da assegnare (dominio sicurezza)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "AWS security engineer",
+  "descrizione_breve_en": "Owns the AWS security baseline, reviews other roles' changes and contributes to the Security Risk Posture."
+}

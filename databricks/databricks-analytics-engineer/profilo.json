@@ -1,0 +1,294 @@
+{
+  "id": "databricks-analytics-engineer",
+  "nome": "Analytics Engineer Databricks",
+  "nome_en": "Databricks analytics engineer",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "famiglia": "databricks",
+  "regole_famiglia": "../FAMIGLIA.md",
+  "piramide": "basso",
+  "fasi": [
+    "POC",
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Costruisce in Databricks SQL misure, modelli semantici, dashboard AI/BI e spazi Genie su dati governati, con warehouse sotto controllo di costo; la pubblicazione in produzione resta un Do.",
+  "descrizione_breve_en": "Builds measures, semantic models, AI/BI dashboards and Genie spaces in Databricks SQL on governed data, with cost-controlled warehouses; production publishing remains a human decision.",
+  "competenza_base": "da qualificare",
+  "competenze_fonti": [
+    {
+      "fonte": "Guida della certificazione Databricks Certified Data Analyst Associate",
+      "riferimento": "domini Databricks SQL; Data Management; SQL in the Lakehouse; Data Visualization and Dashboarding; Analytics Applications (edizione da verificare)",
+      "url": "https://www.databricks.com/learn/certification/data-analyst-associate"
+    },
+    {
+      "fonte": "Documentazione Databricks, SQL warehouse",
+      "riferimento": "SQL warehouse types; sizing, scaling, and queuing behavior",
+      "url": "https://docs.databricks.com/compute/sql-warehouse/"
+    },
+    {
+      "fonte": "Documentazione Databricks, metric view",
+      "riferimento": "Unity Catalog metric views",
+      "url": "https://docs.databricks.com/metric-views/"
+    },
+    {
+      "fonte": "Documentazione Databricks, AI/BI",
+      "riferimento": "AI/BI dashboards; AI/BI Genie space",
+      "url": "https://docs.databricks.com/dashboards/"
+    },
+    {
+      "fonte": "Kimball e Ross, The Data Warehouse Toolkit, 3a ed.",
+      "riferimento": "capitoli 1-3",
+      "url": null
+    },
+    {
+      "fonte": "ISO/IEC 25012",
+      "riferimento": "accuratezza, completezza, coerenza, attualità",
+      "url": "https://www.iso.org/standard/35736.html"
+    },
+    {
+      "fonte": "Regole comuni della famiglia Databricks",
+      "riferimento": "FAMIGLIA.md, regole F1-F12",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§3, §4 bis, §5, §6, §6 bis, §7, §9",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 14B parametri, con capacità SQL; finestra di contesto di almeno 32k token",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio di analytics",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run; il costo DBU del lavoro eseguito si rendiconta a parte per tag"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio di analytics",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run; il costo DBU del lavoro eseguito si rendiconta a parte per tag"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di analytics",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run; il costo DBU del lavoro eseguito si rendiconta a parte per tag"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di analytics",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run; il costo DBU del lavoro eseguito si rendiconta a parte per tag"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso Databricks o il cloud; valuta senza eseguire, registra ogni decisione; un Deny si spiega e si instrada, mai si aggira (FAMIGLIA F8)"
+    },
+    {
+      "strumento": "databricks bundle validate e anteprima delle modifiche",
+      "uso": "obbligatori sul target prima di ogni deploy (bundle plan da verificare nella versione della CLI in uso); un errore o una differenza inattesa impedisce il deploy; esito salvato nella cartella del ruolo sotto docs/changes/ (FAMIGLIA F4)"
+    },
+    {
+      "strumento": "controllo dei tag di costo",
+      "uso": "sul bundle prima del deploy: ogni risorsa di compute ha cost-center, owner, app, env, data-class; una mancanza blocca il deploy (FAMIGLIA F6)"
+    },
+    {
+      "strumento": "riconciliazione con totali di controllo",
+      "uso": "obbligatoria su ogni misura prima dell'accettazione; uno scostamento oltre la tolleranza tiene aperto il pacchetto"
+    },
+    {
+      "strumento": "ricerca di segreti",
+      "uso": "su ogni deliverable prima della consegna; un riscontro blocca la consegna"
+    },
+    {
+      "strumento": "validatore dei Role Profile",
+      "uso": "sul profilo stesso prima di ogni revisione"
+    }
+  ],
+  "scritture_consentite": [
+    "databricks/<app>/sql/",
+    "docs/databricks/analytics/",
+    "docs/changes/databricks-analytics-engineer/"
+  ],
+  "do_riservati": [
+    "creare risorse o avviare spesa: approvazione specifica con risorsa, ambiente, regione, dimensione e stima mensile in euro con base di prezzo",
+    "deploy in test e in produzione (eseguiti dal data engineer dopo il Do)",
+    "grant, revoche e cambi di owner (proposti dallo steward, eseguiti dall'amministratore di piattaforma dopo il Do)",
+    "cancellazioni e operazioni distruttive in qualunque ambiente, salvo le pulizie di sandbox pre-autorizzate nel mandato",
+    "nuovi accessi, identità, segreti, metastore",
+    "installazione di skill o strumenti di terze parti dopo revisione della supply chain",
+    "invio di dati a un provider non ammesso per la loro classe",
+    "qualsiasi porta a una via o decisione di reversibilità dubbia",
+    "pubblicazione in produzione di dashboard o spazi Genie e nuovi lettori",
+    "invio pianificato di report a destinatari",
+    "warehouse sempre acceso o oltre la stima approvata",
+    "cambio della definizione di una misura approvata"
+  ],
+  "esegue_dopo_do": [
+    "cancellazione di dashboard, viste o warehouse di cui è titolare, dopo un Do approvato"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-04",
+    "revisore": "da assegnare (dominio architettura applicativa e dati)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "SD4 per le credenziali di pubblicazione e le schede Do."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Redigere il dizionario delle misure",
+      "deliverable": "dizionario con definizione, formula, grana e owner",
+      "seniority": "SD3",
+      "note": "le misure ambigue diventano punto decisionale"
+    },
+    {
+      "id": "T02",
+      "task": "Scrivere SQL, viste e metric view nel bundle",
+      "deliverable": "codice in sql/ con validate superato",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Costruire dashboard AI/BI e spazi Genie in dev",
+      "deliverable": "dashboard come codice con dati sintetici",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Riconciliare le misure con totali di controllo",
+      "deliverable": "verbale di riconciliazione",
+      "seniority": "SD1",
+      "note": "controllo deterministico"
+    },
+    {
+      "id": "T05",
+      "task": "Ottimizzare una query lenta o costosa",
+      "deliverable": "nota con profilo della query e modifica",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "Proporre tipo e dimensione del warehouse con stima",
+      "deliverable": "scheda di stima con base di prezzo",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Verificare le credenziali di pubblicazione rispetto ai grant dei lettori",
+      "deliverable": "nota di verifica degli accessi",
+      "seniority": "SD4",
+      "note": "sicurezza dell'accesso ai dati"
+    },
+    {
+      "id": "T08",
+      "task": "Preparare la scheda tecnica per un Do di pubblicazione in produzione",
+      "deliverable": "scheda Do con lettori, dati visibili e costo",
+      "seniority": "SD4",
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "id": "finops-practitioner",
+  "nome": "FinOps Practitioner",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "famiglia": "finops",
+  "piramide": "medio",
+  "fasi": [
+    "Scoperta",
+    "POC",
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Guida della famiglia FinOps: coordina gli analisti dei costi e consolida spesa AI di sviluppo e spesa cloud di utilizzo per il Coordinatore AI e il Manager umano.",
+  "competenze_fonti": [
+    {
+      "fonte": "Famiglia FinOps, regole comuni",
+      "riferimento": "FAMIGLIA.md, R1–R10",
+      "url": "../FAMIGLIA.md"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§5 Wave e ciclo di governo; §8 Rilascio; §3 E5",
+      "url": "registro del metodo, framework/Eiraman.md"
+    },
+    {
+      "fonte": "FinOps Framework · Persona FinOps Practitioner",
+      "riferimento": "obiettivi e metriche chiave",
+      "url": "https://www.finops.org/framework/persona/finops-practitioner/"
+    },
+    {
+      "fonte": "FinOps Framework · Fasi",
+      "riferimento": "Inform, Optimize, Operate",
+      "url": "https://www.finops.org/framework/phases/"
+    },
+    {
+      "fonte": "FinOps Framework · Maturità",
+      "riferimento": "Crawl, Walk, Run",
+      "url": "https://www.finops.org/framework/maturity-model/"
+    },
+    {
+      "fonte": "FinOps Framework · FinOps Practice Operations",
+      "riferimento": "dominio Manage the FinOps Practice",
+      "url": "https://www.finops.org/framework/capabilities/finops-practice-operations/"
+    },
+    {
+      "fonte": "FinOps Framework · FinOps Assessment",
+      "riferimento": "dominio Manage the FinOps Practice",
+      "url": "https://www.finops.org/framework/capabilities/finops-assessment/"
+    },
+    {
+      "fonte": "FinOps Framework · KPIs & Benchmarking",
+      "riferimento": "dominio Manage the FinOps Practice",
+      "url": "https://www.finops.org/framework/capabilities/kpis-benchmarking/"
+    },
+    {
+      "fonte": "FinOps Framework · Reporting & Analytics",
+      "riferimento": "dominio Understand Usage & Cost",
+      "url": "https://www.finops.org/framework/capabilities/reporting-analytics/"
+    },
+    {
+      "fonte": "FinOps Framework · Usage Optimization",
+      "riferimento": "dominio Optimize Usage & Cost",
+      "url": "https://www.finops.org/framework/capabilities/usage-optimization/"
+    },
+    {
+      "fonte": "Azure Well-Architected · Cost Optimization",
+      "riferimento": "principi di progettazione",
+      "url": "https://learn.microsoft.com/azure/well-architected/cost-optimization/"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri, contesto di almeno 64k; solo compiti a ragionamento basso o medio (da tarare)",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "riepiloghi a SD1; consolidamento a SD2; conflitti e maturità a SD3; schede Do e piano FinOps a SD4"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "riepilogo di un export di costo o del registro dei run",
+      "deliverable": "tabella con voce, importo, unità, fonte, periodo, voci sconosciute",
+      "seniority": "SD1",
+      "note": "esito verificabile con la somma dei costi dei run"
+    },
+    {
+      "id": "T02",
+      "task": "instradamento di una richiesta di costo al profilo della famiglia competente",
+      "deliverable": "nota di incarico con profilo, perimetro, periodo e formato",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "consolidamento della sezione costi della revisione del ciclo",
+      "deliverable": "sezione costi in eiraman/finops/consolidato/, sviluppo e utilizzo separati",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "aggiornamento del registro dei KPI condivisi",
+      "deliverable": "registro KPI con valore dichiarato, osservato e titolare",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "risoluzione di un conflitto di cifre tra profili",
+      "deliverable": "nota di riconciliazione con evidenze e cifra «in verifica» o confermata",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "backlog delle opportunità di ottimizzazione",
+      "deliverable": "backlog ordinato per risparmio netto, reversibilità e qualità",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "valutazione di maturità e piano FinOps del progetto",
+      "deliverable": "piano FinOps con capability, livello Crawl/Walk/Run e profili",
+      "seniority": "SD4",
+      "note": "giudizio sul valore di business"
+    },
+    {
+      "id": "T08",
+      "task": "scheda Do economica per il Manager umano",
+      "deliverable": "scheda di una pagina con le quattro domande",
+      "seniority": "SD4",
+      "note": "scheda Do"
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "query o export di costo (API o CLI del provider, export FOCUS)",
+      "uso": "obbligatorio per ogni cifra di utilizzo; si legge perimetro, periodo, valuta e data di aggiornamento; un export mancante rende la voce sconosciuta"
+    },
+    {
+      "strumento": "somma dei costi dei run dal registro",
+      "uso": "obbligatorio per ogni consuntivo di sviluppo; esito = totale, numero di run, numero di voci sconosciute"
+    },
+    {
+      "strumento": "confronto tra stima e consuntivo",
+      "uso": "obbligatorio a chiusura di Work Package e dopo 30 giorni per le modifiche di infrastruttura; esito = scarto percentuale per voce"
+    },
+    {
+      "strumento": "validatore dei Role Profile",
+      "uso": "per le proposte di modifica ai profili della famiglia; esito OK o elenco di errori"
+    }
+  ],
+  "scritture_consentite": [
+    "eiraman/finops/consolidato/"
+  ],
+  "do_riservati": [
+    "importo dei budget, soglie e criteri di arresto, e ogni loro modifica",
+    "spesa oltre mandato o oltre il budget di Wave",
+    "acquisti e impegni: prenotazioni, savings plan, crediti, contratti",
+    "nuovi fornitori e nuovi accessi ai dati di fatturazione",
+    "passaggio da showback a chargeback",
+    "risparmio che cambia una Decisione approvata"
+  ],
+  "qualificazione": {
+    "curatore": "agente esecutore del WP-RP-02, su incarico del Coordinatore AI",
+    "revisore": "da assegnare (dominio FinOps, diverso dall'autore)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "id": "ux-writer",
+  "nome": "UX writer",
+  "nome_en": "UX writer",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "POC",
+    "Design e planning",
+    "Scale"
+  ],
+  "descrizione_breve": "Scrive i testi dell'interfaccia in linguaggio chiaro: pulsanti, stati, messaggi di errore, glossario, in tutte le lingue previste.",
+  "descrizione_breve_en": "Writes interface text in plain language: buttons, states, error messages and glossary, in every required language.",
+  "competenze_fonti": [
+    {
+      "fonte": "ISO 24495-1:2023",
+      "riferimento": "principi del linguaggio chiaro",
+      "url": "https://www.iso.org/standard/78907.html"
+    },
+    {
+      "fonte": "Nielsen Norman Group",
+      "riferimento": "euristiche 2, 4 e 9",
+      "url": "https://www.nngroup.com/articles/ten-usability-heuristics/"
+    },
+    {
+      "fonte": "W3C WCAG 2.2",
+      "riferimento": "SC 2.5.3, 3.1.1, 3.1.2, 3.3.1, 3.3.2, 3.3.3",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "fonte": "Indice Gulpease",
+      "riferimento": "Gruppo universitario linguistico pedagogico, Università di Roma La Sapienza, 1988",
+      "url": null
+    },
+    {
+      "fonte": "GOV.UK Design System",
+      "riferimento": "componente Error summary, schema Check answers",
+      "url": "https://design-system.service.gov.uk/components/error-summary/"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§8 regole di redazione per il Manager umano",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 14B parametri con buona resa nelle lingue del mandato; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "SD1 per i controlli deterministici sui testi; tono e pagine pubbliche a SD4"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Glossario del progetto con termini da non mostrare, per lingua",
+      "deliverable": "glossario in docs/ui/",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Testi per schermata e stato da contratto",
+      "deliverable": "testi in docs/ui/testi/ con chiavi stabili",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Messaggi di errore e conferme delle azioni distruttive",
+      "deliverable": "messaggi con cosa è successo, perché, cosa fare",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Versione nella seconda lingua",
+      "deliverable": "catalogo completo nella seconda lingua",
+      "seniority": "SD3",
+      "note": "riscrittura per il pubblico, non traduzione letterale"
+    },
+    {
+      "id": "T05",
+      "task": "Ricerca dei termini vietati nel testo visibile",
+      "deliverable": "elenco delle occorrenze",
+      "seniority": "SD1",
+      "note": "controllo deterministico"
+    },
+    {
+      "id": "T06",
+      "task": "Controllo di completezza dei cataloghi per lingua",
+      "deliverable": "elenco delle chiavi mancanti",
+      "seniority": "SD1",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Revisione linguistica di coerenza e leggibilità",
+      "deliverable": "rapporto con proposte di testo",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Testi delle pagine pubbliche del prodotto o del metodo",
+      "deliverable": "bozza bilingue, Golden Circle, registro da documento di metodo",
+      "seniority": "SD4",
+      "note": "testo pubblico, difficile da ritirare"
+    },
+    {
+      "id": "T09",
+      "task": "Scheda Do su tono o frase d'apertura",
+      "deliverable": "scheda Do con due alternative",
+      "seniority": "SD4",
+      "note": ""
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per schermata scritta",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per schermata scritta",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per schermata scritta",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per schermata scritta",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "ricerca dei termini vietati del glossario nel testo visibile",
+      "uso": "Obbligatoria: un termine vietato nella vista principale blocca la consegna."
+    },
+    {
+      "strumento": "controllo di completezza dei cataloghi per lingua",
+      "uso": "Obbligatorio: ogni chiave ha tutte le lingue del mandato."
+    },
+    {
+      "strumento": "calcolo dell'indice Gulpease sui testi di aiuto in italiano",
+      "uso": "Segnale: sotto 60 produce un avviso, non un fallimento. Convenzione del profilo."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/ui/testi/",
+    "docs/ui/",
+    "cataloghi dei testi per lingua del progetto, se previsti dal Work Package"
+  ],
+  "do_riservati": [
+    "tono del marchio",
+    "lingue del prodotto",
+    "frasi d'apertura approvate delle pagine pubbliche",
+    "testi con valore legale o contrattuale"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-06",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  }
+}

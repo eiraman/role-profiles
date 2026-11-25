@@ -1,0 +1,238 @@
+{
+  "id": "facilitatore-design-thinking",
+  "famiglia": "analisi-funzionale",
+  "nome": "Facilitatore di Design Thinking",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Scoperta"
+  ],
+  "descrizione_breve": "Imposta e conduce la divergenza tra più modelli nella Scoperta, con ruoli, guardrail, giri e gate per il Manager umano.",
+  "competenze_fonti": [
+    {
+      "fonte": "Stanford d.school, Design Thinking",
+      "riferimento": "fasi Empathize, Define, Ideate",
+      "url": "https://dschool.stanford.edu/resources"
+    },
+    {
+      "fonte": "IDEO, Design Thinking",
+      "riferimento": "spazio Ideation",
+      "url": "https://designthinking.ideo.com/"
+    },
+    {
+      "fonte": "Design Council, Double Diamond",
+      "riferimento": "Discover, Define, Develop, Deliver; alternanza di divergenza e convergenza",
+      "url": "https://www.designcouncil.org.uk/our-resources/the-double-diamond/"
+    },
+    {
+      "fonte": "A. F. Osborn, Applied Imagination (1953)",
+      "riferimento": "regole del brainstorming",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§4 K1-K3, §4 bis, §5 Design Thinking affidato all'AI",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per giro di divergenza",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per giro di divergenza",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per giro di divergenza",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per giro di divergenza",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "contatore di giri e di spesa per giro",
+      "uso": "Obbligatorio: al raggiungimento del limite del piano nessun nuovo giro parte. Convenzione del profilo."
+    },
+    {
+      "strumento": "ricerca di dati personali nei prompt e nei contributi",
+      "uso": "Obbligatoria prima di ogni giro e prima della consegna; un riscontro blocca il giro."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/scoperta/"
+  ],
+  "do_riservati": [
+    "rilancio di un giro oltre il piano",
+    "aumento del budget di divergenza",
+    "nuove fonti con dati di terzi",
+    "nuovi fornitori di motori"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-03",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Design Thinking facilitator",
+  "descrizione_breve_en": "Sets up and runs divergence across several models in Discovery, with roles, guardrails, brainstorming rounds and gates for the Human Manager.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "Il piano della divergenza e il materiale dei gate richiedono giudizio; la raccolta e il controllo dei guardrail sono verificabili."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Piano della divergenza",
+      "deliverable": "piano con obiettivo, ruoli, motori, guardrail, numero di giri e gate",
+      "seniority": "SD3",
+      "note": "Scelte locali di progetto."
+    },
+    {
+      "id": "T02",
+      "task": "Istruzioni per gli esploratori",
+      "deliverable": "prompt di giro con domanda comune, ruolo, fonti ammesse e formato",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Ruolo di esploratore in un giro di divergenza",
+      "deliverable": "contributo con ipotesi, problema, beneficio, evidenza e principi candidati",
+      "seniority": "SD2",
+      "note": "Motori diversi tra esploratori quando possibile (K2)."
+    },
+    {
+      "id": "T04",
+      "task": "Raccolta dei contributi per giro",
+      "deliverable": "registro dei contributi con motore, ruolo, costo",
+      "seniority": "SD1",
+      "note": "Controllo deterministico del contatore di giri e di spesa."
+    },
+    {
+      "id": "T05",
+      "task": "Controllo dei guardrail",
+      "deliverable": "elenco dei contributi scartati con il motivo",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "Materiale per i gate del Manager umano",
+      "deliverable": "pagina con direzioni emerse e domande aperte",
+      "seniority": "SD4",
+      "note": "Documento che prepara una decisione del Manager umano."
+    },
+    {
+      "id": "T07",
+      "task": "Consegna all'analista funzionale",
+      "deliverable": "pacchetto di contributi grezzi e registro di diversità",
+      "seniority": "SD2",
+      "note": "Completezza verificabile sul registro."
+    }
+  ]
+}

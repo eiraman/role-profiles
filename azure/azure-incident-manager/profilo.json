@@ -1,0 +1,259 @@
+{
+  "id": "azure-incident-manager",
+  "nome": "Incident e problem manager Azure",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Dichiara e diagnostica gli incidenti, ripristina con l'azione minima reversibile e conduce il problem management con postmortem senza colpa.",
+  "competenze_fonti": [
+    {
+      "fonte": "Guida ufficiale d'esame AZ-104",
+      "riferimento": "area Monitor and maintain Azure resources",
+      "url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-104"
+    },
+    {
+      "fonte": "Guida ufficiale d'esame AZ-500",
+      "riferimento": "area operazioni di sicurezza, per riconoscere un incidente di sicurezza",
+      "url": "https://learn.microsoft.com/credentials/certifications/resources/study-guides/az-500"
+    },
+    {
+      "fonte": "Google SRE Book",
+      "riferimento": "capitoli Managing Incidents e Postmortem Culture",
+      "url": "https://sre.google/sre-book/table-of-contents/"
+    },
+    {
+      "fonte": "Cloud Adoption Framework for Azure",
+      "riferimento": "metodologie Ready, Govern, Manage",
+      "url": "https://learn.microsoft.com/azure/cloud-adoption-framework/"
+    },
+    {
+      "fonte": "Famiglia Azure, regole comuni",
+      "riferimento": "FAMIGLIA.md §1-§9",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§3 (contenimento urgente), §5 (esercizio dal livello 2), §7",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 70B parametri, finestra di contesto da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per incidente medio gestito",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per incidente medio gestito",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per incidente medio gestito",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per incidente medio gestito",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso il cloud; verifica preliminare prima di ogni scrittura; un Deny si spiega e si instrada, mai si aggira; ogni decisione resta nel registro del guard"
+    },
+    {
+      "strumento": "Azure Resource Health, Activity Log, Log Analytics, Application Insights, Network Watcher",
+      "uso": "letture per la diagnosi; i fatti citano la query e l'ora"
+    },
+    {
+      "strumento": "verifica del ripristino visibile all'utente",
+      "uso": "prima di chiudere l'incidente, insieme alla rilettura"
+    },
+    {
+      "strumento": "rilettura dall'ambiente (show, list)",
+      "uso": "dopo ogni scrittura; registra stato atteso e osservato; senza rilettura il pacchetto resta aperto"
+    }
+  ],
+  "scritture_consentite": [
+    "docs/incidents/",
+    "docs/problems/",
+    "docs/runbooks/"
+  ],
+  "do_riservati": [
+    "creare una risorsa cloud o avviare una spesa: approvazione esplicita e specifica con risorsa, ambiente, regione e stima mensile in euro con base di prezzo",
+    "qualsiasi scrittura in produzione",
+    "azioni di ripristino in produzione: il contenimento pre-autorizzato lo esegue il Coordinatore AI, ogni altra azione è Do urgente",
+    "cancellazione di un alert"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-01",
+    "revisore": "da assegnare (dominio architettura cloud)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Azure incident and problem manager",
+  "descrizione_breve_en": "Declares and diagnoses incidents, restores with the smallest reversible action and runs post-incident reviews.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "La diagnosi è SD3; scelte di ripristino in produzione e Do urgenti a SD4."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Dichiarazione e triage di un incidente",
+      "deliverable": "scheda incidente con gravità, impatto e fatti",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Diagnosi su log, metriche e Activity Log",
+      "deliverable": "tre elenchi: fatti, ipotesi con prova, azioni",
+      "seniority": "SD3",
+      "note": "diagnosi alternative con modelli diversi"
+    },
+    {
+      "id": "T03",
+      "task": "Proposta dell'azione minima reversibile e scheda di Do urgente",
+      "deliverable": "scheda Do urgente o proposta di contenimento per il Coordinatore AI",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Revisione post-incidente e problem record",
+      "deliverable": "file in docs/problems/",
+      "seniority": "SD4",
+      "note": "postmortem senza colpa"
+    },
+    {
+      "id": "T05",
+      "task": "Cronologia e aggiornamenti dell'incidente",
+      "deliverable": "cronologia in docs/incidents/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "Manutenzione di alert e action group",
+      "deliverable": "alert con proprietario, runbook e gravità",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Runbook di ripristino",
+      "deliverable": "runbook in docs/runbooks/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Calcolo di MTTD, MTTA, MTTR e precisione degli alert",
+      "deliverable": "tabella KPI",
+      "seniority": "SD1",
+      "note": "calcolo deterministico dai registri"
+    }
+  ]
+}

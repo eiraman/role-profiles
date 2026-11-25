@@ -1,0 +1,255 @@
+{
+  "id": "finops-rate-optimization",
+  "nome": "Ottimizzazione delle tariffe (FinOps)",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "famiglia": "finops",
+  "piramide": "medio",
+  "fasi": [
+    "Design e planning",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Analizza prenotazioni, savings plan, sconti e licenze e prepara proposte con punto di pareggio e rischio; non acquista mai.",
+  "competenze_fonti": [
+    {
+      "fonte": "Famiglia FinOps, regole comuni",
+      "riferimento": "FAMIGLIA.md, R1–R10",
+      "url": "../FAMIGLIA.md"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§3 Do e porte a una via",
+      "url": "registro del metodo, framework/Eiraman.md"
+    },
+    {
+      "fonte": "FinOps Framework · Rate Optimization",
+      "riferimento": "dominio Optimize Usage & Cost",
+      "url": "https://www.finops.org/framework/capabilities/rate-optimization/"
+    },
+    {
+      "fonte": "FinOps Framework · Licensing & SaaS",
+      "riferimento": "dominio Optimize Usage & Cost",
+      "url": "https://www.finops.org/framework/capabilities/licensing-saas/"
+    },
+    {
+      "fonte": "FinOps Framework · Persona Procurement",
+      "riferimento": "collaborazione sugli acquisti",
+      "url": "https://www.finops.org/framework/persona/procurement/"
+    },
+    {
+      "fonte": "FinOps Framework · Maturità",
+      "riferimento": "copertura degli sconti a impegno per livello",
+      "url": "https://www.finops.org/framework/maturity-model/"
+    },
+    {
+      "fonte": "Microsoft Cost Management + Billing · savings plan",
+      "riferimento": "condizioni e calcolo",
+      "url": "https://learn.microsoft.com/azure/cost-management-billing/savings-plan/"
+    },
+    {
+      "fonte": "Microsoft Cost Management + Billing · prenotazioni",
+      "riferimento": "condizioni e scambi",
+      "url": "https://learn.microsoft.com/azure/cost-management-billing/reservations/"
+    },
+    {
+      "fonte": "Azure Retail Prices API",
+      "riferimento": "listino pubblico a consumo",
+      "url": "https://learn.microsoft.com/rest/api/cost-management/retail-prices/azure-retail-prices"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri, contesto di almeno 64k; solo compiti a ragionamento basso o medio (da tarare)",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "riepiloghi di copertura a SD1; analisi a SD3; schede Do su impegni a SD4 perché porte a una via"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "riepilogo di uso e copertura degli impegni da un export",
+      "deliverable": "tabella di copertura e utilizzo",
+      "seniority": "SD1",
+      "note": "verificabile con l'export"
+    },
+    {
+      "id": "T02",
+      "task": "calcolo del punto di pareggio con lo strumento e lettura dell'esito",
+      "deliverable": "tabella con mesi al pareggio e uso minimo coperto",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "rapporto mensile di utilizzo degli impegni con allarme sotto soglia",
+      "deliverable": "rapporto in eiraman/finops/tariffe/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "verifica che l'uso sia ottimizzato prima di un impegno",
+      "deliverable": "nota con esito e richiesta al Practitioner",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "analisi di opportunità con scenari di calo dell'uso",
+      "deliverable": "analisi con opzioni consumo, 1 anno, 3 anni e rischi",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "scheda Do su un impegno, uno scambio o un rinnovo",
+      "deliverable": "scheda di una pagina con porta a una via dichiarata",
+      "seniority": "SD4",
+      "note": "effetti difficili da annullare"
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio del profilo",
+      "valore": "da tarare",
+      "base": "token in ingresso e in uscita registrati per run × listino del fornitore alla data, scarti compresi; media su almeno 10 Work Package (soglia da tarare)"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "query o export di costo (API o CLI del provider, export FOCUS)",
+      "uso": "obbligatorio per ogni cifra di utilizzo; si legge perimetro, periodo, valuta e data di aggiornamento; un export mancante rende la voce sconosciuta"
+    },
+    {
+      "strumento": "confronto tra stima e consuntivo",
+      "uso": "obbligatorio a chiusura di Work Package e dopo 30 giorni per le modifiche di infrastruttura; esito = scarto percentuale per voce"
+    },
+    {
+      "strumento": "calcolo del punto di pareggio",
+      "uso": "obbligatorio per ogni proposta; esito = mesi al pareggio e uso minimo coperto"
+    }
+  ],
+  "scritture_consentite": [
+    "eiraman/finops/tariffe/"
+  ],
+  "do_riservati": [
+    "importo dei budget, soglie e criteri di arresto, e ogni loro modifica",
+    "spesa oltre mandato o oltre il budget di Wave",
+    "acquisti e impegni: prenotazioni, savings plan, crediti, contratti",
+    "nuovi fornitori e nuovi accessi ai dati di fatturazione",
+    "scambio, restituzione o rinnovo di un impegno"
+  ],
+  "qualificazione": {
+    "curatore": "agente esecutore del WP-RP-02, su incarico del Coordinatore AI",
+    "revisore": "da assegnare (dominio FinOps, diverso dall'autore)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  }
+}

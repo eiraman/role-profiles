@@ -1,0 +1,50 @@
+# CODEOWNERS for the Role Profile registry.
+# Organisation: eiraman. Teams are created with the organisation.
+#
+# Rule (GOVERNANCE.md §4.5 and WORKING-GROUPS.md §3 in the community repository): a family is published by the reviewers of its publishing
+# domain, never by the family group or the author. Each folder therefore lists only the domain team.
+# Family maintainer teams (@eiraman/wg-<family>) review content first, but their approval does not
+# satisfy the required code-owner review. A domain team with no members blocks merges in its folders:
+# that is the technical form of "a domain without a reviewer cannot publish profiles".
+# Last matching pattern wins: defaults first, families next, per-profile overrides last.
+#
+# Domain teams (GOVERNANCE.md §4.5): cloud-architecture, security, app-data-architecture, test-quality,
+# privacy, legal-compliance. Cross-cutting: devsecops-tooling, steward.
+
+# Repository files, licensing and this file
+*                                   @eiraman/steward
+/CODEOWNERS                         @eiraman/steward
+/REUSE.toml                         @eiraman/steward
+/.github/                           @eiraman/devsecops-tooling
+
+# Shared material
+/_modello/                          @eiraman/test-quality
+/_seniority/                        @eiraman/devsecops-tooling
+# AI Coordinator profile (draft, not qualified). FLAG: no domain in GOVERNANCE.md §4.5 owns the method's own
+# coordination role; provisionally published by Test & Quality (qualification suites), code by DevSecOps & Tooling.
+/controllore/                       @eiraman/test-quality
+/controllore/tools/                 @eiraman/devsecops-tooling
+
+# Families -> publishing domain (mapping is a proposal, WORKING-GROUPS.md §3)
+/azure/                             @eiraman/cloud-architecture
+/aws/                               @eiraman/cloud-architecture
+/databricks/                        @eiraman/app-data-architecture
+# FLAG: no FinOps domain in GOVERNANCE.md §4.5; provisionally published by Cloud Architecture.
+/finops/                            @eiraman/cloud-architecture
+/analisi-funzionale/                @eiraman/test-quality
+# FLAG: no UX or accessibility domain in GOVERNANCE.md §4.5; web design is provisionally published by
+# Application & Data Architecture, accessibility by Test & Quality.
+/web-design/                        @eiraman/app-data-architecture
+/sviluppo/                          @eiraman/app-data-architecture
+
+# Per-profile overrides
+/azure/azure-security-engineer/     @eiraman/security
+/azure/azure-developer/             @eiraman/app-data-architecture
+/azure/azure-dba/                   @eiraman/app-data-architecture
+/aws/aws-security-engineer/         @eiraman/security
+/aws/aws-developer/                 @eiraman/app-data-architecture
+/aws/aws-database-specialist/       @eiraman/app-data-architecture
+/databricks/databricks-governance-steward/  @eiraman/privacy
+/analisi-funzionale/analista-funzionale/    @eiraman/app-data-architecture
+/web-design/accessibility-specialist/       @eiraman/test-quality
+/sviluppo/shell-iac-developer/      @eiraman/security

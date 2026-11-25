@@ -1,0 +1,38 @@
+{
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "nota": "Mappa della Seniority Digitale: livello -> configurazione di attivazione. I nomi di modello seguono la documentazione dei fornitori al 25/11/2026 e vanno riverificati a ogni cambio di modello (spec §9). Le configurazioni marcate «da verificare» non sono ancora state provate.",
+  "fallback": "SD4",
+  "livelli": [
+    {"id": "SD1", "nome": "Junior", "analogo_umano": "addetto operativo, junior",
+     "quando": "Compiti ripetitivi e ben definiti, con esito verificabile da un controllo deterministico: estrazioni, riepiloghi, formattazione, esecuzione di controlli e lettura dei loro esiti.",
+     "claude": {"model": "haiku", "effort": "low"},
+     "codex": {"model": "gpt-6-luna", "model_reasoning_effort": "low"},
+     "copilot": {"model": "Claude Haiku 5.5", "nota": "nel file dell'agente si sceglie il modello, non il livello di ragionamento"}},
+    {"id": "SD2", "nome": "Professional", "analogo_umano": "professionista con esperienza",
+     "quando": "Lavoro corrente su specifica chiara: sviluppo di una funzione con criteri dati, test, documentazione, analisi standard.",
+     "claude": {"model": "sonnet", "effort": "medium"},
+     "codex": {"model": "gpt-6.2-sol", "model_reasoning_effort": "medium"},
+     "copilot": {"model": "Claude Sonnet 5.5"}},
+    {"id": "SD3", "nome": "Senior", "analogo_umano": "senior, referente tecnico",
+     "quando": "Compiti con scelte locali di progetto o diagnosi: componenti nuovi, debug difficile, revisione del lavoro di altri, analisi di un'anomalia.",
+     "claude": {"model": "sonnet", "effort": "high"},
+     "codex": {"model": "gpt-6.2-sol", "model_reasoning_effort": "high"},
+     "copilot": {"model": "Claude Sonnet 5.5"}},
+    {"id": "SD4", "nome": "Lead", "analogo_umano": "lead, architetto, esperto di dominio",
+     "quando": "Architettura, sicurezza, compiti con effetti difficili da annullare, preparazione di schede Do, giudizio tra candidate, coordinamento. È anche il livello di ripiego per ogni compito fuori catalogo.",
+     "claude": {"model": "opus", "effort": "high"},
+     "codex": {"model": "gpt-6.2-astra", "model_reasoning_effort": "high"},
+     "copilot": {"model": "Claude Opus 5.5"}},
+    {"id": "SD5", "nome": "Principal", "analogo_umano": "principal, massimo esperto",
+     "quando": "Problemi nuovi, molto ambigui o ad alto impatto, che SD4 non ha risolto o per cui il Coordinatore AI registra il motivo. Si usa per eccezione, con budget dichiarato.",
+     "claude": {"model": "fable", "effort": "xhigh"},
+     "codex": {"model": "gpt-6.2-astra", "model_reasoning_effort": "xhigh"},
+     "copilot": {"model": "Claude Fable 5.2"}}
+  ],
+  "file_di_attivazione": {
+    "claude": "`.claude/agents/<id>.md` con frontmatter `name`, `description`, `model`, `effort`; il corpo contiene FAMIGLIA.md e PROFILO.md. Il Coordinatore AI può anche passare `model` ed `effort` alla singola invocazione.",
+    "codex": "`~/.codex/<id>-<livello>.config.toml` con `model` e `model_reasoning_effort`, selezionato con `codex --profile <id>-<livello>`; le istruzioni di ruolo vanno in AGENTS.md della cartella di lavoro.",
+    "copilot": "`.github/agents/<id>.agent.md` con frontmatter `name`, `description`, `model`; il corpo contiene FAMIGLIA.md e PROFILO.md. Formato esatto del nome del modello: da verificare."
+  }
+}

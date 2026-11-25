@@ -1,0 +1,269 @@
+{
+  "id": "frontend-developer",
+  "nome": "Frontend developer",
+  "nome_en": "Frontend developer",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "piramide": "basso",
+  "fasi": [
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Implementa l'interfaccia come progettata, senza alterarla, con componenti accessibili, prestazioni misurate e test di interfaccia.",
+  "descrizione_breve_en": "Implements the interface as designed, without altering it, with accessible components, measured performance and UI tests.",
+  "competenze_fonti": [
+    {
+      "fonte": "WHATWG HTML Living Standard",
+      "riferimento": "elementi interattivi e moduli",
+      "url": "https://html.spec.whatwg.org/"
+    },
+    {
+      "fonte": "W3C WAI-ARIA 1.2",
+      "riferimento": "ruoli, stati e proprietà",
+      "url": "https://www.w3.org/TR/wai-aria-1.2/"
+    },
+    {
+      "fonte": "WAI-ARIA Authoring Practices Guide",
+      "riferimento": "schemi Tabs, Dialog (Modal), Disclosure",
+      "url": "https://www.w3.org/WAI/ARIA/apg/"
+    },
+    {
+      "fonte": "W3C WCAG 2.2",
+      "riferimento": "SC 1.4.4, 1.4.10, 2.1.1, 2.4.7, 4.1.2, 4.1.3",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "fonte": "web.dev Core Web Vitals",
+      "riferimento": "soglie buone di LCP, INP, CLS al 75° percentile",
+      "url": "https://web.dev/articles/vitals"
+    },
+    {
+      "fonte": "W3C Media Queries Level 5",
+      "riferimento": "prefers-color-scheme, prefers-reduced-motion",
+      "url": "https://www.w3.org/TR/mediaqueries-5/"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§6 chiusura e DevSecOps e test; §9 separazione tra codice e documenti di design",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri specializzato per codice; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "esecutore: lavoro corrente a SD2; componenti condivisi complessi a SD4"
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Componente condiviso con schema APG complesso (schede, finestra modale)",
+      "deliverable": "componente e test in src/ e test/ui/",
+      "seniority": "SD4",
+      "note": "riusato da tutte le schermate"
+    },
+    {
+      "id": "T02",
+      "task": "Componente nuovo da sistema di design",
+      "deliverable": "componente con test",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Schermata da contratto con componenti esistenti",
+      "deliverable": "schermata con stati e focus del contratto",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Test di interfaccia: ruoli, nomi, tastiera, stati, termini vietati",
+      "deliverable": "test in test/ui/",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "Esecuzione di build, test e controllo statico dell'interfaccia",
+      "deliverable": "esiti con candidata identificata",
+      "seniority": "SD1",
+      "note": "esito deterministico"
+    },
+    {
+      "id": "T06",
+      "task": "Misura delle prestazioni delle pagine principali",
+      "deliverable": "LCP, INP, CLS con dispositivo e rete dichiarati",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Diagnosi di una barriera o regressione segnalata",
+      "deliverable": "causa e correzione con test di non regressione",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Correzione puntuale di testi o classi già definite",
+      "deliverable": "modifica con controllo statico pulito",
+      "seniority": "SD1",
+      "note": ""
+    },
+    {
+      "id": "T09",
+      "task": "Nota di consegna con verificato e non verificato",
+      "deliverable": "nota per il Coordinatore AI",
+      "seniority": "SD2",
+      "note": ""
+    }
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "build e test di interfaccia del progetto",
+      "uso": "Obbligatori a ogni consegna: un fallimento blocca la consegna."
+    },
+    {
+      "strumento": "controllo statico dell'interfaccia: colori esadecimali, stili in linea, pulsanti senza nome, campi senza etichetta, termini vietati",
+      "uso": "Obbligatorio: ogni segnalazione bloccante blocca la consegna. Convenzione del profilo."
+    },
+    {
+      "strumento": "motore di regole di accessibilità nel browser e test di tastiera con eventi reali",
+      "uso": "Obbligatorio sulle schermate toccate, nei due temi."
+    },
+    {
+      "strumento": "misura di LCP, INP e CLS con dispositivo e rete dichiarati",
+      "uso": "Obbligatoria sulle pagine principali prima della release."
+    }
+  ],
+  "scritture_consentite": [
+    "src/",
+    "test/ui/"
+  ],
+  "do_riservati": [
+    "nuove dipendenze esterne che inviano dati fuori dall'organizzazione",
+    "pubblicazione in produzione"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-06",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  }
+}

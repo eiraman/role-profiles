@@ -1,0 +1,301 @@
+{
+  "id": "databricks-platform-admin",
+  "nome": "Amministratore di piattaforma Databricks",
+  "nome_en": "Databricks platform administrator",
+  "versione": "0.1.0",
+  "data": "2026-11-25",
+  "metodo": "Eiraman 0.3",
+  "stato": "bozza non qualificata",
+  "famiglia": "databricks",
+  "regole_famiglia": "../FAMIGLIA.md",
+  "piramide": "medio",
+  "fasi": [
+    "POC",
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Governa workspace, compute policy e costi DBU di Databricks; prepara come richieste di modifica le operazioni su identità, metastore e segreti, che restano solo umane.",
+  "descrizione_breve_en": "Governs the Databricks workspace, compute policies and DBU costs; executes grants approved by the human Manager on the governance steward's proposal; prepares identity, metastore and secret changes as human-only requests.",
+  "competenza_base": "da qualificare",
+  "competenze_fonti": [
+    {
+      "fonte": "Azure Databricks, Administration",
+      "riferimento": "workspace admin settings; gestione di utenti, service principal e gruppi",
+      "url": "https://learn.microsoft.com/azure/databricks/admin/"
+    },
+    {
+      "fonte": "Documentazione Databricks, compute policy",
+      "riferimento": "Create and manage compute policies; Compute policy reference",
+      "url": "https://docs.databricks.com/admin/clusters/policies"
+    },
+    {
+      "fonte": "Documentazione Databricks, tabelle di sistema",
+      "riferimento": "Billing system tables; Audit log system table reference",
+      "url": "https://docs.databricks.com/admin/system-tables/"
+    },
+    {
+      "fonte": "Guida della certificazione Databricks Certified Data Engineer Professional",
+      "riferimento": "domini Security and Governance; Monitoring and Logging (edizione da verificare)",
+      "url": "https://www.databricks.com/learn/certification/data-engineer-professional"
+    },
+    {
+      "fonte": "FinOps Framework",
+      "riferimento": "capability Allocation e Anomaly Management",
+      "url": "https://www.finops.org/framework/"
+    },
+    {
+      "fonte": "Documentazione Databricks e Azure Databricks",
+      "riferimento": "sezioni citate in PROFILO.md §2 e §7",
+      "url": "https://learn.microsoft.com/azure/databricks/"
+    },
+    {
+      "fonte": "Regole comuni della famiglia Databricks",
+      "riferimento": "FAMIGLIA.md, regole F1-F12",
+      "url": null
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§3, §4 bis, §5, §6, §6 bis, §7, §9",
+      "url": null
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "da tarare: 30B parametri; finestra di contesto di almeno 64k token",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio di amministrazione",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run; il costo DBU del lavoro eseguito si rendiconta a parte per tag"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio di amministrazione",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run; il costo DBU del lavoro eseguito si rendiconta a parte per tag"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di amministrazione",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run; il costo DBU del lavoro eseguito si rendiconta a parte per tag"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio di amministrazione",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run moltiplicati per il listino del provider alla data del run; il costo DBU del lavoro eseguito si rendiconta a parte per tag"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "guard deterministico dichiarato nel progetto",
+      "uso": "obbligatorio per ogni comando verso Databricks o il cloud; valuta senza eseguire, registra ogni decisione; un Deny si spiega e si instrada, mai si aggira (FAMIGLIA F8)"
+    },
+    {
+      "strumento": "databricks bundle validate e anteprima delle modifiche",
+      "uso": "obbligatori sul target prima di ogni deploy (bundle plan da verificare nella versione della CLI in uso); un errore o una differenza inattesa impedisce il deploy; esito salvato nella cartella del ruolo sotto docs/changes/ (FAMIGLIA F4)"
+    },
+    {
+      "strumento": "controllo dei tag di costo",
+      "uso": "sul bundle prima del deploy: ogni risorsa di compute ha cost-center, owner, app, env, data-class; una mancanza blocca il deploy (FAMIGLIA F6)"
+    },
+    {
+      "strumento": "query sulle tabelle di sistema di fatturazione",
+      "uso": "base dei report di consumo; si registrano query, periodo e data di lettura; solo aggregati"
+    },
+    {
+      "strumento": "ricerca di segreti",
+      "uso": "su ogni deliverable prima della consegna; un riscontro blocca la consegna"
+    },
+    {
+      "strumento": "validatore dei Role Profile",
+      "uso": "sul profilo stesso prima di ogni revisione"
+    }
+  ],
+  "scritture_consentite": [
+    "databricks/piattaforma/",
+    "docs/databricks/piattaforma/",
+    "docs/changes/databricks-platform-admin/"
+  ],
+  "do_riservati": [
+    "creare risorse o avviare spesa: approvazione specifica con risorsa, ambiente, regione, dimensione e stima mensile in euro con base di prezzo",
+    "deploy in test e in produzione (eseguiti dal data engineer dopo il Do)",
+    "grant, revoche e cambi di owner (proposti dallo steward, eseguiti dall'amministratore di piattaforma dopo il Do)",
+    "cancellazioni e operazioni distruttive in qualunque ambiente, salvo le pulizie di sandbox pre-autorizzate nel mandato",
+    "nuovi accessi, identità, segreti, metastore",
+    "installazione di skill o strumenti di terze parti dopo revisione della supply chain",
+    "invio di dati a un provider non ammesso per la loro classe",
+    "qualsiasi porta a una via o decisione di reversibilità dubbia",
+    "allentare una compute policy o disattivare l'auto-terminazione",
+    "aumentare un budget o una soglia di avviso",
+    "impegni di consumo prepagati o cambio del livello di prezzo del workspace"
+  ],
+  "esegue_dopo_do": [
+    "grant, revoche, cambi di owner, filtri di riga e maschere di colonna, su proposta dello steward e dopo un Do approvato",
+    "deploy del bundle di piattaforma in test e in produzione dopo un Do approvato"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Work Package WP-RP-04",
+    "revisore": "da assegnare (dominio architettura applicativa e dati)",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD4",
+    "nota": "SD4 per richieste di modifica su identità e sicurezza, schede Do ed esecuzione dei grant approvati."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Scrivere compute policy e budget policy come codice",
+      "deliverable": "policy nel bundle di piattaforma con validate superato",
+      "seniority": "SD2",
+      "note": "regole F6 e F7"
+    },
+    {
+      "id": "T02",
+      "task": "Stimare il costo mensile DBU per ambiente",
+      "deliverable": "modello dei costi con base di prezzo",
+      "seniority": "SD3",
+      "note": "scelte di dimensionamento"
+    },
+    {
+      "id": "T03",
+      "task": "Produrre il report di consumo per tag dalle tabelle di sistema",
+      "deliverable": "report di consumo aggregato per centro di costo",
+      "seniority": "SD1",
+      "note": "query deterministiche su tabelle di sistema"
+    },
+    {
+      "id": "T04",
+      "task": "Verificare la conformità delle risorse a tag e policy",
+      "deliverable": "elenco delle violazioni con correzione proposta",
+      "seniority": "SD2",
+      "note": "controllo su elenchi letti"
+    },
+    {
+      "id": "T05",
+      "task": "Diagnosticare consumi anomali o compute inattivo",
+      "deliverable": "nota di diagnosi con causa e azione",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T06",
+      "task": "Preparare richieste di modifica per identità, metastore, segreti e rete",
+      "deliverable": "richiesta di modifica con privilegio minimo e verifica",
+      "seniority": "SD4",
+      "note": "sicurezza; esecuzione solo umana (F11)"
+    },
+    {
+      "id": "T07",
+      "task": "Preparare la scheda tecnica per un Do di spesa o di allentamento di policy",
+      "deliverable": "scheda Do con impatto e alternative",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Eseguire grant approvati su proposta dello steward",
+      "deliverable": "grant applicati con identificativo del Do e rilettura dei privilegi",
+      "seniority": "SD4",
+      "note": "effetti sugli accessi; il testo del Do va rispettato alla lettera"
+    },
+    {
+      "id": "T09",
+      "task": "Redigere il contributo di piattaforma alla Security Risk Posture",
+      "deliverable": "sezione di piattaforma e sezione Agenti",
+      "seniority": "SD4",
+      "note": "sicurezza"
+    }
+  ]
+}
