@@ -37,7 +37,8 @@ or removed; section 10 of the profiles does not change.
 - AI Coordinator profile 0.5.0 → 0.5.1 and `_seniority/SENIORITY.md`: "(valore indicativo: due)" is removed
   from the rule on promotion. An agent is raised after the failed attempts the mandate allows (Guide §7.1); no
   decision set an indicative number, and the entry 0.6.0 was wrong to give one. The number of attempts is
-  added to the items of the mandate (§2).
+  added to the items of the mandate (§2): it adds no rule, because the Guide §7.1 already has the mandate
+  set it, and the profile until 0.5.0 gave no place where to write it.
 - AI Coordinator profile and `analisi-funzionale/facilitatore-design-thinking` 0.3.0 → 0.3.1: the mark
   "convention of the profile" on a negative outcome of the judge covers only how it is reported; that the
   Human Manager approves the Vision or relaunches the exploration is the Guide §8.
@@ -61,7 +62,10 @@ or removed; section 10 of the profiles does not change.
 - `governo/revisore-test-qualita` does not apply the sentence that the Guide 1.0.0-rc.3 added to §9.1, "Test
   levels" (security and performance testing is proportionate to the risk; RFC 0003, item 18): the sentence
   carries no key word and the profile has no rule on it.
-- The known gaps of 0.6.0 stay open.
+- The known gaps of 0.6.0 stay open, except that what follows a negative outcome of the judge is the Guide §8
+  (the Human Manager approves the Vision or relaunches the exploration); the Guide §12, "Bad news first",
+  already asks for rejections and dissent to come first, so the convention of the profiles on reporting a
+  negative outcome adds little and may be dropped at qualification.
 
 ## [0.6.0] - 2026-11-26
 
