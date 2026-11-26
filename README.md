@@ -83,7 +83,7 @@ Principles and Decisions of their own domain;
 they are AI agents and do not replace the human reviewer of the domain. The family also holds the
 **Security Officer** (`governo/security-officer/`), the AI compliance role of the applicability gate: it
 assigns the project class with a versioned checklist and proposes treatments that bring the scope back
-within the permitted class; it is not a reviewer. The templates in
+within the permitted class, only where the re-classification shows it; it is not a reviewer. The templates in
 `_modello/` are not selected by CI, which skips folders starting with `_`: validate them locally.
 
 ## Rules for writing a profile
