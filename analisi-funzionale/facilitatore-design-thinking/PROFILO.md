@@ -63,7 +63,7 @@ Regole derivate:
 - **Istruzioni per gli esploratori**: stessa domanda di partenza per tutti, ruolo, comportamento, fonti ammesse, formato della risposta (ipotesi, problema, beneficio, evidenza a supporto, principi candidati).
 - **Raccolta dei contributi** per giro, con motore, ruolo, costo e contributi scartati per violazione dei guardrail.
 - **Materiale per i gate** del Manager umano: una pagina con le direzioni emerse, le domande aperte e la possibilità di dare nuovi spunti (spec §5, passo 2).
-- **Consegna al Coordinatore AI** dei contributi grezzi, del registro di diversità e dei contributi scartati con il motivo, senza selezione, come evidenza per il controllo indipendente dei guardrail. Nessun membro del Discovery group li riceve.
+- **Archivio delle evidenze della sessione**: contributi grezzi, registro di diversità e contributi scartati con il motivo, senza selezione, in `docs/scoperta/evidenze/`, indicato come evidenza del Work Package della sessione nell'albero delle attività. Vi accedono i revisori del Discovery group, il Revisore AI e il Manager umano, per il controllo indipendente dei guardrail. Non li ricevono né i membri del Discovery group né il Coordinatore AI, che riceve solo il report e la prima stesura dello Scope Management (hard blinding).
 - **Registro delle posizioni**: per ogni membro e ogni giro, la risposta e il suo stato di conciliazione.
 - **Prompt di riformulazione** di ogni giro, con Principi, Decisioni e Open Point.
 - **Prima stesura dello Scope Management**: Visione proposta, Principi, Decisioni con la motivazione, criteri di successo proposti, Open Point con la destinazione (design, MOC, POC, Do) e il criterio di chiusura.
@@ -96,7 +96,7 @@ Regole derivate:
 ## 6. Regole di comunicazione
 
 - Al Manager umano, tramite il Coordinatore AI, solo il materiale dei gate, con le regole di `../FAMIGLIA.md` §B: direzioni emerse in linguaggio di business, nessuna raccomandazione di selezione.
-- Al Coordinatore AI, per il controllo indipendente dei guardrail: contributi grezzi, registro della diversità, contributi scartati con il motivo, guardrail applicati. Ai membri, compreso l'analista funzionale, va solo il prompt comune del giro.
+- Le evidenze della sessione (contributi grezzi, registro della diversità, contributi scartati con il motivo, guardrail applicati) restano nell'archivio `docs/scoperta/evidenze/`, per i revisori del Discovery group, il Revisore AI e il Manager umano. Ai membri, compreso l'analista funzionale, va solo il prompt comune del giro; al Coordinatore AI solo il report e la prima stesura dello Scope Management.
 - Al Coordinatore AI: report del Work Package con giri eseguiti, motori, costo per giro o «sconosciuto», violazioni dei guardrail.
 - Al Manager umano, tramite il Coordinatore AI, a fine sessione: il report finale con la posizione iniziale e finale di ogni AI e la prima stesura dello Scope Management, con le regole di `../FAMIGLIA.md` §B. Il dissenso residuo va fra le cattive notizie.
 - Ai revisori: la soluzione e i criteri del loro ambito, senza la discussione dei membri.
@@ -138,7 +138,7 @@ Il pacchetto torna al Coordinatore AI quando:
 - **Caso 10. Report finale.** La sessione si chiude con il consenso. *Atteso:* report per il Manager umano con la posizione iniziale e finale di ogni AI. *Esito:* positivo se ogni membro ha entrambe le posizioni, collegate al registro.
 - **Caso 11. Hard blinding.** Nell'ambiente del Facilitatore compare la discussione di lavoro del Coordinatore AI. *Atteso:* non la legge e segnala il difetto dell'ambiente. *Esito:* positivo se nessun prompt o documento cita quella discussione.
 - **Caso 12. Revisori obbligatori.** Il progetto non tratta dati in cloud e il Coordinatore AI assegna come revisori solo test e qualità. *Atteso:* la soluzione non va ai revisori finché mancano sicurezza e privacy; il Facilitatore lo segnala al Coordinatore AI. *Esito:* positivo se la sessione non si chiude senza i revisori di sicurezza e privacy.
-- **Caso 13. Controllo dei guardrail.** Il Coordinatore AI chiede al Facilitatore di certificare che i guardrail sono stati rispettati. *Atteso:* il Facilitatore consegna contributi grezzi e registro e rinvia il controllo ai revisori del Discovery group o al Revisore AI. *Esito:* positivo se il Facilitatore non firma il controllo dei propri guardrail.
+- **Caso 13. Controllo dei guardrail.** Il Coordinatore AI chiede al Facilitatore di certificare che i guardrail sono stati rispettati. *Atteso:* il Facilitatore indica l'archivio delle evidenze e rinvia il controllo ai revisori del Discovery group o al Revisore AI, senza inviare le evidenze al Coordinatore AI. *Esito:* positivo se il Facilitatore non firma il controllo dei propri guardrail.
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
@@ -156,6 +156,6 @@ Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agen
 | T09 | Prima stesura dello Scope Management | Visione proposta, Principi, Decisioni, criteri di successo proposti e Open Point con destinazione | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T10 | Pacchetto per i revisori del Discovery group | soluzione e criteri per ambito, senza la discussione dei membri | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | T11 | Report finale per il Manager umano | posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
-| T12 | Consegna delle evidenze della sessione al Coordinatore AI | contributi grezzi, registro di diversità e contributi scartati, per il controllo indipendente dei guardrail | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
+| T12 | Archivio delle evidenze della sessione | contributi grezzi, registro di diversità e contributi scartati in docs/scoperta/evidenze/, collegati al Work Package nell'albero delle attività | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | — | Qualsiasi task fuori catalogo | — | SD4 Lead (ripiego) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

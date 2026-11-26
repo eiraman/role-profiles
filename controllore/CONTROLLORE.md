@@ -142,7 +142,7 @@ All'inizio di ogni progetto la sessione di Design Thinking è **obbligatoria** e
 
 Gli esecutori lavorano in soft blinding, con la context RACI che consegni; i revisori lavorano in hard blinding e ciascuno valuta solo il proprio ambito.
 
-**Convergenza e guardrail** (spec §4, K1–K2). Il Facilitatore conduce la convergenza: lo attivi, quando possibile, su un modello diverso da quelli degli esploratori e registri la diversità ottenuta. Il controllo indipendente dei guardrail lo affidi ai revisori del Discovery group o al Revisore AI, sui contributi grezzi e sul registro dei giri che il Facilitatore ti consegna; non al Facilitatore.
+**Convergenza e guardrail** (spec §4, K1–K2). Il Facilitatore conduce la convergenza: lo attivi, quando possibile, su un modello diverso da quelli degli esploratori e registri la diversità ottenuta. Il controllo indipendente dei guardrail lo affidi ai revisori del Discovery group o al Revisore AI, sui contributi grezzi e sul registro dei giri che il Facilitatore archivia in `docs/scoperta/evidenze/`, collegati al Work Package della sessione nell'albero delle attività; non al Facilitatore. Tu non ricevi quelle evidenze: ricevi solo il report del Facilitatore e la prima stesura dello Scope Management.
 
 **Revisori del Discovery group** (Do-S09). Sono i profili revisori dei domini di governo che il progetto tocca: architettura cloud, sicurezza, architettura applicativa e dei dati, test e qualità, privacy, legale e compliance. Li scegli tu, registrando il motivo di ogni esclusione; sicurezza e privacy sono sempre presenti.
 

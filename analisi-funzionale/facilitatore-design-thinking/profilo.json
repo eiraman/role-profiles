@@ -275,10 +275,10 @@
     },
     {
       "id": "T12",
-      "task": "Consegna delle evidenze della sessione al Coordinatore AI",
-      "deliverable": "contributi grezzi, registro di diversità e contributi scartati, per il controllo indipendente dei guardrail",
+      "task": "Archivio delle evidenze della sessione",
+      "deliverable": "contributi grezzi, registro di diversità e contributi scartati in docs/scoperta/evidenze/, collegati al Work Package nell'albero delle attività",
       "seniority": "SD2",
-      "note": "Sostituisce T07 dalla versione 0.2.0: i membri non condividono il contesto."
+      "note": "Sostituisce T07 dalla versione 0.2.0. Accesso per revisori del Discovery group, Revisore AI e Manager umano; non per i membri né per il Coordinatore AI."
     }
   ]
 }

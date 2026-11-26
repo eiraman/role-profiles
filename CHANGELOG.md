@@ -87,8 +87,10 @@ reverse an existing rule or remove a task; at `0.y.z` they bump MINOR and are ma
   limit, submission to the reviewers. New deliverables: the final report to the Human Manager with each AI's
   initial and final position, and the first draft of Scope Management. New source: the Delphi method. The
   Facilitator should converge on a model different from the explorers' (K1–K2); it applies the guardrails,
-  but their independent check belongs to the Discovery reviewers or the AI Reviewer. Raw contributions go to
-  the AI Coordinator as evidence, never to members. Tasks T08–T12 added, T07 removed (ID retired); 6
+  but their independent check belongs to the Discovery reviewers or the AI Reviewer. Raw contributions are
+  archived in `docs/scoperta/evidenze/`, linked to the session's Work Package in the activity tree, for the
+  Discovery reviewers, the AI Reviewer and the Human Manager; neither members nor the AI Coordinator receive
+  them (hard blinding). Tasks T08–T12 added, T07 removed (ID retired); 6
   qualification cases added, case 5 replaced.
 - `analisi-funzionale/analista-funzionale` 0.1.0 → 0.2.0, **breaking**: in the Discovery group the
   functional analyst links the needs of the Business Analyst and User Personas to the solutions of UX-UI and
@@ -109,8 +111,8 @@ reverse an existing rule or remove a task; at `0.y.z` they bump MINOR and are ma
 
 ### Removed
 
-Every line removed since v0.1.1 is a replaced rule or a version string (`release_diff.py`, 60 lines in
-profiles plus the registry files):
+Every line removed since v0.1.1 is a replaced rule or a version string (`release_diff.py`, 71 lines: 68 in
+profiles, family files and the AI Coordinator profile, 3 in the registry files):
 
 - **Version strings** (version, date, `metodo`): the `Versione` lines of `CONTROLLORE.md`, of
   `analisi-funzionale/FAMIGLIA.md` and of the three changed `PROFILO.md` files; `versione`, `data` and
@@ -141,8 +143,7 @@ profiles plus the registry files):
     Facilitator;
   - the responsibility "Consegna all'analista funzionale dei contributi grezzi", the §6 line to the
     functional analyst and catalogue task T07 (in `profilo.json` and in the generated table), replaced by
-    the delivery of the evidence to the AI Coordinator (T12): members of the Discovery group do not share
-    context;
+    the archive of the session evidence (T12), which neither members nor the AI Coordinator receive;
   - the empty note of task T05, now stating that the independent guardrail check is not the Facilitator's;
   - the last limit, unchanged in content, now followed by two new limits;
   - `descrizione_breve`, `descrizione_breve_en`, `nome_en` (now "Design Thinking Facilitator", as in the
