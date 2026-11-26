@@ -1,0 +1,250 @@
+{
+  "id": "scrum-master-ai",
+  "famiglia": "analisi-funzionale",
+  "nome": "Scrum Master AI",
+  "versione": "0.1.0",
+  "data": "2026-11-26",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di squadra e di contesto",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Design e planning",
+    "Scale"
+  ],
+  "descrizione_breve": "Coordina gli agenti di una squadra nel contesto condiviso di un Work Package, tiene il Log Tracker del pacchetto e consegna al Coordinatore AI il report delle attività e l'abstract di chiusura; non prende decisioni tecniche e non valida né chiude il pacchetto.",
+  "competenze_fonti": [
+    {
+      "fonte": "The Eiraman Guide 1.0.0-rc.2 (RFC 0001)",
+      "riferimento": "§2 Eiraman theory; §3 Context Consistency and Independence; §4 Specialist AI roles e Internal accountability; §5 Deny, Delegate, Do, E3 Micro-decisions; §7 Role tiers, Agentic Scrum (No Sprints or human timeboxes, One team per Work Package, A new agent for every Work Package, One AI Scrum Master per team, Shared context except for the unit tester, Competing teams), Soft blinding, The AI Coordinator as Scrum of Scrums, Retrospective; §8 Discovery group, Design and planning as a Work Package, Wave; §8.1 Who works in each phase, Design and planning; §9 Open points, Product Backlog, Work Package record, Definition of ready, Definition of done, Dissent or missing proof, Log Tracker; §11 Hostile-input test; §12 Three layers of documentation, Percentages",
+      "url": "https://github.com/eiraman/guide"
+    },
+    {
+      "fonte": "The Scrum Guide, novembre 2020 (K. Schwaber, J. Sutherland)",
+      "riferimento": "sezioni Scrum Theory; Scrum Team, Scrum Master; Scrum Events, Daily Scrum e Sprint Retrospective. Citata e non riprodotta; adattata secondo la Guida Eiraman §7",
+      "url": "https://scrumguides.org/scrum-guide.html"
+    },
+    {
+      "fonte": "Specifica Eiraman 0.3",
+      "riferimento": "§2 Ruoli AI specialistici; §4 bis Squadre e Scrum agentico, Scrum of Scrums e ruolo del Coordinatore AI; §8 Log Tracker",
+      "url": null
+    },
+    {
+      "fonte": "Profilo del Coordinatore AI 0.4.2 (controllore/CONTROLLORE.md)",
+      "riferimento": "§3 Design e planning come Work Package, Context Consistency and Independence, Context RACI, Un agente nuovo per ogni Work Package, Work Package handover abstract; §3 bis Formazione del Discovery group; §6 Registro di progetto",
+      "url": "https://github.com/eiraman/role-profiles"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package coordinato",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package coordinato",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package coordinato",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "controllo della context RACI",
+      "uso": "Obbligatorio alla verifica di avvio e a ogni cambio di assegnazione: ogni parte del contesto ha un solo R. Una parte senza R o con più R rende il pacchetto non pronto e torna al Coordinatore AI."
+    },
+    {
+      "strumento": "controllo di formato e completezza del Log Tracker",
+      "uso": "Obbligatorio prima del report: ogni voce ha agente, attività, candidata, esito, tentativo e costo con unità oppure «sconosciuto»; ogni run della squadra ha la sua voce. Una voce incompleta blocca la consegna del report. Convenzione del profilo."
+    },
+    {
+      "strumento": "contatore di tentativi e di spesa del pacchetto",
+      "uso": "Obbligatorio: al raggiungimento dei tentativi o del budget della scheda nessun nuovo tentativo parte e lo stato sale al Coordinatore AI."
+    },
+    {
+      "strumento": "controllo di completezza della consegna",
+      "uso": "Obbligatorio nel report: ogni risultato atteso della scheda è confrontato con artefatto ed evidenza identificata; la copertura dichiara il denominatore. Misura la presenza, non la correttezza."
+    }
+  ],
+  "scritture_consentite": [
+    "il percorso indicato dalla scheda del Work Package per Log Tracker, piano di lavoro, segnalazioni, report e abstract della squadra",
+    "eiraman/squadre/<id-pacchetto>/ quando la scheda non indica un percorso (convenzione del profilo)"
+  ],
+  "do_riservati": [
+    "le porte a senso unico e ogni caso di reversibilità dubbia",
+    "le materie riservate del mandato: Visione, Principi, criteri di successo, dati personali, terzi, nuovi fornitori, spesa oltre la soglia",
+    "il cambiamento di una Decisione approvata",
+    "i nuovi accessi",
+    "il cambio di classe del progetto e il passaggio a un livello di adozione superiore"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Wave SM-01, pacchetto SM-PROFILO",
+    "revisore": "da assegnare: revisore umano del dominio che pubblica la famiglia",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "AI Scrum Master",
+  "descrizione_breve_en": "Coordinates the agents of one team in the shared context of a Work Package, keeps the package Log Tracker and delivers the activity report and the handover abstract to the AI Coordinator; it takes no technical decisions and neither validates nor closes the package.",
+  "seniority": {
+    "minima": "SD2",
+    "massima": "SD4",
+    "nota": "Registro, report e controlli di completezza sono lavoro corrente su specifica chiara; coordinamento, segnalazioni e abstract richiedono scelte locali; il contributo a Design e planning incide su budget e Wave successive. Nella squadra l'agente lavora al livello più alto dei suoi task nel pacchetto."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Verifica di avvio della squadra",
+      "deliverable": "elenco delle mancanze di scheda del Work Package e context RACI, oppure conferma che il pacchetto è pronto per la squadra",
+      "seniority": "SD2",
+      "note": "Confronto con i campi della scheda (Guida §9)."
+    },
+    {
+      "id": "T02",
+      "task": "Piano di lavoro della squadra",
+      "deliverable": "sequenza dei task con agente R, passaggi di lavoro e punto di consegna al tester",
+      "seniority": "SD3",
+      "note": "Scelte locali entro la context RACI."
+    },
+    {
+      "id": "T03",
+      "task": "Coordinamento degli agenti della squadra",
+      "deliverable": "passaggi di lavoro eseguiti e registrati, con rispetto di context RACI, tentativi e percorsi di scrittura",
+      "seniority": "SD3",
+      "note": "La mappa cita il coordinamento fra gli usi di SD4: livello da tarare in qualificazione (PROFILO.md §8)."
+    },
+    {
+      "id": "T04",
+      "task": "Tenuta del Log Tracker del pacchetto",
+      "deliverable": "Log Tracker con una voce per attività: agente, candidata, esito, tentativo, costo, micro-decisioni",
+      "seniority": "SD2",
+      "note": "Può scendere a SD1 dove un controllo deterministico ne verifica formato e completezza; da tarare."
+    },
+    {
+      "id": "T05",
+      "task": "Segnalazione di blocchi, dipendenze e dissensi",
+      "deliverable": "segnalazione al Coordinatore AI con evidenza, task e Wave che blocca e criterio di chiusura; per un dissenso, le due posizioni",
+      "seniority": "SD3",
+      "note": "Diagnosi, senza giudizio tecnico sul merito."
+    },
+    {
+      "id": "T06",
+      "task": "Controllo di completezza della consegna",
+      "deliverable": "confronto fra risultati attesi della scheda, artefatti ed evidenze, con denominatore",
+      "seniority": "SD2",
+      "note": "Presenza, non correttezza: la validazione è del Coordinatore AI."
+    },
+    {
+      "id": "T07",
+      "task": "Report delle attività sul template del Coordinatore AI",
+      "deliverable": "report della squadra con le cattive notizie in testa",
+      "seniority": "SD2",
+      "note": "Senza template indicato il report non si scrive."
+    },
+    {
+      "id": "T08",
+      "task": "Work Package handover abstract della squadra",
+      "deliverable": "abstract di chiusura della squadra, con gli abstract dei singoli agenti: ricevuto, decisioni e micro-decisioni, assunzioni, artefatti e versioni, punti aperti, che cosa passare e che cosa no",
+      "seniority": "SD3",
+      "note": "Decide che cosa serve agli agenti successivi."
+    },
+    {
+      "id": "T09",
+      "task": "Contributo al Work Package di Design e planning",
+      "deliverable": "contributo al Product Backlog e ai suoi workstream in forma eseguibile dalle squadre, contributo alla stima del costo della componente AI e proposta di composizione delle squadre",
+      "seniority": "SD4",
+      "note": "Incide su budget e Wave successive; la proposta di composizione è una convenzione del profilo e le squadre le forma il Coordinatore AI."
+    }
+  ]
+}

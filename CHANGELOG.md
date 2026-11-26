@@ -21,6 +21,83 @@ the version.
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-11-26
+
+Scope: Change Request CR-008 of the method project, Wave SM-01. The Guide requires one AI Scrum Master per
+team (Guide 1.0.0-rc.2, §7, "One AI Scrum Master per team") and the registry had no profile for the role; the
+Human Manager decided to keep the rule and have the missing profile written (decision D8, alternative C, on
+the review findings on specification 0.3). Registry bump: MINOR (one new profile). No rule is reversed and no
+task is removed. No other profile, family file or tool changes. The profile is **draft, not qualified**.
+
+### Added
+
+- `analisi-funzionale/scrum-master-ai`, the **AI Scrum Master**, 0.1.0, in the structure of `_modello/`:
+  - purpose: it coordinates the agents of one team in the shared context of one Work Package, keeps the Log
+    Tracker of the package and delivers to the AI Coordinator the activity report, on the template the AI
+    Coordinator specifies, and the team's Work Package handover abstract;
+  - limits of the role: it takes no technical decisions, which belong to the agent that is R in the context
+    RACI, and it neither validates nor closes the package, which belongs to the AI Coordinator (Guide §7,
+    "The AI Coordinator as Scrum of Scrums"; §9, "Definition of done"); it reports dependencies between
+    teams and does not resolve them;
+  - context rules: shared context of the team under soft blinding; a new agent for every Work Package; it
+    does not receive the tester's discussion and does not hand the team's discussion to the tester; it is not
+    part of the Discovery group; with competing teams it sees only its own;
+  - sources: Guide 1.0.0-rc.2 §2, §3, §4, §5, §7, §8, §8.1, §9, §11, §12; the Scrum Guide of November 2020
+    (sections Scrum Theory; Scrum Team, Scrum Master; Daily Scrum; Sprint Retrospective), cited only and
+    adapted as the Guide §7 prescribes, section names checked on scrumguides.org by the independent review; specification 0.3 §2, §4 bis, §8; the AI Coordinator
+    profile 0.4.2 §3, §3 bis, §6;
+  - catalogue: 9 tasks (SD2–SD4): start-up check, team work plan, coordination, Log Tracker, reporting of
+    blocks, dependencies and dissent, completeness check of the delivery, activity report, handover abstract,
+    contribution to the Design and planning Work Package;
+  - qualification suite: 16 known-answer cases, including two out-of-role cases (a technical decision; closing
+    the package), a hostile instruction in the data, which ends in a recorded Deny, and two
+    missing-information cases (no report template; a context part with no R);
+  - conventions of the profile, marked as such and to be confirmed at qualification: technical decisions
+    inside the team belong to the agent that is R, while the Guide §4 gives them to the specialist AI roles as
+    a whole; the AI Scrum Master receives only outcomes and evidence from the tester; the team work plan; the
+    proposal of team composition in Design and planning.
+- Placement: the profile is in the existing family `analisi-funzionale/` as a **provisional placement**
+  (decision D-SM-1 of the method project, to be confirmed by the Human Manager at release). The family
+  `governo/` requires independent context and hard blinding, the opposite of this role; a new family requires
+  an RFC (WORKING-GROUPS.md §3).
+
+### Changed
+
+- `README.md`: Functional analysis family 6 profiles, total 48. `CODEOWNERS` and `REUSE.toml` are unchanged:
+  the new folder is covered by the existing `/analisi-funzionale/` rule and by the existing patterns.
+
+### Removed
+
+Lines removed since v0.4.1: the Functional analysis row and the "Total: 47 profiles" line of `README.md`,
+replaced (6 and 48); in this file, the `[Unreleased]` link, now comparing from v0.5.0.
+
+### Profile versions
+
+Profiles not listed keep the version of the latest table in which they appear.
+
+| Profile | Version | Date | State |
+|---|---|---|---|
+| `analisi-funzionale/scrum-master-ai` | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+
+Family files and the Digital Seniority map (0.1.0) are unchanged.
+
+### Known gaps
+
+- `analisi-funzionale/FAMIGLIA.md` (0.2.0) does not list the new profile in its table, and the AI Coordinator
+  profile (0.4.2) does not refer to it: both changes are proposed for a later release. The profile states
+  how it applies the family rules, which prevail over it.
+- WORKING-GROUPS.md §3 does not name the AI Scrum Master in the scope of the Functional Analysis group.
+- The form of the team Log Tracker, the write paths and the minimum content of the activity report are
+  conventions of the profile; no qualified template of the activity report exists yet. The default path
+  `eiraman/squadre/` is not in the project registry of the AI Coordinator profile (§6).
+- Task T03, coordination, is catalogued at SD3, while the Digital Seniority map 0.1.0 names coordination among
+  the uses of SD4: the level is to be calibrated at qualification.
+- The Guide §8.1 names the AI Scrum Master in Design and planning and in Scale only; the suite does not cover
+  teams formed in other phases.
+- The `tools` registry baseline (`tools` v0.2.3, 47 profiles) does not include the new profile; the registry
+  now has 48. It is updated in a later `tools` release, with the site and the kit.
+- The profile's fallback level for tasks outside the catalogue is SD4, as in the Digital Seniority map 0.1.0.
+
 ## [0.4.1] - 2026-11-26
 
 Scope: Change Request CR-005 of the method project.
@@ -441,7 +518,8 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.4.1...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.5.0...main
+[0.5.0]: https://github.com/eiraman/role-profiles/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/eiraman/role-profiles/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/eiraman/role-profiles/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/eiraman/role-profiles/compare/v0.2.0...v0.3.0

@@ -27,7 +27,7 @@ across the registry and matches its folder name.
 
 | Family | Folder | Profiles |
 |---|---|---|
-| Functional analysis | `analisi-funzionale/` | 5 |
+| Functional analysis | `analisi-funzionale/` | 6 |
 | Governance | `governo/` | 7 |
 | AWS | `aws/` | 6 |
 | Azure | `azure/` | 7 |
@@ -36,7 +36,7 @@ across the registry and matches its folder name.
 | Development | `sviluppo/` | 7 |
 | Web design | `web-design/` | 5 |
 
-Total: 47 profiles. Also included: `_modello/` (the template every profile starts from, and the templates
+Total: 48 profiles. Also included: `_modello/` (the template every profile starts from, and the templates
 `business-analyst` and `user-persona`, from which the AI Coordinator creates project instances without
 changing their rules and limits),
 `_seniority/` (the Digital Seniority map, `seniority.json`, and its explanation) and `controllore/`
