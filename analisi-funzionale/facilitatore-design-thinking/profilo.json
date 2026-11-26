@@ -2,7 +2,7 @@
   "id": "facilitatore-design-thinking",
   "famiglia": "analisi-funzionale",
   "nome": "Facilitatore di Design Thinking",
-  "versione": "0.3.1",
+  "versione": "0.4.0",
   "data": "2026-11-26",
   "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, la convergenza della Scoperta (§8) e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
@@ -10,7 +10,7 @@
   "fasi": [
     "Scoperta"
   ],
-  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management.",
+  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management; consegna una scheda di ingaggio di una pagina, con al massimo cinque scelte non reversibili da confermare.",
   "competenze_fonti": [
     {
       "fonte": "Stanford d.school, Design Thinking",
@@ -213,7 +213,7 @@
     {
       "id": "T02",
       "task": "Istruzioni per gli esploratori",
-      "deliverable": "prompt di giro con domanda comune, ruolo, fonti ammesse e formato",
+      "deliverable": "prompt di giro con domanda comune, ruolo, fonti ammesse e formato, comprese la porta di ogni decisione proposta e le assunzioni",
       "seniority": "SD2",
       "note": ""
     },
@@ -269,7 +269,7 @@
     {
       "id": "T11",
       "task": "Report finale per il Manager umano",
-      "deliverable": "posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo, esito dei revisori e del giudice K1",
+      "deliverable": "scheda di ingaggio in prima pagina; posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo, esito dei revisori e del giudice K1",
       "seniority": "SD4",
       "note": "Documento letto dal Manager umano."
     },
@@ -286,6 +286,13 @@
       "deliverable": "risultato e criteri di convergenza fissati prima della divergenza, senza la discussione dei membri",
       "seniority": "SD2",
       "note": "Il giudice è un agente distinto, attivato dal Coordinatore AI (Guida §8)."
+    },
+    {
+      "id": "T14",
+      "task": "Scheda di ingaggio e registro delle decisioni della sessione",
+      "deliverable": "una pagina con Visione e Principi, al massimo 5 scelte non reversibili da confermare, 5 assunzioni ad alto impatto e 5 decisioni reversibili sopra soglia; registro con tutte le decisioni, la porta e le assunzioni",
+      "seniority": "SD4",
+      "note": "Base delle conferme del Manager umano. Convenzione del profilo (D-ING-1, D-ING-2)."
     }
   ]
 }

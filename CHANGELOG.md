@@ -21,6 +21,72 @@ the version.
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-11-26
+
+Scope: Change Request CR-011 of the method project. The Discovery session decides everything it can and
+hands the Human Manager one page to correct, the **engagement brief** ("scheda di ingaggio"), instead of one
+question per open point. Decisions of the Human Manager of 26 November 2026: D-ING-1 (rigid limits, set by
+the AI Coordinator: 5 irreversible choices, 5 high-impact assumptions, 5 reversible decisions shown), D-ING-2
+(only the reversible decisions above an impact threshold are shown), D-ING-3 (released on its own, after
+0.6.1). Origin: in a test run of the method the Discovery asked the Human Manager two questions out of the
+fifteen allowed, none about money, and the delivery missed three essential expectations out of five.
+
+Registry bump: MINOR, rules and one task are added; no rule, task or deliverable is removed. Both profiles
+stay **draft, not qualified**. The rules are **conventions of the two profiles**, not rules of the Guide: the
+Guide 1.0.0-rc.3 requires the Discovery report with the initial and final position of each AI (§8), which
+stays, and says nothing on the form in which the Human Manager approves the Vision. The limits are numbers
+chosen by the AI Coordinator and have not been tested.
+
+### Added
+
+- `analisi-funzionale/facilitatore-design-thinking` 0.3.1 → 0.4.0:
+  - six rules, "Decidere tutto ciò che si può": every theme ends in a Principle or a Decision; a missing piece
+    of information becomes a declared assumption when the choice is reversible (for those who propose, not for
+    reviewers and judge); every Decision declares whether it is reversible, and in doubt it is not (E1); five
+    fixed headings are always examined (budget and costs, data, access, external services, publication); at
+    most 5 irreversible choices go to the Human Manager, and beyond that the scope of the first cycle is
+    reduced and the others are deferred to a later gate, never decided without confirmation and never
+    reclassified; items are ordered by priority and impact;
+  - the impact threshold for reversible decisions (visible to the end user, undoing it costs more than one
+    Work Package of rework, or it moves costs or times);
+  - the engagement brief, first page of the final report, with its format: bad news, Vision and Principles to
+    approve as a block, irreversible choices with a preferred option and at most one alternative, high-impact
+    assumptions, reversible decisions above the threshold for information; the register of the decisions of
+    the session; task T14;
+  - the preferred option is the one the group agreed on, never the Facilitator's own; without consensus the
+    positions are reported and the AI Coordinator adds the recommendation;
+  - four forbidden actions, one limit and four cases of the qualification suite.
+- AI Coordinator profile 0.5.1 → 0.6.0, §3 bis, "Scheda di ingaggio": the four criteria it always confirms
+  among the convergence criteria, which the K1 judge checks; the fields of the Do it adds to each irreversible
+  choice; one delivery at the top of the Manager View; explicit confirmation for Vision, Principles and each
+  irreversible choice, none for reversible decisions, and a requested change is a Change Request; the limit
+  of 5 and the Do on reducing the scope; every high-impact assumption becomes an open point with its check.
+  Two cases added to the qualification suite.
+
+### Changed
+
+- `facilitatore-design-thinking`: the instructions for the explorers ask also for the door of each proposed
+  decision and for the assumptions made (T02 deliverable); the final report opens with the engagement brief
+  (T11 deliverable, step 8 of the convergence procedure). Section 10 is generated again for this profile.
+
+### Profile versions
+
+| Profile | Version | Date | State |
+|---|---|---|---|
+| AI Coordinator (`controllore/CONTROLLORE.md`) | 0.5.1 → 0.6.0 | 2026-11-26 | draft, not qualified |
+| `analisi-funzionale/facilitatore-design-thinking` | 0.3.1 → 0.4.0 | 2026-11-26 | draft, not qualified |
+
+### Known gaps
+
+- The limits 5, 5 and 5 and the impact threshold are a judgement of the AI Coordinator, to be calibrated on
+  the test bench. With a rigid limit the group may classify an irreversible choice as reversible: the
+  reviewers and the judge check the classification, and no tool does.
+- The profiles of the members of the Discovery group, of the domain reviewers and of the judge do not change:
+  they receive the format and the criteria from the Facilitator and the AI Coordinator.
+- The Manager View has no dedicated section for the engagement brief: it is delivered as a project document
+  and through the decisions waiting for the Human Manager.
+- Making these rules part of the method needs an RFC to the Guide.
+
 ## [0.6.1] - 2026-11-26
 
 Scope: Change Request CR-010 of the method project. Corrections from the independent re-review of 0.6.0
@@ -855,7 +921,8 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.6.1...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.7.0...main
+[0.7.0]: https://github.com/eiraman/role-profiles/compare/v0.6.1...v0.7.0
 [0.6.1]: https://github.com/eiraman/role-profiles/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/eiraman/role-profiles/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/eiraman/role-profiles/compare/v0.5.0...v0.5.1
