@@ -21,6 +21,18 @@ the version.
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-11-26
+
+Scope: Change Request CR-005 of the method project.
+
+### Fixed
+
+- CI, `compliance.yml`: the local-path check flagged the official ISO URL
+  `https://committee.iso.org/sites/jtc1sc7/home/...` cited by `governo/revisore-test-qualita`, so the
+  workflow failed on v0.4.0. The check now removes http(s) URLs from the matched lines before
+  matching again, so a path segment inside a URL is not flagged; every other form of local path caught before
+  (plain text, quotes, `file://` URLs, PATH values, linker flags, Windows paths) is still caught. No profile changed.
+
 ## [0.4.0] - 2026-11-26
 
 Scope: second part of Change Request CR-004 of the method project, Wave REV-02 (Do-S12), with the rules of
@@ -429,7 +441,8 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.4.0...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.4.1...main
+[0.4.1]: https://github.com/eiraman/role-profiles/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/eiraman/role-profiles/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/eiraman/role-profiles/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/eiraman/role-profiles/compare/v0.1.1...v0.2.0
