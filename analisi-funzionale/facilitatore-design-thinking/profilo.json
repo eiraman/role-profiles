@@ -10,7 +10,7 @@
   "fasi": [
     "Scoperta"
   ],
-  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management; consegna una scheda di ingaggio di una pagina, con al massimo cinque scelte non reversibili da confermare.",
+  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management.",
   "competenze_fonti": [
     {
       "fonte": "Stanford d.school, Design Thinking",
@@ -213,14 +213,14 @@
     {
       "id": "T02",
       "task": "Istruzioni per gli esploratori",
-      "deliverable": "prompt di giro con domanda comune, ruolo, fonti ammesse e formato, comprese la porta di ogni decisione proposta e le assunzioni",
+      "deliverable": "prompt di giro con domanda comune, ruolo, fonti ammesse e formato, comprese porta, costo di annullamento e assunzioni di ogni decisione proposta",
       "seniority": "SD2",
       "note": ""
     },
     {
       "id": "T03",
       "task": "Ruolo di esploratore in un giro di divergenza",
-      "deliverable": "contributo con ipotesi, problema, beneficio, evidenza e principi candidati",
+      "deliverable": "contributo con ipotesi, problema, beneficio, evidenza, principi candidati e decisioni proposte con porta, costo di annullamento e assunzioni",
       "seniority": "SD2",
       "note": "Motori diversi tra esploratori quando possibile (K2). Mai assegnato all'agente che facilita la stessa sessione."
     },
@@ -269,7 +269,7 @@
     {
       "id": "T11",
       "task": "Report finale per il Manager umano",
-      "deliverable": "scheda di ingaggio in prima pagina; posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo, esito dei revisori e del giudice K1",
+      "deliverable": "scheda di ingaggio in apertura; posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo, esito dei revisori e del giudice K1",
       "seniority": "SD4",
       "note": "Documento letto dal Manager umano."
     },
@@ -290,9 +290,9 @@
     {
       "id": "T14",
       "task": "Scheda di ingaggio e registro delle decisioni della sessione",
-      "deliverable": "una pagina con Visione e Principi, al massimo 5 scelte non reversibili da confermare, 5 assunzioni ad alto impatto e 5 decisioni reversibili sopra soglia; registro con tutte le decisioni, la porta e le assunzioni",
+      "deliverable": "scheda di una pagina nel formato del §6 e registro con tutte le decisioni, la porta, il costo di annullamento, l'impatto e le assunzioni",
       "seniority": "SD4",
-      "note": "Base delle conferme del Manager umano. Convenzione del profilo (D-ING-1, D-ING-2)."
+      "note": "Base delle conferme del Manager umano. Convenzione del profilo."
     }
   ]
 }
