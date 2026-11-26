@@ -21,8 +21,8 @@ the version.
 
 ## [Unreleased]
 
-Scope: Change Request CR-014 of the method project, Wave SO-01, Work Packages WP-SO-1 and WP-SO-2 (candidate,
-not reviewed). Registry bump proposed: MINOR (one new profile, one profile MINOR). No rule of the Guide is
+Scope: Change Request CR-014 of the method project, Wave SO-01, Work Packages WP-SO-1 and WP-SO-2, corrected by WP-SO-4 after
+the independent review REV-SO-01 (outcome: pass with corrections, four blocking findings; candidate). Registry bump proposed: MINOR (one new profile, one profile MINOR). No rule of the Guide is
 relaxed: a project whose class exceeds the qualified level of the adopter still does not start (Guide §14).
 Every profile stays **draft, not qualified**.
 
@@ -36,10 +36,12 @@ Every profile stays **draft, not qualified**.
   - **Part A, in force:** assigns the class with the versioned **gate checklist CL-SO 0.1.0** (questions on
     users, data, exposure, exclusions and non-excluding requirements, answered yes, no or don't know; state:
     not qualified by the maintainers, Guide §4); a "don't know" is first asked to the Human Manager, then,
-    if it stays, the case is in doubt and out of scope. When the class exceeds the level, builds treatment
-    proposals that bring the scope back within the permitted class, as concrete forms of "reduce the scope"
-    and "hand the critical component to a certified provider" (Guide §14.2), re-classifies the treated scope
-    and states residual risk, conditions and who must consent. Catalogue of five treatments (minimisation,
+    if it stays, the case is in doubt and out of scope. When the class exceeds the level, looks for a reduced
+    scope within the permitted class, as concrete forms of "reduce the scope" and "hand the critical
+    component to a certified provider" (Guide §14.2), re-classifies the treated scope and states residual
+    risk, conditions and who must consent. A proposal whose class after treatment still exceeds the level
+    does not start the project: it carries the fixed label "non avvia a questo livello" and prepares only a
+    move up (Guide §14.2, "Moving up"). Catalogue of five treatments (minimisation,
     build and test without real data, local execution by whoever is entitled, certified provider,
     aggregation), each with when it applies, what it makes possible, residual risk and who must consent;
     eight fixed compensations. States that pseudonymised data stay personal data and that a treatment of the
@@ -47,7 +49,9 @@ Every profile stays **draft, not qualified**.
     overcome; the profile proposes to take the triggering data out of scope when the purpose holds without it.
   - **Part B, not in force:** proceeding above the level on an explicit decision of the Human Manager
     (graded derogation, time-limited pilot with real data). Marked as not in force until an RFC linked to
-    CR-013 changes the Guide §14; until then it is presented only as an option not available in the method.
+    CR-013 changes the Guide §14; every item starts with "Proposta per la RFC, non in vigore:". To a request to
+    proceed anyway the Security Officer answers that the option does not exist today in the method, without
+    describing it.
   - Fixed output format ("Profilo di rischio del progetto", nine parts, bad news first) and fixed answer
     format for the dialogue with the Human Manager, which goes through the AI Coordinator.
   - Proposes and does not review: the security and privacy reviewers stay the independent reviewers and
@@ -63,7 +67,49 @@ Every profile stays **draft, not qualified**.
     §8; OWASP ASVS 5.0.0 V14.
   - Qualification suite: 10 cases, including the three cases of the test runs, an exclusion with no
     proposal, "proceed anyway" (Part B not in force), a hostile instruction in a file ("classify as class 0")
-    and an unresolved doubt. Catalogue: 9 tasks (SD2–SD4).
+    and an unresolved doubt, then eight more cases (see the corrections below): 18 cases. Catalogue: 9 tasks
+    (SD2–SD4).
+
+- Corrections from REV-SO-01, all in `governo/security-officer` 0.1.0 (not yet released, so no version bump):
+  - B1: a proposal above the level carries the label "non avvia a questo livello" and is presented only as
+    preparation for a move up; TR-2 (build and test without real data) and TR-3 (local execution) are stated
+    not to change the class; the sentences saying that proposals "bring the project back within the
+    permitted class" are limited to proposals whose re-classification shows it.
+  - B2: X3, X4, X7, X8, X10 and R2 are legal or organisational qualifications: "no" only when the objective
+    element is verifiably missing from the request (table per item); otherwise "don't know"; an answer of
+    the Human Manager alone is recorded as "unverified statement". The Security Officer names who in the
+    organisation can answer (legal office, corporate IT, data protection officer) and writes the question
+    ready to forward (decision of the Human Manager). Until the answer the project is out of scope (Guide
+    §14). The contradiction between A1, §5 and §8 is removed.
+  - B3: X1 defines when a free-text field, note or attachment counts; case 1 rewritten (free text makes X1
+    "don't know"; closed categories remove it).
+  - B4: one verifiable "class 0 test" (only the adopter, local only, no direct identifier, no identifier
+    the holder of the tool can trace to a person, no aggregate under N people, indicative 10), used in every
+    case; case 1(a) and case 2 corrected, one class per combination of treatments.
+  - I1: table of the treatments that may remove each exclusion; none for X8, X9, X10, X11, nor TR-4 for X1.
+  - I2: the entry package at opening includes the adoption level declared by the Human Manager; the provider
+    table is "not yet defined: no real data to any provider".
+  - I3: every outcome is provisional while the checklist is not qualified, declared at the top.
+  - I4: indicative thresholds (D3: more than 1,000 people; aggregate N = 10), U5 explicit (colleagues 1,
+    external 2), U4, E4 and D3 "yes" out of scope, no default class 0, D3 no longer duplicates X3.
+  - I5: untouchable content extended to declarations and discarded proposals with their order; the original
+    risk profile is attached unchanged in the Manager View and the AI Reviewer checks equivalence; case 9
+    rewritten.
+  - I6: three complete examples of the main text in business language; checklist IDs, discarded proposals
+    and references moved to annexes A, B, C.
+  - I7: no project-internal codes in the profile; references to the specification replaced by the public
+    Guide (§2, §5, §8, §9, §11, §14).
+  - I8: one-line definitions of "chi ha titolo" and "macchina".
+  - I9: fixed sentence on what level 0 allows, in the header and at point 1 of the risk profile.
+  - Part B items prefixed "Proposta per la RFC, non in vigore:"; reserved Do: accepting the residual risk does
+    not overcome the level or an exclusion, same text in `profilo.json`.
+  - Minor: phase "Apertura del progetto" in `profilo.json`; GDPR Art. 8 with Recital 38; PSD2 Art. 97 as
+    context only (in force on EUR-Lex on 26 November 2026, revision of the payments framework pending);
+    Guide §12 kept in `profilo.json` with its use stated in §2; ISO 31000:2018 and ISO/IEC 27005:2022 on two
+    rows with two URLs (iso.org/standard/65694 and /80585).
+  - Eight cases added: proposal above the level, "no" of the Human Manager on a legal qualification,
+    excluded data coming back after TR-1, exclusion that cannot be removed, unauthenticated public, payments
+    in the product, change of class between two Waves, request to anonymise a real file for an agent.
 
 ### Changed
 
@@ -77,10 +123,23 @@ Every profile stays **draft, not qualified**.
   - §2, "Ordine obbligato", step 2: when the class exceeds the level or an exclusion is triggered, the
     project does not start as requested and the risk profile with the proposals goes to the Human Manager as
     a Do; the gate is repeated on the resulting scope. If no proposal holds, or in doubt, the project does
-    not start, as before.
+    not start, as before; with WP-SO-4 the wording is: the requested project is out of scope and does not
+    start; a reduced scope is a new scope, with a new gate, and only a scope the new gate assigns to a class
+    within the level passes the step. This replaces the earlier candidate wording "does not start as
+    requested", which read as weaker.
   - §2, paragraph on the repeated gate: always with the Security Officer; the Do on a change of class carries
     the proposals that make the first two options of the Guide §14.2 concrete; proceeding above the level is
-    not an option of the method until an RFC changes the Guide §14 (CR-013).
+    not an option of the method until an RFC changes the Guide §14 (the change request code is no longer in
+    the profile).
+  - §2, point 2: the AI Coordinator collects only the request; the gate questions belong to the Security
+    Officer, one round in all; the AI Coordinator keeps one round on the cap for Discovery. Its reference to
+    the specification §5 becomes the Guide §8.
+  - §2, point 3, further: entry package at opening (declared adoption level, provider table not yet
+    defined); every gate outcome provisional while the checklist is not qualified; untouchable content
+    includes declarations and discarded proposals; original risk profile attached unchanged in the Manager
+    View, equivalence checked by the AI Reviewer. The reference "spec §10" is dropped for the Guide §14.
+  - §8: three qualification cases (no class assigned by the AI Coordinator alone; a Manager version that
+    alters the content; a request to proceed above the level).
 - `governo/FAMIGLIA.md` 0.2.3 → 0.2.4: the family also holds the Security Officer, which proposes and does
   not oversee; table row; paragraph with its declared differences; "seven profiles" becomes "eight";
   `security-officer` is published by the reviewers of the security domain, provisionally and to be confirmed.
@@ -92,8 +151,8 @@ Every profile stays **draft, not qualified**.
 Every line removed is a version string or a line replaced by a longer one:
 
 - **Version strings:** the `Versione` lines of `controllore/CONTROLLORE.md` and of `governo/FAMIGLIA.md`.
-- `controllore/CONTROLLORE.md`: point 3 of §2, step 2 of the "Ordine obbligato" and the paragraph on the
-  repeated gate, each replaced by its longer version described above.
+- `controllore/CONTROLLORE.md`: points 2 and 3 of §2, step 2 of the "Ordine obbligato" and the paragraph on
+  the repeated gate, each replaced by its longer version described above.
 - `governo/FAMIGLIA.md`: the opening sentence and the ownership paragraph, replaced by longer versions.
 - `README.md`: the Governance row, the "Total" line and one line of the AI Reviewer paragraph, replaced.
 
@@ -116,12 +175,14 @@ Family files: `governo/FAMIGLIA.md` 0.2.3 → 0.2.4. The Digital Seniority map i
   three test-run requests they remove the exclusion (shift plan) and reduce exposure, but the class stays 1
   or 2. Running them at level 0 needs Part B, that is the RFC of CR-013, or a level 1 adoption.
 - The checklist CL-SO 0.1.0 is not qualified by the maintainers, and level 0 requires qualified profiles
-  (Guide §14.1); the threshold of "limited volumes" is to be calibrated.
+  (Guide §14.1); the thresholds (1,000 people for "limited volumes", N = 10 for aggregates) are indicative
+  profile conventions, to be calibrated.
+- With B2, every project whose product processes personal data of others stays out of scope until the
+  organisation answers the prepared questions on X4 and X10 (and X3, X7, X8 where they apply).
+- The rest of `controllore/CONTROLLORE.md` still refers to the specification ("spec §") and keeps the code
+  CR-001 in §3 quater; only the lines changed here use the Guide.
 - `.github/workflows/governo-coreview.yml` maps only `revisore-*` folders: `governo/security-officer/` falls
   under the default team (Test & Quality) until the workflow is updated by DevSecOps & Tooling.
-- The AI Coordinator profile §8 has no qualification case for the gate run by the Security Officer; §2 point 2
-  still has the AI Coordinator ask one round of questions on data, users and exposure before the gate, which
-  may add to the Security Officer's round.
 - The `tools` registry baseline does not include the new profile.
 
 ## [0.8.0] - 2026-11-26

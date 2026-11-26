@@ -8,19 +8,21 @@
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
+    "Apertura del progetto (gate prima della Scoperta e del mandato)",
     "Scoperta",
+    "POC",
     "Design e planning",
     "Scale",
     "Accettazione ed esercizio"
   ],
-  "descrizione_breve": "Agente AI che svolge il ruolo di compliance del gate di applicabilità: assegna la classe del progetto con una checklist versionata e, quando la classe supera il livello o scatta un'esclusione, propone trattamenti che riportano lo scopo dentro la classe permessa, con rischio residuo, condizioni e chi deve dare l'assenso; non revisiona, non tocca dati reali e non dà pareri legali.",
+  "descrizione_breve": "Agente AI che svolge il ruolo di compliance del gate di applicabilità: assegna la classe del progetto con una checklist versionata e, quando la classe supera il livello o scatta un'esclusione, cerca uno scopo ridotto che stia nella classe permessa, con rischio residuo, condizioni e chi deve dare l'assenso, e dice quando non c'è; non revisiona, non tocca dati reali e non dà pareri legali.",
   "nome_en": "Security Officer",
-  "descrizione_breve_en": "AI agent in the compliance role of the applicability gate: it assigns the project class with a versioned checklist and, when the class exceeds the level or an exclusion is triggered, proposes treatments that bring the scope back within the permitted class, with residual risk, conditions and who must consent; it does not review, never touches real data and gives no legal opinions.",
+  "descrizione_breve_en": "AI agent in the compliance role of the applicability gate: it assigns the project class with a versioned checklist and, when the class exceeds the level or an exclusion is triggered, looks for a reduced scope within the permitted class, with residual risk, conditions and who must consent, and says when there is none; it does not review, never touches real data and gives no legal opinions.",
   "competenze_fonti": [
     {
       "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
       "url": "https://github.com/eiraman/guide",
-      "riferimento": "§4 Maintainers, Liability towards third parties; §5 Do; §6 Security and personal data; §11 Data classes per provider, Delegation of data; §12 Writing rules; §14 Project classes, Deliverables, Out of scope at any level, Applicability gate, Legal advice; §14.1; §14.2 Moving up, Class change; §15 Conformance"
+      "riferimento": "§2 Management applied to AI; §4 Maintainers, Liability towards third parties; §5 Do, E3; §6 Security and personal data; §9 Vision; §11 Data classes per provider, Delegation of data, Hostile-input test; §12 Writing rules (per il testo principale del profilo di rischio); §14 Project classes, Deliverables, Out of scope at any level, Applicability gate, Legal advice; §14.1; §14.2 Moving up, Class change; §15 Conformance"
     },
     {
       "fonte": "Eiraman community, GOVERNANCE.md",
@@ -30,7 +32,7 @@
     {
       "fonte": "Regolamento (UE) 2016/679 (GDPR)",
       "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
-      "riferimento": "art. 4(1), 4(5), 4(7), 4(15); art. 5(1)(b), (c), (e); art. 6(1); art. 8; art. 9(1); art. 10; art. 22(1); art. 25; art. 28; art. 30; art. 32; art. 33–34; art. 35(1), 35(3), 35(4); art. 37; considerando 26"
+      "riferimento": "art. 4(1), 4(5), 4(7), 4(15); art. 5(1)(b), (c), (e); art. 6(1); art. 8 e considerando 38 (minori); art. 9(1); art. 10; art. 22(1); art. 25; art. 28; art. 30; art. 32; art. 33–34; art. 35(1), 35(3), 35(4); art. 37; considerando 26"
     },
     {
       "fonte": "Regolamento (UE) 2024/1689 sull'intelligenza artificiale",
@@ -50,7 +52,7 @@
     {
       "fonte": "Direttiva (UE) 2015/2366 (PSD2)",
       "url": "https://eur-lex.europa.eu/eli/dir/2015/2366/oj",
-      "riferimento": "art. 97 (autenticazione forte del cliente)"
+      "riferimento": "art. 97 (autenticazione forte del cliente), solo come contesto per X6; in vigore su EUR-Lex al 26 novembre 2026, con la revisione del quadro dei pagamenti in corso"
     },
     {
       "fonte": "PCI DSS v4.0.1 (giugno 2024)",
@@ -83,9 +85,14 @@
       "riferimento": "controlli 8.10, 8.11, 8.13, 8.31, 8.33 (solo citazione)"
     },
     {
-      "fonte": "ISO 31000:2018 e ISO/IEC 27005:2022",
+      "fonte": "ISO 31000:2018, Risk management — Guidelines",
       "url": "https://www.iso.org/standard/65694.html",
-      "riferimento": "ISO 31000 §6.5 Risk treatment; ISO/IEC 27005 §8 trattamento del rischio (solo citazione)"
+      "riferimento": "§6.5 Risk treatment (solo citazione)"
+    },
+    {
+      "fonte": "ISO/IEC 27005:2022, Guidance on managing information security risks",
+      "url": "https://www.iso.org/standard/80585.html",
+      "riferimento": "§8 trattamento del rischio (solo citazione)"
     },
     {
       "fonte": "OWASP ASVS 5.0.0 (maggio 2025)",
@@ -212,11 +219,15 @@
     },
     {
       "strumento": "Checklist del gate CL-SO 0.1.0 (PROFILO.md §3, A1)",
-      "uso": "Obbligatoria a ogni gate: ogni domanda ha sì, no o non so con l'elemento da cui deriva; la classe è la più alta indicata dalle risposte U, D, E; un sì in X è fuori perimetro; un non so rimasto dopo il giro di domande è un caso dubbio, fuori perimetro (Guida §14). Stato: non qualificata dai maintainer."
+      "uso": "Obbligatoria a ogni gate: ogni domanda ha sì, no o non so con l'elemento da cui deriva; la classe è la più alta indicata dalle risposte U, D, E; U4, E4, D3 «sì» e ogni X «sì» sono fuori perimetro; nessuna U/D/E «sì» vale come «non so»; un «non so» di fatto si scioglie con un solo giro di domande al Manager umano, una qualificazione giuridica o dell'organizzazione solo con l'elemento oggettivo o con la risposta di chi nell'organizzazione ne ha titolo; un «non so» rimasto è fuori perimetro (Guida §14). Esito provvisorio: checklist non qualificata dai maintainer."
+    },
+    {
+      "strumento": "prova di classe 0 (PROFILO.md §3, A1)",
+      "uso": "Obbligatoria per ogni «no» a D1 e per ogni proposta dichiarata di classe 0: solo chi adotta, solo locale, nessun identificatore diretto, nessun identificatore riconducibile a una persona con le fonti abituali, nessun aggregato sotto N persone (indicativo 10). Una condizione non verificabile fa fallire la prova."
     },
     {
       "strumento": "controllo di completezza del profilo di rischio",
-      "uso": "Obbligatorio: le nove parti del formato del §6 sono presenti nell'ordine; ogni proposta ha classe dopo il trattamento, condizioni, rischio residuo, chi deve dare l'assenso e reversibilità; la Parte B compare solo come non disponibile. Convenzione del profilo."
+      "uso": "Obbligatorio: il formato del §6 è completo e nell'ordine, con la dichiarazione di esito provvisorio in testa e gli allegati A, B, C; il testo principale non contiene sigle, ID della checklist né articoli; ogni proposta ha una sola classe dopo il trattamento e l'etichetta «non avvia a questo livello» quando la classe supera il livello; procedere sopra il livello non compare come opzione. Convenzione del profilo."
     },
     {
       "strumento": "ricerca di istruzioni nel materiale",
@@ -235,11 +246,11 @@
     "scelta fra le proposte di trattamento e fra le opzioni della Guida §14.2",
     "riduzione dello scopo",
     "nuovo fornitore per un componente critico",
-    "accettazione del rischio residuo, nei limiti di ciò che il Manager umano ha titolo ad accettare",
+    "accettazione del rischio residuo, nei limiti di ciò che il Manager umano ha titolo ad accettare: l'accettazione del rischio residuo non rende superabile il livello né un'esclusione",
     "salita di livello di applicabilità"
   ],
   "qualificazione": {
-    "curatore": "Coordinatore AI, Wave SO-01, pacchetti WP-SO-1 e WP-SO-2 (CR-014)",
+    "curatore": "Coordinatore AI del progetto di gestione del metodo",
     "revisore": "da assegnare: revisori umani titolari o supplenti dei domini sicurezza e privacy (GOVERNANCE §4.5); la checklist CL-SO va qualificata dai maintainer (Guida §4)",
     "data": null,
     "scadenza": null,
@@ -268,16 +279,16 @@
     {
       "id": "T03",
       "task": "Domande per sciogliere i «non so»",
-      "deliverable": "una domanda chiusa per elemento, con l'effetto di ogni risposta",
+      "deliverable": "domande di fatto al Manager umano, una per elemento, in un solo giro; per le qualificazioni giuridiche o dell'organizzazione, chi può rispondere e la domanda pronta da inoltrare",
       "seniority": "SD3",
-      "note": "Un giro per gate, attraverso il Coordinatore AI."
+      "note": "Una risposta del Manager umano su una qualificazione giuridica si registra come «dichiarazione non verificata»."
     },
     {
       "id": "T04",
       "task": "Proposte di trattamento con riclassificazione",
-      "deliverable": "proposte in ordine di preferenza, ciascuna con classe dopo il trattamento, condizioni, rischio residuo, chi deve dare l'assenso e reversibilità",
+      "deliverable": "proposte in ordine di preferenza, ciascuna con una sola classe dopo il trattamento, prova di classe 0 dove dichiarata, etichetta «non avvia a questo livello» dove vale, condizioni, rischio residuo, chi deve dare l'assenso e reversibilità",
       "seniority": "SD4",
-      "note": "Forme concrete di «ridurre lo scopo» e «fornitore certificato» (Guida §14.2)."
+      "note": "Forme concrete di «ridurre lo scopo» e «fornitore certificato» (Guida §14.2); lo scopo ridotto ha un nuovo gate."
     },
     {
       "id": "T05",
@@ -296,9 +307,9 @@
     {
       "id": "T07",
       "task": "Profilo di rischio del progetto",
-      "deliverable": "documento nel formato fisso del §6, con il confronto con la situazione attuale",
+      "deliverable": "documento nel formato fisso del §6: testo principale in linguaggio di business e allegati con checklist, proposte scartate e riferimenti",
       "seniority": "SD4",
-      "note": "Testo principale in linguaggio di business, riferimenti a parte."
+      "note": "Esito provvisorio dichiarato in testa finché la checklist non è qualificata."
     },
     {
       "id": "T08",
