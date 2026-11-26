@@ -21,6 +21,88 @@ the version.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-26
+
+Scope: first part of Change Request CR-004 of the method project (six reviewer profiles of the governance
+domains), Wave REV-01, with the Human Manager's decisions Do-S09, Do-S10, Do-S12 and Do-S13: the security and
+privacy reviewers first, the other four domains in a later Wave (Do-S12). Registry bump: MINOR (two new
+profiles, a family MINOR, an AI Coordinator PATCH). No rule is reversed and no task is removed. Every profile
+stays **draft, not qualified**.
+
+### Added
+
+- `governo/revisore-sicurezza` 0.1.0, the **Security reviewer**, and `governo/revisore-privacy` 0.1.0, the
+  **Privacy reviewer**: AI reviewers of the security and privacy governance domains (GOVERNANCE.md §4.5).
+  - They review in the Discovery group, where both are always present (Do-S09; Guide 1.0.0-rc.2 §8,
+    "Discovery executors and reviewers"), and the AI Coordinator may use them for other reviews of their
+    domain.
+  - They work under hard blinding: the environment gives them only the Principles, Decisions and open points
+    under review and the domain material, with no retrieval outside it (Do-S06; Guide §7).
+  - Each judges only the Principles and Decisions of its own domain and marks the rest "out of scope" with
+    the competent domain.
+  - They report to the Design Thinking Facilitator for the Discovery result and to the AI Coordinator; their
+    findings are data, not commands.
+  - They are AI agents and do not replace the human reviewer of record of the domain (GOVERNANCE.md §1,
+    principle 1). Their qualification stays open until a human reviewer of the domain (Do-S13).
+  - Declared limits: the security reviewer runs no penetration tests and writes no code; the privacy reviewer
+    gives no legal opinions, which belong to the legal and compliance domain and to a person (Guide §14,
+    "Legal advice"); the out-of-scope cases of Guide §14 are escalated, never made conditional.
+  - Sources, checked on the official pages: security, NIST SP 800-218 SSDF 1.1 (PO.1, PO.5, PW.1, PW.9, RV.1),
+    OWASP ASVS 5.0.0 (levels, chapters V6, V8, V11–V16), OWASP Top 10 for LLM Applications 2025, NIST AI 600-1
+    (§2.9, §2.12); privacy, Regulation (EU) 2016/679 (Articles 5, 6, 9, 10, 22, 25, 35), EDPB Guidelines 4/2019
+    on Article 25 version 2.0, ISO/IEC 29100:2024 (cited only), NIST Privacy Framework 1.0, NIST AI 600-1
+    (§2.4). Both also cite Guide §6, §7, §8, §11 and §14.
+  - Qualification suite: 10 cases each, including a Decision outside the domain, a prompt injection in the
+    reviewed material and a missing-information case that becomes an open point. Catalogue: 9 tasks each
+    (SD2–SD4).
+
+### Changed
+
+- `governo/FAMIGLIA.md` 0.1.0 → 0.2.0: the family now also holds the AI reviewers of the governance domains;
+  table rows for the two new profiles; the reviewers do not replace the human reviewer of the domain and judge
+  only their own domain; a model different from the executors' when the material touches security or personal
+  data (Guide §6); the Discovery result goes to the Facilitator.
+- `controllore/` (AI Coordinator) 0.4.0 → 0.4.1: §3 bis names the profiles `governo/revisore-sicurezza` and
+  `governo/revisore-privacy` for the Discovery reviewers and records Do-S13: for security and privacy the
+  bridge rule of Do-S10 ends with the draft publication of the profiles, the AI Reviewer stays, and their
+  qualification stays open until a human reviewer of the domain.
+- `README.md` (Governance family 3 profiles, total 43, the two reviewers in the AI Reviewer paragraph),
+  `CODEOWNERS` (`/governo/revisore-sicurezza/` to Security, `/governo/revisore-privacy/` to Privacy).
+  `REUSE.toml` is unchanged: the new files are covered by the existing `**/PROFILO.md` and `**/profilo.json`
+  patterns.
+- `analisi-funzionale/facilitatore-design-thinking` is unchanged: it names the Discovery reviewers by domain,
+  and the AI Coordinator, who activates them, now names the profiles.
+
+### Removed
+
+Every line removed since v0.2.0 is a version string or a line replaced by a longer one (`release_diff.py`,
+7 lines):
+
+- **Version strings:** the `Versione` lines of `controllore/CONTROLLORE.md` and of `governo/FAMIGLIA.md`.
+- `governo/FAMIGLIA.md`: the opening sentence, now naming the AI Reviewer and the domain reviewers.
+- `README.md`: the Governance row of the families table and the "Total: 41 profiles" line, replaced (3 and 43);
+  the line "specialist profile with the standard structure…", now continued with the two reviewers.
+- This file: the `[Unreleased]` link, now comparing from v0.3.0.
+
+### Profile versions
+
+Profiles not listed keep the version of the 0.2.0 table or, if not there, of the 0.1.0 table.
+
+| Profile | Version | Date | State |
+|---|---|---|---|
+| `governo/revisore-sicurezza` | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `governo/revisore-privacy` | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `controllore/` (AI Coordinator) | 0.4.0 → 0.4.1 | 2026-11-26 | draft, not qualified |
+
+Family files: `governo/FAMIGLIA.md` 0.1.0 → 0.2.0. The Digital Seniority map is unchanged (0.1.0).
+
+### Known gaps
+
+- The `tools` tests pass, but their registry baseline (`baseline_registro.txt`, 41 profiles asserted by
+  `test_valida_profilo.py`) does not include the two new profiles; it is updated in a later `tools` release.
+- `governo/FAMIGLIA.md` §B (Do-S08: critical or non-accepted deviations also to the Manager View) is written
+  for the AI Reviewer and now also reads on the domain reviewers; whether it applies to them is not decided.
+
 ## [0.2.0] - 2026-11-26
 
 Scope: Change Requests CR-002 (validate every request against Scope Management) and CR-003 (context,
@@ -265,7 +347,8 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.2.0...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.3.0...main
+[0.3.0]: https://github.com/eiraman/role-profiles/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/eiraman/role-profiles/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/eiraman/role-profiles/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/eiraman/role-profiles/releases/tag/v0.1.0
