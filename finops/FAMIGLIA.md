@@ -1,6 +1,6 @@
 # Famiglia FinOps · regole comuni
 
-Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
+Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (budget di deriva, §5 E5) · Stato: **bozza non qualificata**
 
 Questo file vale per tutti i profili della famiglia. Il Coordinatore AI lo passa all'agente insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la Specifica Eiraman, poi questo file, poi il profilo.
 
@@ -26,7 +26,7 @@ La divisione segue i domini del FinOps Framework (finops.org/framework/domains):
 
 **R4 · Consuntivo completo.** Il consuntivo include tutte le candidate e i tentativi, anche quelli scartati (spec §6, Scheda minima). Il costo per incremento accettato si calcola su questo consuntivo (spec §5, Wave e ciclo di governo; K6).
 
-**R5 · Soglie e budget.** Soglie, budget e criteri di arresto si cambiano solo con una decisione registrata con titolare, e mai per silenziare un allarme. Le soglie di Wave sono 80% (segnalazione) e 100% (Deny su nuovo lavoro e checkpoint) (spec §5); il budget di deriva è cumulativo (spec §3, E5) e somma i valori assoluti degli scostamenti, senza compensare quelli positivi con quelli negativi (convenzione del profilo, in attesa di una regola del metodo su E5).
+**R5 · Soglie e budget.** Soglie, budget e criteri di arresto si cambiano solo con una decisione registrata con titolare, e mai per silenziare un allarme. Le soglie di Wave sono 80% (segnalazione) e 100% (Deny su nuovo lavoro e checkpoint) (spec §5); il budget di deriva è cumulativo (spec §3, E5), si esprime in spesa e in tempo e riporta i cambi di classe anche come voce a sé (Guida 1.0.0-rc.3, §5, E5), e somma i valori assoluti degli scostamenti, senza compensare quelli positivi con quelli negativi (convenzione del profilo sul modo di sommare, che la Guida §5, E5, non fissa).
 
 **R6 · Acquisti e impegni sono sempre Do.** Prenotazioni, savings plan, impegni di spesa, contratti, nuovi fornitori, cambi di fatturazione e di metodo di pagamento sono porte a una via: salgono al Manager umano (spec §3, Do). I profili della famiglia preparano analisi e proposte, non acquistano.
 
@@ -46,7 +46,7 @@ Valori obiettivo **da tarare** nel mandato. I riferimenti di maturità vengono d
 |---|---|---|---|
 | Costo per incremento accettato | spesa di sviluppo del periodo, scarti compresi / incrementi accettati | FinOps per l'AI | — |
 | Consumo del budget di Wave | spesa di Wave / budget di Wave | Forecast e budget | soglie 80% e 100% (spec §5) |
-| Budget di deriva | somma cumulativa dei valori assoluti degli scostamenti dal piano (convenzione del profilo, in attesa di una regola del metodo su E5) | Forecast e budget | soglia del mandato (E5) |
+| Budget di deriva | somma cumulativa dei valori assoluti degli scostamenti dal piano (convenzione del profilo sul modo di sommare, che la Guida §5, E5, non fissa) | Forecast e budget | soglia del mandato (E5) |
 | Accuratezza della stima | \|consuntivo − stima\| / stima | Forecast e budget | scarto sotto 20%, 10%, 5% |
 | Quota di spesa allocata | spesa con titolare valido / spesa totale | Analista di allocazione | almeno 70%, 85%, oltre 90% |
 | Costo delle risorse orfane | costo di risorse non collegate o inattive | Analista di allocazione | — |

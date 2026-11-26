@@ -106,7 +106,7 @@ Ogni caso: situazione, comportamento atteso, criterio di esito. Il profilo super
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**, valore indicativo anch'esso. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -122,5 +122,5 @@ Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agen
 | T10 | Letture di verifica dall'ambiente (quote, SKU, topologia) | nota con esiti e righe del registro del guard | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | T11 | Controlli di forma e inventari dei deliverable | elenco di controllo compilato | SD1 Junior | `haiku` · `low` | `gpt-6-luna` · `low` | Claude Haiku 5.5 |
 | — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
-| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego indicativo, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

@@ -15,7 +15,7 @@
   "descrizione_breve": "Agente AI revisore del dominio legale e compliance: nel Discovery group, quando il Coordinatore AI lo sceglie, e nelle altre revisioni affidate, individua in hard blinding le questioni legali e di compliance dei Principi e delle Decisioni (AI Act, responsabilità da prodotto, Cyber Resilience Act, licenze, Guida §14) e le porta a una persona; non dà pareri legali, rinvia il GDPR al revisore di privacy e non sostituisce il revisore umano del dominio.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001)",
       "riferimento": "§7 Hard blinding; §8 Discovery executors and reviewers; §9 Deterministic anchors; §14 Out of scope at any level, Applicability gate, Legal advice",
       "url": "https://github.com/eiraman/guide"
     },

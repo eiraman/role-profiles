@@ -23,7 +23,7 @@ permissions:
 env:
   TOOLS_REPO: eiraman/tools
   # Full commit SHA of the tools release used to validate profiles.
-  TOOLS_REF: "84f39e859817d11c8018a74492e7ee697edbae0d" # tools 0.3.0
+  TOOLS_REF: "4901fcf7c946e5f1b15dc8e6a069519df5ce71b2" # tools 0.3.0
 
 jobs:
   validate:

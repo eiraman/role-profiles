@@ -23,7 +23,7 @@ L = {
    unknown="esecuzioni senza importo misurato", alert80="Avviso: superato l'80% del tetto.", block100="Tetto raggiunto: nessun nuovo lavoro.",
    pk="Pacchetti di lavoro", tech="Stato tecnico", acc="Accettazione", pub="Pubblicazione", ev="Evidenza",
    deliv="Consegnato in questo ciclo", next="Proposta per il ciclo successivo", risks="Rischi", vision="Visione",
-   missing="mancante", nav_view="Vista", nav_docs="Documenti di progetto", docs_title="Documenti di progetto", docs_hint="Documenti strategici e manageriali del progetto. I documenti tecnici restano agli agenti.", strategic="Strategici", managerial="Manageriali", absent="non ancora prodotto", refused="non mostrato: percorso non ammesso", back="Torna ai documenti", d_mandato="Mandato", d_decisioni="Registro delle decisioni", d_piano="High Level Plan", d_arch="High Level Architectural View", d_rischi="Risk Log", d_exec="Executive Description", d_perf="Performance Analysis", d_ciclo="Revisione del ciclo", tree="Albero del progetto", tree_hint="Clicca un Work Package per vederne deliverable e squad. Sui rami: stima di costo per eseguirlo.", done_s="completato", prog_s="in corso", todo_s="da fare", est="Stima", actual="Costo effettivo", deliverable="Deliverable", squad="AI Squad", role="Ruolo", profile="Role Profile", model="Modello", reasoning="Ragionamento", desc="Descrizione", progress="Avanzamento", legend_done="Completati", legend_prog="In corso, con i controlli obbligatori superati sul totale", checks="controlli obbligatori superati", gov_share="Quota di governo", off_cat="Task fuori catalogo", of="su", unk="sconosciuta", legend_todo="Da fare", unknown_spend="Spesa non misurata: il tetto non è verificabile.", auto_late="Decisione scaduta senza risposta", auto_80="La spesa ha superato l'80% del tetto.", auto_100="La spesa ha raggiunto il tetto: nessun nuovo lavoro.", auto_missing="Decisione incompleta (mancano scadenza o effetto della mancata risposta)",
+   missing="mancante", nav_view="Vista", nav_docs="Documenti di progetto", docs_title="Documenti di progetto", docs_hint="Documenti strategici e manageriali del progetto. I documenti tecnici restano agli agenti.", strategic="Strategici", managerial="Manageriali", absent="non ancora prodotto", refused="non mostrato: percorso non ammesso", back="Torna ai documenti", d_mandato="Mandato", d_decisioni="Registro delle decisioni", d_piano="High Level Plan", d_arch="High Level Architectural View", d_rischi="Risk Log", d_exec="Executive Description", d_perf="Performance Analysis", d_ciclo="Revisione del ciclo", tree="Albero del progetto", tree_hint="Clicca un Work Package per vederne deliverable e squad. Sui rami: stima di costo per eseguirlo.", done_s="completato", prog_s="in corso", todo_s="da fare", est="Stima", actual="Costo effettivo", deliverable="Deliverable", squad="AI Squad", role="Ruolo", profile="Role Profile", model="Modello", reasoning="Ragionamento", desc="Descrizione", progress="Avanzamento", legend_done="Completati", legend_prog="In corso, con i controlli obbligatori superati sul totale", checks="controlli obbligatori superati", gov_share="Quota di governo", off_cat="Task fuori catalogo", of="su", unk="sconosciuta", no_den="avanzamento non dichiarato: mancano i controlli superati e il totale", legend_todo="Da fare", unknown_spend="Spesa non misurata: il tetto non è verificabile.", auto_late="Decisione scaduta senza risposta", auto_80="La spesa ha superato l'80% del tetto.", auto_100="La spesa ha raggiunto il tetto: nessun nuovo lavoro.", auto_missing="Decisione incompleta (mancano scadenza o effetto della mancata risposta)",
    foot="Pagina generata dal Coordinatore AI dal registro del progetto. Per rispondere a una decisione scrivi nella chat della sessione.",
    rp_title="Role Profile attivati dal Coordinatore", rp_hint="I ruoli AI che il Coordinatore ha attivato per eseguire il progetto, con il motore usato e il lavoro svolto.", rp_qual="Qualificazione", rp_tasks="Compiti", rp_wp="Work Package", rp_runs="Esecuzioni", rp_none="Nessun Role Profile registrato.",
    expired="scaduta", today="oggi", days="giorni", do_count="Do in questo ciclo", ref="riferimento", runs="Esecuzioni registrate", no_reg="Registro delle esecuzioni non presente."),
@@ -34,7 +34,7 @@ L = {
    unknown="runs with no measured amount", alert80="Warning: over 80% of the cap.", block100="Cap reached: no new work.",
    pk="Work packages", tech="Technical state", acc="Acceptance", pub="Publication", ev="Evidence",
    deliv="Delivered this cycle", next="Proposal for the next cycle", risks="Risks", vision="Vision",
-   missing="missing", nav_view="View", nav_docs="Project documents", docs_title="Project documents", docs_hint="Strategic and managerial documents of the project. Technical documents stay with the agents.", strategic="Strategic", managerial="Managerial", absent="not produced yet", refused="not shown: path not allowed", back="Back to documents", d_mandato="Mandate", d_decisioni="Decision log", d_piano="High Level Plan", d_arch="High Level Architectural View", d_rischi="Risk Log", d_exec="Executive Description", d_perf="Performance Analysis", d_ciclo="Cycle review", tree="Project tree", tree_hint="Click a Work Package to see its deliverables and squad. On the branches: estimated cost to run it.", done_s="completed", prog_s="in progress", todo_s="to do", est="Estimate", actual="Actual cost", deliverable="Deliverables", squad="AI Squad", role="Role", profile="Role Profile", model="Model", reasoning="Reasoning", desc="Description", progress="Progress", legend_done="Completed", legend_prog="In progress, with mandatory checks passed over the total", checks="mandatory checks passed", gov_share="Governance share", off_cat="Tasks outside the catalogue", of="of", unk="unknown", legend_todo="To do", unknown_spend="Spend not measured: the cap cannot be checked.", auto_late="Decision overdue without an answer", auto_80="Spend is over 80% of the cap.", auto_100="Spend has reached the cap: no new work.", auto_missing="Incomplete decision (deadline or effect of no answer missing)",
+   missing="missing", nav_view="View", nav_docs="Project documents", docs_title="Project documents", docs_hint="Strategic and managerial documents of the project. Technical documents stay with the agents.", strategic="Strategic", managerial="Managerial", absent="not produced yet", refused="not shown: path not allowed", back="Back to documents", d_mandato="Mandate", d_decisioni="Decision log", d_piano="High Level Plan", d_arch="High Level Architectural View", d_rischi="Risk Log", d_exec="Executive Description", d_perf="Performance Analysis", d_ciclo="Cycle review", tree="Project tree", tree_hint="Click a Work Package to see its deliverables and squad. On the branches: estimated cost to run it.", done_s="completed", prog_s="in progress", todo_s="to do", est="Estimate", actual="Actual cost", deliverable="Deliverables", squad="AI Squad", role="Role", profile="Role Profile", model="Model", reasoning="Reasoning", desc="Description", progress="Progress", legend_done="Completed", legend_prog="In progress, with mandatory checks passed over the total", checks="mandatory checks passed", gov_share="Governance share", off_cat="Tasks outside the catalogue", of="of", unk="unknown", no_den="progress not declared: checks passed and total are missing", legend_todo="To do", unknown_spend="Spend not measured: the cap cannot be checked.", auto_late="Decision overdue without an answer", auto_80="Spend is over 80% of the cap.", auto_100="Spend has reached the cap: no new work.", auto_missing="Incomplete decision (deadline or effect of no answer missing)",
    foot="Page generated by the AI Coordinator from the project registry. To answer a decision, write in the session chat.",
    rp_title="Role Profiles activated by the Coordinator", rp_hint="The AI roles the Coordinator activated to run the project, with the engine used and the work done.", rp_qual="Qualification", rp_tasks="Tasks", rp_wp="Work Packages", rp_runs="Runs", rp_none="No Role Profile recorded.",
    expired="overdue", today="today", days="days", do_count="Do this cycle", ref="reference", runs="Recorded runs", no_reg="No run log available."),
@@ -89,9 +89,9 @@ def _checks(p):
         return None
 
 def _prog_label(p, pc):
-    """Avanzamento con il denominatore: «4/10»; «40%» solo per i registri che usano ancora `percentuale`."""
+    """Avanzamento con il denominatore: «4/10»; «?» se i controlli non sono dichiarati."""
     c = _checks(p)
-    return f"{c[0]}/{c[1]}" if c else ("?" if pc is None else f"{pc}%")
+    return f"{c[0]}/{c[1]}" if c else "?"
 
 def _share(d, num, den, t, cur=None):
     """«X su Y (Z%)» da un dizionario {num, den}; «sconosciuta» se manca o non è misurata."""
@@ -108,11 +108,8 @@ def _status(p):
     if a in ("completato", "completed", "done", "chiuso"): return "done", 100
     if a in ("da fare", "to do", "todo"): return "todo", 0
     if a in ("in corso", "in progress", "doing", "attivo"):
-        c = _checks(p)
-        if c: return "prog", int(round(100.0 * c[0] / c[1]))
-        try: pc = max(0, min(100, int(float(p.get("percentuale")))))
-        except Exception: pc = None
-        return "prog", pc
+        c = _checks(p)  # il vecchio campo `percentuale` non dichiara il denominatore: non si mostra
+        return "prog", (int(round(100.0 * c[0] / c[1])) if c else None)
     tec = " ".join(str(p.get("tecnico") or "").lower().split())
     if tec in ("chiuso su prova", "closed on evidence"): return "done", 100
     return "todo", 0
@@ -175,7 +172,7 @@ def build_tree(s, t, cur):
     cards = []
     for p in pk:
         st, pc = _status(p); sid = sids[id(p)]
-        stl = {"done": t["done_s"], "prog": t["prog_s"], "todo": t["todo_s"]}[st] + ((" · " + _prog_label(p, pc) + (" " + t["checks"] if _checks(p) else "")) if st == "prog" and (pc is not None or _checks(p)) else "")
+        stl = {"done": t["done_s"], "prog": t["prog_s"], "todo": t["todo_s"]}[st] + ((" · " + (_prog_label(p, pc) + " " + t["checks"] if _checks(p) else t["no_den"])) if st == "prog" else "")
         dels = "".join(f"<li>{e(x)}</li>" for x in as_list(p.get("deliverable")))
         sq = "".join(f'<tr><td>{e(m.get("ruolo"))}</td><td>{e(m.get("profilo"))}</td><td>{e(m.get("modello"))}</td><td>{e(m.get("ragionamento"))}</td></tr>'
                      for m in (as_dict(x, "ruolo") for x in as_list(p.get("squad"))))

@@ -93,7 +93,7 @@ Il pacchetto torna al Coordinatore AI quando:
 - un incidente richiede indagine forense, notifica a autorità o a interessati: servono persone dedicate;
 - richiede modifiche all'identity provider dell'organizzazione o alla fatturazione;
 - la classe di dati non è assegnata (spec §10);
-- il revisore con modello diverso non è disponibile: lo segnali al Coordinatore AI, che decide come procedere e registra il livello di indipendenza ottenuto.
+- il revisore con modello diverso non è disponibile: lo segnali al Coordinatore AI, che registra il livello di indipendenza ottenuto. Resta fermo il livello minimo di indipendenza che la classe di rischio del Work Package fissa (Guida §6, «Independence of verification»): sotto quel livello il pacchetto resta aperto.
 
 ## 9. Suite di qualificazione
 
@@ -110,7 +110,7 @@ Il profilo supera la suite solo se passa tutti i casi.
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**, valore indicativo anch'esso. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -123,5 +123,5 @@ Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agen
 | T07 | Verifica dei permission set degli agenti rispetto alla matrice delle deleghe | rapporto di scostamento | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T08 | Inventario dei riscontri aperti e KPI di sicurezza | tabella dei riscontri e indicatori | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
-| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego indicativo, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

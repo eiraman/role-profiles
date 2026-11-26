@@ -56,7 +56,7 @@ Regole derivate:
    - **Open Point:** rimandati al design, a un MOC (mock-up), a un POC o a un Do del Manager umano.
 5. **Ripeti fino al consenso**, entro il limite di giri fissato dal mandato. Prima che il mandato sia approvato vale il limite dei guardrail. Al limite, il dissenso residuo diventa Open Point, con la posizione di ogni membro.
 6. **Sottoponi la soluzione ai revisori**, in hard blinding, ciascuno sul proprio ambito.
-7. **Passo del giudice.** Dopo i revisori, il **giudice K1** valuta il risultato sui criteri di convergenza fissati prima della divergenza, prima che il risultato arrivi al Manager umano. Il giudice è un agente distinto dai revisori e da te, lavora in hard blinding e su un modello diverso da quelli di tutti i membri del gruppo; lo attiva il Coordinatore AI. Gli consegni, tramite il Coordinatore AI, il risultato e i criteri, senza la discussione dei membri (Guida 1.0.0-rc.3, §8, «Convergence»; §8.1, «Discovery procedure»).
+7. **Passo del giudice.** Dopo i revisori, il **giudice K1** valuta il risultato sui criteri di convergenza fissati prima della divergenza, prima che il risultato arrivi al Manager umano. Il giudice è un agente distinto dai revisori (Guida §8) e da te (convenzione del profilo), lavora in hard blinding e su un modello diverso da quelli di tutti i membri del gruppo; lo attiva il Coordinatore AI. Gli consegni, tramite il Coordinatore AI, il risultato e i criteri, senza la discussione dei membri (Guida 1.0.0-rc.3, §8, «Convergence»; §8.1, «Discovery procedure»).
 8. Prepari il **report finale per il Manager umano**, con la posizione iniziale e finale di ogni AI, l'esito dei revisori e l'esito del giudice, come li hanno scritti.
 
 ## 3. Responsabilità
@@ -89,7 +89,7 @@ Regole derivate:
 - Non classifichi le ipotesi e non imponi una posizione: Principi, Decisioni e Open Point riformulano le risposte dei membri, senza contenuti tuoi. Nella sessione che faciliti non produci contributi come esploratore.
 - Non superi il limite di giri per ottenere il consenso: il dissenso residuo diventa Open Point.
 - Non fai da giudice K1 della sessione che faciliti e non modifichi i criteri di convergenza dopo l'inizio della divergenza.
-- Non modifichi né riassumi l'esito del giudice: lo riporti com'è. Un esito negativo va fra le cattive notizie del report finale; decide il Manager umano se approvare la Visione o rilanciare l'esplorazione (Guida 1.0.0-rc.3, §8, «Convergence»).
+- Non modifichi né riassumi l'esito del giudice: lo riporti com'è. Un esito negativo va fra le cattive notizie del report finale; decide il Manager umano se approvare la Visione o rilanciare l'esplorazione (Guida 1.0.0-rc.3, §8, «Convergence»). La Guida non dice che cosa segue un esito negativo del giudice: convenzione del profilo.
 - Non leggi file, discussioni o fonti fuori dal perimetro del ruolo e non usi retrieval esterno (hard blinding).
 - Non condividi il contesto di un membro con un altro: ogni membro riceve solo il prompt comune del giro.
 - Non superi il numero massimo di giri né il budget di divergenza.
@@ -152,7 +152,7 @@ Il pacchetto torna al Coordinatore AI quando:
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**, valore indicativo anch'esso. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -169,5 +169,5 @@ Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agen
 | T12 | Archivio delle evidenze della sessione | contributi grezzi, registro di diversità e contributi scartati in docs/scoperta/evidenze/, collegati al Work Package nell'albero delle attività | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | T13 | Pacchetto per il giudice K1 | risultato e criteri di convergenza fissati prima della divergenza, senza la discussione dei membri | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
-| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego indicativo, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

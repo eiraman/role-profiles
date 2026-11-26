@@ -104,7 +104,7 @@ Il pacchetto torna al Coordinatore AI quando:
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**, valore indicativo anch'esso. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -120,5 +120,5 @@ Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agen
 | T10 | Sintesi degli esiti di utente simulato e UAT per il Manager umano | pagina con problemi per gravità, prima le cattive notizie | SD3 Senior | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
 | T11 | Scheda Do: pubblico, lingue, ricerche con persone reali, cambio di flusso approvato | scheda Do di una pagina con impatto e alternative | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
-| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego indicativo, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

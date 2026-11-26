@@ -15,7 +15,7 @@
   "descrizione_breve": "Agente AI revisore del dominio architettura cloud: nel Discovery group, quando il Coordinatore AI lo sceglie, e nelle altre revisioni affidate, giudica in hard blinding solo i Principi e le Decisioni di architettura cloud, con fonti puntuali e neutralità verso i fornitori; non accede agli ambienti e non sostituisce il revisore umano del dominio.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001)",
       "riferimento": "§6 K7 e Independence of verification; §7 Hard blinding e Flexible Decisions; §8 Discovery executors and reviewers; §9 High Level Architectural View e Open points; §11 Data classes per provider; §14 Out of scope at any level",
       "url": "https://github.com/eiraman/guide"
     },

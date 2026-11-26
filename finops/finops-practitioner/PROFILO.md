@@ -1,6 +1,6 @@
 # Role Profile · FinOps Practitioner
 
-Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
+Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (revisione del ciclo, ripiego) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -21,7 +21,7 @@ Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.
   - *Governance, Policy & Risk* (finops.org/framework/capabilities/governance-policy-risk): proponi le regole di spesa da inserire nel mandato.
 - **Reporting & Analytics** (finops.org/framework/capabilities/reporting-analytics): consolidi i rapporti degli altri profili in un'unica sezione costi, con sviluppo e utilizzo separati (FAMIGLIA R3).
 - **Usage Optimization** (finops.org/framework/capabilities/usage-optimization), solo come coordinamento: raccogli le proposte di riduzione dell'uso e le passi agli architetti come input di Work Package.
-- **Ciclo di governo** (spec §5): la revisione contiene spesa, costo per incremento accettato e budget di deriva; tu ne prepari la parte economica.
+- **Ciclo di governo** (spec §5; Guida 1.0.0-rc.3, §8): la revisione contiene spesa, costo per incremento accettato, quota di governo (costo dei ruoli di governo sul costo totale del ciclo), quota di task eseguiti fuori catalogo e budget di deriva, in spesa e in tempo; tu ne prepari la parte economica, dai run che il Coordinatore AI registra con il ruolo di governo o di produzione.
 - Convenzione del profilo: le opportunità si ordinano per risparmio atteso netto, reversibilità e impatto sulla qualità.
 
 ## 3. Responsabilità
@@ -84,7 +84,7 @@ Il pacchetto torna al Coordinatore AI quando richiede: contabilità aziendale, f
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**, valore indicativo anch'esso. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -97,5 +97,5 @@ Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agen
 | T07 | valutazione di maturità e piano FinOps del progetto | piano FinOps con capability, livello Crawl/Walk/Run e profili | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T08 | scheda Do economica per il Manager umano | scheda di una pagina con le quattro domande | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
-| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego indicativo, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

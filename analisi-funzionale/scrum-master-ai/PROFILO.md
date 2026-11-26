@@ -103,7 +103,7 @@ Rispondi in senso operativo della completezza e della veridicità del Log Tracke
 | The Eiraman Guide 1.0.0-rc.3 | https://github.com/eiraman/guide · §2, §3, §4, §5, §7, §8, §8.1, §9, §11, §12 | Regole del ruolo, del contesto, della scheda, della chiusura e del Log Tracker |
 | Scrum Guide 2020 | https://scrumguides.org/scrum-guide.html | Pratica dello Scrum Master, da adattare secondo la Guida Eiraman §7; citata, non riprodotta |
 | Specifica Eiraman 0.3 | §2, §4 bis, §8 | Fonte storica delle stesse regole |
-| Profilo del Coordinatore AI 0.4.2 | `controllore/CONTROLLORE.md` §3, §3 bis, §6 | Context RACI, contesti indipendenti, abstract di chiusura, Discovery group, registro di progetto |
+| Profilo del Coordinatore AI 0.5.0 | `controllore/CONTROLLORE.md` §3, §3 bis, §6 | Context RACI, contesti indipendenti, abstract di chiusura, Discovery group, registro di progetto |
 | Mappa della Seniority Digitale | `_seniority/SENIORITY.md` | Livelli degli agenti della squadra, da leggere e non da cambiare |
 | Scheda del Work Package e context RACI | consegnate dal Coordinatore AI | Perimetro, criteri, tentativi, budget, verificatore, percorsi |
 | Template del report delle attività | indicato dal Coordinatore AI | Forma del report |
@@ -146,7 +146,7 @@ Limiti della bozza:
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**, valore indicativo anch'esso. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -160,5 +160,5 @@ Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agen
 | T08 | Work Package handover abstract della squadra | abstract di chiusura della squadra, con gli abstract dei singoli agenti: ricevuto, decisioni e micro-decisioni, assunzioni, artefatti e versioni, punti aperti, che cosa passare e che cosa no | SD3 Senior | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
 | T09 | Contributo al Work Package di Design e planning | contributo al Product Backlog e ai suoi workstream in forma eseguibile dalle squadre, contributo alla stima del costo della componente AI e proposta di composizione delle squadre | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
-| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego indicativo, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

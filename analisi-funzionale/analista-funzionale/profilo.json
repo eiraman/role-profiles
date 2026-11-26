@@ -56,7 +56,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001)",
       "riferimento": "Context Consistency and Independence; soft blinding e context RACI; Discovery group",
       "url": "https://github.com/eiraman/guide"
     }

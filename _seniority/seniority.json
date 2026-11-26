@@ -5,7 +5,7 @@
   "fallback": "SD3",
   "fallback_indicativo": true,
   "fallback_eccezione": {"livello": "SD4", "compiti": "architettura, sicurezza, effetti difficili da annullare"},
-  "fallback_nota": "Il livello di ripiego dei task fuori catalogo lo fissa il mandato del progetto (Guida §7.1, «Fallback»); SD3 è il valore indicativo. I task fuori catalogo che per natura sono di livello Lead partono da SD4. Al primo fallimento per carenza di capacità un task fuori catalogo sale di un livello (Guida §7.1, «Promotion and reduction»).",
+  "fallback_nota": "Il livello di ripiego dei task fuori catalogo lo fissa il mandato del progetto (Guida §7.1, «Fallback»); SD3 è il valore indicativo. I task fuori catalogo che per natura sono di livello Lead partono da SD4, valore indicativo anch'esso. Al primo fallimento per carenza di capacità un task fuori catalogo sale di un livello (Guida §7.1, «Promotion and reduction»).",
   "livelli": [
     {"id": "SD1", "nome": "Junior", "analogo_umano": "addetto operativo, junior",
      "quando": "Compiti ripetitivi e ben definiti, con esito verificabile da un controllo deterministico: estrazioni, riepiloghi, formattazione, esecuzione di controlli e lettura dei loro esiti.",
