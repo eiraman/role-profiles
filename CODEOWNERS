@@ -61,3 +61,5 @@
 /governo/revisore-architettura-applicativa-dati/ @eiraman/wg-governance-assurance @eiraman/app-data-architecture
 /governo/revisore-test-qualita/                 @eiraman/wg-governance-assurance @eiraman/test-quality
 /governo/revisore-legale-compliance/            @eiraman/wg-governance-assurance @eiraman/legal-compliance
+# FLAG: provisional, to be confirmed: the gate is maintained by Security with Privacy and Legal & Compliance (Guide §14).
+/governo/security-officer/          @eiraman/wg-governance-assurance @eiraman/security

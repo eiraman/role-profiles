@@ -28,7 +28,7 @@ across the registry and matches its folder name.
 | Family | Folder | Profiles |
 |---|---|---|
 | Functional analysis | `analisi-funzionale/` | 6 |
-| Governance (Governance & Assurance, RFC 0002) | `governo/` | 7 |
+| Governance (Governance & Assurance, RFC 0002) | `governo/` | 8 |
 | AWS | `aws/` | 6 |
 | Azure | `azure/` | 7 |
 | Databricks | `databricks/` | 5 |
@@ -36,7 +36,7 @@ across the registry and matches its folder name.
 | Development | `sviluppo/` | 7 |
 | Web design | `web-design/` | 5 |
 
-Total: 48 profiles. Also included: `_modello/` (the template every profile starts from, and the templates
+Total: 49 profiles. Also included: `_modello/` (the template every profile starts from, and the templates
 `business-analyst` and `user-persona`, from which the AI Coordinator creates project instances without
 changing their rules and limits),
 `_seniority/` (the Digital Seniority map, `seniority.json`, and its explanation) and `controllore/`
@@ -80,7 +80,10 @@ the AI reviewers of the six governance domains (`governo/revisore-sicurezza/`, `
 `governo/revisore-architettura-cloud/`, `governo/revisore-architettura-applicativa-dati/`,
 `governo/revisore-test-qualita/`, `governo/revisore-legale-compliance/`), who review the Discovery group's
 Principles and Decisions of their own domain;
-they are AI agents and do not replace the human reviewer of the domain. The templates in
+they are AI agents and do not replace the human reviewer of the domain. The family also holds the
+**Security Officer** (`governo/security-officer/`), the AI compliance role of the applicability gate: it
+assigns the project class with a versioned checklist and proposes treatments that bring the scope back
+within the permitted class; it is not a reviewer. The templates in
 `_modello/` are not selected by CI, which skips folders starting with `_`: validate them locally.
 
 ## Rules for writing a profile

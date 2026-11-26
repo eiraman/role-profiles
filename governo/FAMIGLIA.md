@@ -1,10 +1,10 @@
 # Famiglia · Governo
 
-Versione 0.2.3 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
+Versione 0.2.4 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
 
-Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipendente dal Coordinatore AI: il Revisore AI e i revisori AI dei domini di governo (GOVERNANCE §4.5). Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo.
+Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipendente dal Coordinatore AI: il Revisore AI e i revisori AI dei domini di governo (GOVERNANCE §4.5). La famiglia comprende anche il Security Officer, che non sorveglia ma propone: applica queste regole con le differenze dichiarate nel suo profilo (§1) e riassunte sotto la tabella. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo.
 
-**Proprietà e revisione (RFC 0002, Do-S18).** La famiglia è del gruppo di lavoro **Governance & Assurance**, che scrive e mantiene questo file e i sette profili e non li pubblica mai. Ogni `revisore-<dominio>` è rivisto e pubblicato dai revisori titolari o supplenti del gruppo del proprio dominio (GOVERNANCE §4.5); `revisore-ai` e questo file sono pubblicati da Test & Quality, in via provvisoria. Una modifica dei §A–§C vincola tutti i revisori di dominio e richiede anche il lazy consensus dei sei gruppi di dominio (GOVERNANCE §6.1). Le regole dei §A–§D non cambiano.
+**Proprietà e revisione (RFC 0002, Do-S18).** La famiglia è del gruppo di lavoro **Governance & Assurance**, che scrive e mantiene questo file e gli otto profili e non li pubblica mai. Ogni `revisore-<dominio>` è rivisto e pubblicato dai revisori titolari o supplenti del gruppo del proprio dominio (GOVERNANCE §4.5); `revisore-ai` e questo file sono pubblicati da Test & Quality, in via provvisoria; `security-officer` dai revisori del dominio sicurezza, in via provvisoria e da confermare. Una modifica dei §A–§C vincola tutti i revisori di dominio e richiede anche il lazy consensus dei sei gruppi di dominio (GOVERNANCE §6.1). Le regole dei §A–§D non cambiano.
 
 | Profilo | Cartella | Livello della piramide | Fasi principali |
 |---|---|---|---|
@@ -15,6 +15,9 @@ Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipen
 | Revisore di architettura applicativa e dei dati | `revisore-architettura-applicativa-dati/` | medio | Scoperta (Discovery group, quando il Coordinatore AI lo sceglie); altre revisioni del dominio affidate dal Coordinatore AI |
 | Revisore di test e qualità | `revisore-test-qualita/` | medio | Scoperta (Discovery group, quando il Coordinatore AI lo sceglie); altre revisioni del dominio affidate dal Coordinatore AI |
 | Revisore legale e di compliance | `revisore-legale-compliance/` | medio | Scoperta (Discovery group, quando il Coordinatore AI lo sceglie); altre revisioni del dominio affidate dal Coordinatore AI |
+| Security Officer | `security-officer/` | alto | gate di applicabilità all'apertura, a ogni Wave e a ogni cambio di mandato; dialogo con il Manager umano in ogni fase |
+
+**Differenze dichiarate del Security Officer.** È il ruolo AI di compliance del gate (Guida §14): assegna la classe e propone trattamenti; non revisiona e non coincide mai, sullo stesso progetto, con il Revisore di sicurezza o di privacy. Rispetto al §A riceve anche la richiesta del Manager umano e le domande e risposte del dialogo con lui; rispetto al §B il suo profilo di rischio è destinato al Manager umano, e il Coordinatore AI lo riporta senza alterarne il contenuto. I §C e §D valgono senza differenze.
 
 Il profilo del Coordinatore AI resta in `controllore/`: è il ruolo che i profili di questa famiglia sorvegliano, e ha una struttura propria.
 
