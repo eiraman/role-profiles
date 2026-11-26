@@ -61,8 +61,8 @@ no task is removed. Every profile stays **draft, not qualified**.
 - `governo/FAMIGLIA.md` 0.2.0 → 0.2.1: table rows for the four new reviewers; the sentence on the other four
   domains, now stating that each of the six domains has its profile.
 - `controllore/` (AI Coordinator) 0.4.1 → 0.4.2: §3 bis names the four new reviewer profiles and records that
-  whether the bridge rule of Do-S10 ends for these four domains is a decision of the Human Manager at
-  release; until it is taken, the bridge rule stays as recorded.
+  for these four domains too, the bridge rule of Do-S10 ends with the draft publication (Do-S15, decided by
+  the Human Manager at release); the AI Reviewer stays.
 - `README.md` (Governance family 7 profiles, total 47, the six reviewers in the AI Reviewer paragraph),
   `CODEOWNERS` (each new folder to its domain team: Cloud Architecture, Application & Data Architecture, Test &
   Quality, Legal & Compliance). `REUSE.toml` is unchanged: the new files are covered by the existing patterns.
@@ -98,8 +98,6 @@ Family files: `governo/FAMIGLIA.md` 0.2.0 → 0.2.1. The Digital Seniority map i
 - The `tools` tests pass, but their registry baseline (`tools` v0.2.2, `baseline_registro.txt`, 43 profiles,
   security and privacy reviewers included) does not include the four new reviewer profiles; the registry now
   has 47. It is updated in a later `tools` release.
-- Whether the bridge rule of Do-S10 ends for cloud architecture, application and data architecture, test and
-  quality, and legal and compliance is open for the Human Manager's decision at release.
 
 ## [0.3.0] - 2026-11-26
 
