@@ -21,7 +21,7 @@ the version.
 
 ## [Unreleased]
 
-## [0.9.0] - 2026-11-26
+## [0.9.0] - 2026-11-27
 
 Scope: Change Requests CR-014 and CR-018 of the method project. The release brings the registry to the Guide
 1.0.0-rc.4 (RFC 0004, accepted with Do-S26 and published with Do-S27): the Security Officer runs the
