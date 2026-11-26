@@ -20,6 +20,8 @@ Per far partire il Coordinatore AI in automatico, rinomina o collega `CONTROLLOR
 - **Claude Code:** `CLAUDE.md`, che può contenere solo la riga `@CONTROLLORE.md`;
 - **Codex:** `AGENTS.md`.
 
+**Revisore AI.** Prima della prima Wave il Coordinatore AI prepara l'ambiente del Revisore AI (profilo `governo/revisore-ai`), che lavora in una sessione separata, con i soli file del suo ruolo e, dove disponibile, su un modello diverso da quello del Coordinatore AI. Se per avviarlo serve una tua azione, per esempio aprire una sessione con un altro fornitore, il Coordinatore AI te la chiede.
+
 Per riprendere un progetto, apri una nuova sessione nella stessa cartella e scrivi: «Riprendi come Coordinatore AI Eiraman». Il registro in `eiraman/` conserva lo stato.
 
 Durante l'esecuzione il Coordinatore AI apre la **Vista del Manager** (`eiraman/vista/index.html`) nel pannello del browser di Claude Code o, in Codex, con il comando di apertura del sistema. Tienila aperta: è il tuo cruscotto per le decisioni, il budget e lo stato del lavoro.
