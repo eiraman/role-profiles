@@ -1,6 +1,6 @@
 # Famiglia FinOps · regole comuni
 
-Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (budget di deriva, §5 E5) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (budget di deriva, §5 E5) · Stato: **bozza non qualificata**
 
 Questo file vale per tutti i profili della famiglia. Il Coordinatore AI lo passa all'agente insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la Specifica Eiraman, poi questo file, poi il profilo.
 
@@ -46,7 +46,7 @@ Valori obiettivo **da tarare** nel mandato. I riferimenti di maturità vengono d
 |---|---|---|---|
 | Costo per incremento accettato | spesa di sviluppo del periodo, scarti compresi / incrementi accettati | FinOps per l'AI | — |
 | Consumo del budget di Wave | spesa di Wave / budget di Wave | Forecast e budget | soglie 80% e 100% (spec §5) |
-| Budget di deriva | somma cumulativa dei valori assoluti degli scostamenti dal piano (convenzione del profilo sul modo di sommare, che la Guida §5, E5, non fissa) | Forecast e budget | soglia del mandato (E5) |
+| Budget di deriva | in spesa e in tempo, con i cambi di classe anche come voce a sé (Guida §5, E5); somma cumulativa dei valori assoluti degli scostamenti dal piano (convenzione del profilo sul modo di sommare, che la Guida §5, E5, non fissa) | Forecast e budget | soglia del mandato (E5) |
 | Accuratezza della stima | \|consuntivo − stima\| / stima | Forecast e budget | scarto sotto 20%, 10%, 5% |
 | Quota di spesa allocata | spesa con titolare valido / spesa totale | Analista di allocazione | almeno 70%, 85%, oltre 90% |
 | Costo delle risorse orfane | costo di risorse non collegate o inattive | Analista di allocazione | — |

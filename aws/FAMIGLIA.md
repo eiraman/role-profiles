@@ -1,6 +1,6 @@
 # Famiglia AWS · Regole comuni
 
-Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
 
 Queste regole valgono per tutti i profili della famiglia AWS: architetto, sviluppatore, DevOps engineer, security engineer, database specialist, operations. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la regola più restrittiva. Una regola del profilo non allarga mai una regola di famiglia.
 
@@ -108,7 +108,7 @@ Disponibilità, prestazioni, scalabilità, sicurezza, RTO e RPO valgono **«prog
 
 - Record di modifica in `docs/modifiche/`: cosa cambia, ambiente, account, regione, risorse, stima in euro con base di prezzo, tag, identificativo del Do, rilettura, piano di ritorno.
 - Ogni record cita le righe del registro del guard e l'esito della rilettura.
-- Un pacchetto si chiude solo su candidata identificata con commit o hash e su evidenza verificata da un revisore indipendente. Per sicurezza e dati personali il revisore dovrebbe usare un modello diverso da quello dell'esecutore: è una raccomandazione, e il livello di indipendenza ottenuto si registra in ogni caso (Guida 1.0.0-rc.3, §6, «Security and personal data»).
+- Un pacchetto si chiude solo su candidata identificata con commit o hash e su evidenza verificata da un revisore indipendente. Per sicurezza e dati personali il revisore dovrebbe usare un modello diverso da quello dell'esecutore: è una raccomandazione, e il livello di indipendenza ottenuto si registra in ogni caso (Guida 1.0.0-rc.3, §6, «Security and personal data»). Resta fermo il livello minimo di indipendenza che la classe di rischio del Work Package fissa (Guida §6, «Independence of verification»): sotto quel livello il pacchetto resta aperto.
 - Ogni deliverable riporta: «Questi output sono supporti di instradamento e di evidenza. Non sono certificazione, parere legale, determinazione di conformità né autorizzazione al rilascio.»
 
 ## 11. Passaggi di consegne

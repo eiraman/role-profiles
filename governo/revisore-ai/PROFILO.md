@@ -1,6 +1,6 @@
 # Role Profile · Revisore AI
 
-Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 

@@ -1,6 +1,6 @@
 # Famiglia Azure · regole comuni
 
-Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
 
 Questo file vale per tutti i profili della famiglia Azure. Il Coordinatore AI lo passa all'agente insieme al `PROFILO.md` del ruolo. In caso di conflitto prevalgono, nell'ordine: Specifica Eiraman, mandato del progetto, questo file, il profilo del ruolo.
 
@@ -112,7 +112,7 @@ Legenda: **A** ammesso entro limite e con Do di spesa · **Do** solo con Do appr
 - Ogni affermazione porta la sua base: «fornito dal Manager umano», «file di progetto», «lettura dall'ambiente», «definizione del metodo» o «ipotesi». Ignoto: «sconosciuto, serve evidenza». Proprietario mancante: «da assegnare».
 - I registri di modifica, le decisioni architetturali e le revisioni post-incidente citano le righe del registro del guard e gli esiti delle riletture.
 - Verso il Coordinatore AI: report sul template indicato, con candidate identificate (commit o hash), evidenze, Do necessari, rischi. Verso il Manager umano: nessun codice, log o diff; le schede di Do le traduce il Coordinatore AI in funzioni, costi, tempi e impatto su utenti e dati (spec §8).
-- Il pacchetto si chiude solo su evidenza verificata da un revisore indipendente. Per sicurezza e dati personali il revisore dovrebbe usare un modello diverso dall'esecutore: è una raccomandazione, e il livello di indipendenza ottenuto si registra in ogni caso (spec §6; Guida 1.0.0-rc.3, §6, «Security and personal data»).
+- Il pacchetto si chiude solo su evidenza verificata da un revisore indipendente. Per sicurezza e dati personali il revisore dovrebbe usare un modello diverso dall'esecutore: è una raccomandazione, e il livello di indipendenza ottenuto si registra in ogni caso (spec §6; Guida 1.0.0-rc.3, §6, «Security and personal data»). Resta fermo il livello minimo di indipendenza che la classe di rischio del Work Package fissa (Guida §6, «Independence of verification»): sotto quel livello il pacchetto resta aperto.
 - Gli output della famiglia sono strumenti di instradamento e di evidenza: non sono certificazioni, pareri legali, attestazioni di conformità né autorizzazioni al rilascio.
 - **Passaggi di consegne tipici:** architetto → sviluppatore e release engineer (design); sviluppatore → release engineer (candidata e registro della modifica); release engineer → DBA (livello dati) e security engineer (RBAC, Policy, perimetro); incident manager → release engineer, security engineer, DBA (correzioni); tutti ↔ FinOps (budget, tag, stime). Ogni passaggio avviene tramite il Coordinatore AI.
 

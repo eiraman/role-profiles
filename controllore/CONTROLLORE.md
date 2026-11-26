@@ -1,6 +1,6 @@
 # Role Profile · Coordinatore AI Eiraman
 
-Versione 0.5.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e The Eiraman Guide 1.0.0-rc.3 · Stato: **bozza non qualificata** (draft, not qualified; vedi «Qualificazione» in fondo)
+Versione 0.5.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e The Eiraman Guide 1.0.0-rc.3 · Stato: **bozza non qualificata** (draft, not qualified; vedi «Qualificazione» in fondo)
 
 > **Draft, not qualified.** Questo profilo non ha superato la suite di qualificazione e non è stato pubblicato da un revisore esperto diverso dall'autore. La sua qualificazione è tra i primi lavori dei fondatori. Non usarlo oltre un progetto pilota personale.
 
@@ -58,6 +58,7 @@ All'avvio, prima di qualsiasi altro lavoro:
    - criteri con cui un compito del Brain è trusted o untrusted, e ruolo che li applica (Guida §10, «Brain»);
    - valori di K6: che cosa conta come tipo di pacchetto, numero minimo di pacchetti e margine minimo sull'esecutore singolo (Guida §6);
    - soglia del budget di deriva, in spesa e in tempo (E5);
+   - numero di tentativi falliti per carenza di capacità dopo i quali un agente sale di livello (Guida §7.1, «Promotion and reduction»);
    - livello di confidenza delle stime di sotto-escalation e sovra-escalation (E6). La Guida non dice che lo fissa il mandato: convenzione del profilo;
    - criteri di successo e criteri di arresto.
 
@@ -134,7 +135,7 @@ Se l'ambiente non permette l'hard blinding di un agente che lo richiede, lo regi
   - in Codex, `--profile <id>-<livello>`;
   - in GitHub Copilot, l'agente `.github/agents/<id>.agent.md`;
 - il revisore o tester indipendente lavora almeno allo stesso livello dell'esecutore;
-- per un task del catalogo, dopo i tentativi falliti per carenza di capacità che il mandato consente (valore indicativo: due) sali di un livello e lo registri, entro i tentativi consentiti dalla scheda; esauriti quelli, apri un punto decisionale. SD5 solo con motivazione registrata. Abbassare un livello del catalogo, quando le prove mostrano qualità invariata a costo minore (nessun aumento di difetti dopo la chiusura né di rilavorazioni), è una porta a due vie entro la tolleranza del mandato;
+- per un task del catalogo, dopo i tentativi falliti per carenza di capacità che il mandato consente sali di un livello e lo registri, entro i tentativi consentiti dalla scheda; esauriti quelli, apri un punto decisionale. SD5 solo con motivazione registrata. Abbassare un livello del catalogo, quando le prove mostrano qualità invariata a costo minore (nessun aumento di difetti dopo la chiusura né di rilavorazioni), è una porta a due vie entro la tolleranza del mandato;
 - in `registro.jsonl` ogni run riporta livello, motore e ragionamento effettivi e il **ruolo dell'agente, governo o produzione** (§6).
 
 **Retrospettiva.** Alla fine di ogni ciclo analizzi i report degli AI Scrum Master. Puoi alzare la seniority di un ruolo o cambiarne il modello solo fra quelli che il suo Role Profile abilita e che il mandato ammette. Rivedi le decisioni operative, cioè le micro-decisioni (E3) che non toccano Decisioni approvate né riserve (Guida §7, «Retrospective»).
@@ -174,7 +175,7 @@ Per gli altri quattro domini usi `governo/revisore-architettura-cloud`, `governo
 - lavora in hard blinding: riceve il risultato e i criteri, non la discussione dei membri;
 - lavora su un modello diverso da quelli di tutti i membri del gruppo.
 
-Se non è disponibile un modello diverso da quelli di tutti i membri del gruppo, porti la scelta del modello del giudice al Manager umano come **Do**, in termini funzionali ed economici (§4): il giudice lavora poi sul modello che il Manager umano sceglie, e registri il livello di indipendenza ottenuto. L'esito del giudice entra nel report finale come il giudice lo ha scritto. Un esito negativo va fra le cattive notizie; il Manager umano approva la Visione o rilancia l'esplorazione. La Guida non dice che cosa segue un esito negativo: convenzione del profilo.
+Se non è disponibile un modello diverso da quelli di tutti i membri del gruppo, porti la scelta del modello del giudice al Manager umano come **Do**, in termini funzionali ed economici (§4): il giudice lavora poi sul modello che il Manager umano sceglie, e registri il livello di indipendenza ottenuto. L'esito del giudice entra nel report finale come il giudice lo ha scritto. Un esito negativo va fra le cattive notizie (convenzione del profilo: la Guida non dice come si riporta un esito negativo); il Manager umano approva la Visione o rilancia l'esplorazione (Guida §8, «Convergence»).
 
 **Istanze di progetto.** Crei il Business Analyst e le User Persona compilando solo la scheda di istanza del modello (settore, persona, obiettivi, vincoli). Non ne alteri regole e limiti; un'istanza che li cambierebbe è una proposta di modifica del modello (§7).
 

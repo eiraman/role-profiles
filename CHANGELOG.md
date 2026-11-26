@@ -21,6 +21,48 @@ the version.
 
 ## [Unreleased]
 
+## [0.6.1] - 2026-11-26
+
+Scope: Change Request CR-010 of the method project. Corrections from the independent re-review of 0.6.0
+(REV-CONS-C), which arrived after 0.6.0 was published. Registry bump: PATCH: the changes restore the intent
+stated in the entry 0.6.0 and remove a value that no decision had approved. No task, section or file is added
+or removed; section 10 of the profiles does not change.
+
+### Fixed
+
+- `analisi-funzionale/FAMIGLIA.md` 0.3.0 → 0.3.1, `aws/FAMIGLIA.md`, `azure/FAMIGLIA.md` and
+  `sviluppo/FAMIGLIA.md` 0.2.0 → 0.2.1: the sentence on the minimum level of independence of the risk class
+  (Guide §6, "Independence of verification") is added next to the recommendation of a different model. The
+  entry 0.6.0 said it was there; it was only in the AI Coordinator profile and in three profiles.
+- AI Coordinator profile 0.5.0 → 0.5.1 and `_seniority/SENIORITY.md`: "(valore indicativo: due)" is removed
+  from the rule on promotion. An agent is raised after the failed attempts the mandate allows (Guide §7.1); no
+  decision set an indicative number, and the entry 0.6.0 was wrong to give one. The number of attempts is
+  added to the items of the mandate (§2).
+- AI Coordinator profile and `analisi-funzionale/facilitatore-design-thinking` 0.3.0 → 0.3.1: the mark
+  "convention of the profile" on a negative outcome of the judge covers only how it is reported; that the
+  Human Manager approves the Vision or relaunches the exploration is the Guide §8.
+- `governo/revisore-ai` 0.2.0 → 0.2.1: in `profilo.json` the source of E6 names the text of the Guide
+  1.0.0-rc.3 (RFC 0003), as `PROFILO.md` already did.
+- `finops/FAMIGLIA.md` 0.2.0 → 0.2.1: the row "Budget di deriva" of the table of measures follows rule R5
+  (spending and time, class changes also as an item of their own).
+
+### Profile versions
+
+| Profile or file | Version | Date | State |
+|---|---|---|---|
+| AI Coordinator (`controllore/CONTROLLORE.md`) | 0.5.0 → 0.5.1 | 2026-11-26 | draft, not qualified |
+| `analisi-funzionale/facilitatore-design-thinking` | 0.3.0 → 0.3.1 | 2026-11-26 | draft, not qualified |
+| `governo/revisore-ai` | 0.2.0 → 0.2.1 | 2026-11-26 | draft, not qualified |
+| `analisi-funzionale/FAMIGLIA.md` | 0.3.0 → 0.3.1 | 2026-11-26 | draft, not qualified |
+| `aws/FAMIGLIA.md`, `azure/FAMIGLIA.md`, `sviluppo/FAMIGLIA.md`, `finops/FAMIGLIA.md` | 0.2.0 → 0.2.1 | 2026-11-26 | draft, not qualified |
+
+### Known gaps
+
+- `governo/revisore-test-qualita` does not apply the sentence that the Guide 1.0.0-rc.3 added to §9.1, "Test
+  levels" (security and performance testing is proportionate to the risk; RFC 0003, item 18): the sentence
+  carries no key word and the profile has no rule on it.
+- The known gaps of 0.6.0 stay open.
+
 ## [0.6.0] - 2026-11-26
 
 Scope: Change Request CR-010 of the method project (Wave CONS-01), which carries out the Role Profiles part of
@@ -809,7 +851,8 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.6.0...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.6.1...main
+[0.6.1]: https://github.com/eiraman/role-profiles/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/eiraman/role-profiles/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/eiraman/role-profiles/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/eiraman/role-profiles/compare/v0.4.1...v0.5.0
