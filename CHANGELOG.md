@@ -41,7 +41,9 @@ relaxes it (a class 1 project may run from level 0 by decision); one rule relaxe
 Guide relaxes it (work on test data while a question for the organisation is unanswered); one rule reversed
 (the AI Coordinator no longer assigns the class); rules added. Against the first step: three rules of the
 Security Officer 0.1.0 and one of the AI Coordinator 0.8.0 are reversed (see "Rules of the second step" and
-"Changed"). No profile relaxes a rule beyond what the Guide 1.0.0-rc.4 relaxes. Every profile stays
+"Changed"). No profile is meant to relax a rule beyond what the Guide 1.0.0-rc.4 relaxes; where the environment
+cannot enforce what the Guide asks of it (Deny, hard blinding), the profiles record a non-conformity, listed
+under "Known gaps". Every profile stays
 **draft, not qualified**; no profile is qualified, requalified or suspended by this release. RFC in scope:
 RFC 0004 of the Guide.
 
@@ -78,6 +80,7 @@ those of RFC 0004.
 | 18 | In the meantime, only if no exclusion is triggered and no other doubt remains, work may go on only on test data: no real data, no masked data, no release | Security Officer §3 A1, §5; AI Coordinator §2 point 3, §2 ter | **relaxed**, as the Guide relaxes it (0.8.0: a doubtful case did not proceed at all) | 8, 11 |
 | 19 | In doubt between class 1 and a higher class the higher class is assumed, also when the doubt depends on a question for the organisation; no work on test data for that doubt | Security Officer §3 A1, A6 | added | 2 |
 | 20 | An unanswered question on the data protection officer (R2) is a question for the organisation and keeps the case in doubt | Security Officer §3 A1 | changed (tightened): 0.1.0 said it only blocked the move-up dossier. Follows the letter of the Guide; listed among the open points | 11 |
+| 20a | X8 and X10 have a provisional "no" on the Human Manager's statement only for a personal tool (class 0 test passed); for a tool used by others they are questions for the organisation | Security Officer §3 A1 | changed (tightened): 0.1.0 accepted the absence test alone; found by the review REV-RP4-01 | 11 |
 | 21 | The AI Coordinator carries the dialogue between the Human Manager and the Security Officer without altering its content; the original risk profile is attached unchanged in the Manager View | AI Coordinator §2 point 3; Security Officer §6 | unchanged from the first step; now a rule of the Guide. The untouchable content also covers the availability of the decision and the questions for the organisation | 12 |
 | 22 | The Security Officer does not act as a reviewer; the roles of security reviewer and privacy reviewer are not held, on the same project, by it or by an agent instantiated from its profile | Security Officer §1, §5; `governo/FAMIGLIA.md`; `governo/revisore-sicurezza` and `governo/revisore-privacy` §1, §5; AI Coordinator §3 bis | changed (broadened to agents instantiated from the profile); added in the two reviewers | 13 |
 | 23 | The Security Officer works under hard blinding; a model different from the AI Coordinator's is recommended where available | Security Officer §1; AI Coordinator §3, §9 CX-24; `governo/FAMIGLIA.md` | changed (the source is now the Guide §7 and §14); added in the AI Coordinator | 13, 14 |
@@ -159,13 +162,13 @@ Every profile stays **draft, not qualified**.
     blinding", §14.1 "Level 0 · Organisation", "Level 1 · Method".
   - Catalogue: new task **T10** "Disponibilità della decisione di procedere sopra il livello" (SD4);
     deliverables of T03, T07 and T09 broadened; note of T04 reworded. 10 tasks.
-  - Qualification suite: cases 1, 2, 3, 4, 5, 7, 9, 11, 12, 13, 14, 15, 16, 17, 19 and 20 revised; fourteen
-    cases added (21 to 34), one or more for each rule: class 1 at level 0 with and without the decision;
+  - Qualification suite: cases 1, 2, 3, 4, 5, 7, 9, 11, 12, 13, 14, 15, 16, 17, 19 and 20 revised; sixteen
+    cases added (21 to 36), one or more for each rule: class 1 at level 0 with and without the decision;
     question for the organisation unanswered; answer of the Human Manager alone; after the organisation
     answers; doubt between class 1 and class 2; class 2 by decision, from level 0 and from level 1; exclusion
     "at any level" with a decision; data of colleagues before and after the protections; request to act as a
     reviewer; context and model; class 0 with a question for the organisation; exclusion with a question
-    open. 34 cases.
+    open; lapsed requirement; preview and first release. 36 cases.
 - Second step, AI Coordinator: new section **§2 ter** "Progetto sopra il livello qualificato" (when the Do is
   prepared, content of the Do, recording, requirements and deadlines, Deny, waiting for the organisation,
   mandate and ownership, cycle review, draft profiles); eleven qualification cases in §8; row CX-24 in §9.
@@ -380,7 +383,8 @@ Every profile stays **draft, not qualified**.
   and that it runs the gate as a draft by declared deviation.
 - Second step, `governo/revisore-sicurezza` and `governo/revisore-privacy`: references to the Guide
   1.0.0-rc.3 become 1.0.0-rc.4 (header, §1, §2 and `profilo.json`; the paragraphs cited are unchanged in
-  rc.4, except "Applicability gate", which now names the role); "the AI compliance role assigns the class"
+  rc.4, except "Applicability gate", which now names the role, and §7 "Hard blinding", which adds the
+  Security Officer); "the AI compliance role assigns the class"
   names the Security Officer.
 - Second step, `README.md`: the sentence on the Security Officer names the risk profile and the decision of
   the Guide §14.2.
@@ -454,9 +458,18 @@ and `analisi-funzionale/analista-funzionale` (input to the gate; they cite the s
 - The requirement "security and privacy profiles qualified for class 1" (Guide §14.1) cannot be met today:
   an admitted project relies on the declared deviation (CR-013, decision 8), which the profiles record as
   "in deroga dichiarata", never as met.
-- The Deny of the Guide §5 is asked of the environment. In the current kit the prohibitions are instructions
-  followed by the AI Coordinator, not a technical block (`controllore/AVVIO.md`): the profile says to record
-  it as a limit.
+- The Deny of the Guide §5 and the hard blinding of §7 are asked of the environment. In the current kit the
+  prohibitions are instructions followed by the AI Coordinator, not a technical block
+  (`controllore/AVVIO.md`): the profiles say to declare it as a non-conformity, in the Do and at the top of
+  the gate outcome; they do not make it conformant.
+- Reading of the deviation on draft profiles (CR-013, decision 8), to be confirmed by the Human Manager of
+  the method project: the row "qualified security and privacy profiles" alone does not stop the release or
+  the data of colleagues; whether the deviation also covers adopters outside the method project is not
+  decided.
+- Findings of the independent review REV-RP4-01 recorded and not applied: the word "titolare" covers both
+  the owner of the Guide §4 and the controller of the GDPR; U4, E4 and D3 "yes" are out of scope by profile
+  convention; X9 and X11 admit no treatment by profile convention; the declared adoption level is not
+  verified by the gate; the examples compress the seven requirements of the decision.
 - `controllore/tools/vista_manager.py` and `controllore/STATO.md` have no field for the declaration that the
   project runs above the qualified level: the AI Coordinator writes it among the bad news. The tool is not
   changed by this release.
@@ -497,6 +510,12 @@ they follow the letter of the Guide, or a profile convention marked as such, and
   for a risk profile in that case; the Security Officer profile delivers its outcome at every gate anyway.
 - A preview with sign-in through the corporate identity processes personal data of colleagues: RFC 0004
   states it as a consequence, the Guide text does not. The AI Coordinator profile applies it and names the RFC.
+- Masked data before the requirements are met: the Guide allows building on masked data, while producing
+  them is a processing of the real data that the project MUST NOT do; anonymised data are not named.
+- A question for the organisation when the adopter is the only owner (personal tool): the profile lets the
+  adopter's statement stand for X8 and X10 in that case only.
+- A revoked mandate, a project that fits no row of the class table, who verifies the declared adoption
+  level, and what follows when the environment cannot apply a MUST of the Guide.
 - From the decision to the mandate of the organisation the project stays owned by the adopter: RFC 0004
   states it as a consequence; the profiles record ownership of the organisation from the mandate on.
 
