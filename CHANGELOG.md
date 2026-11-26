@@ -24,8 +24,8 @@ the version.
 ## [0.3.0] - 2026-11-26
 
 Scope: first part of Change Request CR-004 of the method project (six reviewer profiles of the governance
-domains), Wave REV-01, with the Human Manager's decisions Do-S09, Do-S10, Do-S12 and Do-S13: the security and
-privacy reviewers first, the other four domains in a later Wave (Do-S12). Registry bump: MINOR (two new
+domains), Wave REV-01, with the Human Manager's decisions Do-S09, Do-S10, Do-S12, Do-S13 and Do-S14, and the
+corrections of the independent review REV-R01: the security and privacy reviewers first, the other four domains in a later Wave (Do-S12). Registry bump: MINOR (two new
 profiles, a family MINOR, an AI Coordinator PATCH). No rule is reversed and no task is removed. Every profile
 stays **draft, not qualified**.
 
@@ -46,8 +46,9 @@ stays **draft, not qualified**.
     principle 1). Their qualification stays open until a human reviewer of the domain (Do-S13).
   - Declared limits: the security reviewer runs no penetration tests and writes no code; the privacy reviewer
     gives no legal opinions, which belong to the legal and compliance domain and to a person (Guide §14,
-    "Legal advice"); the out-of-scope cases of Guide §14 are escalated, never made conditional.
-  - Sources, checked on the official pages: security, NIST SP 800-218 SSDF 1.1 (PO.1, PO.5, PW.1, PW.9, RV.1),
+    "Legal advice"), and never concludes that a DPIA is required (qualification case 8); the out-of-scope cases of Guide §14 are escalated, never made conditional.
+  - Sources, checked on the official pages: security, NIST SP 800-218 SSDF 1.1 (PO.1, PO.5, PW.1 and PW.9 for
+    design Decisions; RV.1 only for vulnerability identification and response),
     OWASP ASVS 5.0.0 (levels, chapters V6, V8, V11–V16), OWASP Top 10 for LLM Applications 2025, NIST AI 600-1
     (§2.9, §2.12); privacy, Regulation (EU) 2016/679 (Articles 5, 6, 9, 10, 22, 25, 35), EDPB Guidelines 4/2019
     on Article 25 version 2.0, ISO/IEC 29100:2024 (cited only), NIST Privacy Framework 1.0, NIST AI 600-1
@@ -61,7 +62,10 @@ stays **draft, not qualified**.
 - `governo/FAMIGLIA.md` 0.1.0 → 0.2.0: the family now also holds the AI reviewers of the governance domains;
   table rows for the two new profiles; the reviewers do not replace the human reviewer of the domain and judge
   only their own domain; a model different from the executors' when the material touches security or personal
-  data (Guide §6); the Discovery result goes to the Facilitator.
+  data (Guide §6). §A–§C apply to every profile of the family, the domain reviewers included (Do-S14). §B:
+  a domain reviewer's Discovery result goes to the Design Thinking Facilitator, every other finding to the AI
+  Coordinator, and critical or non-accepted findings also reach the Human Manager in the Manager View (Do-S08,
+  Do-S14). The version stays 0.2.0: 0.2.0 was never released, and both changes ship in this release.
 - `controllore/` (AI Coordinator) 0.4.0 → 0.4.1: §3 bis names the profiles `governo/revisore-sicurezza` and
   `governo/revisore-privacy` for the Discovery reviewers and records Do-S13: for security and privacy the
   bridge rule of Do-S10 ends with the draft publication of the profiles, the AI Reviewer stays, and their
@@ -76,10 +80,12 @@ stays **draft, not qualified**.
 ### Removed
 
 Every line removed since v0.2.0 is a version string or a line replaced by a longer one (`release_diff.py`,
-7 lines):
+8 lines):
 
 - **Version strings:** the `Versione` lines of `controllore/CONTROLLORE.md` and of `governo/FAMIGLIA.md`.
-- `governo/FAMIGLIA.md`: the opening sentence, now naming the AI Reviewer and the domain reviewers.
+- `governo/FAMIGLIA.md`: the opening sentence, now naming the AI Reviewer and the domain reviewers; the §B line
+  on reporting deviations (Do-S08), replaced by two lines that extend it to the domain reviewers and set the
+  Facilitator exception (Do-S14).
 - `README.md`: the Governance row of the families table and the "Total: 41 profiles" line, replaced (3 and 43);
   the line "specialist profile with the standard structure…", now continued with the two reviewers.
 - This file: the `[Unreleased]` link, now comparing from v0.3.0.
@@ -100,8 +106,6 @@ Family files: `governo/FAMIGLIA.md` 0.1.0 → 0.2.0. The Digital Seniority map i
 
 - The `tools` tests pass, but their registry baseline (`baseline_registro.txt`, 41 profiles asserted by
   `test_valida_profilo.py`) does not include the two new profiles; it is updated in a later `tools` release.
-- `governo/FAMIGLIA.md` §B (Do-S08: critical or non-accepted deviations also to the Manager View) is written
-  for the AI Reviewer and now also reads on the domain reviewers; whether it applies to them is not decided.
 
 ## [0.2.0] - 2026-11-26
 

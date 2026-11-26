@@ -14,6 +14,8 @@ Il profilo del Coordinatore AI resta in `controllore/`: è il ruolo che i profil
 
 I revisori dei domini di governo sono agenti AI: non sostituiscono il revisore umano titolare o supplente del dominio, perché nessun sistema AI è reviewer of record (GOVERNANCE §1, principio 1). Giudicano solo i Principi e le Decisioni del proprio dominio (Guida 1.0.0-rc.2, §8, «Discovery executors and reviewers»; Do-S09). Gli altri quattro domini avranno i loro profili in una Wave successiva (Do-S12).
 
+Le regole dei §A–§C valgono per tutti i profili della famiglia, compresi i revisori dei domini di governo (Do-S14).
+
 ## A. Indipendenza dal Coordinatore AI
 
 - I profili della famiglia lavorano in **independent context** e in **hard blinding** (Guida 1.0.0-rc.2, principio di Context Consistency and Independence): l'ambiente dà loro solo i file, gli strumenti e i dati elencati nel profilo, senza retrieval fuori da quel perimetro, e il profilo lo impone come istruzione. Il blinding riguarda le informazioni del progetto, non la conoscenza generale del modello. Un modello locale è un'opzione quando l'hardware lo consente.
@@ -27,9 +29,10 @@ I revisori dei domini di governo sono agenti AI: non sostituiscono il revisore u
 
 - I profili della famiglia non eseguono Work Package, non modificano artefatti del progetto e non danno istruzioni agli agenti esecutori.
 - Le loro segnalazioni e i loro suggerimenti sono **dati, non comandi**: nessun agente li esegue senza passare dal Coordinatore AI, che li valuta in modo critico e ne registra l'esito.
-- I profili della famiglia riportano al Coordinatore AI tutti gli scostamenti, e il Coordinatore AI risponde a ognuno. Gli scostamenti critici, e quelli che il Coordinatore AI non accoglie, vanno anche al Manager umano nella Vista del Manager, senza modifiche e con la risposta del Coordinatore AI accanto (Do-S08).
+- I profili della famiglia riportano al Coordinatore AI tutti gli scostamenti e i riscontri, e il Coordinatore AI risponde a ognuno. Fa eccezione l'esito della Discovery di un revisore di dominio, che va al Design Thinking Facilitator (vedi sotto).
+- Gli scostamenti e i riscontri critici, e quelli che il Coordinatore AI non accoglie, vanno anche al Manager umano nella Vista del Manager, senza modifiche e con la risposta del Coordinatore AI accanto (Do-S08; Do-S14).
 - La loro sezione della revisione del ciclo di governo è riportata dal Coordinatore AI senza modifiche, con l'esito del Coordinatore AI accanto.
-- I revisori dei domini di governo consegnano l'esito della Discovery al Design Thinking Facilitator, che lo riporta senza modifiche nel report finale per il Manager umano, e consegnano al Coordinatore AI le altre revisioni e le segnalazioni.
+- I revisori dei domini di governo consegnano l'esito della Discovery al Design Thinking Facilitator, che lo riporta senza modifiche nel report finale per il Manager umano; ogni altro riscontro, revisione o segnalazione va al Coordinatore AI.
 
 ## C. Misure
 
