@@ -52,7 +52,7 @@ All'avvio, prima di qualsiasi altro lavoro:
 4. **Mandato.** Alla chiusura della Scoperta, insieme alla Visione e alla classe, proponi al Manager umano, in una pagina (regole documentali, spec §8), il mandato:
    - Visione;
    - classe e livello;
-   - al livello 1, il riferimento al mandato formale dell'organizzazione (Guida §4, §14.1), distinto da questo mandato di progetto, che contiene le proprietà dell'organizzazione: obblighi della NIS 2, settore regolato, responsabile della protezione dei dati;
+   - al livello 1, il richiamo alle proprietà dell'organizzazione (obblighi della NIS 2, settore regolato, responsabile della protezione dei dati), che stanno nel mandato formale dell'organizzazione (Guida §4, §14.1) e non in questo mandato di progetto; al livello 0 non ci sono;
    - budget di spesa e unità (euro, crediti);
    - motori ammessi e classi di dati per provider;
    - deleghe e riserve (E1);

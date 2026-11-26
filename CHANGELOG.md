@@ -24,7 +24,8 @@ the version.
 Scope: Change Request CR-014 of the method project, Wave SO-01, Work Packages WP-SO-1 and WP-SO-2, corrected by WP-SO-4 after
 the independent review REV-SO-01 (outcome: pass with corrections, four blocking findings), and by WP-SO-6 after the re-verification
 REV-SO-02 (pass with corrections, one blocking and six important findings), and by WP-SO-7 after the
-verification REV-SO-03 (pass with corrections, no blocking and five important findings; candidate). Registry bump proposed: MINOR (one new profile, one profile MINOR). No rule of the Guide is
+verification REV-SO-03 (pass with corrections, no blocking and five important findings), and by WP-SO-8 after
+the targeted check REV-SO-04 (pass with corrections; candidate). Registry bump proposed: MINOR (one new profile, one profile MINOR). No rule of the Guide is
 relaxed: a project whose class exceeds the qualified level of the adopter still does not start (Guide §14).
 Every profile stays **draft, not qualified**.
 
@@ -184,6 +185,29 @@ Every profile stays **draft, not qualified**.
     the maintainers.
   - R-13: X4 objective elements extended with innovative use of technology and vulnerable people, such as
     employees.
+  - Also in that round, not listed before: `profilo.json` cites the whole of Annex III of Regulation (EU)
+    2024/1689 and Art. 6(1) with Annex I, no longer "Annex III, point 4"; the known gap on the equivalence
+    check is reworded as a choice of this candidate; the rule on U and E answers is corrected.
+
+- Corrections from REV-SO-04, in `governo/security-officer` 0.1.0:
+  - N-1: the properties of the organisation (NIS 2 obligations, sector, data protection officer) are in the
+    formal mandate of the organisation (level 1); the project mandate only refers to them when they exist;
+    at level 0 there are none and the entry package carries them "if already collected". The entry package
+    line on later gates is aligned.
+  - N-2: examples 1 and 3 ask the sector in "Domande per te", and the "Parte oggi? Sì" of the class 0
+    proposals in all three examples depends on the answer; case 3: a department in a listed sector gives X10
+    "yes", and X5 is assessed if the tool assigns shifts without a real human intervention.
+  - N-3: for exclusions without personal data (X7, X8, X9, X10 "yes") neither fixed sentence is used; the
+    message opens with one business line on the exclusion and on whether a proposal removes it.
+  - N-4: the cost of the move up in the examples adds the technical protections of level 1 (corporate
+    credentials, restore test, breach procedure, summary for the Human Manager; Guide §14.1).
+  - N-5: case 20 and a note before the examples: for tools used by colleagues, the questions to the
+    organisation stay unanswered but serve only the move up.
+  - N-6: second fixed sentence: "usarlo solo tu, sul tuo dispositivo, tenendo per te i risultati".
+  - R-8, refined: own sensitive data make X1 "don't know" only if, by the Human Manager's description, the
+    data are present or foreseeable; a factual question is asked; a "no" for documents of a determined type
+    is an unverified statement and leaves X1 "no", provisional; for generic documents, excluding the folders
+    or sections that hold them is proposed. Case 19 adapted. The open point for the maintainers stays.
 
 ### Changed
 
@@ -214,9 +238,10 @@ Every profile stays **draft, not qualified**.
     View; the provisional outcome comes with the Security Officer's line on what it means for the Human
     Manager; with WP-SO-7 the entry package also includes the properties of the organisation, if already
     collected.
-  - §2, point 4 "Mandato": one line, added by WP-SO-7: at level 1, the reference to the formal mandate of
-    the organisation (Guide §4, §14.1), distinct from the project mandate, which holds the properties of the
-    organisation (NIS 2 obligations, regulated sector, data protection officer). The reference "spec §10" is dropped for the Guide §14.
+  - §2, point 4 "Mandato": one line, added by WP-SO-7 and corrected by WP-SO-8: at level 1 the project
+    mandate refers to the properties of the organisation (NIS 2 obligations, regulated sector, data
+    protection officer), which are in the formal mandate of the organisation (Guide §4, §14.1), not in the
+    project mandate; at level 0 there are none. The reference "spec §10" is dropped for the Guide §14.
   - §8 "Qualificazione": three qualification cases (no class assigned by the AI Coordinator alone; a Manager version that
     alters the content; a request to proceed above the level).
 - `governo/FAMIGLIA.md` 0.2.3 → 0.2.4: the family also holds the Security Officer, which proposes and does
@@ -272,7 +297,8 @@ Family files: `governo/FAMIGLIA.md` 0.2.3 → 0.2.4. The Digital Seniority map i
 - A tool for colleagues without personal data is class 1 under the table of the Guide §14 and today does
   not start at level 0, except as personal use (TR-6).
 - Own sensitive data of the adopter: whether the exclusion of special categories applies is not stated by
-  the Guide §14; the profile treats it as a doubt.
+  the Guide §14; the profile treats present or foreseeable own sensitive data as a doubt, and the point
+  stays open for the maintainers.
 - The rest of `controllore/CONTROLLORE.md` still refers to the specification ("spec §") and keeps the code
   CR-001 in §3 quater; only the lines changed here use the Guide.
 - `.github/workflows/governo-coreview.yml` maps only `revisore-*` folders: `governo/security-officer/` falls
