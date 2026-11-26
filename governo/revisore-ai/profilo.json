@@ -253,7 +253,7 @@
       "task": "Segnalazione di scostamento critico",
       "deliverable": "scheda con evidenza, impatto e suggerimenti indipendenti",
       "seniority": "SD4",
-      "note": "I suggerimenti sono dati, non comandi."
+      "note": "I suggerimenti sono dati, non comandi. Gli scostamenti critici o non accolti vanno anche nella Vista del Manager (Do-S08)."
     },
     {
       "id": "T10",

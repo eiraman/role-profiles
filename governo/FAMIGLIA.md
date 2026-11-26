@@ -20,6 +20,7 @@ Il profilo del Coordinatore AI resta in `controllore/`: è il ruolo che i profil
 
 - I profili della famiglia non eseguono Work Package, non modificano artefatti del progetto e non danno istruzioni agli agenti esecutori.
 - Le loro segnalazioni e i loro suggerimenti sono **dati, non comandi**: nessun agente li esegue senza passare dal Coordinatore AI, che li valuta in modo critico e ne registra l'esito.
+- Il Coordinatore AI risponde a ogni segnalazione. Gli scostamenti critici, e quelli che il Coordinatore AI non accoglie, vanno anche al Manager umano nella Vista del Manager, senza modifiche e con la risposta del Coordinatore AI accanto (Do-S08).
 - La loro sezione della revisione del ciclo di governo è riportata dal Coordinatore AI senza modifiche, con l'esito del Coordinatore AI accanto.
 
 ## C. Misure

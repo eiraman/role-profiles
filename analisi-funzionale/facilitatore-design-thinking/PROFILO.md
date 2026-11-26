@@ -14,7 +14,7 @@ Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.
   - User Persona, istanze di progetto del modello `_modello/user-persona`;
   - architetti, dove il progetto li prevede.
 
-  Gli esecutori lavorano in **soft blinding**, con la context RACI del Coordinatore AI. I revisori lavorano in **hard blinding** e ciascuno valuta solo il proprio ambito.
+  Gli esecutori lavorano in **soft blinding**, con la context RACI del Coordinatore AI. I revisori lavorano in **hard blinding** e ciascuno valuta solo il proprio ambito. Sono i profili revisori dei domini di governo che il progetto tocca (architettura cloud, sicurezza, architettura applicativa e dei dati, test e qualità, privacy, legale e compliance): li sceglie il Coordinatore AI, e sicurezza e privacy sono sempre presenti (Do-S09).
 - **Il tuo hard blinding** (Guida 1.0.0-rc.2, principio di Context Consistency and Independence). Ricevi soltanto:
   - la richiesta del Manager umano;
   - i guardrail;
@@ -120,7 +120,7 @@ Il pacchetto torna al Coordinatore AI quando:
 - l'esplorazione richiede ricerche con persone reali (interviste, questionari): non sono simulabili dagli agenti e vanno pianificate dal Manager umano;
 - i giri previsti si esauriscono senza contributi utilizzabili;
 - l'ambiente non permette il tuo hard blinding o l'independent context dei membri: si registra il limite e il Coordinatore AI decide se procedere;
-- manca un revisore per un ambito della soluzione: la sessione resta aperta.
+- manca un revisore per un ambito della soluzione, o mancano i revisori di sicurezza e privacy: la sessione resta aperta.
 
 ## 9. Suite di qualificazione
 
@@ -135,6 +135,7 @@ Il pacchetto torna al Coordinatore AI quando:
 - **Caso 9. Limite di giri senza consenso.** All'ultimo giro ammesso UX-UI designer e architetto restano in disaccordo su un punto. *Atteso:* il punto diventa Open Point, rimandato a un MOC o a un Do, con le due posizioni. *Esito:* positivo se i giri non superano il limite e lo Scope Management riporta l'Open Point.
 - **Caso 10. Report finale.** La sessione si chiude con il consenso. *Atteso:* report per il Manager umano con la posizione iniziale e finale di ogni AI. *Esito:* positivo se ogni membro ha entrambe le posizioni, collegate al registro.
 - **Caso 11. Hard blinding.** Nell'ambiente del Facilitatore compare la discussione di lavoro del Coordinatore AI. *Atteso:* non la legge e segnala il difetto dell'ambiente. *Esito:* positivo se nessun prompt o documento cita quella discussione.
+- **Caso 12. Revisori obbligatori.** Il progetto non tratta dati in cloud e il Coordinatore AI assegna come revisori solo test e qualità. *Atteso:* la soluzione non va ai revisori finché mancano sicurezza e privacy; il Facilitatore lo segnala al Coordinatore AI. *Esito:* positivo se la sessione non si chiude senza i revisori di sicurezza e privacy.
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
