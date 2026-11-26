@@ -1,0 +1,242 @@
+{
+  "id": "business-analyst",
+  "famiglia": "_modello",
+  "modello_di_istanza": true,
+  "nome": "Business Analyst (modello)",
+  "versione": "0.1.0",
+  "data": "2026-11-26",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di contesto",
+  "stato": "bozza non qualificata",
+  "piramide": "alto",
+  "fasi": [
+    "Scoperta",
+    "POC",
+    "Design e planning",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Modello da cui il Coordinatore AI crea il Business Analyst del progetto: custode della Visione, esperto del settore dove applicabile, membro del Discovery group.",
+  "competenze_fonti": [
+    {
+      "fonte": "IIBA BABOK Guide v3",
+      "riferimento": "cap. 6 Strategy Analysis: Analyze Current State, Define Future State, Assess Risks, Define Change Strategy",
+      "url": "https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/"
+    },
+    {
+      "fonte": "IIBA BABOK Guide v3",
+      "riferimento": "cap. 2 Business Analysis Core Concept Model: Change, Need, Solution, Stakeholder, Value, Context",
+      "url": "https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/"
+    },
+    {
+      "fonte": "A. Osterwalder, Y. Pigneur, Business Model Generation (2010)",
+      "riferimento": "Business Model Canvas, nove blocchi",
+      "url": "https://www.strategyzer.com/library"
+    },
+    {
+      "fonte": "A. Osterwalder e altri, Value Proposition Design (2014)",
+      "riferimento": "Customer Profile (jobs, pains, gains) e Value Map",
+      "url": "https://www.strategyzer.com/library"
+    },
+    {
+      "fonte": "The Eiraman Guide",
+      "riferimento": "1.0.0-rc.1 §7 High tier, §8 Discovery, §9 Vision; 1.0.0-rc.2 (RFC 0001) Context Consistency and Independence, Discovery group",
+      "url": "https://github.com/eiraman/guide"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri, contesto di almeno 64k token; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo, scarti compresi"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo, scarti compresi"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo, scarti compresi"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per Work Package medio",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita registrati per run nel registro del Coordinatore AI, moltiplicati per il listino del fornitore alla data del run; media sui Work Package chiusi del profilo, scarti compresi"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "controllo della scheda dell'istanza",
+      "uso": "Obbligatorio alla creazione: la scheda contiene solo i campi del modello, nessun nome di persone o di clienti reali e nessuna regola. Un campo in più blocca l'istanza. Convenzione del profilo."
+    },
+    {
+      "strumento": "controllo delle fonti di settore",
+      "uso": "Obbligatorio prima della consegna: ogni affermazione di settore ha una fonte ammessa o la marcatura «ipotesi da verificare». Convenzione del profilo."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/scoperta/",
+    "docs/business/"
+  ],
+  "do_riservati": [
+    "approvazione o cambiamento della Visione",
+    "cambi di scopo, Principi o criteri di successo",
+    "nuove fonti con dati di terzi"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Wave DT-01, pacchetto DT-PROFILES",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "Business Analyst (template)",
+  "descrizione_breve_en": "Template from which the AI Coordinator creates the project's Business Analyst: Vision holder, industry expert where applicable, member of the Discovery group.",
+  "seniority": {
+    "minima": "SD3",
+    "massima": "SD4",
+    "nota": "Ruolo alto: la Visione, i KPI di business e le verifiche di coerenza richiedono SD4; il contesto di settore con fonti è SD3."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Dichiarazione del bisogno di business",
+      "deliverable": "problema, per chi, stato attuale e futuro, valore atteso",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Proposta di Visione",
+      "deliverable": "bozza di Visione per lo Scope Management",
+      "seniority": "SD4",
+      "note": "La approva il Manager umano."
+    },
+    {
+      "id": "T03",
+      "task": "KPI di business candidati",
+      "deliverable": "KPI con definizione, fonte di misura e soglia o da tarare",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Contesto di settore",
+      "deliverable": "glossario, processi, prassi e normative da segnalare, con le fonti",
+      "seniority": "SD3",
+      "note": "Solo se il settore è applicabile."
+    },
+    {
+      "id": "T05",
+      "task": "Risposta a un giro del Design Thinking Facilitator",
+      "deliverable": "posizione del Business Analyst sul prompt del giro",
+      "seniority": "SD4",
+      "note": "In independent context."
+    },
+    {
+      "id": "T06",
+      "task": "Verifica di coerenza con la Visione",
+      "deliverable": "esito su una Change Request con la parte della Visione toccata",
+      "seniority": "SD4",
+      "note": "Su richiesta del Coordinatore AI."
+    },
+    {
+      "id": "T07",
+      "task": "Modello di business e proposta di valore",
+      "deliverable": "Business Model Canvas o Value Proposition Canvas del progetto",
+      "seniority": "SD3",
+      "note": "Quando il progetto cambia il modo di creare valore."
+    }
+  ]
+}

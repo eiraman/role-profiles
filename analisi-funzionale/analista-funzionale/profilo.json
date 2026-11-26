@@ -2,9 +2,9 @@
   "id": "analista-funzionale",
   "famiglia": "analisi-funzionale",
   "nome": "Analista funzionale",
-  "versione": "0.1.0",
-  "data": "2026-11-25",
-  "metodo": "Eiraman 0.3",
+  "versione": "0.2.0",
+  "data": "2026-11-26",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di contesto",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -13,7 +13,7 @@
     "Design e planning",
     "Accettazione ed esercizio"
   ],
-  "descrizione_breve": "Conduce la convergenza del Design Thinking, redige Visione e Scope Management, deriva backlog e criteri eseguibili e prepara UAT e test con utente simulato.",
+  "descrizione_breve": "Nel Discovery group collega le esigenze di Business Analyst e User Persona alle soluzioni di UX-UI e architetti, in soft blinding; deriva backlog e criteri eseguibili e prepara UAT e test con utente simulato.",
   "competenze_fonti": [
     {
       "fonte": "IIBA BABOK Guide v3",
@@ -54,6 +54,11 @@
       "fonte": "Specifica Eiraman 0.3",
       "riferimento": "§1, §4 K1-K2, §4 bis, §5, §6 P2, §6 bis, §8, §10, §11",
       "url": null
+    },
+    {
+      "fonte": "The Eiraman Guide 1.0.0-rc.2 (RFC 0001)",
+      "riferimento": "Context Consistency and Independence; soft blinding e context RACI; Discovery group",
+      "url": "https://github.com/eiraman/guide"
     }
   ],
   "motori": [
@@ -207,27 +212,13 @@
     "suite": "PROFILO.md §9"
   },
   "nome_en": "Functional analyst",
-  "descrizione_breve_en": "Leads Design Thinking convergence, drafts Vision and Scope Management, derives backlog and executable acceptance criteria.",
+  "descrizione_breve_en": "In the Discovery group links the needs of the Business Analyst and User Personas to the solutions of UX-UI and architects, under soft blinding; derives backlog and executable acceptance criteria.",
   "seniority": {
     "minima": "SD1",
     "massima": "SD4",
-    "nota": "Ruolo alto della piramide: la convergenza, la fattibilità e le schede Do richiedono SD4; i lavori su specifica chiara scendono a SD2."
+    "nota": "Ruolo alto della piramide: il collegamento esigenze–soluzioni, la fattibilità e le schede Do richiedono SD4; i lavori su specifica chiara scendono a SD2."
   },
   "catalogo": [
-    {
-      "id": "T01",
-      "task": "Convergenza del Design Thinking",
-      "deliverable": "sintesi di convergenza con ipotesi scartate e registro di diversità",
-      "seniority": "SD4",
-      "note": "Un solo modello, diverso da quelli della divergenza quando possibile (spec §4, K1-K2)."
-    },
-    {
-      "id": "T02",
-      "task": "Bozza della Visione e prima versione dello Scope Management",
-      "deliverable": "bozza di Visione con Principi, criteri di successo, criteri di arresto e punti aperti",
-      "seniority": "SD4",
-      "note": "Base delle decisioni del Manager umano, effetti difficili da annullare."
-    },
     {
       "id": "T03",
       "task": "Elicitazione e analisi delle evidenze degli utenti",
@@ -290,6 +281,27 @@
       "deliverable": "opzioni funzionali tradotte in funzioni, costi, tempi e impatto",
       "seniority": "SD4",
       "note": "Schede Do."
+    },
+    {
+      "id": "T12",
+      "task": "Mappa esigenze–soluzioni nel Discovery group",
+      "deliverable": "esigenze di Business Analyst e User Persona collegate alle soluzioni candidate di UX-UI e architetti, con lacune da conciliare",
+      "seniority": "SD4",
+      "note": "Sostituisce T01 dalla versione 0.2.0: la convergenza è del Design Thinking Facilitator."
+    },
+    {
+      "id": "T13",
+      "task": "Risposta a un giro del Design Thinking Facilitator",
+      "deliverable": "posizione dell'analista con le evidenze degli utenti",
+      "seniority": "SD3",
+      "note": "In independent context, senza le risposte degli altri membri."
+    },
+    {
+      "id": "T14",
+      "task": "Contributo funzionale allo Scope Management",
+      "deliverable": "criteri di successo su KPI misurabili e criteri di arresto proposti",
+      "seniority": "SD4",
+      "note": "Sostituisce T02 dalla versione 0.2.0: la prima stesura è del Design Thinking Facilitator."
     }
   ]
 }

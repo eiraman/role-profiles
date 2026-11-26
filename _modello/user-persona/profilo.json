@@ -1,0 +1,245 @@
+{
+  "id": "user-persona",
+  "famiglia": "_modello",
+  "modello_di_istanza": true,
+  "deriva_da": "analisi-funzionale/utente-simulato",
+  "nome": "User Persona (modello)",
+  "versione": "0.1.0",
+  "data": "2026-11-26",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di contesto",
+  "stato": "bozza non qualificata",
+  "piramide": "alto",
+  "fasi": [
+    "Scoperta",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Modello da cui il Coordinatore AI crea le User Persona del progetto: porta le esigenze di un utente tipo nel Discovery group ed esegue i test funzionali Human Supervised come utente finale simulato.",
+  "competenze_fonti": [
+    {
+      "fonte": "A. Cooper, R. Reimann, D. Cronin, C. Noessel, About Face, 4ª ed. (2014)",
+      "riferimento": "cap. 3 Modeling Users: Personas and Goals",
+      "url": null
+    },
+    {
+      "fonte": "ISO 9241-11:2018",
+      "riferimento": "definizione di usabilità: efficacia, efficienza, soddisfazione nel contesto d'uso",
+      "url": "https://www.iso.org/standard/63500.html"
+    },
+    {
+      "fonte": "ISO/IEC 25010:2023",
+      "riferimento": "caratteristica capacità di interazione",
+      "url": "https://www.iso.org/standard/78176.html"
+    },
+    {
+      "fonte": "W3C WCAG 2.2",
+      "riferimento": "principi percepibile, utilizzabile, comprensibile, robusto",
+      "url": "https://www.w3.org/TR/WCAG22/"
+    },
+    {
+      "fonte": "The Eiraman Guide",
+      "riferimento": "1.0.0-rc.1 §7 High tier e §9.1 Who supervises tests; 1.0.0-rc.2 (RFC 0001) Context Consistency and Independence, Discovery group",
+      "url": "https://github.com/eiraman/guide"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri con capacità visiva; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per scenario eseguito",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per scenario eseguito",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per scenario eseguito",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per scenario eseguito",
+      "valore": "da tarare",
+      "base": "token per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "automazione del browser o di dispositivi simulati con registrazione dei passi",
+      "uso": "Obbligatoria: ogni esito ha la traccia dei passi; senza traccia l'esito è «non concluso»."
+    },
+    {
+      "strumento": "controllo dello stato dell'ambiente prima della sessione",
+      "uso": "Obbligatorio: un ambiente non stabile blocca la sessione. Convenzione del profilo."
+    },
+    {
+      "strumento": "controllo della scheda dell'istanza",
+      "uso": "Obbligatorio alla creazione: la scheda contiene solo i campi del modello, nessun dato di persone reali e nessuna regola. Un campo in più blocca l'istanza. Convenzione del profilo."
+    }
+  ],
+  "scritture_consentite": [
+    "docs/scoperta/",
+    "test/esiti/user-persona/"
+  ],
+  "do_riservati": [
+    "uso di un ambiente diverso da quello di prova autorizzato",
+    "azioni irreversibili su sistemi esterni"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Wave DT-01, pacchetto DT-PROFILES",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "User Persona (template)",
+  "descrizione_breve_en": "Template from which the AI Coordinator creates the project's User Personas: brings a typical user's needs to the Discovery group and runs the Human Supervised functional tests as a simulated end user.",
+  "seniority": {
+    "minima": "SD1",
+    "massima": "SD3",
+    "nota": "Le risposte nel Discovery group e le osservazioni con giudizio di gravità sono SD3; l'esecuzione di scenari dati scende a SD2 e SD1."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Esigenze della persona per il Discovery group",
+      "deliverable": "obiettivi, ostacoli ed esito atteso, con fonte o ipotesi da verificare",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T02",
+      "task": "Risposta a un giro del Design Thinking Facilitator",
+      "deliverable": "posizione della persona sul prompt del giro",
+      "seniority": "SD3",
+      "note": "In independent context."
+    },
+    {
+      "id": "T03",
+      "task": "Osservazioni su un MOC (mock-up)",
+      "deliverable": "osservazioni della persona collegate alle sue esigenze",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Controllo di stabilità dell'ambiente",
+      "deliverable": "esito del controllo prima della sessione",
+      "seniority": "SD1",
+      "note": "Controllo deterministico."
+    },
+    {
+      "id": "T05",
+      "task": "Esecuzione di uno scenario di test funzionale come persona",
+      "deliverable": "diario di sessione con passi, tempo ed esito",
+      "seniority": "SD2",
+      "note": "Test Human Supervised: l'avanzamento non dipende da una persona."
+    },
+    {
+      "id": "T06",
+      "task": "Osservazioni collegate a ISO/IEC 25010",
+      "deliverable": "osservazioni con caratteristica, criterio e gravità proposta",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Segnalazione di difetti riproducibili",
+      "deliverable": "scheda difetto con passi di riproduzione",
+      "seniority": "SD2",
+      "note": ""
+    }
+  ]
+}

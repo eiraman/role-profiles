@@ -2,15 +2,15 @@
   "id": "facilitatore-design-thinking",
   "famiglia": "analisi-funzionale",
   "nome": "Facilitatore di Design Thinking",
-  "versione": "0.1.0",
-  "data": "2026-11-25",
-  "metodo": "Eiraman 0.3",
+  "versione": "0.2.0",
+  "data": "2026-11-26",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di contesto",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
     "Scoperta"
   ],
-  "descrizione_breve": "Imposta e conduce la divergenza tra più modelli nella Scoperta, con ruoli, guardrail, giri e gate per il Manager umano.",
+  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point, prima stesura dello Scope Management.",
   "competenze_fonti": [
     {
       "fonte": "Stanford d.school, Design Thinking",
@@ -36,6 +36,16 @@
       "fonte": "Specifica Eiraman 0.3",
       "riferimento": "§4 K1-K3, §4 bis, §5 Design Thinking affidato all'AI",
       "url": null
+    },
+    {
+      "fonte": "N. Dalkey, O. Helmer, An Experimental Application of the Delphi Method to the Use of Experts",
+      "riferimento": "Management Science 9(3), 1963: giri con riscontro controllato fino al consenso",
+      "url": null
+    },
+    {
+      "fonte": "The Eiraman Guide 1.0.0-rc.2 (RFC 0001)",
+      "riferimento": "Context Consistency and Independence; hard blinding, soft blinding; Discovery group; convergenza del Design Thinking Facilitator",
+      "url": "https://github.com/eiraman/guide"
     }
   ],
   "motori": [
@@ -159,6 +169,14 @@
     {
       "strumento": "ricerca di dati personali nei prompt e nei contributi",
       "uso": "Obbligatoria prima di ogni giro e prima della consegna; un riscontro blocca il giro."
+    },
+    {
+      "strumento": "registro delle posizioni per membro e giro",
+      "uso": "Obbligatorio: il report finale si genera dal registro; un membro senza posizione iniziale o finale blocca la consegna. Convenzione del profilo."
+    },
+    {
+      "strumento": "confronto dei prompt di giro",
+      "uso": "Obbligatorio prima di ogni giro: i prompt inviati ai membri devono essere identici; una differenza blocca il giro."
     }
   ],
   "scritture_consentite": [
@@ -177,8 +195,8 @@
     "scadenza": null,
     "suite": "PROFILO.md §9"
   },
-  "nome_en": "Design Thinking facilitator",
-  "descrizione_breve_en": "Sets up and runs divergence across several models in Discovery, with roles, guardrails, brainstorming rounds and gates for the Human Manager.",
+  "nome_en": "Design Thinking Facilitator",
+  "descrizione_breve_en": "Runs the mandatory Design Thinking session with the Discovery group under hard blinding: divergence across models, convergence to consensus in Principles, Decisions and Open Points, first draft of Scope Management.",
   "seniority": {
     "minima": "SD1",
     "massima": "SD4",
@@ -204,7 +222,7 @@
       "task": "Ruolo di esploratore in un giro di divergenza",
       "deliverable": "contributo con ipotesi, problema, beneficio, evidenza e principi candidati",
       "seniority": "SD2",
-      "note": "Motori diversi tra esploratori quando possibile (K2)."
+      "note": "Motori diversi tra esploratori quando possibile (K2). Mai assegnato all'agente che facilita la stessa sessione."
     },
     {
       "id": "T04",
@@ -233,6 +251,34 @@
       "deliverable": "pacchetto di contributi grezzi e registro di diversità",
       "seniority": "SD2",
       "note": "Completezza verificabile sul registro."
+    },
+    {
+      "id": "T08",
+      "task": "Riconciliazione delle risposte e prompt di riformulazione",
+      "deliverable": "registro di conciliazione e nuovo prompt con Principi, Decisioni e Open Point",
+      "seniority": "SD4",
+      "note": "Convergenza: giudizio sulle posizioni dei membri."
+    },
+    {
+      "id": "T09",
+      "task": "Prima stesura dello Scope Management",
+      "deliverable": "Visione proposta, Principi, Decisioni, criteri di successo proposti e Open Point con destinazione",
+      "seniority": "SD4",
+      "note": "Base delle decisioni del Manager umano."
+    },
+    {
+      "id": "T10",
+      "task": "Pacchetto per i revisori del Discovery group",
+      "deliverable": "soluzione e criteri per ambito, senza la discussione dei membri",
+      "seniority": "SD2",
+      "note": ""
+    },
+    {
+      "id": "T11",
+      "task": "Report finale per il Manager umano",
+      "deliverable": "posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo",
+      "seniority": "SD4",
+      "note": "Documento letto dal Manager umano."
     }
   ]
 }
