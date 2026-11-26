@@ -115,6 +115,6 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/114f7a2d656698d2057aa176f0d18139bfeca332...main
-[0.1.1]: https://github.com/eiraman/role-profiles/compare/114f7a2d656698d2057aa176f0d18139bfeca332...main
-[0.1.0]: https://github.com/eiraman/role-profiles/tree/114f7a2d656698d2057aa176f0d18139bfeca332
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.1.1...main
+[0.1.1]: https://github.com/eiraman/role-profiles/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/eiraman/role-profiles/releases/tag/v0.1.0
