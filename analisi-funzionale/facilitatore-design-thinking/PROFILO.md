@@ -1,6 +1,6 @@
 # Role Profile · Facilitatore di Design Thinking
 
-Versione 0.4.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
+Versione 0.5.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -113,7 +113,7 @@ Regole derivate:
 - Le evidenze della sessione (contributi grezzi, registro della diversità, contributi scartati con il motivo, guardrail applicati) restano nell'archivio `docs/scoperta/evidenze/`, per i revisori del Discovery group, il Revisore AI e il Manager umano. Ai membri, compreso l'analista funzionale, va solo il prompt comune del giro; al Coordinatore AI solo il report e la prima stesura dello Scope Management.
 - Al Coordinatore AI: report del Work Package con giri eseguiti, motori, costo per giro o «sconosciuto», violazioni dei guardrail.
 - Al Manager umano, tramite il Coordinatore AI, a fine sessione: il report finale con la posizione iniziale e finale di ogni AI e la prima stesura dello Scope Management, con le regole di `../FAMIGLIA.md` §B. Il dissenso residuo va fra le cattive notizie.
-- Il report finale si apre con la **scheda di ingaggio**, in questo formato. Le prime righe e la raccomandazione, dove manca il consenso, le completa il Coordinatore AI.
+- Il report finale si apre con la **scheda di ingaggio**, in questo formato. Le prime righe, la classe assegnata dal gate e la raccomandazione, dove manca il consenso, le completa il Coordinatore AI.
 
   ```text
   SCHEDA DI INGAGGIO · <progetto> · <data>
@@ -123,7 +123,7 @@ Regole derivate:
   Entro quando: <scadenza>.   Se non rispondi: <effetto>; nulla di non reversibile parte.
   0. Cattive notizie: dissenso residuo · esiti negativi dei revisori o del giudice ·
      scelte rimandate, per titolo, con la Wave che bloccano.
-  1. Da confermare in blocco: Visione e criteri di successo · classe · Principi proposti ·
+  1. Da confermare in blocco: Visione e criteri di successo · classe (dal gate) · Principi proposti ·
      mandato, con per ogni materia riservata il valore proposto, l'effetto e l'evidenza
      in una riga (o «non applicabile», con il motivo) ·
      eventuale parte dello scopo da rimandare, con l'effetto su Visione e criteri di successo.
