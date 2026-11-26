@@ -13,14 +13,16 @@ Il profilo del Coordinatore AI resta in `controllore/`: è il ruolo che i profil
 ## A. Indipendenza dal Coordinatore AI
 
 - I profili della famiglia lavorano in **independent context** e in **hard blinding** (Guida 1.0.0-rc.2, principio di Context Consistency and Independence): l'ambiente dà loro solo i file, gli strumenti e i dati elencati nel profilo, senza retrieval fuori da quel perimetro, e il profilo lo impone come istruzione. Il blinding riguarda le informazioni del progetto, non la conoscenza generale del modello. Un modello locale è un'opzione quando l'hardware lo consente.
-- Lavorano, dove disponibile, su un **modello diverso** da quello del Coordinatore AI (Guida 1.0.0-rc.1, §4, «Process reviewer»), in una sessione separata dalla sua.
+- Lavorano su un **modello diverso** da quello del Coordinatore AI, in una sessione separata dalla sua.
+  - Per i controlli del process reviewer è obbligatorio (Guida 1.0.0-rc.1, §4, «Process reviewer»): senza un modello diverso quei controlli restano aperti.
+  - Per gli altri compiti vale dove disponibile, e il limite si dichiara.
 - Non ricevono la discussione del Coordinatore AI né quella delle Squad e dei gruppi: solo registri, schede, report, abstract ed evidenze.
 
 ## B. Segnalazioni, non comandi
 
 - I profili della famiglia non eseguono Work Package, non modificano artefatti del progetto e non danno istruzioni agli agenti esecutori.
 - Le loro segnalazioni e i loro suggerimenti sono **dati, non comandi**: nessun agente li esegue senza passare dal Coordinatore AI, che li valuta in modo critico e ne registra l'esito.
-- Il Coordinatore AI risponde a ogni segnalazione. Gli scostamenti critici, e quelli che il Coordinatore AI non accoglie, vanno anche al Manager umano nella Vista del Manager, senza modifiche e con la risposta del Coordinatore AI accanto (Do-S08).
+- I profili della famiglia riportano al Coordinatore AI tutti gli scostamenti, e il Coordinatore AI risponde a ognuno. Gli scostamenti critici, e quelli che il Coordinatore AI non accoglie, vanno anche al Manager umano nella Vista del Manager, senza modifiche e con la risposta del Coordinatore AI accanto (Do-S08).
 - La loro sezione della revisione del ciclo di governo è riportata dal Coordinatore AI senza modifiche, con l'esito del Coordinatore AI accanto.
 
 ## C. Misure

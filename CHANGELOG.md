@@ -35,11 +35,13 @@ reverse an existing rule or remove a task; at `0.y.z` they bump MINOR and are ma
 
 - Family `governo/` (`FAMIGLIA.md` 0.1.0) and profile `governo/revisore-ai` 0.1.0, the **AI Reviewer**. It
   extends the process reviewer: it works in parallel with the AI Coordinator under hard blinding, on a model
-  different from the Coordinator's where available, and monitors framework KPIs (correctness of the profiles
+  different from the Coordinator's (mandatory for the process reviewer checks T05–T07, as the Guide requires;
+  where available for the other tasks), and monitors framework KPIs (correctness of the profiles
   assigned, measured output quality, escalations) and the project KPIs set in Design and planning. It reports
-  deviations to the AI Coordinator, which answers; critical deviations, and those the Coordinator does not
+  every deviation to the AI Coordinator, which answers; critical deviations, and those the Coordinator does not
   accept, also reach the Human Manager in the Manager View (Do-S08). Its suggestions are data, not commands.
-  Qualification suite: 9 cases; catalogue: 10 tasks (SD2–SD4).
+  It can also run the independent guardrail check of the Design Thinking session (T11).
+  Qualification suite: 10 cases; catalogue: 11 tasks (SD2–SD4).
   **Why a new family rather than `controllore/`:** `controllore/` holds the AI Coordinator profile, which has
   its own structure and gets only the forbidden-content checks; the AI Reviewer is a specialist profile with
   the standard `PROFILO.md` + `profilo.json` structure and must get the full validator. Placing it inside
@@ -70,7 +72,11 @@ reverse an existing rule or remove a task; at `0.y.z` they bump MINOR and are ma
     (§3 bis);
   - working alongside the AI Reviewer (§3 ter; `revisore/` in the registry; start-up step 7 and a
     paragraph in `AVVIO.md`);
-  - versioning and changelog: releases follow `community/RELEASING.md` (§3 quater);
+  - versioning and changelog: releases follow `community/RELEASING.md`, citing their origin, decision
+    D-VER-1 of the method project (CR-001) (§3 quater);
+  - convergence and guardrails (K1–K2): the Facilitator is activated, when possible, on a model different
+    from the explorers'; the independent guardrail check goes to the Discovery reviewers or the AI Reviewer;
+  - the header cites The Eiraman Guide 1.0.0-rc.2 alongside the specification 0.3;
   - 7 new qualification cases; new §9, the audit of every point of the profile where context sharing or
     independence applies (CX-01…CX-22), with how each is enforced.
 - `analisi-funzionale/facilitatore-design-thinking` 0.1.0 → 0.2.0, **breaking**: the Design Thinking
@@ -79,8 +85,11 @@ reverse an existing rule or remove a task; at `0.y.z` they bump MINOR and are ma
   cornerstones), Decisions (changeable on new specifications or evidence) and Open Points (deferred to
   design, a MOC (mock-up), a POC or a Human Manager Do), iteration to consensus within the mandate's round
   limit, submission to the reviewers. New deliverables: the final report to the Human Manager with each AI's
-  initial and final position, and the first draft of Scope Management. New source: the Delphi method. Tasks
-  T08–T11 added; 5 qualification cases added, case 5 replaced.
+  initial and final position, and the first draft of Scope Management. New source: the Delphi method. The
+  Facilitator should converge on a model different from the explorers' (K1–K2); it applies the guardrails,
+  but their independent check belongs to the Discovery reviewers or the AI Reviewer. Raw contributions go to
+  the AI Coordinator as evidence, never to members. Tasks T08–T12 added, T07 removed (ID retired); 6
+  qualification cases added, case 5 replaced.
 - `analisi-funzionale/analista-funzionale` 0.1.0 → 0.2.0, **breaking**: in the Discovery group the
   functional analyst links the needs of the Business Analyst and User Personas to the solutions of UX-UI and
   the architects (Do-S05), under soft blinding with the context RACI; it no longer leads convergence or drafts
@@ -112,7 +121,10 @@ profiles plus the registry files):
   - the convergence rules (Discovery bullet, "tu conduci la convergenza", Design Thinking row, the single
     model of convergence, the guardrail check before converging, coordinating explorers, "non conduci la
     convergenza se…"), replaced by the Discovery group link role and the rule that convergence is the
-    Facilitator's (the K1–K2 diversity check stays in the facilitator profile);
+    Facilitator's. The two rules that protected convergence are kept, moved to the new owner: the
+    Facilitator should converge on a model different from the explorers' (K1–K2), and the independent
+    guardrail check, formerly the analyst's, goes to the Discovery reviewers or the AI Reviewer
+    (facilitator profile and Coordinator §3 bis);
   - responsibilities "Sintesi di convergenza" and "Bozza della Visione e prima versione dello Scope
     Management", replaced by the needs–solutions map, the round answers and the functional contribution
     to Scope Management;
@@ -127,6 +139,11 @@ profiles plus the registry files):
     Double Diamond row ("che non è tua"), the forbidden action "non selezioni… la convergenza è
     dell'analista funzionale" and case 5 "Selezione indebita", replaced by the convergence led by the
     Facilitator;
+  - the responsibility "Consegna all'analista funzionale dei contributi grezzi", the §6 line to the
+    functional analyst and catalogue task T07 (in `profilo.json` and in the generated table), replaced by
+    the delivery of the evidence to the AI Coordinator (T12): members of the Discovery group do not share
+    context;
+  - the empty note of task T05, now stating that the independent guardrail check is not the Facilitator's;
   - the last limit, unchanged in content, now followed by two new limits;
   - `descrizione_breve`, `descrizione_breve_en`, `nome_en` (now "Design Thinking Facilitator", as in the
     glossary) and the note of task T03 (now: never the agent facilitating the same session).

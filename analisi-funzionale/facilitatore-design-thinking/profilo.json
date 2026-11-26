@@ -236,7 +236,7 @@
       "task": "Controllo dei guardrail",
       "deliverable": "elenco dei contributi scartati con il motivo",
       "seniority": "SD2",
-      "note": ""
+      "note": "Applicazione dei guardrail; il controllo indipendente è dei revisori del Discovery group o del Revisore AI."
     },
     {
       "id": "T06",
@@ -244,13 +244,6 @@
       "deliverable": "pagina con direzioni emerse e domande aperte",
       "seniority": "SD4",
       "note": "Documento che prepara una decisione del Manager umano."
-    },
-    {
-      "id": "T07",
-      "task": "Consegna all'analista funzionale",
-      "deliverable": "pacchetto di contributi grezzi e registro di diversità",
-      "seniority": "SD2",
-      "note": "Completezza verificabile sul registro."
     },
     {
       "id": "T08",
@@ -279,6 +272,13 @@
       "deliverable": "posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo",
       "seniority": "SD4",
       "note": "Documento letto dal Manager umano."
+    },
+    {
+      "id": "T12",
+      "task": "Consegna delle evidenze della sessione al Coordinatore AI",
+      "deliverable": "contributi grezzi, registro di diversità e contributi scartati, per il controllo indipendente dei guardrail",
+      "seniority": "SD2",
+      "note": "Sostituisce T07 dalla versione 0.2.0: i membri non condividono il contesto."
     }
   ]
 }

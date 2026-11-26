@@ -14,7 +14,7 @@
     "Scale",
     "Accettazione ed esercizio"
   ],
-  "descrizione_breve": "Lavora in parallelo al Coordinatore AI, in hard blinding e su un modello diverso dove disponibile; monitora i KPI del framework e di progetto e segnala gli scostamenti critici con suggerimenti indipendenti.",
+  "descrizione_breve": "Lavora in parallelo al Coordinatore AI, in hard blinding e su un modello diverso (obbligatorio per i controlli del process reviewer); monitora i KPI del framework e di progetto e riporta tutti gli scostamenti al Coordinatore AI, quelli critici o non accolti anche al Manager umano.",
   "competenze_fonti": [
     {
       "fonte": "The Eiraman Guide 1.0.0-rc.1",
@@ -185,7 +185,7 @@
     "suite": "PROFILO.md §9"
   },
   "nome_en": "AI Reviewer",
-  "descrizione_breve_en": "Works in parallel with the AI Coordinator, under hard blinding and on a different model where available; monitors framework and project KPIs and reports critical deviations with independent suggestions.",
+  "descrizione_breve_en": "Works in parallel with the AI Coordinator under hard blinding and on a different model (mandatory for the process reviewer checks); monitors framework and project KPIs and reports every deviation to the Coordinator, critical or non-accepted ones also to the Human Manager.",
   "seniority": {
     "minima": "SD2",
     "massima": "SD4",
@@ -225,21 +225,21 @@
       "task": "Campionamento delle Wave chiuse",
       "deliverable": "esito su escalation dovute e chiusure su evidenza",
       "seniority": "SD4",
-      "note": "Estende il process reviewer; almeno al livello del lavoro verificato."
+      "note": "Estende il process reviewer; almeno al livello del lavoro verificato. Modello diverso da quello del Coordinatore AI obbligatorio (Guida §4)."
     },
     {
       "id": "T06",
       "task": "Misura di under-escalation e over-escalation (E6)",
       "deliverable": "due indicatori del ciclo con numeratore e denominatore",
       "seniority": "SD3",
-      "note": ""
+      "note": "Modello diverso da quello del Coordinatore AI obbligatorio (Guida §4)."
     },
     {
       "id": "T07",
       "task": "Esame dei casi ad alta divergenza (K8)",
       "deliverable": "esito per ogni caso, con priorità nel campione di calibrazione",
       "seniority": "SD4",
-      "note": ""
+      "note": "Modello diverso da quello del Coordinatore AI obbligatorio (Guida §4)."
     },
     {
       "id": "T08",
@@ -250,8 +250,8 @@
     },
     {
       "id": "T09",
-      "task": "Segnalazione di scostamento critico",
-      "deliverable": "scheda con evidenza, impatto e suggerimenti indipendenti",
+      "task": "Segnalazione di scostamento",
+      "deliverable": "scheda con evidenza, gravità, impatto e suggerimenti indipendenti",
       "seniority": "SD4",
       "note": "I suggerimenti sono dati, non comandi. Gli scostamenti critici o non accolti vanno anche nella Vista del Manager (Do-S08)."
     },
@@ -261,6 +261,13 @@
       "deliverable": "pagina in linguaggio di business, prima le cattive notizie, con l'esito di ogni segnalazione",
       "seniority": "SD4",
       "note": "Documento letto dal Manager umano."
+    },
+    {
+      "id": "T11",
+      "task": "Controllo indipendente dei guardrail della sessione di Design Thinking",
+      "deliverable": "esito del confronto fra contributi grezzi, registro dei giri e guardrail registrati",
+      "seniority": "SD3",
+      "note": "Quando il Coordinatore AI lo affida al Revisore AI invece che ai revisori del Discovery group."
     }
   ]
 }
