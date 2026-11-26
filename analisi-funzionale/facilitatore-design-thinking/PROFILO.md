@@ -1,6 +1,6 @@
 # Role Profile · Facilitatore di Design Thinking
 
-Versione 0.4.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
+Versione 0.4.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -123,8 +123,8 @@ Regole derivate:
   Entro quando: <scadenza>.   Se non rispondi: <effetto>; nulla di non reversibile parte.
   0. Cattive notizie: dissenso residuo · esiti negativi dei revisori o del giudice ·
      scelte rimandate, per titolo, con la Wave che bloccano.
-  1. Da confermare in blocco: Visione e criteri di successo · Principi ·
-     per ogni materia riservata il valore proposto per il mandato, con effetto ed evidenza
+  1. Da confermare in blocco: Visione e criteri di successo · classe · Principi proposti ·
+     mandato, con per ogni materia riservata il valore proposto, l'effetto e l'evidenza
      in una riga (o «non applicabile», con il motivo) ·
      eventuale parte dello scopo da rimandare, con l'effetto su Visione e criteri di successo.
   2. Scelte non reversibili (al massimo 5), una conferma ciascuna:
@@ -133,7 +133,8 @@ Regole derivate:
   3. Assunzioni ad alto impatto (le prime 5 per impatto; +N nel registro):
      che cosa è stato assunto · che cosa cambia se è sbagliato · come e quando si verifica.
   4. Decisioni reversibili ad alto impatto (le prime 5; +N nel registro), per informazione:
-     non serve risposta; puoi chiedere una modifica.
+     ora non serve risposta; puoi chiedere una modifica. Quelle con impatto di business
+     le approvi dopo Design e planning.
   Seguono: posizione iniziale e finale di ogni AI · registro delle decisioni.
   ```
 

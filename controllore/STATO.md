@@ -66,7 +66,7 @@ Ogni dato numerico ha la sua fonte nel registro. Se non è misurato, si indica �
 - che il lavoro di costruzione è partito con una fase non chiusa, se un pacchetto di una fase successiva è avviato o completato mentre i pacchetti di Scoperta, o quelli di Design e planning, mancano o non sono tutti completati;
 - che la fase non è dichiarata, se un pacchetto avviato o completato non ha `fase` o ne ha una che la vista non riconosce.
 
-Il controllo legge ciò che il Coordinatore AI scrive in `stato.json`: non vede un pacchetto di costruzione dichiarato con la fase sbagliata, né un elenco di pacchetti vuoto. Non sostituisce il Revisore AI, che verifica il controllo delle fasi sulle evidenze.
+Il controllo legge ciò che il Coordinatore AI scrive in `stato.json`: non vede un pacchetto di costruzione dichiarato con la fase sbagliata, né un elenco di pacchetti vuoto, né un pacchetto senza `avanzamento` il cui stato tecnico non è «chiuso su prova», che conta come «da fare». Gli avvisi automatici compaiono dopo le cattive notizie scritte dal Coordinatore AI. Non sostituisce il Revisore AI, che verifica il controllo delle fasi sulle evidenze.
 
 **Quote del ciclo.** `ciclo.quota_governo` riporta il costo di governo del ciclo e il costo totale, nella valuta del budget: sono di governo i run del Coordinatore AI, degli AI Scrum Master, dei revisori, del classificatore di escalation (E4), dei giudici (K1), del gate di applicabilità e della redazione dei documenti manageriali (Guida §8, «Governance cycle»; §11, «Run traceability»). `ciclo.fuori_catalogo` riporta i task eseguiti fuori catalogo e il totale dei task del ciclo (Guida §7.1, «Fallback»). La vista mostra le due quote con numeratore e denominatore; se un campo manca, scrive «sconosciuta», mai zero.
 

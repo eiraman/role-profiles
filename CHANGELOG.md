@@ -21,6 +21,76 @@ the version.
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-11-26
+
+Scope: Change Requests CR-011 and CR-012 of the method project. Corrections to 0.7.0 from its final
+independent verification (REV-070-FINALE), which arrived after 0.7.0 had been published and failed it for one
+sentence of the AI Coordinator profile. Registry bump: MINOR, because one rule is added (the build Work
+Package waits for the AI Reviewer); the other changes restore conformity with the Guide 1.0.0-rc.3 or the
+intent stated in 0.7.0. The three profiles stay **draft, not qualified**.
+
+This release does not change the applicability gate: a project whose class exceeds the qualified level of
+the adopter does not start, as the Guide §14 requires. Whether such a project may start on a decision of the
+Human Manager is Change Request CR-013 of the method project, which needs an RFC to the Guide.
+
+### Fixed
+
+- AI Coordinator profile 0.6.0 → 0.7.0, §2, "Ordine obbligato": 0.7.0 said that steps 1 to 7 are done once
+  per project. Step 2 is the applicability gate, which the Guide §14 requires at every Wave and at every
+  change of mandate. Now: steps 3 to 7 are done once per project; the gate is repeated at every Wave and at
+  every change of mandate; a change of class is a Do and reopens step 4.
+- Step 6: the proof of concept is always carried out, in theory or with small trial Work Packages, and its
+  outcome is recorded (Guide §8, "Five phases, one set of rules"); 0.7.0 said "where the functional analyst
+  asks for it".
+- Step 4 and §3 bis: Vision, class and mandate are approved in one step, with the engagement brief; the
+  mandate page is delivered with the brief and carries the values proposed for the reserved matters. The
+  Principles stay proposed until the approval after Design and planning. 0.7.0 described the moment of the
+  mandate in two ways.
+- §3 bis and the Facilitator profile 0.4.0 → 0.4.1: the reversible decisions of the brief are for information
+  at that point; those with business impact go back to the Human Manager's approval after Design and planning
+  (Guide §8, "Phases and decisions"). The format of the brief names the class and the mandate in the block to
+  confirm.
+- §2, "Controllo delle fasi": a build Work Package is one that writes into the product to be delivered; the
+  packages of Discovery, proof of concept and Design and planning produce documents and evidence and do not
+  write into the product. The check is made before each build package, not once per cycle.
+- §2, derogation: it is a Do, holds for that phase and that cycle, is communicated to the AI Reviewer and is
+  never solicited with a question.
+- §3, closure, and §5, "Stato delle fasi": both refer to the steps of the "Ordine obbligato".
+- §3 bis: irreversible choices beyond five, when the Human Manager does not confirm the deferral of scope,
+  are brought as later Do, as the Facilitator profile already said.
+- §3 bis, "Proporzione": "one User Persona" is marked as a reading of the profile, because the Guide names
+  "the User Personas" without a number.
+- `controllore/STATO.md`: what the phase alert of the Manager View does not see, and where the automatic
+  bad news appear. The tool does not change.
+
+### Added
+
+- AI Coordinator profile, §2, "Controllo delle fasi": the build Work Package starts only after the AI
+  Reviewer has checked the `controllo_fasi` event; if the AI Reviewer cannot check it, it is a Do.
+
+### Profile versions
+
+| Profile | Version | Date | State |
+|---|---|---|---|
+| AI Coordinator (`controllore/CONTROLLORE.md`) | 0.6.0 → 0.7.0 | 2026-11-26 | draft, not qualified |
+| `analisi-funzionale/facilitatore-design-thinking` | 0.4.0 → 0.4.1 | 2026-11-26 | draft, not qualified |
+
+### Known gaps
+
+- Entries missing from 0.7.0, recorded here: the AI Coordinator asking the questions and fixing the criteria
+  itself is not a Discovery, nor is a session whose members have no initial and final position; the cap
+  proposed for Discovery is not lower than the estimate; a snapshot whose packages declare no `fase` gets the
+  alert on the undeclared phase.
+- The AI Reviewer's check of the phase check is part of its task T05, which stays open when no model
+  different from the AI Coordinator's is available: in that case the build package cannot start without a Do.
+- The Facilitator and the AI Coordinator profiles provide for the AI Reviewer, or the Discovery reviewers, to
+  check the guardrails of Discovery, while the AI Reviewer is started after Discovery: during Discovery that
+  check is on the Discovery reviewers.
+- With this registry, as with 0.7.0, an adoption at level 0 cannot start a project of class 1 or 2. In test
+  runs with a kit built from 0.7.0 three department requests did not start for this reason, so the rules of
+  CR-012 on Discovery have not been exercised.
+- The known gaps of 0.7.0 stay open.
+
 ## [0.7.0] - 2026-11-26
 
 Scope: Change Requests CR-011 and CR-012 of the method project. CR-012 is described in the first "Added"
@@ -1008,7 +1078,8 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.7.0...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.8.0...main
+[0.8.0]: https://github.com/eiraman/role-profiles/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/eiraman/role-profiles/compare/v0.6.1...v0.7.0
 [0.6.1]: https://github.com/eiraman/role-profiles/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/eiraman/role-profiles/compare/v0.5.1...v0.6.0
