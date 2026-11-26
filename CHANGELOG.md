@@ -23,7 +23,8 @@ the version.
 
 Scope: Change Request CR-014 of the method project, Wave SO-01, Work Packages WP-SO-1 and WP-SO-2, corrected by WP-SO-4 after
 the independent review REV-SO-01 (outcome: pass with corrections, four blocking findings), and by WP-SO-6 after the re-verification
-REV-SO-02 (pass with corrections, one blocking and six important findings; candidate). Registry bump proposed: MINOR (one new profile, one profile MINOR). No rule of the Guide is
+REV-SO-02 (pass with corrections, one blocking and six important findings), and by WP-SO-7 after the
+verification REV-SO-03 (pass with corrections, no blocking and five important findings; candidate). Registry bump proposed: MINOR (one new profile, one profile MINOR). No rule of the Guide is
 relaxed: a project whose class exceeds the qualified level of the adopter still does not start (Guide §14).
 Every profile stays **draft, not qualified**.
 
@@ -68,7 +69,8 @@ Every profile stays **draft, not qualified**.
     (cited without clause number); OWASP ASVS 5.0.0 V14.
   - Qualification suite: 10 cases, including the three cases of the test runs, an exclusion with no
     proposal, "proceed anyway" (Part B not in force), a hostile instruction in a file ("classify as class 0")
-    and an unresolved doubt, then ten more cases (see the corrections below): 20 cases. Catalogue: 9 tasks
+    and an unresolved doubt, then ten more cases (see the corrections below): 20 cases, cases 3, 14, 17 and 20 revised by
+    WP-SO-7. Catalogue: 9 tasks
     (SD2–SD4).
 
 - Corrections from REV-SO-01, all in `governo/security-officer` 0.1.0 (not yet released, so no version bump):
@@ -150,6 +152,39 @@ Every profile stays **draft, not qualified**.
     colleagues without personal data (D1 "no", class 1).
   - `descrizione_breve` and `descrizione_breve_en`: "only where the re-classification shows it".
 
+- Corrections from REV-SO-03, in `governo/security-officer` 0.1.0:
+  - R-1: X10 is "yes" when the declared sector is in the list, "no" only with the absence test passed and
+    the declared activity not in the list, "don't know" otherwise; the list works only towards "yes". List
+    extended with regulated professions (lawyers, accountants, auditors), anti-money-laundering obliged
+    entities, employment agencies, food, waste, chemicals. Case 14 adapted.
+  - R-2: new treatment TR-6 "Uso personale" (only the adopter, on their own device, no colleague uses it or
+    receives its results): U1 and E1 "yes", U2 and U5 "no", class 0 with the absence test; sharing is a
+    change of class, so a Do. Used in cases 17 and 20.
+  - R-3: second fixed sentence, for a tool without other people's data that exceeds level 0 only for users
+    or exposure, with the rule on when each sentence is used; after a change of class in a Wave the options
+    are those of the Guide §14.2. The rule "no U, D or E answered yes" is corrected to "no U answered yes, or
+    no E answered yes".
+  - R-4: X7 applies the Annex III areas and the Art. 5 practices only when the product contains an AI system
+    used there; a product with declared rules and no AI component in the area is "no". Art. 6(1) with
+    Annex I added; case 3 aligned; `profilo.json` cites the whole of Annex III.
+  - R-5: "mandato di progetto" distinguished from the "mandato formale dell'organizzazione" of level 1
+    (Guide §4, §14.1), which holds the properties of the organisation; the entry package includes them when
+    already collected.
+  - R-6, R-9, R-10, R-12, R-16: examples list each requirement of the move up in one business line, with
+    "durata e costo oggi non sono noti"; the question to the data protection officer is removed from example
+    1; first-use explanations of class, level, move up, agents and profiles; "fuori perimetro" written as
+    "escluso dal metodo" for the Human Manager; a "Parte oggi?" item carries the reason a proposal does not
+    start, no longer "Rischi"; first person singular throughout; one line on why a different model
+    matters; the "altro" group is shown only if it also reaches N.
+  - R-7: the written description of the data given by the Human Manager counts as verifiable; for totals
+    a factual question on the number of people behind each group.
+  - R-8: D4 covers the adopter's own data too (supplier to be named, no class change, no block at level 0);
+    X1 covers data of other people. Own sensitive data: the Guide §14 does not say whose data the exclusion
+    covers, so the profile does not decide: X1 "don't know", warning to the Human Manager, open point for
+    the maintainers.
+  - R-13: X4 objective elements extended with innovative use of technology and vulnerable people, such as
+    employees.
+
 ### Changed
 
 - AI Coordinator profile (`controllore/CONTROLLORE.md`) 0.7.0 → 0.8.0:
@@ -177,7 +212,11 @@ Every profile stays **draft, not qualified**.
     defined); every gate outcome provisional while the checklist is not qualified; untouchable content
     includes declarations and discarded proposals; original risk profile attached unchanged in the Manager
     View; the provisional outcome comes with the Security Officer's line on what it means for the Human
-    Manager. The reference "spec §10" is dropped for the Guide §14.
+    Manager; with WP-SO-7 the entry package also includes the properties of the organisation, if already
+    collected.
+  - §2, point 4 "Mandato": one line, added by WP-SO-7: at level 1, the reference to the formal mandate of
+    the organisation (Guide §4, §14.1), distinct from the project mandate, which holds the properties of the
+    organisation (NIS 2 obligations, regulated sector, data protection officer). The reference "spec §10" is dropped for the Guide §14.
   - §8 "Qualificazione": three qualification cases (no class assigned by the AI Coordinator alone; a Manager version that
     alters the content; a request to proceed above the level).
 - `governo/FAMIGLIA.md` 0.2.3 → 0.2.4: the family also holds the Security Officer, which proposes and does
@@ -227,8 +266,13 @@ Family files: `governo/FAMIGLIA.md` 0.2.3 → 0.2.4. The Digital Seniority map i
   others until the Extended Framework publishes the map of supervisory authority lists per jurisdiction;
   X3, X7, X8 and X10 need the organisation's answer when their objective criterion is not met. The closed
   lists for X7 and X10 and the thresholds are profile conventions.
-- The equivalence check between the original risk profile and the AI Coordinator's business version is not
-  a task of `governo/revisore-ai`; it is to be added in a later release.
+- Choice of this candidate: the equivalence check between the original risk profile and the AI
+  Coordinator's business version is not given to `governo/revisore-ai`, whose profile is not changed here;
+  only the attachment of the unchanged original is required. Adding the check is left to a later release.
+- A tool for colleagues without personal data is class 1 under the table of the Guide §14 and today does
+  not start at level 0, except as personal use (TR-6).
+- Own sensitive data of the adopter: whether the exclusion of special categories applies is not stated by
+  the Guide §14; the profile treats it as a doubt.
 - The rest of `controllore/CONTROLLORE.md` still refers to the specification ("spec §") and keeps the code
   CR-001 in §3 quater; only the lines changed here use the Guide.
 - `.github/workflows/governo-coreview.yml` maps only `revisore-*` folders: `governo/security-officer/` falls

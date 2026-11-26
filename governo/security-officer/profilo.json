@@ -37,7 +37,7 @@
     {
       "fonte": "Regolamento (UE) 2024/1689 sull'intelligenza artificiale",
       "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
-      "riferimento": "art. 5; art. 6; art. 50; allegato III, punto 4"
+      "riferimento": "art. 5; art. 6(1) e allegato I; art. 6(2) e allegato III (tutte le aree); art. 50"
     },
     {
       "fonte": "Direttiva (UE) 2022/2555 (NIS 2)",
@@ -227,7 +227,7 @@
     },
     {
       "strumento": "controllo di completezza del profilo di rischio",
-      "uso": "Obbligatorio: il formato del §6 è completo e nell'ordine (testa con esito provvisorio, otto punti, allegati A, B, C); il testo principale non contiene sigle, ID della checklist né articoli; la frase fissa del livello 0 è identica a quella del profilo; ogni proposta ha una sola classe dopo il trattamento e «si può avviare» o «non avvia a questo livello»; procedere sopra il livello non compare, salvo risposta a una domanda del Manager umano. Convenzione del profilo."
+      "uso": "Obbligatorio: il formato del §6 è completo e nell'ordine (testa con esito provvisorio, otto punti, allegati A, B, C); il testo principale non contiene sigle, ID della checklist né articoli; le due frasi fisse del livello 0 sono identiche a quelle del profilo e usate nel caso giusto (dati di altre persone; solo utenti o esposizione); dopo un cambio di classe in una Wave le opzioni sono quelle della Guida §14.2; ogni proposta ha «Parte oggi?»; ogni proposta ha una sola classe dopo il trattamento e «si può avviare» o «non avvia a questo livello»; procedere sopra il livello non compare, salvo risposta a una domanda del Manager umano. Convenzione del profilo."
     },
     {
       "strumento": "ricerca di istruzioni nel materiale",
