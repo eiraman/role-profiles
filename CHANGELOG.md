@@ -32,6 +32,8 @@ reserved matters are confirmed as a block with Vision and Principles and do not 
 Origin: test runs of the method, recorded in the project plan, in which Discovery asked the Human Manager few
 questions and none about costs.
 
+This release also carries Change Request CR-012 (see the first "Added" section).
+
 Registry bump: MINOR, rules and one task are added; no rule, task or deliverable is removed. Both profiles
 stay **draft, not qualified**. The rules are **conventions of the two profiles**, not rules of the Guide. The
 Guide 1.0.0-rc.3 stays as it is: the Discovery report with the initial and final position of each AI (§8) is
@@ -43,7 +45,42 @@ A first candidate of this version was rejected by the independent review (REV-IN
 decide reserved matters when reversible and reduce the scope without a confirmation. This entry describes the
 rewritten candidate.
 
-### Added
+### Added, Change Request CR-012: Discovery skipped by the AI Coordinator
+
+In two test runs out of three with kit 0.8.1 (AI Coordinator profile 0.5.1) the AI Coordinator delivered the
+first cycle without the Design Thinking session, without Design and planning and without the AI Reviewer. In
+both it had asked the Human Manager to approve class, budget and mandate before Discovery, took the approval
+as leave to build, and recorded the skipped phases as a "limit" or as a "reduced application" of the method,
+without a Do. The profile had one written condition for building, the approved mandate, and no rule for the
+case in which time or budget do not cover a mandatory phase. The changes below are in the AI Coordinator
+profile 0.6.0, the same version that carries the engagement brief.
+
+- §2, start: the first message asks only what the gate needs and a cap of spending and time for Discovery,
+  not the approval of the mandate or leave to build; the Vision is the one that results from Discovery; the
+  mandate is proposed after Discovery is closed and the Vision approved.
+- §2, "Ordine obbligato": the eight steps of a new project, from the request to the first Wave that builds
+  the product, none of which is swapped or skipped (Guide §8, "Discovery at every start").
+- §2, "Controllo delle fasi": before any Work Package that builds the product, an event `controllo_fasi` in
+  the run register with the evidence of each step; an approval of a Do or of the mandate does not replace a
+  step.
+- §2, "Nessuna riduzione di tua iniziativa": no phase or obligation is skipped, reduced or deferred by the AI
+  Coordinator's own choice; a "limit" is only what the environment does not allow; when time or budget do
+  not cover a mandatory phase the AI Coordinator stops and brings a Do with four options (more time or
+  budget, a smaller scope, stopping, a derogation that is declared at the top of every delivery).
+- §3 bis, "Proporzione": what the AI Coordinator may size in Discovery (rounds, number of User Personas,
+  architects, Seniority levels, other reviewers) and what it may not remove (the five minimum members, the
+  security and privacy reviewers, the K1 judge, the report), as the Guide §8 requires.
+- §3, closure: no product is delivered while a Work Package of Discovery or of Design and planning is open.
+- §5, "Stato delle fasi": every message that asks for an approval and every delivery state whether
+  Discovery, Design and planning and the AI Reviewer were carried out; a phase not carried out is the first
+  bad news.
+- §7: one hard limit. §8: four cases added to the qualification suite.
+- `controllore/STATO.md` and `controllore/tools/vista_manager.py`: each package declares its `fase`; the
+  Manager View adds by itself, among the bad news, that build work started with Discovery or Design and
+  planning not closed, or that the packages do not declare their phase. The check reads what the AI
+  Coordinator writes and does not replace the AI Reviewer.
+
+### Added, Change Request CR-011: engagement brief
 
 - `analisi-funzionale/facilitatore-design-thinking` 0.3.1 → 0.4.0:
   - three rules for the group, "Scheda di ingaggio": what is delegated is decided, each Decision declaring
@@ -97,6 +134,12 @@ rewritten candidate.
 - The Manager View has no dedicated section for the brief: it is a project document, and its confirmations
   appear among the decisions waiting for the Human Manager.
 - Making these rules part of the method needs an RFC to the Guide.
+- CR-012: the rules are still instructions that the AI Coordinator follows; nothing in the environment stops
+  a Work Package from starting. The phase alert of the Manager View depends on the `fase` the AI Coordinator
+  itself declares.
+- CR-012: the minimum Discovery group of the Guide (five members, two reviewers, one judge) is costly for a
+  very small project, which is the pressure that led to the skipping; making it proportionate needs an RFC to
+  the Guide.
 
 ## [0.6.1] - 2026-11-26
 

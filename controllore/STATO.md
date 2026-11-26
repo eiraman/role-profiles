@@ -37,6 +37,7 @@ Ogni dato numerico ha la sua fonte nel registro. Se non è misurato, si indica �
   ],
   "pacchetti": [
     {"id": "WP-W1-01", "titolo": "…", "wave": "W1",
+     "fase": "Scoperta | POC | Design e planning | Scale | Accettazione ed esercizio",
      "avanzamento": "completato | in corso | da fare",
      "controlli": {"superati": 4, "totale": 10},
      "stima_costo": 18, "costo_effettivo": 20.5,
@@ -60,6 +61,8 @@ Ogni dato numerico ha la sua fonte nel registro. Se non è misurato, si indica �
 **Albero dei Work Package.** L'albero raggruppa i pacchetti per Wave e mostra sui rami la `stima_costo`, nella valuta del budget. `controlli` vale solo per i pacchetti in corso: indica i controlli obbligatori della scheda del Work Package superati sulla candidata e il loro totale, e la vista li mostra come «4/10» (regola del denominatore, spec §8; Guida §12, «Percentages»). Il campo `percentuale` delle versioni precedenti non dichiara il denominatore e non viene più mostrato: va sostituito con `controlli`. Un pacchetto in corso senza `controlli` compare con «?» e con la dicitura «avanzamento non dichiarato». Un pacchetto senza `avanzamento` è «completato» se lo stato tecnico è «chiuso su prova», altrimenti «da fare». Una stima assente compare come «?».
 
 **Documenti di progetto.** `documenti` elenca i soli documenti strategici e manageriali, con percorsi relativi alla cartella `eiraman/`. Il generatore li converte da Markdown in pagine leggibili. Se `documenti` manca, cerca mandato.md, architettura.md (High Level Architectural View), piano.md, decisioni.md, rischi.md, executive.md, performance.md e le revisioni in `ciclo/`. Non pubblica mai `registro.jsonl`, `stato.json`, le evidenze né la cartella `vista/`, anche con maiuscole diverse, e rifiuta percorsi fuori da `eiraman/`: un documento rifiutato compare come «non mostrato». Collegamenti e immagini nei documenti sono relativi alla cartella `eiraman/` e seguono le stesse regole; un disegno si include con `![testo](architettura.svg)`.
+
+**Fase dei pacchetti.** Ogni pacchetto dichiara in `fase` la fase a cui appartiene. La vista usa il campo per un controllo: se un pacchetto di una fase successiva è in corso o completato mentre nessun pacchetto di Scoperta, o nessuno di Design e planning, è completato, aggiunge da sola fra le cattive notizie che il lavoro di costruzione è partito con una fase non chiusa. Lo stesso avviso compare se i pacchetti in corso o completati non dichiarano la fase. Il controllo legge ciò che il Coordinatore AI scrive in `stato.json`: non sostituisce il Revisore AI.
 
 **Quote del ciclo.** `ciclo.quota_governo` riporta il costo di governo del ciclo e il costo totale, nella valuta del budget: sono di governo i run del Coordinatore AI, degli AI Scrum Master, dei revisori, del classificatore di escalation (E4), dei giudici (K1), del gate di applicabilità e della redazione dei documenti manageriali (Guida §8, «Governance cycle»; §11, «Run traceability»). `ciclo.fuori_catalogo` riporta i task eseguiti fuori catalogo e il totale dei task del ciclo (Guida §7.1, «Fallback»). La vista mostra le due quote con numeratore e denominatore; se un campo manca, scrive «sconosciuta», mai zero.
 
