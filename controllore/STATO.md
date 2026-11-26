@@ -17,12 +17,14 @@ Ogni dato numerico ha la sua fonte nel registro. Se non è misurato, si indica �
   "lingua": "it",
   "progetto": "Nome del progetto",
   "visione": "Una frase: problema, utenti, beneficio",
-  "metodo": "Eiraman 0.3",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3",
   "classe": 0,
   "livello": 0,
   "fase": "Scoperta | POC | Design e planning | Scale | Accettazione ed esercizio",
   "aggiornato": "2026-11-25T10:00:00Z",
-  "ciclo": {"numero": 1, "inizio": "2026-11-24", "revisione": "2026-11-28"},
+  "ciclo": {"numero": 1, "inizio": "2026-11-24", "revisione": "2026-11-28",
+            "quota_governo": {"governo": 3.2, "totale": 12.5},
+            "fuori_catalogo": {"task": 2, "totale": 31}},
   "budget": {"valuta": "EUR", "tetto": 100, "speso": 12.5, "sconosciuto": 3,
              "nota": "3 esecuzioni in abbonamento senza importo"},
   "cattive_notizie": ["Una prova è fallita ed è stata ripetuta.", "…"],
@@ -35,7 +37,8 @@ Ogni dato numerico ha la sua fonte nel registro. Se non è misurato, si indica �
   ],
   "pacchetti": [
     {"id": "WP-W1-01", "titolo": "…", "wave": "W1",
-     "avanzamento": "completato | in corso | da fare", "percentuale": 40,
+     "avanzamento": "completato | in corso | da fare",
+     "controlli": {"superati": 4, "totale": 10},
      "stima_costo": 18, "costo_effettivo": 20.5,
      "descrizione": "Che cosa produce, in linguaggio di business",
      "deliverable": ["Pagina elenco", "Prova di accettazione"],
@@ -54,9 +57,11 @@ Ogni dato numerico ha la sua fonte nel registro. Se non è misurato, si indica �
 }
 ```
 
-**Albero dei Work Package.** L'albero raggruppa i pacchetti per Wave e mostra sui rami la `stima_costo`, nella valuta del budget. `percentuale` vale solo per i pacchetti in corso e dichiara il proprio denominatore nel piano, per esempio i criteri di accettazione superati sul totale (spec §8). Un pacchetto senza `avanzamento` è «completato» se lo stato tecnico è «chiuso su prova», altrimenti «da fare». Una stima assente compare come «?».
+**Albero dei Work Package.** L'albero raggruppa i pacchetti per Wave e mostra sui rami la `stima_costo`, nella valuta del budget. `controlli` vale solo per i pacchetti in corso: indica i controlli obbligatori della scheda del Work Package superati sulla candidata e il loro totale, e la vista li mostra come «4/10» (regola del denominatore, spec §8; Guida §12, «Percentages»). Il campo `percentuale` delle versioni precedenti è ancora letto, per i registri esistenti, e compare come «40%»: non dichiara il denominatore e va sostituito con `controlli`. Un pacchetto in corso senza nessuno dei due campi compare con «?». Un pacchetto senza `avanzamento` è «completato» se lo stato tecnico è «chiuso su prova», altrimenti «da fare». Una stima assente compare come «?».
 
 **Documenti di progetto.** `documenti` elenca i soli documenti strategici e manageriali, con percorsi relativi alla cartella `eiraman/`. Il generatore li converte da Markdown in pagine leggibili. Se `documenti` manca, cerca mandato.md, architettura.md (High Level Architectural View), piano.md, decisioni.md, rischi.md, executive.md, performance.md e le revisioni in `ciclo/`. Non pubblica mai `registro.jsonl`, `stato.json`, le evidenze né la cartella `vista/`, anche con maiuscole diverse, e rifiuta percorsi fuori da `eiraman/`: un documento rifiutato compare come «non mostrato». Collegamenti e immagini nei documenti sono relativi alla cartella `eiraman/` e seguono le stesse regole; un disegno si include con `![testo](architettura.svg)`.
+
+**Quote del ciclo.** `ciclo.quota_governo` riporta il costo di governo del ciclo e il costo totale, nella valuta del budget: sono di governo i run del Coordinatore AI, degli AI Scrum Master, dei revisori, del classificatore di escalation (E4), dei giudici (K1), del gate di applicabilità e della redazione dei documenti manageriali (Guida §8, «Governance cycle»; §11, «Run traceability»). `ciclo.fuori_catalogo` riporta i task eseguiti fuori catalogo e il totale dei task del ciclo (Guida §7.1, «Fallback»). La vista mostra le due quote con numeratore e denominatore; se un campo manca, scrive «sconosciuta», mai zero.
 
 Campi facoltativi: `rischi` (elenco di frasi), `escalation_ciclo` (numero di Do del ciclo), `indicatore_do` (valore di riferimento dichiarato nel mandato, di default 3).
 

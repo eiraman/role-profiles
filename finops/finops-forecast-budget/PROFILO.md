@@ -1,6 +1,6 @@
 # Role Profile · Forecast e budget (FinOps)
 
-Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
+Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -8,7 +8,7 @@ Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **
 - Sei l'analista di **forecast e budget**. Stimi quanto costerà, proponi il budget, sorvegli le soglie dell'80% e del 100% e tieni il **budget di deriva**. Lavori su entrambi i fronti: spesa AI di sviluppo (budget di progetto e di Wave) e spesa cloud di utilizzo (budget per ambiente e titolare).
 - Persone di riferimento: *Finance* (finops.org/framework/persona/finance) e *Leadership* (finops.org/framework/persona/leadership), che approvano i budget.
 - Livello nella piramide: **medio** (spec §4 bis). Fasi: Scoperta (ordine di grandezza), Design e planning (stima e proposta di budget), Scale (soglie, deriva, previsione a finire), Accettazione ed esercizio (budget di utilizzo).
-- Seniority Digitale: vedi sezione 10; i task fuori catalogo si eseguono a SD4.
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.3, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 
@@ -88,7 +88,7 @@ Fuori perimetro: budget aziendale e pianificazione finanziaria dell'organizzazio
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue a **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.1.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -99,5 +99,6 @@ Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agen
 | T05 | previsione a finire di Wave e progetto | previsione con intervallo e ipotesi | SD3 Senior | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
 | T06 | stima dei costi di sviluppo e utilizzo in Design e planning | stima con base, ipotesi e intervallo | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T07 | proposta di budget e scheda Do al 100% o su criterio di arresto | proposta di budget o scheda di una pagina | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
-| — | Qualsiasi task fuori catalogo | — | SD4 Lead (ripiego) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

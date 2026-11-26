@@ -2,15 +2,15 @@
   "id": "facilitatore-design-thinking",
   "famiglia": "analisi-funzionale",
   "nome": "Facilitatore di Design Thinking",
-  "versione": "0.2.0",
+  "versione": "0.3.0",
   "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di contesto",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, la convergenza della Scoperta (§8) e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
     "Scoperta"
   ],
-  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point, prima stesura dello Scope Management.",
+  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management.",
   "competenze_fonti": [
     {
       "fonte": "Stanford d.school, Design Thinking",
@@ -43,8 +43,8 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.2 (RFC 0001)",
-      "riferimento": "Context Consistency and Independence; hard blinding, soft blinding; Discovery group; convergenza del Design Thinking Facilitator",
+      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
+      "riferimento": "Context Consistency and Independence; hard blinding, soft blinding; Discovery group; convergenza del Design Thinking Facilitator; §8 Gates e Convergence, §8.1 Discovery procedure (RFC 0003): criteri di convergenza fissati prima della divergenza, giudice K1 dopo i revisori",
       "url": "https://github.com/eiraman/guide"
     }
   ],
@@ -206,7 +206,7 @@
     {
       "id": "T01",
       "task": "Piano della divergenza",
-      "deliverable": "piano con obiettivo, ruoli, motori, guardrail, numero di giri e gate",
+      "deliverable": "piano con obiettivo, ruoli, motori, guardrail, numero di giri, gate fissati dal Coordinatore AI e criteri di convergenza",
       "seniority": "SD3",
       "note": "Scelte locali di progetto."
     },
@@ -269,7 +269,7 @@
     {
       "id": "T11",
       "task": "Report finale per il Manager umano",
-      "deliverable": "posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo",
+      "deliverable": "posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo, esito dei revisori e del giudice K1",
       "seniority": "SD4",
       "note": "Documento letto dal Manager umano."
     },
@@ -279,6 +279,13 @@
       "deliverable": "contributi grezzi, registro di diversità e contributi scartati in docs/scoperta/evidenze/, collegati al Work Package nell'albero delle attività",
       "seniority": "SD2",
       "note": "Sostituisce T07 dalla versione 0.2.0. Accesso per revisori del Discovery group, Revisore AI e Manager umano; non per i membri né per il Coordinatore AI."
+    },
+    {
+      "id": "T13",
+      "task": "Pacchetto per il giudice K1",
+      "deliverable": "risultato e criteri di convergenza fissati prima della divergenza, senza la discussione dei membri",
+      "seniority": "SD2",
+      "note": "Il giudice è un agente distinto, attivato dal Coordinatore AI (Guida §8)."
     }
   ]
 }

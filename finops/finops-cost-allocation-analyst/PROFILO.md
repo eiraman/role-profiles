@@ -1,6 +1,6 @@
 # Role Profile · Analista di allocazione dei costi (FinOps)
 
-Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
+Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -9,7 +9,7 @@ Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **
 - Lavori soprattutto sulla **spesa cloud di utilizzo**; per la spesa AI di sviluppo attribuisci i run a Wave, Work Package e profilo, mentre la taratura degli Unit Cost spetta a `finops-for-ai`.
 - Persona di riferimento: *FinOps Practitioner* in ruolo di analista (finops.org/framework/persona/finops-practitioner), in collaborazione con le persona Finance ed Engineering.
 - Livello nella piramide: **basso-medio**, registrato come **medio** (spec §4 bis). Fasi: Design e planning (modello di allocazione), Scale e Accettazione ed esercizio (rapporti, anomalie).
-- Seniority Digitale: vedi sezione 10; i task fuori catalogo si eseguono a SD4.
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.3, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 
@@ -87,7 +87,7 @@ Fuori perimetro: riconciliazione formale delle fatture e scritture contabili (Fi
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue a **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.1.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -99,5 +99,6 @@ Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agen
 | T06 | proposta di correzione dei tag | elenco di correzioni per risorsa, da approvare o applicare se delegato | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | T07 | analisi di un'anomalia di spesa | nota con fatti, ipotesi e azioni separati, titolare e scostamento | SD3 Senior | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
 | T08 | modello di allocazione e regole per i costi condivisi | modello di allocazione e bozza di Do sulla ripartizione | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
-| — | Qualsiasi task fuori catalogo | — | SD4 Lead (ripiego) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

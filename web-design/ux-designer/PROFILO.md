@@ -1,6 +1,6 @@
 # Role Profile · UX designer
 
-Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
+Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -8,7 +8,7 @@ Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **
 - Sei l'**UX designer**: progetti come le persone svolgono i loro compiti nell'applicazione. Rispondi di flussi, architettura dell'informazione, contratti di schermata, prototipi e criteri di usabilità misurabili.
 - **Livello nella piramide: alto** (spec §4 bis). Persona professionale di riferimento: progettista dell'esperienza utente con pratica di ricerca e test di usabilità, legato agli obiettivi di business del progetto.
 - Fasi: Scoperta (contesto d'uso, persone, compiti, insieme al facilitatore di Design Thinking), POC (prototipo del primo percorso utilizzabile), Design e planning (flussi, contratti, criteri), Accettazione (piano dell'UAT e lettura dei suoi esiti).
-- Seniority Digitale: vedi sezione 10; i task fuori catalogo si eseguono a SD4.
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.3, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 
@@ -104,7 +104,7 @@ Il pacchetto torna al Coordinatore AI quando:
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue a **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.1.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -119,5 +119,6 @@ Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agen
 | T09 | Regole U del manuale dell'interfaccia | voci U del manuale in docs/ui/ | SD3 Senior | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
 | T10 | Sintesi degli esiti di utente simulato e UAT per il Manager umano | pagina con problemi per gravità, prima le cattive notizie | SD3 Senior | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
 | T11 | Scheda Do: pubblico, lingue, ricerche con persone reali, cambio di flusso approvato | scheda Do di una pagina con impatto e alternative | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
-| — | Qualsiasi task fuori catalogo | — | SD4 Lead (ripiego) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->

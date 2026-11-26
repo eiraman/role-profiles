@@ -2,9 +2,9 @@
   "id": "analista-funzionale",
   "famiglia": "analisi-funzionale",
   "nome": "Analista funzionale",
-  "versione": "0.2.0",
+  "versione": "0.3.0",
   "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di contesto",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -56,7 +56,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.2 (RFC 0001)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
       "riferimento": "Context Consistency and Independence; soft blinding e context RACI; Discovery group",
       "url": "https://github.com/eiraman/guide"
     }

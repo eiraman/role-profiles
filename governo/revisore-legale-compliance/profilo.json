@@ -2,9 +2,9 @@
   "id": "revisore-legale-compliance",
   "famiglia": "governo",
   "nome": "Revisore legale e di compliance",
-  "versione": "0.1.0",
+  "versione": "0.2.0",
   "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di contesto",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -15,7 +15,7 @@
   "descrizione_breve": "Agente AI revisore del dominio legale e compliance: nel Discovery group, quando il Coordinatore AI lo sceglie, e nelle altre revisioni affidate, individua in hard blinding le questioni legali e di compliance dei Principi e delle Decisioni (AI Act, responsabilità da prodotto, Cyber Resilience Act, licenze, Guida §14) e le porta a una persona; non dà pareri legali, rinvia il GDPR al revisore di privacy e non sostituisce il revisore umano del dominio.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.2 (RFC 0001)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
       "riferimento": "§7 Hard blinding; §8 Discovery executors and reviewers; §9 Deterministic anchors; §14 Out of scope at any level, Applicability gate, Legal advice",
       "url": "https://github.com/eiraman/guide"
     },

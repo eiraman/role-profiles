@@ -1,6 +1,6 @@
 # Famiglia · Governo
 
-Versione 0.2.2 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.2 (RFC 0001) · Stato: **bozza non qualificata**
+Versione 0.2.3 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
 
 Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipendente dal Coordinatore AI: il Revisore AI e i revisori AI dei domini di governo (GOVERNANCE §4.5). Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo.
 

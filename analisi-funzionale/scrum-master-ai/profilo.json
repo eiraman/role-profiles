@@ -2,9 +2,9 @@
   "id": "scrum-master-ai",
   "famiglia": "analisi-funzionale",
   "nome": "Scrum Master AI",
-  "versione": "0.1.0",
+  "versione": "0.2.0",
   "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di squadra e di contesto",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di squadra e di contesto e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -14,7 +14,7 @@
   "descrizione_breve": "Coordina gli agenti di una squadra nel contesto condiviso di un Work Package, tiene il Log Tracker del pacchetto e consegna al Coordinatore AI il report delle attività e l'abstract di chiusura; non prende decisioni tecniche e non valida né chiude il pacchetto.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.2 (RFC 0001)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
       "riferimento": "§2 Eiraman theory; §3 Context Consistency and Independence; §4 Specialist AI roles e Internal accountability; §5 Deny, Delegate, Do, E3 Micro-decisions; §7 Role tiers, Agentic Scrum (No Sprints or human timeboxes, One team per Work Package, A new agent for every Work Package, One AI Scrum Master per team, Shared context except for the unit tester, Competing teams), Soft blinding, The AI Coordinator as Scrum of Scrums, Retrospective; §8 Discovery group, Design and planning as a Work Package, Wave; §8.1 Who works in each phase, Design and planning; §9 Open points, Product Backlog, Work Package record, Definition of ready, Definition of done, Dissent or missing proof, Log Tracker; §11 Hostile-input test; §12 Three layers of documentation, Percentages",
       "url": "https://github.com/eiraman/guide"
     },

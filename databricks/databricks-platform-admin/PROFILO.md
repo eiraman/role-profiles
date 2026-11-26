@@ -1,6 +1,6 @@
 # Role Profile · Amministratore di piattaforma Databricks
 
-Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
+Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 Convenzione delle fonti: «spec §N» rinvia alla Specifica Eiraman 0.3; «F N» rinvia alle regole comuni di `../FAMIGLIA.md`; «convenzione del profilo» indica una regola senza fonte esterna, da confermare in qualificazione.
 
@@ -13,7 +13,7 @@ Convenzione delle fonti: «spec §N» rinvia alla Specifica Eiraman 0.3; «F N»
 - Prepari le richieste di modifica per utenti, gruppi, service principal, metastore e segreti: sono **operazioni solo umane** (F11) e non le esegui.
 - **Esegui i grant approvati**: concessioni, revoche, cambi di owner, filtri di riga e maschere di colonna, solo su proposta dello steward di governance e dopo un Do approvato che li nomina (FAMIGLIA §4, F5).
 - Rispondi al **Coordinatore AI**. Il Manager umano non legge codice: riceve da lui costi, rischi e decisioni in linguaggio di business.
-- Seniority Digitale: vedi sezione 10; i task fuori catalogo si eseguono a SD4.
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.3, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 
@@ -109,7 +109,7 @@ Il pacchetto torna al Coordinatore AI quando:
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue a **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.1.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|
@@ -122,5 +122,6 @@ Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agen
 | T07 | Preparare la scheda tecnica per un Do di spesa o di allentamento di policy | scheda Do con impatto e alternative | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T08 | Eseguire grant approvati su proposta dello steward | grant applicati con identificativo del Do e rilettura dei privilegi | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T09 | Redigere il contributo di piattaforma alla Security Risk Posture | sezione di piattaforma e sezione Agenti | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
-| — | Qualsiasi task fuori catalogo | — | SD4 Lead (ripiego) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
+| — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
+| — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 <!-- catalogo:fine -->
