@@ -30,7 +30,7 @@ bump: MINOR, marked **breaking**: three rules of 0.7.0 are reversed or narrowed 
 other changes restore conformity with the Guide 1.0.0-rc.3 or the intent stated in 0.7.0. The profiles stay
 **draft, not qualified**.
 
-This release does not change the applicability gate: a project whose class exceeds the qualified level of
+This release does not relax the applicability gate: a project whose class exceeds the qualified level of
 the adopter does not start, as the Guide §14 requires. Whether such a project may start on a decision of the
 Human Manager is Change Request CR-013 of the method project, which needs an RFC to the Guide.
 
@@ -40,7 +40,8 @@ Human Manager is Change Request CR-013 of the method project, which needs an RFC
   per project. Step 2 is the applicability gate, which the Guide §14 requires at every Wave and at every
   change of mandate. Now: steps 3 to 7 are done once per project; the gate is repeated at every Wave and at
   every change of mandate; a change of class is always a Do, with the three options of the Guide §14 when the
-  new class exceeds the level, and its answer updates class and mandate without a new Discovery.
+  new class exceeds the level; the gate is run again on the resulting scope, and class and mandate are
+  updated without a new Discovery, unless the reduction of scope changes the Vision, which is a new project.
 - Step 6: the proof of concept is always carried out, in theory or with small trial Work Packages, and its
   outcome is recorded (Guide §8, "Five phases, one set of rules"); 0.7.0 said "where the functional analyst
   asks for it".
@@ -75,8 +76,9 @@ Rules of 0.7.0 that are reversed or narrowed, in the AI Coordinator profile and 
 
 ### Added
 
-- AI Coordinator profile, §2, "Controllo delle fasi": a report of the AI Reviewer on a missing step stops the
-  build Work Packages until it is resolved.
+- AI Coordinator profile, §2, "Controllo delle fasi": the AI Coordinator assesses at once a report of the AI
+  Reviewer on a missing step, as data and not as a command; if the step is missing it stops the build Work
+  Packages until the step is closed on evidence; a report it does not accept goes to the Human Manager.
 
 ### Profile versions
 
@@ -109,8 +111,8 @@ Rules of 0.7.0 that are reversed or narrowed, in the AI Coordinator profile and 
     up several obligations of the Guide (E4, SWOT on a changed Decision, comprehension and completeness
     checks, calibration of E6, hostile-input test, Security Risk Posture, SBOM).
 - A simulation by the same review of a one-person, class 0 project: at best five messages to read and four
-  confirmations; realistically nine or ten messages and seven to nine confirmations or actions, three of
-  them on matters internal to the method. The AI Coordinator profile is over four hundred lines long.
+  confirmations; realistically nine or ten messages and seven to nine confirmations or actions, some of
+  them on matters internal to the method. The simulation was made on the first commit of this release. The AI Coordinator profile is over four hundred lines long.
 - With this registry, as with 0.7.0, an adoption at level 0 cannot start a project of class 1 or 2. In test
   runs with a kit built from 0.7.0 three department requests did not start for this reason, so the rules of
   CR-012 on Discovery have not been exercised.
