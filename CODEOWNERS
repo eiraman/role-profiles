@@ -54,3 +54,7 @@
 /sviluppo/shell-iac-developer/      @eiraman/security
 /governo/revisore-sicurezza/        @eiraman/security
 /governo/revisore-privacy/          @eiraman/privacy
+/governo/revisore-architettura-cloud/            @eiraman/cloud-architecture
+/governo/revisore-architettura-applicativa-dati/ @eiraman/app-data-architecture
+/governo/revisore-test-qualita/                 @eiraman/test-quality
+/governo/revisore-legale-compliance/            @eiraman/legal-compliance

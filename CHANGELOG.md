@@ -21,6 +21,85 @@ the version.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-26
+
+Scope: second part of Change Request CR-004 of the method project, Wave REV-02 (Do-S12), with the rules of
+the `governo/` family as extended by Do-S14. Registry bump: MINOR (four new profiles). No rule is reversed and
+no task is removed. Every profile stays **draft, not qualified**.
+
+### Added
+
+- Four AI reviewers of the governance domains (GOVERNANCE.md §4.5), each 0.1.0, in the structure of
+  `governo/revisore-sicurezza` and `governo/revisore-privacy`:
+  - `governo/revisore-architettura-cloud`, the **Cloud architecture reviewer**: sources NIST SP 800-145, the
+    AWS Well-Architected Framework (six pillars) and the Azure Well-Architected Framework (five pillars), CSA
+    Cloud Controls Matrix v4 (current 4.1, cited only), Guide §6 K7, §9, §11; detailed platform design is
+    referred to `aws/aws-architect` and `azure/azure-architect`;
+  - `governo/revisore-architettura-applicativa-dati`, the **Application and data architecture reviewer**:
+    sources Guide §9, §10 (composable architecture) and §11 (untrusted tasks), ISO/IEC 25010:2023 and
+    DAMA-DMBOK (cited only), TOGAF® Standard cited by name with the trademark notice; data architecture only,
+    personal data protection is referred to the privacy reviewer;
+  - `governo/revisore-test-qualita`, the **Test and quality reviewer**: sources Guide §6, §7, §9 and §9.1,
+    PA-8 and Do-S03 (test progress never depends on a person; User Personas run the simulated-user functional
+    tests), ISO/IEC/IEEE 29119 parts 1–4 and the ISTQB CTFL syllabus v4.0.1 (cited only);
+  - `governo/revisore-legale-compliance`, the **Legal and compliance reviewer**: it gives no legal opinions; it
+    identifies legal and compliance questions and escalates them to a person, the domain reviewer of record or
+    a lawyer. Sources Regulation (EU) 2024/1689 (Art. 5, 6, 50, 113, Annex III), Directive (EU) 2024/2853
+    (Art. 2, 4(1), 7, 22), Regulation (EU) 2024/2847 (Art. 2, 3(1), 13, 24, 71, Annex I), SPDX 3.0 and the
+    SPDX License List, REUSE 3.3, Guide §14; the GDPR is referred to the privacy reviewer.
+  - Common to all four: hard blinding (Do-S06); each judges only the Principles and Decisions of its own
+    domain (Do-S09) and is in the Discovery group when the AI Coordinator selects it; family rules §A–§C apply
+    (Do-S14); they do not replace the human reviewer of record (GOVERNANCE.md §1, principle 1); findings are
+    data, not commands. Qualification suite: 10 cases each, including a Decision outside the domain, a prompt
+    injection in the material and a missing-information case. Catalogue: 9 tasks each (SD2–SD4).
+  - Articles and sections checked on the official pages: the Publications Office text of the three EU acts,
+    docs.aws.amazon.com and aws.amazon.com, learn.microsoft.com, csrc.nist.gov, cloudsecurityalliance.org,
+    iso.org, dama.org, istqb.org, spdx.dev, reuse.software.
+
+### Changed
+
+- `governo/FAMIGLIA.md` 0.2.0 → 0.2.1: table rows for the four new reviewers; the sentence on the other four
+  domains, now stating that each of the six domains has its profile.
+- `controllore/` (AI Coordinator) 0.4.1 → 0.4.2: §3 bis names the four new reviewer profiles and records that
+  whether the bridge rule of Do-S10 ends for these four domains is a decision of the Human Manager at
+  release; until it is taken, the bridge rule stays as recorded.
+- `README.md` (Governance family 7 profiles, total 47, the six reviewers in the AI Reviewer paragraph),
+  `CODEOWNERS` (each new folder to its domain team: Cloud Architecture, Application & Data Architecture, Test &
+  Quality, Legal & Compliance). `REUSE.toml` is unchanged: the new files are covered by the existing patterns.
+
+### Removed
+
+Every line removed since v0.3.0 is a version string or a line replaced by a longer one (`release_diff.py`,
+8 lines):
+
+- **Version strings:** the `Versione` lines of `controllore/CONTROLLORE.md` and of `governo/FAMIGLIA.md`.
+- `governo/FAMIGLIA.md`: the paragraph on the domain reviewers, whose last sentence ("Gli altri quattro domini
+  avranno i loro profili in una Wave successiva") is replaced by the six-domain sentence.
+- `README.md`: the Governance row and the "Total: 43 profiles" line, replaced (7 and 47); the two lines naming
+  the security and privacy reviewers, now naming all six.
+- This file: the `[Unreleased]` link, now comparing from v0.4.0.
+
+### Profile versions
+
+Profiles not listed keep the version of the latest table in which they appear.
+
+| Profile | Version | Date | State |
+|---|---|---|---|
+| `governo/revisore-architettura-cloud` | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `governo/revisore-architettura-applicativa-dati` | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `governo/revisore-test-qualita` | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `governo/revisore-legale-compliance` | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `controllore/` (AI Coordinator) | 0.4.1 → 0.4.2 | 2026-11-26 | draft, not qualified |
+
+Family files: `governo/FAMIGLIA.md` 0.2.0 → 0.2.1. The Digital Seniority map is unchanged (0.1.0).
+
+### Known gaps
+
+- The `tools` tests pass, but their registry baseline (`baseline_registro.txt`, 41 profiles) does not include
+  the six reviewer profiles; the registry now has 47. It is updated in a later `tools` release.
+- Whether the bridge rule of Do-S10 ends for cloud architecture, application and data architecture, test and
+  quality, and legal and compliance is open for the Human Manager's decision at release.
+
 ## [0.3.0] - 2026-11-26
 
 Scope: first part of Change Request CR-004 of the method project (six reviewer profiles of the governance
@@ -351,7 +430,8 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.3.0...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.4.0...main
+[0.4.0]: https://github.com/eiraman/role-profiles/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/eiraman/role-profiles/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/eiraman/role-profiles/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/eiraman/role-profiles/compare/v0.1.0...v0.1.1

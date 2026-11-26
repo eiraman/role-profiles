@@ -28,7 +28,7 @@ across the registry and matches its folder name.
 | Family | Folder | Profiles |
 |---|---|---|
 | Functional analysis | `analisi-funzionale/` | 5 |
-| Governance | `governo/` | 3 |
+| Governance | `governo/` | 7 |
 | AWS | `aws/` | 6 |
 | Azure | `azure/` | 7 |
 | Databricks | `databricks/` | 5 |
@@ -36,7 +36,7 @@ across the registry and matches its folder name.
 | Development | `sviluppo/` | 7 |
 | Web design | `web-design/` | 5 |
 
-Total: 43 profiles. Also included: `_modello/` (the template every profile starts from, and the templates
+Total: 47 profiles. Also included: `_modello/` (the template every profile starts from, and the templates
 `business-analyst` and `user-persona`, from which the AI Coordinator creates project instances without
 changing their rules and limits),
 `_seniority/` (the Digital Seniority map, `seniority.json`, and its explanation) and `controllore/`
@@ -76,8 +76,10 @@ Coordinator should get a profile structure of its own is an open item for the Te
 
 The **AI Reviewer** (`governo/revisore-ai/`), which works in parallel with the AI Coordinator, is a
 specialist profile with the standard structure and is validated like the others. The same family holds
-the AI reviewers of the security and privacy governance domains (`governo/revisore-sicurezza/`,
-`governo/revisore-privacy/`), who review the Discovery group's Principles and Decisions of their own domain;
+the AI reviewers of the six governance domains (`governo/revisore-sicurezza/`, `governo/revisore-privacy/`,
+`governo/revisore-architettura-cloud/`, `governo/revisore-architettura-applicativa-dati/`,
+`governo/revisore-test-qualita/`, `governo/revisore-legale-compliance/`), who review the Discovery group's
+Principles and Decisions of their own domain;
 they are AI agents and do not replace the human reviewer of the domain. The templates in
 `_modello/` are not selected by CI, which skips folders starting with `_`: validate them locally.
 
