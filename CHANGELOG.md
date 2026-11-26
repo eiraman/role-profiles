@@ -29,10 +29,10 @@ applicability gate and delivers a risk profile, and a class 1 project may run in
 level 0 by an explicit and recorded decision of the Human Manager, within the limits of the Guide §14.2.
 
 **Starting state.** The release was prepared in two steps on top of the tag `v0.8.0` (`0bc7f86`). The first
-step (CR-014, Wave SO-01) is five local commits, up to `8eedc8d`, never published: they add
+step (CR-014, Wave SO-01) is five commits, up to `036ebbf`, never published before this release: they add
 `governo/security-officer` 0.1.0 and bring the AI Coordinator to 0.8.0 and `governo/FAMIGLIA.md` to 0.2.4,
-all written on the Guide 1.0.0-rc.3. The second step (CR-018, Wave RP-RC4) starts from `8eedc8d`, does not
-rewrite those commits and aligns the profiles to the Guide 1.0.0-rc.4. The version numbers of the first step
+all written on the Guide 1.0.0-rc.3. The second step (CR-018, Wave RP-RC4) starts from that state, does not
+change its content and aligns the profiles to the Guide 1.0.0-rc.4. The version numbers of the first step
 were never released; because that candidate was reviewed and used on the test bench, the profiles changed by
 the second step take a new number.
 
@@ -86,7 +86,7 @@ those of RFC 0004.
 | 23 | The Security Officer works under hard blinding; a model different from the AI Coordinator's is recommended where available | Security Officer §1; AI Coordinator §3, §9 CX-24; `governo/FAMIGLIA.md` | changed (the source is now the Guide §7 and §14); added in the AI Coordinator | 13, 14 |
 | 24 | The draft profiles are used by declared deviation: in the Do of an admitted project, and at the top of every gate outcome | Security Officer header, §3 A5 and A6, §6; AI Coordinator §2 point 3, §2 ter | added (deviations of the method project, see above) | none: CR-013 decision 8, Do-S25 |
 
-**First step, CR-014 (local candidate `8eedc8d`, written on the Guide 1.0.0-rc.3, never published).** Where the
+**First step, CR-014 (candidate `036ebbf`, locally `8eedc8d`, written on the Guide 1.0.0-rc.3, never published).** Where the
 second step changes a rule, the second step prevails; the entries of the first step are kept as they were
 written. Scope: Change Request CR-014 of the method project, Wave SO-01, Work Packages WP-SO-1 and WP-SO-2, corrected by WP-SO-4 after
 the independent review REV-SO-01 (outcome: pass with corrections, four blocking findings), and by WP-SO-6 after the re-verification
@@ -496,8 +496,9 @@ and `analisi-funzionale/analista-funzionale` (input to the gate; they cite the s
   under the default team (Test & Quality) until the workflow is updated by DevSecOps & Tooling.
 - The `tools` registry baseline does not include the new profile, and `community/VERSIONING.md` still lists
   the versions of 0.8.0.
-- The five commits of the first step carry no DCO sign-off: the DCO check of RELEASING step 4 fails on them.
-  To be settled before publication.
+- The commits of the first step were made locally without a DCO sign-off and with a local address (the
+  candidate then was `8eedc8d`). By decision of the Human Manager they were rewritten before publication with
+  the sign-off and the noreply identity; the tree of each commit is unchanged.
 
 ### Open points for the Author of the Guide
 
