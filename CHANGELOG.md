@@ -21,6 +21,11 @@ the version.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-26
+
+Release files only: no profile, template or Seniority map changes. Every profile keeps the version
+in the 0.1.0 table below.
+
 ### Added
 
 - This changelog, with the per-profile version table.
@@ -30,8 +35,8 @@ the version.
 ## [0.1.0] - 2026-11-25
 
 First public release of the registry, published as commits `c9af3d8` and `114f7a2` of
-`github.com/eiraman/role-profiles` during the restricted launch of 25 November 2026. It was not tagged:
-tagging starts with the next release (VERSIONING.md, "Tags").
+`github.com/eiraman/role-profiles` during the restricted launch of 25 November 2026. It was not tagged.
+The tag `v0.1.0` will be applied retroactively to `114f7a2`.
 
 ### Added
 
@@ -111,4 +116,5 @@ Notes on the history before this release, from the project's activity log:
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
 [Unreleased]: https://github.com/eiraman/role-profiles/compare/114f7a2d656698d2057aa176f0d18139bfeca332...main
+[0.1.1]: https://github.com/eiraman/role-profiles/compare/114f7a2d656698d2057aa176f0d18139bfeca332...main
 [0.1.0]: https://github.com/eiraman/role-profiles/tree/114f7a2d656698d2057aa176f0d18139bfeca332
