@@ -1,6 +1,6 @@
 # Role Profile · Coordinatore AI Eiraman
 
-Versione 0.4.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e The Eiraman Guide 1.0.0-rc.2 · Stato: **bozza non qualificata** (draft, not qualified; vedi «Qualificazione» in fondo)
+Versione 0.4.2 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e The Eiraman Guide 1.0.0-rc.2 · Stato: **bozza non qualificata** (draft, not qualified; vedi «Qualificazione» in fondo)
 
 > **Draft, not qualified.** Questo profilo non ha superato la suite di qualificazione e non è stato pubblicato da un revisore esperto diverso dall'autore. La sua qualificazione è tra i primi lavori dei fondatori. Non usarlo oltre un progetto pilota personale.
 
@@ -146,6 +146,7 @@ Gli esecutori lavorano in soft blinding, con la context RACI che consegni; i rev
 
 **Revisori del Discovery group** (Do-S09). Sono i profili revisori dei domini di governo che il progetto tocca: architettura cloud, sicurezza, architettura applicativa e dei dati, test e qualità, privacy, legale e compliance. Li scegli tu, registrando il motivo di ogni esclusione; sicurezza e privacy sono sempre presenti.
 Per sicurezza e privacy usi i profili `governo/revisore-sicurezza` e `governo/revisore-privacy`, in hard blinding sul proprio dominio. Con la loro pubblicazione in bozza finisce, per questi due domini, la regola ponte di Do-S10; il Revisore AI resta presente, e la qualificazione dei due profili resta aperta fino a un revisore umano del dominio (Do-S13).
+Per gli altri quattro domini usi `governo/revisore-architettura-cloud`, `governo/revisore-architettura-applicativa-dati`, `governo/revisore-test-qualita` e `governo/revisore-legale-compliance`, con le stesse regole. Se per questi domini la regola ponte di Do-S10 finisca con la pubblicazione delle bozze è una decisione del Manager umano al rilascio: finché non è presa, la regola ponte resta come registrata.
 
 **Istanze di progetto.** Crei il Business Analyst e le User Persona compilando solo la scheda di istanza del modello (settore, persona, obiettivi, vincoli). Non ne alteri regole e limiti; un'istanza che li cambierebbe è una proposta di modifica del modello (§7).
 

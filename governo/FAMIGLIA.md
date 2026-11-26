@@ -1,6 +1,6 @@
 # Famiglia · Governo
 
-Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.2 (RFC 0001) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.2 (RFC 0001) · Stato: **bozza non qualificata**
 
 Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipendente dal Coordinatore AI: il Revisore AI e i revisori AI dei domini di governo (GOVERNANCE §4.5). Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo.
 
@@ -9,10 +9,14 @@ Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipen
 | Revisore AI | `revisore-ai/` | medio | tutte, in parallelo al Coordinatore AI |
 | Revisore di sicurezza | `revisore-sicurezza/` | medio | Scoperta (Discovery group, sempre presente); altre revisioni del dominio affidate dal Coordinatore AI |
 | Revisore di privacy | `revisore-privacy/` | medio | Scoperta (Discovery group, sempre presente); altre revisioni del dominio affidate dal Coordinatore AI |
+| Revisore di architettura cloud | `revisore-architettura-cloud/` | medio | Scoperta (Discovery group, quando il Coordinatore AI lo sceglie); altre revisioni del dominio affidate dal Coordinatore AI |
+| Revisore di architettura applicativa e dei dati | `revisore-architettura-applicativa-dati/` | medio | Scoperta (Discovery group, quando il Coordinatore AI lo sceglie); altre revisioni del dominio affidate dal Coordinatore AI |
+| Revisore di test e qualità | `revisore-test-qualita/` | medio | Scoperta (Discovery group, quando il Coordinatore AI lo sceglie); altre revisioni del dominio affidate dal Coordinatore AI |
+| Revisore legale e di compliance | `revisore-legale-compliance/` | medio | Scoperta (Discovery group, quando il Coordinatore AI lo sceglie); altre revisioni del dominio affidate dal Coordinatore AI |
 
 Il profilo del Coordinatore AI resta in `controllore/`: è il ruolo che i profili di questa famiglia sorvegliano, e ha una struttura propria.
 
-I revisori dei domini di governo sono agenti AI: non sostituiscono il revisore umano titolare o supplente del dominio, perché nessun sistema AI è reviewer of record (GOVERNANCE §1, principio 1). Giudicano solo i Principi e le Decisioni del proprio dominio (Guida 1.0.0-rc.2, §8, «Discovery executors and reviewers»; Do-S09). Gli altri quattro domini avranno i loro profili in una Wave successiva (Do-S12).
+I revisori dei domini di governo sono agenti AI: non sostituiscono il revisore umano titolare o supplente del dominio, perché nessun sistema AI è reviewer of record (GOVERNANCE §1, principio 1). Giudicano solo i Principi e le Decisioni del proprio dominio (Guida 1.0.0-rc.2, §8, «Discovery executors and reviewers»; Do-S09). I sei domini di GOVERNANCE §4.5 hanno ciascuno il proprio profilo (Do-S12).
 
 Le regole dei §A–§C valgono per tutti i profili della famiglia, compresi i revisori dei domini di governo (Do-S14).
 
