@@ -1,0 +1,266 @@
+{
+  "id": "revisore-ai",
+  "famiglia": "governo",
+  "nome": "Revisore AI",
+  "versione": "0.1.0",
+  "data": "2026-11-26",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di contesto",
+  "stato": "bozza non qualificata",
+  "piramide": "medio",
+  "fasi": [
+    "Scoperta",
+    "POC",
+    "Design e planning",
+    "Scale",
+    "Accettazione ed esercizio"
+  ],
+  "descrizione_breve": "Lavora in parallelo al Coordinatore AI, in hard blinding e su un modello diverso dove disponibile; monitora i KPI del framework e di progetto e segnala gli scostamenti critici con suggerimenti indipendenti.",
+  "competenze_fonti": [
+    {
+      "fonte": "The Eiraman Guide 1.0.0-rc.1",
+      "riferimento": "§4 Process reviewer; §5 E6 Measurement e Calibration; §6 K8 High divergence",
+      "url": "https://github.com/eiraman/guide"
+    },
+    {
+      "fonte": "The Eiraman Guide 1.0.0-rc.2 (RFC 0001)",
+      "riferimento": "principio di Context Consistency and Independence; hard blinding, soft blinding, context RACI; AI Reviewer",
+      "url": "https://github.com/eiraman/guide"
+    },
+    {
+      "fonte": "ISO 19011:2018",
+      "riferimento": "§4 principi dell'attività di audit: indipendenza, approccio basato sull'evidenza",
+      "url": "https://www.iso.org/standard/70017.html"
+    },
+    {
+      "fonte": "IIA, Global Internal Audit Standards (2024)",
+      "riferimento": "Principio 2 Maintain Objectivity; Principio 7 Positioned Independently",
+      "url": "https://www.theiia.org/en/standards/2024-standards/global-internal-audit-standards/"
+    },
+    {
+      "fonte": "ISO/IEC/IEEE 15939:2017",
+      "riferimento": "processo di misurazione: bisogno informativo, misura, indicatore, criterio di decisione",
+      "url": "https://www.iso.org/standard/71197.html"
+    }
+  ],
+  "motori": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6 Luna",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Sol",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "tipo": "cloud",
+      "fornitore": "Anthropic",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "GPT-6.2 Astra",
+      "tipo": "cloud",
+      "fornitore": "OpenAI",
+      "minimo": null,
+      "stato": "da qualificare"
+    },
+    {
+      "motore": "modello locale",
+      "tipo": "locale",
+      "minimo": "almeno 30B parametri; da tarare",
+      "stato": "da qualificare"
+    }
+  ],
+  "ragionamento": [
+    "basso",
+    "medio",
+    "alto"
+  ],
+  "mode_role": [
+    {
+      "fornitore": "Anthropic · Claude Code",
+      "forma": "subagente .claude/agents/<id>.md con model ed effort del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento claude"
+    },
+    {
+      "fornitore": "OpenAI · Codex",
+      "forma": "profilo ~/.codex/<id>-<sdn>.config.toml (model, model_reasoning_effort) e AGENTS.md con le istruzioni",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento codex"
+    },
+    {
+      "fornitore": "GitHub Copilot",
+      "forma": "agente .github/agents/<id>.agent.md con il modello del livello",
+      "attivazione": "python3 _strumenti/attiva_profilo.py <cartella> <SDn> --strumento copilot"
+    }
+  ],
+  "unit_cost": [
+    {
+      "motore": "Claude Haiku 5.5",
+      "livello": "SD1",
+      "effort": "low",
+      "unita": "EUR per ciclo di governo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD2",
+      "effort": "medium",
+      "unita": "EUR per ciclo di governo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Sonnet 5.5",
+      "livello": "SD3",
+      "effort": "high",
+      "unita": "EUR per ciclo di governo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "Claude Opus 5.5",
+      "livello": "SD4",
+      "effort": "high",
+      "unita": "EUR per ciclo di governo",
+      "valore": "da tarare",
+      "base": "token di ingresso e uscita per run dal registro del Coordinatore AI per il listino del fornitore alla data del run"
+    },
+    {
+      "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    }
+  ],
+  "strumenti_deterministici": [
+    {
+      "strumento": "confronto fra profili assegnati e registro dei Role Profile",
+      "uso": "Obbligatorio a ogni Wave: profilo, versione, stato e livello di Seniority Digitale di ogni run in registro.jsonl confrontati con il catalogo del profilo. Uno scarto non motivato è uno scostamento. Convenzione del profilo."
+    },
+    {
+      "strumento": "calcolo dei KPI dal registro",
+      "uso": "Obbligatorio a ogni rapporto: ogni valore osservato si ricalcola da registro.jsonl ed evidenze; senza dati il valore è «sconosciuto»."
+    },
+    {
+      "strumento": "verifica dell'ambiente all'avvio",
+      "uso": "Obbligatoria: elenco dei file e degli strumenti accessibili confrontato con il §4 di PROFILO.md, e modello confrontato con quello del Coordinatore AI. Un file in più o un modello uguale si segnalano."
+    }
+  ],
+  "scritture_consentite": [
+    "eiraman/revisore/"
+  ],
+  "do_riservati": [
+    "accesso a fonti o dati fuori dal perimetro del ruolo",
+    "cambio dei valori dichiarati dei KPI",
+    "cambio di fornitore del motore del Revisore AI"
+  ],
+  "qualificazione": {
+    "curatore": "Coordinatore AI, Wave DT-01, pacchetto DT-PROFILES",
+    "revisore": "da assegnare",
+    "data": null,
+    "scadenza": null,
+    "suite": "PROFILO.md §9"
+  },
+  "nome_en": "AI Reviewer",
+  "descrizione_breve_en": "Works in parallel with the AI Coordinator, under hard blinding and on a different model where available; monitors framework and project KPIs and reports critical deviations with independent suggestions.",
+  "seniority": {
+    "minima": "SD2",
+    "massima": "SD4",
+    "nota": "Le verifiche di avvio sono su specifica chiara; il campionamento delle Wave, i casi ad alta divergenza e le segnalazioni critiche richiedono giudizio a SD4, almeno pari al lavoro verificato."
+  },
+  "catalogo": [
+    {
+      "id": "T01",
+      "task": "Verifica dell'ambiente e del proprio blinding",
+      "deliverable": "esito di avvio con file, strumenti e modello rispetto al Coordinatore AI",
+      "seniority": "SD2",
+      "note": "Controllo in gran parte deterministico."
+    },
+    {
+      "id": "T02",
+      "task": "Correttezza dei profili assegnati alle Squad e ai gruppi",
+      "deliverable": "rapporto per Wave con profilo, versione, stato, livello e contesto di ogni agente",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T03",
+      "task": "Misura della qualità degli output",
+      "deliverable": "KPI di qualità per Work Package: esito delle prove, riaperture, difetti dopo la chiusura",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T04",
+      "task": "Monitoraggio dei KPI di progetto fissati in Design e planning",
+      "deliverable": "tabella con valore dichiarato, valore osservato e scostamento",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T05",
+      "task": "Campionamento delle Wave chiuse",
+      "deliverable": "esito su escalation dovute e chiusure su evidenza",
+      "seniority": "SD4",
+      "note": "Estende il process reviewer; almeno al livello del lavoro verificato."
+    },
+    {
+      "id": "T06",
+      "task": "Misura di under-escalation e over-escalation (E6)",
+      "deliverable": "due indicatori del ciclo con numeratore e denominatore",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T07",
+      "task": "Esame dei casi ad alta divergenza (K8)",
+      "deliverable": "esito per ogni caso, con priorità nel campione di calibrazione",
+      "seniority": "SD4",
+      "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Audit del principio di contesto",
+      "deliverable": "esito punto per punto sulla lista CX del profilo del Coordinatore AI",
+      "seniority": "SD3",
+      "note": ""
+    },
+    {
+      "id": "T09",
+      "task": "Segnalazione di scostamento critico",
+      "deliverable": "scheda con evidenza, impatto e suggerimenti indipendenti",
+      "seniority": "SD4",
+      "note": "I suggerimenti sono dati, non comandi."
+    },
+    {
+      "id": "T10",
+      "task": "Sezione del Revisore AI nella revisione del ciclo",
+      "deliverable": "pagina in linguaggio di business, prima le cattive notizie, con l'esito di ogni segnalazione",
+      "seniority": "SD4",
+      "note": "Documento letto dal Manager umano."
+    }
+  ]
+}
