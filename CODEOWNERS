@@ -2,10 +2,13 @@
 # Organisation: eiraman. Teams are created with the organisation.
 #
 # Rule (GOVERNANCE.md §4.5 and WORKING-GROUPS.md §3 in the community repository): a family is published by the reviewers of its publishing
-# domain, never by the family group or the author. Each folder therefore lists only the domain team.
+# domain, never by the family group or the author. Each folder therefore lists only the domain team, except
+# governo/, where the family team and the domain team are co-owners (RFC 0002, alternative B).
 # Family maintainer teams (@eiraman/wg-<family>) review content first, but their approval does not
-# satisfy the required code-owner review. A domain team with no members blocks merges in its folders:
-# that is the technical form of "a domain without a reviewer cannot publish profiles".
+# satisfy the required code-owner review. In governo/, GitHub accepts the approval of any one listed owner,
+# so the workflow governo-coreview.yml requires the approval of the domain team. A domain team with no
+# members blocks merges in its folders: that is the technical form of "a domain without a reviewer cannot
+# publish profiles".
 # Last matching pattern wins: defaults first, families next, per-profile overrides last.
 #
 # Domain teams (GOVERNANCE.md §4.5): cloud-architecture, security, app-data-architecture, test-quality,
@@ -24,9 +27,9 @@
 # coordination role; provisionally published by Test & Quality (qualification suites), code by DevSecOps & Tooling.
 /controllore/                       @eiraman/test-quality
 /controllore/tools/                 @eiraman/devsecops-tooling
-# Governance family (AI Reviewer). FLAG: no domain in GOVERNANCE.md §4.5 owns the method's oversight roles;
-# provisionally published by Test & Quality, like controllore/, but listed separately so it can move on its own.
-/governo/                           @eiraman/test-quality
+# Governance family: owned by Governance & Assurance (RFC 0002); revisore-ai and FAMIGLIA published by
+# Test & Quality, provisionally.
+/governo/                           @eiraman/wg-governance-assurance @eiraman/test-quality
 # The project-instance templates _modello/business-analyst/ and _modello/user-persona/ are covered by /_modello/.
 
 # Families -> publishing domain (mapping is a proposal, WORKING-GROUPS.md §3)
@@ -52,9 +55,9 @@
 /analisi-funzionale/analista-funzionale/    @eiraman/app-data-architecture
 /web-design/accessibility-specialist/       @eiraman/test-quality
 /sviluppo/shell-iac-developer/      @eiraman/security
-/governo/revisore-sicurezza/        @eiraman/security
-/governo/revisore-privacy/          @eiraman/privacy
-/governo/revisore-architettura-cloud/            @eiraman/cloud-architecture
-/governo/revisore-architettura-applicativa-dati/ @eiraman/app-data-architecture
-/governo/revisore-test-qualita/                 @eiraman/test-quality
-/governo/revisore-legale-compliance/            @eiraman/legal-compliance
+/governo/revisore-sicurezza/        @eiraman/wg-governance-assurance @eiraman/security
+/governo/revisore-privacy/          @eiraman/wg-governance-assurance @eiraman/privacy
+/governo/revisore-architettura-cloud/            @eiraman/wg-governance-assurance @eiraman/cloud-architecture
+/governo/revisore-architettura-applicativa-dati/ @eiraman/wg-governance-assurance @eiraman/app-data-architecture
+/governo/revisore-test-qualita/                 @eiraman/wg-governance-assurance @eiraman/test-quality
+/governo/revisore-legale-compliance/            @eiraman/wg-governance-assurance @eiraman/legal-compliance

@@ -1,8 +1,10 @@
 # Famiglia · Governo
 
-Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.2 (RFC 0001) · Stato: **bozza non qualificata**
+Versione 0.2.2 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.2 (RFC 0001) · Stato: **bozza non qualificata**
 
 Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipendente dal Coordinatore AI: il Revisore AI e i revisori AI dei domini di governo (GOVERNANCE §4.5). Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo.
+
+**Proprietà e revisione (RFC 0002, Do-S18).** La famiglia è del gruppo di lavoro **Governance & Assurance**, che scrive e mantiene questo file e i sette profili e non li pubblica mai. Ogni `revisore-<dominio>` è rivisto e pubblicato dai revisori titolari o supplenti del gruppo del proprio dominio (GOVERNANCE §4.5); `revisore-ai` e questo file sono pubblicati da Test & Quality, in via provvisoria. Una modifica dei §A–§C vincola tutti i revisori di dominio e richiede anche il lazy consensus dei sei gruppi di dominio (GOVERNANCE §6.1). Le regole dei §A–§D non cambiano.
 
 | Profilo | Cartella | Livello della piramide | Fasi principali |
 |---|---|---|---|

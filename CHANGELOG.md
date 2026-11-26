@@ -21,6 +21,47 @@ the version.
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-11-26
+
+Scope: Change Request CR-007 of the method project, implementing RFC 0002 (`guide/rfcs/0002-governo-family.md`),
+alternative B, decided by Do-S18: the working group **Governance & Assurance** owns the family `governo/`,
+and the domain groups co-review the reviewer profile of their own domain. The change was prepared on v0.4.1 as
+0.4.2 (Wave GOV-01) and is released here on top of 0.5.0, with the same content (Change Request CR-010, decision
+D-CONS-1). Registry bump: PATCH (ownership,
+documentation and CI only; no rule, limit or task of any profile changes). Every profile stays **draft, not
+qualified**.
+
+### Changed
+
+- `CODEOWNERS`: `/governo/` lists `@eiraman/wg-governance-assurance` and `@eiraman/test-quality`; each
+  `/governo/revisore-<domain>/` lists `@eiraman/wg-governance-assurance` and the team of its domain. The FLAG
+  on `governo/` is replaced by "owned by Governance & Assurance (RFC 0002); revisore-ai and FAMIGLIA
+  published by Test & Quality, provisionally", and the header comment no longer says that every folder lists
+  only the domain team.
+- `README.md`: the families table names Governance & Assurance (RFC 0002) for `governo/`.
+- `governo/FAMIGLIA.md` 0.2.1 → 0.2.2: a header paragraph on ownership and review (Governance & Assurance
+  authors and maintains and never publishes; each `revisore-<domain>` is co-reviewed and published by the
+  reviewers of record of its domain; `revisore-ai` and the family file by Test & Quality, provisionally;
+  changes to §A–§C also need lazy consensus of the six domain groups). Rules §A–§D unchanged.
+
+### Added
+
+- CI, `governo-coreview.yml`: on pull requests that change `governo/`, the check passes only if a member of
+  the required team approved the current head commit: the domain team for `governo/revisore-<domain>/`, and
+  Test & Quality for `governo/revisore-ai/`, `governo/FAMIGLIA.md` and any other family file. Approvals by the
+  author or on an earlier commit do not count; an unknown `revisore-*` folder fails. The check reads only the
+  GitHub API and never runs the pull request's code. It needs the organisation secret `EIRAMAN_TEAMS_TOKEN`
+  (read access to team membership) and must be set as a required status check; until both are set by the
+  organisation, it fails or only reports, and the co-review is not enforced (open point).
+
+### Profile versions
+
+| Profile or file | Version | Date | State |
+|---|---|---|---|
+| `governo/FAMIGLIA.md` | 0.2.1 → 0.2.2 | 2026-11-26 | draft, not qualified |
+
+No profile, template or the AI Coordinator profile changes.
+
 ## [0.5.0] - 2026-11-26
 
 Scope: Change Request CR-008 of the method project, Wave SM-01. The Guide requires one AI Scrum Master per
@@ -518,7 +559,8 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.5.0...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.5.1...main
+[0.5.1]: https://github.com/eiraman/role-profiles/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/eiraman/role-profiles/compare/v0.4.1...v0.5.0
 [0.4.1]: https://github.com/eiraman/role-profiles/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/eiraman/role-profiles/compare/v0.3.0...v0.4.0

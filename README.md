@@ -28,7 +28,7 @@ across the registry and matches its folder name.
 | Family | Folder | Profiles |
 |---|---|---|
 | Functional analysis | `analisi-funzionale/` | 6 |
-| Governance | `governo/` | 7 |
+| Governance (Governance & Assurance, RFC 0002) | `governo/` | 7 |
 | AWS | `aws/` | 6 |
 | Azure | `azure/` | 7 |
 | Databricks | `databricks/` | 5 |

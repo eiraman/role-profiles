@@ -1,0 +1,128 @@
+# SPDX-FileCopyrightText: 2026 Paolo Ungari and contributors
+# SPDX-License-Identifier: Apache-2.0
+#
+# Co-review of the governo/ family (RFC 0002, alternative B; WORKING-GROUPS.md §3 in the community repository).
+# CODEOWNERS lists the family team @eiraman/wg-governance-assurance and the domain team as co-owners of each
+# governo/revisore-<domain>/ folder, and GitHub accepts the approval of any one code owner. This check closes
+# that gap: a pull request that changes a governo/ path passes only if, for every path, a member of the
+# required publishing team has approved the current head commit.
+#   governo/revisore-<domain>/            -> the team of that domain (GOVERNANCE.md §4.5)
+#   governo/revisore-ai/, governo/FAMIGLIA.md and any other governo/ file -> test-quality (provisional, RFC 0002)
+# An unknown governo/revisore-* folder fails until it is added to the map below.
+# Approvals by the pull request author, or on an earlier commit, do not count.
+#
+# The check needs:
+#   - the secret EIRAMAN_TEAMS_TOKEN, a token that can read team membership of the organisation
+#     (GitHub App or fine-grained token with "Members: read"); GITHUB_TOKEN cannot read it. Without the
+#     secret the check fails, it never passes by default;
+#   - to be a required status check of the default branch (ruleset or branch protection), or it only reports.
+# Setting the secret and the required check are settings of the organisation, owned by DevSecOps & Tooling
+# and the Steward. Pull requests from forks get no secrets: the check fails and a maintainer re-runs it.
+# The workflow never checks out or runs the code of the pull request: it reads only the GitHub API.
+name: governo-coreview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths: ["governo/**"]
+  pull_request_review:
+    types: [submitted, dismissed]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  coreview:
+    name: Domain co-review of governo/
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Require the approval of the domain team
+        env:
+          GH_API: ${{ github.api_url }}
+          REPO: ${{ github.repository }}
+          ORG: ${{ github.repository_owner }}
+          PR: ${{ github.event.pull_request.number }}
+          PR_TOKEN: ${{ github.token }}
+          TEAMS_TOKEN: ${{ secrets.EIRAMAN_TEAMS_TOKEN }}
+        run: |
+          python3 -I - <<'PY'
+          import json, os, sys, urllib.error, urllib.request
+
+          TEAMS = {
+              "revisore-sicurezza": "security",
+              "revisore-privacy": "privacy",
+              "revisore-architettura-cloud": "cloud-architecture",
+              "revisore-architettura-applicativa-dati": "app-data-architecture",
+              "revisore-test-qualita": "test-quality",
+              "revisore-legale-compliance": "legal-compliance",
+              "revisore-ai": "test-quality",
+          }
+          DEFAULT = "test-quality"  # governo/FAMIGLIA.md and any other file of the family
+
+          api, repo, org, pr = os.environ["GH_API"], os.environ["REPO"], os.environ["ORG"], os.environ["PR"]
+
+          def get(url, token, allow_404=False):
+              req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}",
+                                                         "Accept": "application/vnd.github+json",
+                                                         "X-GitHub-Api-Version": "2022-11-28"})
+              try:
+                  with urllib.request.urlopen(req) as r:
+                      return json.load(r)
+              except urllib.error.HTTPError as e:
+                  if allow_404 and e.code == 404:
+                      return None
+                  sys.exit(f"::error::GitHub API {e.code} on {url}")
+
+          def pages(url, token):
+              out, page = [], 1
+              while True:
+                  batch = get(f"{url}?per_page=100&page={page}", token)
+                  out += batch
+                  if len(batch) < 100:
+                      return out
+                  page += 1
+
+          def required_team(path):
+              parts = path.split("/")
+              if len(parts) > 2 and parts[1].startswith("revisore-"):
+                  if parts[1] not in TEAMS:
+                      sys.exit(f"::error::{path}: folder {parts[1]} has no domain in governo-coreview.yml")
+                  return TEAMS[parts[1]]
+              return DEFAULT
+
+          info = get(f"{api}/repos/{repo}/pulls/{pr}", os.environ["PR_TOKEN"])
+          head, author = info["head"]["sha"], info["user"]["login"]
+          paths = set()
+          for f in pages(f"{api}/repos/{repo}/pulls/{pr}/files", os.environ["PR_TOKEN"]):
+              paths.update(p for p in (f["filename"], f.get("previous_filename")) if p)
+          need = {}
+          for p in sorted(paths):
+              if p.startswith("governo/"):
+                  need.setdefault(required_team(p), []).append(p)
+          if not need:
+              print("No governo/ path in this pull request: nothing to check.")
+              sys.exit(0)
+
+          token = os.environ.get("TEAMS_TOKEN") or ""
+          if not token:
+              sys.exit("::error::secret EIRAMAN_TEAMS_TOKEN is not set: domain approval cannot be verified")
+
+          last = {}
+          for r in pages(f"{api}/repos/{repo}/pulls/{pr}/reviews", os.environ["PR_TOKEN"]):
+              if r["state"] in ("APPROVED", "CHANGES_REQUESTED", "DISMISSED"):
+                  last[r["user"]["login"]] = r
+          approvers = sorted(u for u, r in last.items()
+                             if r["state"] == "APPROVED" and r["commit_id"] == head and u != author)
+
+          fail = 0
+          for team, files in sorted(need.items()):
+              ok = [u for u in approvers
+                    if (get(f"{api}/orgs/{org}/teams/{team}/memberships/{u}", token, allow_404=True) or {}).get("state") == "active"]
+              if ok:
+                  print(f"{team}: approved by {', '.join(ok)} ({len(files)} files)")
+              else:
+                  print(f"::error::no approval of @{org}/{team} on {head[:12]} for: {', '.join(files)}")
+                  fail = 1
+          sys.exit(fail)
+          PY
