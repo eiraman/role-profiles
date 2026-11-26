@@ -376,8 +376,12 @@ Every profile stays **draft, not qualified**.
 - Second step, `governo/security-officer`, changes to rules of the first step (see the table above, rules 14
   to 17, 20, 22 and 23): header box; §1 (purpose, class, independence, hard blinding and model); §3 A2, A3,
   A4; table of the treatments (TR-2, TR-3) and of the exclusions; §5; §6 points 1, 3, 4 and 8, untouchable
-  content, dialogue; §8.
-- Second step, `governo/FAMIGLIA.md` 0.2.4 → 0.3.0 (0.2.3 → 0.3.0 against 0.8.0): Guide 1.0.0-rc.4; the
+  content, dialogue; §8. After REV-RP4-01: in §8 a missing hard blinding is a non-conformity declared at the
+  top of the outcome, no longer a limit the role accepts (a different model stays a declared limit); in §6
+  the fixed sentence for class 2 has an opening line for the doubt on the class.
+- Second step, `governo/FAMIGLIA.md` 0.2.4 → 0.3.0 (0.2.3 → 0.3.0 against 0.8.0): Guide 1.0.0-rc.4; on the
+  rules that the Guide 1.0.0-rc.4 added or changed the Guide prevails over the specification 0.3, which
+  otherwise prevails in the family as before (found by REV-RP4-01); the
   paragraph on the Security Officer says that it delivers the risk profile, that the reviewer roles are not
   held by it or by an agent instantiated from its profile, that its hard blinding is required by the Guide
   and that it runs the gate as a draft by declared deviation.
@@ -469,7 +473,14 @@ and `analisi-funzionale/analista-funzionale` (input to the gate; they cite the s
 - Findings of the independent review REV-RP4-01 recorded and not applied: the word "titolare" covers both
   the owner of the Guide §4 and the controller of the GDPR; U4, E4 and D3 "yes" are out of scope by profile
   convention; X9 and X11 admit no treatment by profile convention; the declared adoption level is not
-  verified by the gate; the examples compress the seven requirements of the decision.
+  verified by the gate; the examples compress the seven requirements of the decision, do not list every
+  question for the organisation and do not say that the draft profiles are an exception of the method
+  project; "the consent on the data of colleagues is not a Do of the Human Manager" may be read against the
+  reserved matter "personal data" of the Guide §5; the Guide §6 "Security and personal data" is applied to
+  the Security Officer, which is not a verifier; the AI Coordinator's header extends the deviation on draft
+  profiles to its own profile; the warning that sign-in with the corporate identity processes personal data
+  of colleagues is in the suite cases but not in a rule of the Security Officer; this changelog carries
+  internal codes of the method project (Work Packages and reviews), as earlier entries do.
 - `controllore/tools/vista_manager.py` and `controllore/STATO.md` have no field for the declaration that the
   project runs above the qualified level: the AI Coordinator writes it among the bad news. The tool is not
   changed by this release.

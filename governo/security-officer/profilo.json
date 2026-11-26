@@ -223,7 +223,7 @@
     },
     {
       "strumento": "prova di assenza di dati personali di altri e prova di classe 0 (PROFILO.md §3, A1)",
-      "uso": "Obbligatorie. Prova di assenza, per D1, X3, X4, X8, X10: nessun identificatore diretto, nessun identificatore riconducibile a una persona con le fonti abituali, nessun aggregato sotto N persone (indicativo 10), ingresso già aggregato. Prova di classe 0: la prova di assenza più U1 ed E1 «sì». Una condizione non verificabile fa fallire la prova."
+      "uso": "Obbligatorie. Prova di assenza, per D1, X3, X4: nessun identificatore diretto, nessun identificatore riconducibile a una persona con le fonti abituali, nessun aggregato sotto N persone (indicativo 10), ingresso già aggregato. Prova di classe 0, richiesta anche per il «no» provvisorio di X8 e X10: la prova di assenza più U1 ed E1 «sì». Una condizione non verificabile fa fallire la prova."
     },
     {
       "strumento": "controllo di completezza del profilo di rischio",
