@@ -24,6 +24,10 @@
 # coordination role; provisionally published by Test & Quality (qualification suites), code by DevSecOps & Tooling.
 /controllore/                       @eiraman/test-quality
 /controllore/tools/                 @eiraman/devsecops-tooling
+# Governance family (AI Reviewer). FLAG: no domain in GOVERNANCE.md §4.5 owns the method's oversight roles;
+# provisionally published by Test & Quality, like controllore/, but listed separately so it can move on its own.
+/governo/                           @eiraman/test-quality
+# The project-instance templates _modello/business-analyst/ and _modello/user-persona/ are covered by /_modello/.
 
 # Families -> publishing domain (mapping is a proposal, WORKING-GROUPS.md §3)
 /azure/                             @eiraman/cloud-architecture

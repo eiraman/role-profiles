@@ -13,6 +13,8 @@ path = [
   "_seniority/**",
   "controllore/*.md",
 ]
+# Paths added in 0.2.0 (governo/, _modello/business-analyst/, _modello/user-persona/) hold only
+# PROFILO.md, profilo.json and FAMIGLIA.md files, covered by the patterns above.
 precedence = "override"
 SPDX-FileCopyrightText = "2026 Paolo Ungari and contributors"
 SPDX-License-Identifier = "CC-BY-4.0"

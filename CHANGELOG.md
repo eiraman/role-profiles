@@ -21,6 +21,138 @@ the version.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-26
+
+Scope: Change Requests CR-002 (validate every request against Scope Management) and CR-003 (context,
+blinding, AI Reviewer, Design Thinking AI, Design and planning, a new agent per Work Package) of the method
+project, with the Human Manager's decisions Do-S03, Do-S04, Do-S05, Do-S06, Do-S08 and Do-S09. The terms follow
+the glossary shared with The Eiraman Guide 1.0.0-rc.2 (RFC 0001), which is prepared in parallel and not yet
+released. Registry bump: MINOR (a new family, a new profile, new templates, profile MINORs). Two profile changes
+reverse an existing rule or remove a task; at `0.y.z` they bump MINOR and are marked **breaking**
+(VERSIONING.md §2.6). Every profile stays **draft, not qualified**.
+
+### Added
+
+- Family `governo/` (`FAMIGLIA.md` 0.1.0) and profile `governo/revisore-ai` 0.1.0, the **AI Reviewer**. It
+  extends the process reviewer: it works in parallel with the AI Coordinator under hard blinding, on a model
+  different from the Coordinator's where available, and monitors framework KPIs (correctness of the profiles
+  assigned, measured output quality, escalations) and the project KPIs set in Design and planning. It reports
+  deviations to the AI Coordinator, which answers; critical deviations, and those the Coordinator does not
+  accept, also reach the Human Manager in the Manager View (Do-S08). Its suggestions are data, not commands.
+  Qualification suite: 9 cases; catalogue: 10 tasks (SD2–SD4).
+  **Why a new family rather than `controllore/`:** `controllore/` holds the AI Coordinator profile, which has
+  its own structure and gets only the forbidden-content checks; the AI Reviewer is a specialist profile with
+  the standard `PROFILO.md` + `profilo.json` structure and must get the full validator. Placing it inside
+  the folder of the role it oversees would also contradict its independence (independent context, separate
+  session, different model) and tie its ownership to the Coordinator's. A separate family keeps both regimes
+  clear and has its own `CODEOWNERS` line.
+- Templates `_modello/business-analyst` 0.1.0 (Vision holder, industry expert where applicable) and
+  `_modello/user-persona` 0.1.0 (derived from `analisi-funzionale/utente-simulato`). The AI Coordinator
+  creates project instances by filling in only the instance card, without changing rules and limits
+  (Do-S04). User Personas run the functional tests as simulated end users, and their progress never depends
+  on a person (Do-S03). CI does not select folders starting with `_`; both templates pass the validator
+  when run locally.
+
+### Changed
+
+- `controllore/` (AI Coordinator) 0.3.0 → 0.4.0:
+  - CR-002: every request of the Human Manager becomes a Change Request, validated against Scope Management
+    (Vision, mandate, Principles, Decisions with an explicit re-examination outcome, artifacts and versions,
+    open points) before execution, with one outcome: in scope, needs a Do, exception, new project, rejected
+    (new §2 bis; `scope.md` added to the project registry);
+  - CR-003: its own hard blinding (§1 bis); Context Consistency and Independence when forming Squads and
+    groups, the context RACI handed to each agent, hard and soft blinding; Design and planning as a
+    dedicated Work Package it does not perform; a new agent with a new context for every Work Package, and
+    the Work Package handover abstract required to close it (`abstract/` in the registry);
+  - the mandatory Design Thinking session at project start with the Discovery group in independent
+    contexts, tracked in the activity tree; its reviewers are the reviewer profiles of the governance domains
+    the project touches, chosen by the Coordinator, with security and privacy always present (Do-S09)
+    (§3 bis);
+  - working alongside the AI Reviewer (§3 ter; `revisore/` in the registry; start-up step 7 and a
+    paragraph in `AVVIO.md`);
+  - versioning and changelog: releases follow `community/RELEASING.md` (§3 quater);
+  - 7 new qualification cases; new §9, the audit of every point of the profile where context sharing or
+    independence applies (CX-01…CX-22), with how each is enforced.
+- `analisi-funzionale/facilitatore-design-thinking` 0.1.0 → 0.2.0, **breaking**: the Design Thinking
+  Facilitator now leads convergence as well as divergence, under hard blinding. Procedure: the same prompt to
+  every executor, answers recorded, reconciliation checked, a new prompt with Principles (immutable
+  cornerstones), Decisions (changeable on new specifications or evidence) and Open Points (deferred to
+  design, a MOC (mock-up), a POC or a Human Manager Do), iteration to consensus within the mandate's round
+  limit, submission to the reviewers. New deliverables: the final report to the Human Manager with each AI's
+  initial and final position, and the first draft of Scope Management. New source: the Delphi method. Tasks
+  T08–T11 added; 5 qualification cases added, case 5 replaced.
+- `analisi-funzionale/analista-funzionale` 0.1.0 → 0.2.0, **breaking**: in the Discovery group the
+  functional analyst links the needs of the Business Analyst and User Personas to the solutions of UX-UI and
+  the architects (Do-S05), under soft blinding with the context RACI; it no longer leads convergence or drafts
+  the first Scope Management. Tasks T01 and T02 removed (IDs retired), replaced by T12–T14; case 1 replaced,
+  cases 9 and 10 added.
+- `analisi-funzionale/utente-simulato` 0.1.0 → 0.2.0: "Human Supervised" means that the end user is simulated
+  (Do-S03); progress never waits for a person; when a project has User Persona instances they run the tests;
+  independent context and soft blinding. Cases 8 and 9 added.
+- `analisi-funzionale/FAMIGLIA.md` 0.1.0 → 0.2.0: phases of the analyst and the facilitator, the linked
+  templates, the Discovery group contexts.
+- Field `metodo` of the changed and new profiles: "Eiraman 0.3; Guida 1.0.0-rc.2 per le regole di
+  contesto". Section references such as "spec §5" still point to the specification 0.3, so the deviation of
+  VERSIONING.md §6 is only partly closed.
+- `README.md` (families table, total 41, templates, AI Coordinator files, AI Reviewer), `CODEOWNERS`
+  (`/governo/` to Test & Quality, flagged as provisional), `REUSE.toml` (comment only: the new paths were
+  already covered).
+
+### Removed
+
+Every line removed since v0.1.1 is a replaced rule or a version string (`release_diff.py`, 60 lines in
+profiles plus the registry files):
+
+- **Version strings** (version, date, `metodo`): the `Versione` lines of `CONTROLLORE.md`, of
+  `analisi-funzionale/FAMIGLIA.md` and of the three changed `PROFILO.md` files; `versione`, `data` and
+  `metodo` in the three changed `profilo.json` files.
+- `analisi-funzionale/FAMIGLIA.md`: the table rows "Scoperta (convergenza)" and "Scoperta (divergenza)",
+  replaced by the new phases.
+- `analista-funzionale`, **breaking**:
+  - the convergence rules (Discovery bullet, "tu conduci la convergenza", Design Thinking row, the single
+    model of convergence, the guardrail check before converging, coordinating explorers, "non conduci la
+    convergenza se…"), replaced by the Discovery group link role and the rule that convergence is the
+    Facilitator's (the K1–K2 diversity check stays in the facilitator profile);
+  - responsibilities "Sintesi di convergenza" and "Bozza della Visione e prima versione dello Scope
+    Management", replaced by the needs–solutions map, the round answers and the functional contribution
+    to Scope Management;
+  - catalogue tasks T01 and T02 (in `profilo.json` and in the generated table of section 10), replaced by
+    T12 and T14;
+  - the deliverables list in §6 and the limit "motore diverso per la convergenza", replaced;
+  - case 1 replaced; the outcome of case 2 reworded to the needs–solutions map;
+  - the Design and planning bullet, reworded to name the dedicated Work Package in shared context;
+  - `descrizione_breve`, `descrizione_breve_en` and the `seniority.nota`, reworded to the new role.
+- `facilitatore-design-thinking`, **breaking**:
+  - the identity bullet ("consegni i contributi all'analista funzionale, che conduce la convergenza"), the
+    Double Diamond row ("che non è tua"), the forbidden action "non selezioni… la convergenza è
+    dell'analista funzionale" and case 5 "Selezione indebita", replaced by the convergence led by the
+    Facilitator;
+  - the last limit, unchanged in content, now followed by two new limits;
+  - `descrizione_breve`, `descrizione_breve_en`, `nome_en` (now "Design Thinking Facilitator", as in the
+    glossary) and the note of task T03 (now: never the agent facilitating the same session).
+- `utente-simulato`: the line "supervisionato dall'umano", replaced by the "Human Supervised" rule (Do-S03).
+- `controllore/CONTROLLORE.md`: in start-up step 2, "avvia la Scoperta (spec §5) e proponi la Visione",
+  replaced by the Discovery via the Design Thinking session of §3 bis.
+- Registry files: in `README.md`, the "Total: 40 profiles" line and the `CONTROLLORE.md` row, replaced; in
+  this file, the `[Unreleased]` link, now comparing from v0.2.0.
+
+### Profile versions
+
+Profiles not listed keep the version of the 0.1.0 table.
+
+| Profile | Version | Date | State |
+|---|---|---|---|
+| `analisi-funzionale/analista-funzionale` | 0.1.0 → 0.2.0 | 2026-11-26 | draft, not qualified |
+| `analisi-funzionale/facilitatore-design-thinking` | 0.1.0 → 0.2.0 | 2026-11-26 | draft, not qualified |
+| `analisi-funzionale/utente-simulato` | 0.1.0 → 0.2.0 | 2026-11-26 | draft, not qualified |
+| `governo/revisore-ai` | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `_modello/business-analyst` (template) | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `_modello/user-persona` (template) | new, 0.1.0 | 2026-11-26 | draft, not qualified |
+| `controllore/` (AI Coordinator) | 0.3.0 → 0.4.0 | 2026-11-26 | draft, not qualified |
+
+Family files: `analisi-funzionale/FAMIGLIA.md` 0.1.0 → 0.2.0; `governo/FAMIGLIA.md` new, 0.1.0. The Digital
+Seniority map is unchanged (0.1.0).
+
 ## [0.1.1] - 2026-11-26
 
 Release files only: no profile, template or Seniority map changes. Every profile keeps the version
@@ -115,6 +247,7 @@ Notes on the history before this release, from the project's activity log:
   25 November 2026, when the roles were renamed to "AI Coordinator" and "Human Manager". The log does not
   record whether versions 0.1.x or 0.2.x of it were ever labelled; none was released on its own.
 
-[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.1.1...main
+[Unreleased]: https://github.com/eiraman/role-profiles/compare/v0.2.0...main
+[0.2.0]: https://github.com/eiraman/role-profiles/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/eiraman/role-profiles/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/eiraman/role-profiles/releases/tag/v0.1.0

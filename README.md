@@ -28,6 +28,7 @@ across the registry and matches its folder name.
 | Family | Folder | Profiles |
 |---|---|---|
 | Functional analysis | `analisi-funzionale/` | 5 |
+| Governance | `governo/` | 1 |
 | AWS | `aws/` | 6 |
 | Azure | `azure/` | 7 |
 | Databricks | `databricks/` | 5 |
@@ -35,7 +36,9 @@ across the registry and matches its folder name.
 | Development | `sviluppo/` | 7 |
 | Web design | `web-design/` | 5 |
 
-Total: 40 profiles. Also included: `_modello/` (the template every profile starts from),
+Total: 41 profiles. Also included: `_modello/` (the template every profile starts from, and the templates
+`business-analyst` and `user-persona`, from which the AI Coordinator creates project instances without
+changing their rules and limits),
 `_seniority/` (the Digital Seniority map, `seniority.json`, and its explanation) and `controllore/`
 (the AI Coordinator profile, see below).
 
@@ -56,7 +59,7 @@ specialist Role Profile and does not follow the `PROFILO.md` + `profilo.json` st
 
 | File | Content |
 |---|---|
-| `CONTROLLORE.md` | the instructions the AI engine loads to act as AI Coordinator: mandate, session start, Waves, delegation, Digital Seniority, closure, escalation, Manager View, project registry, hard limits, qualification |
+| `CONTROLLORE.md` | the instructions the AI engine loads to act as AI Coordinator: mandate, its own hard blinding, session start, Change Requests and Scope Management, Waves, delegation, context rules (Context Consistency and Independence, context RACI, a new agent per Work Package with its handover abstract), Discovery group, AI Reviewer, versioning, Digital Seniority, closure, escalation, Manager View, project registry, hard limits, qualification, context audit |
 | `AVVIO.md` | how a Human Manager starts the AI Coordinator in a project folder |
 | `STATO.md` | format of `eiraman/stato.json`, the snapshot read by the Manager View |
 | `tools/vista_manager.py` | generator of the Manager View (code, Apache-2.0) |
@@ -70,6 +73,10 @@ be empty in half its fields or would duplicate the method. The validator's struc
 not apply; its forbidden-content checks (local paths, credentials, private keys and the local deny-list)
 do, and CI runs them on `controllore/` (`.github/workflows/validate-profiles.yml`). Whether the AI
 Coordinator should get a profile structure of its own is an open item for the Test & Quality domain.
+
+The **AI Reviewer** (`governo/revisore-ai/`), which works in parallel with the AI Coordinator, is a
+specialist profile with the standard structure and is validated like the others. The templates in
+`_modello/` are not selected by CI, which skips folders starting with `_`: validate them locally.
 
 ## Rules for writing a profile
 
