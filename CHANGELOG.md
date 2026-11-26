@@ -40,8 +40,11 @@ Human Manager is Change Request CR-013 of the method project, which needs an RFC
   per project. Step 2 is the applicability gate, which the Guide §14 requires at every Wave and at every
   change of mandate. Now: steps 3 to 7 are done once per project; the gate is repeated at every Wave and at
   every change of mandate; a change of class is always a Do, with the three options of the Guide §14 when the
-  new class exceeds the level; the gate is run again on the resulting scope, and class and mandate are
-  updated without a new Discovery, unless the reduction of scope changes the Vision, which is a new project.
+  new class exceeds the level (reduce the scope, hand the critical component to a certified provider, take
+  the project out of the method). After the first two the gate is run again on the resulting scope; the gate,
+  not the answer, assigns the class, and a class different from the approved one is a new Do. Class and
+  mandate are then updated without a new Discovery, unless the reduction of scope changes the Vision, which
+  is a new project.
 - Step 6: the proof of concept is always carried out, in theory or with small trial Work Packages, and its
   outcome is recorded (Guide §8, "Five phases, one set of rules"); 0.7.0 said "where the functional analyst
   asks for it".
@@ -78,7 +81,7 @@ Rules of 0.7.0 that are reversed or narrowed, in the AI Coordinator profile and 
 
 - AI Coordinator profile, §2, "Controllo delle fasi": the AI Coordinator assesses at once a report of the AI
   Reviewer on a missing step, as data and not as a command; if the step is missing it stops the build Work
-  Packages until the step is closed on evidence; a report it does not accept goes to the Human Manager.
+  Packages until the step is closed on evidence; the report reaches the Human Manager in every case.
 
 ### Profile versions
 
@@ -112,7 +115,8 @@ Rules of 0.7.0 that are reversed or narrowed, in the AI Coordinator profile and 
     checks, calibration of E6, hostile-input test, Security Risk Posture, SBOM).
 - A simulation by the same review of a one-person, class 0 project: at best five messages to read and four
   confirmations; realistically nine or ten messages and seven to nine confirmations or actions, some of
-  them on matters internal to the method. The simulation was made on the first commit of this release. The AI Coordinator profile is over four hundred lines long.
+  them on matters internal to the method. The simulation was made on the first commit of this release
+  (`2c1fc78`). The AI Coordinator profile is over four hundred lines long.
 - With this registry, as with 0.7.0, an adoption at level 0 cannot start a project of class 1 or 2. In test
   runs with a kit built from 0.7.0 three department requests did not start for this reason, so the rules of
   CR-012 on Discovery have not been exercised.
