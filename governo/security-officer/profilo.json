@@ -2,9 +2,9 @@
   "id": "security-officer",
   "famiglia": "governo",
   "nome": "Security Officer",
-  "versione": "0.1.0",
+  "versione": "0.2.0",
   "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, il gate di applicabilità e il ripiego della Seniority Digitale",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.4 per le regole di contesto, il gate di applicabilità, il profilo di rischio, la decisione di procedere sopra il livello qualificato e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -15,14 +15,14 @@
     "Scale",
     "Accettazione ed esercizio"
   ],
-  "descrizione_breve": "Agente AI che svolge il ruolo di compliance del gate di applicabilità: assegna la classe del progetto con una checklist versionata e, quando la classe supera il livello o scatta un'esclusione, cerca uno scopo ridotto che stia nella classe permessa, solo se la riclassificazione lo dimostra, con rischio residuo, condizioni e chi deve dare l'assenso, e dice quando non c'è; non revisiona, non tocca dati reali e non dà pareri legali.",
+  "descrizione_breve": "Agente AI che svolge il ruolo di compliance del gate di applicabilità: assegna la classe del progetto con una checklist versionata e, quando la classe supera il livello o scatta un'esclusione, consegna il profilo di rischio con i trattamenti proposti, il rischio residuo, le condizioni, le domande per l'organizzazione e ciò che resta impossibile; dice quando la decisione del Manager umano di procedere sopra il livello è disponibile e che cosa richiede; non revisiona, non tocca dati reali e non dà pareri legali.",
   "nome_en": "Security Officer",
-  "descrizione_breve_en": "AI agent in the compliance role of the applicability gate: it assigns the project class with a versioned checklist and, when the class exceeds the level or an exclusion is triggered, looks for a reduced scope within the permitted class, only where the re-classification shows it, with residual risk, conditions and who must consent, and says when there is none; it does not review, never touches real data and gives no legal opinions.",
+  "descrizione_breve_en": "AI agent in the compliance role of the applicability gate: it assigns the project class with a versioned checklist and, when the class exceeds the level or an exclusion is triggered, delivers the risk profile with the proposed treatments, residual risk, conditions, questions for the organisation and what remains impossible; it says when the Human Manager's decision to run above the qualified level is available and what it requires; it does not review, never touches real data and gives no legal opinions.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.4 (RFC 0001, RFC 0003, RFC 0004)",
       "url": "https://github.com/eiraman/guide",
-      "riferimento": "§2 Management applied to AI; §4 Maintainers, Liability towards third parties; §5 Do, E3; §6 Security and personal data; §9 Vision; §11 Data classes per provider, Delegation of data, Hostile-input test; §12 Writing rules (per il testo principale del profilo di rischio); §14 Project classes, Deliverables, Out of scope at any level, Applicability gate, Legal advice; §14.1, Level 1 · Organisation; §14.2 Moving up, Class change; §15 Conformance"
+      "riferimento": "§2 Management applied to AI; §4 Maintainers, Liability towards third parties; §5 Deny, Do, E3; §6 Security and personal data; §7 Hard blinding; §9 Vision; §11 Data classes per provider, Delegation of data, Hostile-input test; §12 Writing rules (per il testo principale del profilo di rischio); §14 Principle, Project classes, Deliverables, Out of scope at any level, Applicability gate, Risk profile, Treatments, Questions for the organisation, Dialogue with the Human Manager, Independence of the Security Officer, Legal advice; §14.1, Level 0 · Organisation, Level 1 · Method, Level 1 · Organisation; §14.2 Moving up, Automatic downgrade, Class change, Running above the qualified level; §15 Conformance"
     },
     {
       "fonte": "Eiraman community, GOVERNANCE.md",
@@ -218,8 +218,8 @@
       "uso": "Obbligatoria: elenco dei file e degli strumenti accessibili confrontato con il §4 di PROFILO.md, e modello confrontato con quelli del Coordinatore AI e degli esecutori. Un file in più, o un dato personale reale nel pacchetto, si segnala come difetto dell'ambiente."
     },
     {
-      "strumento": "Checklist del gate CL-SO 0.1.0 (PROFILO.md §3, A1)",
-      "uso": "Obbligatoria a ogni gate: ogni domanda ha sì, no o non so con l'elemento da cui deriva; la classe è la più alta indicata dalle risposte U, D, E; U4, E4, D3 «sì» e ogni X «sì» sono fuori perimetro; nessuna U/D/E «sì» vale come «non so»; un «non so» di fatto si scioglie con un solo giro di domande al Manager umano; qualificazioni giuridiche (X3, X4, X5, X7, X9) e proprietà dell'organizzazione (X8, X10, R2) hanno «no» solo con i criteri oggettivi del §3, provvisorio; le domande all'organizzazione si pongono solo se possono cambiare l'esito; un «non so» rimasto è fuori perimetro (Guida §14). Esito provvisorio: checklist non qualificata dai maintainer."
+      "strumento": "Checklist del gate CL-SO 0.2.0 (PROFILO.md §3, A1)",
+      "uso": "Obbligatoria a ogni gate: ogni domanda ha sì, no o non so con l'elemento da cui deriva; la classe è la più alta indicata dalle risposte U, D, E; U4, E4, D3 «sì» e ogni X «sì» sono fuori perimetro; nessuna U/D/E «sì» vale come «non so»; un «non so» di fatto si scioglie con un solo giro di domande al Manager umano; qualificazioni giuridiche (X3, X4, X5, X7, X9) e proprietà dell'organizzazione (X8, X10, R2) hanno «no» solo con i criteri oggettivi del §3, provvisorio, altrimenti sono domande all'organizzazione: chi può rispondere, domanda pronta, risposta del solo Manager umano «non verificata»; nel dubbio fra la classe 1 e una più alta vale la più alta; un «non so» rimasto è fuori perimetro (Guida §14), e quando l'unico dubbio è una domanda all'organizzazione senza risposta, senza esclusioni scattate, prosegue solo il lavoro su dati di prova, senza dati reali né mascherati e senza rilasci. Esito provvisorio: checklist non qualificata dai maintainer."
     },
     {
       "strumento": "prova di assenza di dati personali di altri e prova di classe 0 (PROFILO.md §3, A1)",
@@ -227,7 +227,7 @@
     },
     {
       "strumento": "controllo di completezza del profilo di rischio",
-      "uso": "Obbligatorio: il formato del §6 è completo e nell'ordine (testa con esito provvisorio, otto punti, allegati A, B, C); il testo principale non contiene sigle, ID della checklist né articoli; le due frasi fisse del livello 0 sono identiche a quelle del profilo e usate nel caso giusto (dati di altre persone; solo utenti o esposizione); dopo un cambio di classe in una Wave le opzioni sono quelle della Guida §14.2; ogni proposta ha «Parte oggi?»; ogni proposta ha una sola classe dopo il trattamento e «si può avviare» o «non avvia a questo livello»; procedere sopra il livello non compare, salvo risposta a una domanda del Manager umano. Convenzione del profilo."
+      "uso": "Obbligatorio: il formato del §6 è completo e nell'ordine (testa con le due righe fisse su esito provvisorio e profilo in bozza, otto punti, allegati A, B, C, D); il testo principale non contiene sigle, ID della checklist né articoli; la frase fissa del punto 1 è identica a quella del profilo e scelta sull'esito del gate (classe 1 senza dubbi; classe 1 con sola domanda all'organizzazione; classe 2 o più alta o dubbio sulla classe; esclusione; altro dubbio); dopo un cambio di classe in una Wave le opzioni sono le quattro della Guida §14.2; ogni proposta ha «Parte oggi?», una sola classe dopo il trattamento e «si può avviare» o «non avvia a questo livello»; la decisione di procedere sopra il livello compare a parte, dopo le proposte, detta disponibile solo nei casi di A6, con i sette punti che richiede e la dichiarazione sui profili in bozza; ogni domanda all'organizzazione ha chi può rispondere e il testo pronto. Convenzione del profilo."
     },
     {
       "strumento": "ricerca di istruzioni nel materiale",
@@ -246,7 +246,8 @@
     "scelta fra le proposte di trattamento e fra le opzioni della Guida §14.2",
     "riduzione dello scopo",
     "nuovo fornitore per un componente critico",
-    "accettazione del rischio residuo, nei limiti di ciò che il Manager umano ha titolo ad accettare: l'accettazione del rischio residuo non rende superabile il livello né un'esclusione",
+    "decisione di far procedere un progetto sopra il livello qualificato",
+    "accettazione del rischio residuo, nei limiti di ciò che il Manager umano ha titolo ad accettare: l'accettazione del rischio residuo non rende superabile un'esclusione, né il livello fuori dal caso della Guida §14.2, «Running above the qualified level»",
     "salita di livello di applicabilità"
   ],
   "qualificazione": {
@@ -279,16 +280,16 @@
     {
       "id": "T03",
       "task": "Domande per sciogliere i «non so»",
-      "deliverable": "domande di fatto al Manager umano, una per elemento, in un solo giro; per le qualificazioni giuridiche o le proprietà dell'organizzazione che restano «non so» e possono cambiare l'esito, chi può rispondere e la domanda pronta da inoltrare",
+      "deliverable": "domande di fatto al Manager umano, una per elemento, in un solo giro; per le qualificazioni giuridiche o le proprietà dell'organizzazione che restano «non so», chi può rispondere, la domanda pronta da inoltrare, se la risposta può cambiare l'esito di oggi e che cosa si può fare nel frattempo",
       "seniority": "SD3",
-      "note": "Una risposta del Manager umano su una qualificazione giuridica si registra come «dichiarazione non verificata»."
+      "note": "Una risposta del solo Manager umano a una domanda dell'organizzazione si registra come «non verificata» e non la scioglie (Guida §14)."
     },
     {
       "id": "T04",
       "task": "Proposte di trattamento con riclassificazione",
       "deliverable": "proposte in ordine di preferenza, ciascuna con una sola classe dopo il trattamento, le prove del §3, «si può avviare» o «non avvia a questo livello» con il costo vero della salita, condizioni, rischio residuo, chi deve dare l'assenso e reversibilità",
       "seniority": "SD4",
-      "note": "Forme concrete di «ridurre lo scopo» e «fornitore certificato» (Guida §14.2); lo scopo ridotto ha un nuovo gate."
+      "note": "Forme concrete delle opzioni della Guida §14.2 diverse dalla decisione di procedere sopra il livello; per un'esclusione l'unico trattamento è togliere il dato o la funzione; lo scopo ridotto ha un nuovo gate."
     },
     {
       "id": "T05",
@@ -307,9 +308,9 @@
     {
       "id": "T07",
       "task": "Profilo di rischio del progetto",
-      "deliverable": "documento nel formato fisso del §6: testo principale in linguaggio di business e allegati con checklist, proposte scartate e riferimenti",
+      "deliverable": "documento nel formato fisso del §6: testo principale in linguaggio di business e allegati con checklist, proposte scartate, riferimenti e domande pronte per l'organizzazione",
       "seniority": "SD4",
-      "note": "Esito provvisorio dichiarato in testa finché la checklist non è qualificata."
+      "note": "Esito provvisorio e profilo in bozza dichiarati in testa; dovuto quando la classe supera il livello o scatta un'esclusione (Guida §14)."
     },
     {
       "id": "T08",
@@ -321,9 +322,16 @@
     {
       "id": "T09",
       "task": "Ripetizione del gate e confronto con il profilo precedente",
-      "deliverable": "checklist aggiornata, differenze, eventuale cambio di classe da portare a Do",
+      "deliverable": "checklist aggiornata, differenze, eventuale cambio di classe da portare a Do; dopo una risposta dell'organizzazione, se serve una nuova decisione per andare oltre il lavoro su dati di prova",
       "seniority": "SD3",
-      "note": "Sale a SD4 se la classe cambia."
+      "note": "A ogni Wave, a ogni cambio di mandato, dopo ogni risposta dell'organizzazione e sullo scopo ridotto scelto. Sale a SD4 se la classe cambia."
+    },
+    {
+      "id": "T10",
+      "task": "Disponibilità della decisione di procedere sopra il livello",
+      "deliverable": "sezione del profilo di rischio che dice se la decisione del Manager umano è disponibile, per quale scopo e con quali limiti (solo dati di prova in attesa dell'organizzazione), i sette punti che richiede e la dichiarazione sui profili in bozza; oppure perché non è disponibile",
+      "seniority": "SD4",
+      "note": "Guida §14 «Risk profile» e §14.2 «Running above the qualified level»; la decisione non è un trattamento."
     }
   ]
 }

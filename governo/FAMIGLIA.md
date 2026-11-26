@@ -1,6 +1,6 @@
 # Famiglia · Governo
 
-Versione 0.2.4 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.4 (RFC 0001, RFC 0003, RFC 0004); ogni profilo dichiara nel proprio campo `metodo` la versione della Guida che segue · Stato: **bozza non qualificata**
 
 Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipendente dal Coordinatore AI: il Revisore AI e i revisori AI dei domini di governo (GOVERNANCE §4.5). La famiglia comprende anche il Security Officer, che non sorveglia ma propone: applica queste regole con le differenze dichiarate nel suo profilo (§1) e riassunte sotto la tabella. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo.
 
@@ -17,7 +17,7 @@ Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipen
 | Revisore legale e di compliance | `revisore-legale-compliance/` | medio | Scoperta (Discovery group, quando il Coordinatore AI lo sceglie); altre revisioni del dominio affidate dal Coordinatore AI |
 | Security Officer | `security-officer/` | alto | gate di applicabilità all'apertura, a ogni Wave e a ogni cambio di mandato; dialogo con il Manager umano in ogni fase |
 
-**Differenze dichiarate del Security Officer.** È il ruolo AI di compliance del gate (Guida §14): assegna la classe e propone trattamenti; non revisiona e non coincide mai, sullo stesso progetto, con il Revisore di sicurezza o di privacy. Rispetto al §A riceve anche la richiesta del Manager umano e le domande e risposte del dialogo con lui; rispetto al §B il suo profilo di rischio è destinato al Manager umano, e il Coordinatore AI lo riporta senza alterarne il contenuto. I §C e §D valgono senza differenze.
+**Differenze dichiarate del Security Officer.** È il ruolo AI di compliance del gate (Guida 1.0.0-rc.4, §14, «Applicability gate»): assegna la classe, consegna il profilo di rischio con i trattamenti che propone e dice quando la decisione del Manager umano di procedere sopra il livello qualificato è disponibile. Non revisiona: i ruoli di Revisore di sicurezza e di Revisore di privacy restano indipendenti da lui e, sullo stesso progetto, non sono tenuti dal Security Officer né da un agente istanziato dal suo profilo (Guida §14, «Independence of the Security Officer»). L'hard blinding del §A per lui è chiesto anche dalla Guida (§7, «Hard blinding»); il modello diverso da quello del Coordinatore AI è una raccomandazione, dove disponibile. Rispetto al §A riceve anche la richiesta del Manager umano e le domande e risposte del dialogo con lui; rispetto al §B il suo profilo di rischio è destinato al Manager umano, e il Coordinatore AI lo riporta senza alterarne il contenuto. I §C e §D valgono senza differenze. È una bozza non qualificata: esegue il gate per una deroga del progetto che mantiene il metodo, dichiarata nel suo profilo.
 
 Il profilo del Coordinatore AI resta in `controllore/`: è il ruolo che i profili di questa famiglia sorvegliano, e ha una struttura propria.
 

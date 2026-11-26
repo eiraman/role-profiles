@@ -17,7 +17,7 @@ Ogni dato numerico ha la sua fonte nel registro. Se non Ã¨ misurato, si indica Â
   "lingua": "it",
   "progetto": "Nome del progetto",
   "visione": "Una frase: problema, utenti, beneficio",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.4",
   "classe": 0,
   "livello": 0,
   "fase": "Scoperta | POC | Design e planning | Scale | Accettazione ed esercizio",
