@@ -95,8 +95,9 @@ Family files: `governo/FAMIGLIA.md` 0.2.0 → 0.2.1. The Digital Seniority map i
 
 ### Known gaps
 
-- The `tools` tests pass, but their registry baseline (`baseline_registro.txt`, 41 profiles) does not include
-  the six reviewer profiles; the registry now has 47. It is updated in a later `tools` release.
+- The `tools` tests pass, but their registry baseline (`tools` v0.2.2, `baseline_registro.txt`, 43 profiles,
+  security and privacy reviewers included) does not include the four new reviewer profiles; the registry now
+  has 47. It is updated in a later `tools` release.
 - Whether the bridge rule of Do-S10 ends for cloud architecture, application and data architecture, test and
   quality, and legal and compliance is open for the Human Manager's decision at release.
 
