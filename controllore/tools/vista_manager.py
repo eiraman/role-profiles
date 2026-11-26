@@ -105,17 +105,18 @@ def _share(d, num, den, t, cur=None):
 
 def _status(p):
     a = str(p.get("avanzamento") or "").strip().lower()
-    if a in ("completato", "completed", "done", "chiuso"): return "done", 100
+    if a in ("completato", "completata", "completed", "done", "chiuso", "chiuso su prova"): return "done", 100
     if a in ("da fare", "to do", "todo"): return "todo", 0
-    if a in ("in corso", "in progress", "doing", "attivo"):
+    if a:  # ogni altro valore dichiarato (in corso, da rivedere, sospeso, consegnato, …) è lavoro avviato e non chiuso
         c = _checks(p)  # il vecchio campo `percentuale` non dichiara il denominatore: non si mostra
         return "prog", (int(round(100.0 * c[0] / c[1])) if c else None)
     tec = " ".join(str(p.get("tecnico") or "").lower().split())
     if tec in ("chiuso su prova", "closed on evidence"): return "done", 100
     return "todo", 0
 
-_PHASES = {"scoperta": 0, "discovery": 0, "poc": 1, "design e planning": 2, "design and planning": 2,
-           "scale": 3, "accettazione ed esercizio": 4, "acceptance and operation": 4}
+_PHASES = {"scoperta": 0, "discovery": 0, "poc": 1, "proof of concept": 1, "prova di fattibilità": 1,
+           "design e planning": 2, "design and planning": 2, "design & planning": 2, "design e pianificazione": 2,
+           "scale": 3, "accettazione ed esercizio": 4, "acceptance and operation": 4, "acceptance and operations": 4}
 
 def phase_alerts(s, t):
     """Cattive notizie automatiche: pacchetti di costruzione avviati con Scoperta o Design e planning non chiusi."""
@@ -123,10 +124,10 @@ def phase_alerts(s, t):
     active = [p for p in pk if _status(p)[0] in ("prog", "done")]
     if not active: return []
     def ph(p): return _PHASES.get(" ".join(str(p.get("fase") or "").lower().split()))
-    if any(ph(p) is None for p in active): return [t["auto_nophase"]]
-    out = []
+    out = [t["auto_nophase"]] if any(ph(p) is None for p in active) else []
     for need, later in ((0, 1), (2, 3)):
-        closed = any(ph(p) == need and _status(p)[0] == "done" for p in pk)
+        of_phase = [p for p in pk if ph(p) == need]
+        closed = bool(of_phase) and all(_status(p)[0] == "done" for p in of_phase)
         started = [p for p in active if ph(p) is not None and ph(p) >= later]
         if started and not closed:
             name = t["ph_disc"] if need == 0 else t["ph_design"]

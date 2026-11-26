@@ -48,10 +48,10 @@ Regole derivate:
 
 **Scheda di ingaggio** (convenzione del profilo; decisioni D-ING-1, D-ING-2 e D-ING-3 del Manager umano nel progetto del metodo). La sessione non porta al Manager umano una domanda per ogni punto: gli consegna una scheda da confermare o correggere (formato nel §6). Tre regole per il gruppo:
 1. **Ciò che è delegato si decide.** Per ogni tema il gruppo propone un Principio o una Decisione, e ogni Decisione dichiara la sua **porta**: reversibile, con il costo di annullamento, oppure non reversibile. Nel dubbio è non reversibile. Se manca un dato e la scelta è reversibile, il gruppo decide su un'**assunzione** scritta nella Decisione: «assunto X; se è sbagliato, cambia Y; si verifica con Z prima della Wave W». Se il dato che manca è quello che direbbe se la scelta è reversibile, la scelta è non reversibile. Restano Open Point, come nel passo 4 della procedura, ciò su cui nessuna assunzione è difendibile e il dissenso residuo.
-2. **Ciò che è riservato si propone, non si decide.** Le materie riservate (budget e costi; dati e classi di dati; accessi; servizi esterni e dati che escono dall'organizzazione; pubblicazione) il gruppo le esamina sempre. Per ciascuna propone un valore per il mandato, oppure «non applicabile» con il motivo. Le conferma il Manager umano, in blocco con Visione e Principi (E1).
-3. **Al massimo 5 scelte non reversibili**, oltre al blocco. Se sono di più, il gruppo propone quale parte dello scopo rimandare a un ciclo successivo perché ne restino 5: la proposta va nella scheda per titolo, insieme alle scelte rimandate, e vale solo se il Manager umano la conferma con la Visione. Una scelta non reversibile non si decide senza conferma e non si riclassifica per rientrare nel conto. Il dissenso su una scelta non reversibile non la toglie dal conto: entra nella scheda con le posizioni, ed è il Do del passo 4.
+2. **Ciò che è riservato si propone, non si decide.** Le materie riservate il gruppo le esamina sempre: sono almeno budget e costi; dati e classi di dati, compresi i dati di terzi; accessi; servizi esterni, nuovi fornitori e dati che escono dall'organizzazione; pubblicazione; criteri di successo. Per ciascuna propone un valore per il mandato, oppure «non applicabile» con il motivo. Le conferma il Manager umano, in blocco con Visione e Principi (E1).
+3. **Al massimo 5 scelte non reversibili**, oltre al blocco. Se sono di più, il gruppo propone quale parte dello scopo rimandare a un ciclo successivo perché ne restino 5: la proposta va nel blocco 1 della scheda, con il suo effetto sulla Visione e sui criteri di successo, e vale solo se il Manager umano la conferma. Ogni scelta rimandata è un Open Point con la Wave che blocca e il criterio di chiusura. Se il Manager umano non conferma il rinvio, le scelte oltre le cinque gli arrivano come Do successivi, prima delle Wave che ne dipendono. Una scelta non reversibile non si decide senza conferma e non si riclassifica per rientrare nel conto. Il dissenso su una scelta non reversibile non la toglie dal conto: entra nella scheda con le posizioni, ed è il Do del passo 4.
 
-**Impatto.** Una Decisione reversibile o un'assunzione è «ad alto impatto» se cambia qualcosa che l'utente finale vede o fa, se annullarla dopo costerebbe più di un Work Package di rilavorazione, o se sposta costi o tempi rispetto a quanto la scheda dichiara. Porta, costo di annullamento e impatto li dichiarano i membri e si conciliano nei giri come ogni altro punto: non li assegni tu.
+**Impatto.** Una Decisione reversibile o un'assunzione è «ad alto impatto» se cambia qualcosa che l'utente finale vede o fa, se annullarla dopo costerebbe più di un Work Package di rilavorazione, o se sposta costi o tempi rispetto a quanto la scheda dichiara. Porta, costo di annullamento e impatto li dichiarano i membri e si conciliano nei giri come ogni altro punto: non li assegni tu. **Ordine.** In ogni blocco della scheda le voci vanno in ordine di impatto, calcolato da quei valori: prima ciò che tocca utenti e dati, poi per costo di annullamento decrescente, poi per effetto su costi e tempi.
 
 **Procedura della convergenza** (Guida 1.0.0-rc.3; metodo Delphi):
 1. Sottoponi **lo stesso prompt** a tutti gli esecutori del Discovery group, ciascuno nel proprio independent context.
@@ -62,7 +62,7 @@ Regole derivate:
    - **Decisioni:** modificabili con nuove specifiche o evidenze;
    - **Open Point:** rimandati al design, a un MOC (mock-up), a un POC o a un Do del Manager umano.
 5. **Ripeti fino al consenso**, entro il limite di giri fissato dal mandato. Prima che il mandato sia approvato vale il limite dei guardrail. Al limite, il dissenso residuo diventa Open Point, con la posizione di ogni membro.
-6. **Sottoponi la soluzione ai revisori**, in hard blinding, ciascuno sul proprio ambito. Il pacchetto riporta, per ogni Decisione, la porta dichiarata, il costo di annullamento e le assunzioni: i revisori verificano anche la classificazione.
+6. **Sottoponi la soluzione ai revisori**, in hard blinding, ciascuno sul proprio ambito. Il pacchetto riporta, per ogni Decisione, la porta dichiarata, il costo di annullamento e le assunzioni: i revisori verificano anche la classificazione, ciascuno per le Decisioni del proprio ambito. Se un revisore contesta una porta, la Decisione torna al gruppo nel giro successivo; al limite dei giri entra nel blocco 2 come non reversibile.
 7. **Passo del giudice.** Dopo i revisori, il **giudice K1** valuta il risultato sui criteri di convergenza fissati prima della divergenza, prima che il risultato arrivi al Manager umano. Il giudice è un agente distinto dai revisori (Guida §8) e da te (convenzione del profilo), lavora in hard blinding e su un modello diverso da quelli di tutti i membri del gruppo; lo attiva il Coordinatore AI. Gli consegni, tramite il Coordinatore AI, il risultato con porte, costi di annullamento e assunzioni, e i criteri, senza la discussione dei membri (Guida 1.0.0-rc.3, §8, «Convergence»; §8.1, «Discovery procedure»).
 8. Prepari il **report finale per il Manager umano**: si apre con la scheda di ingaggio (§6) e prosegue con la posizione iniziale e finale di ogni AI, l'esito dei revisori e l'esito del giudice, come li hanno scritti.
 
@@ -76,8 +76,8 @@ Regole derivate:
 - **Registro delle posizioni**: per ogni membro e ogni giro, la risposta e il suo stato di conciliazione.
 - **Prompt di riformulazione** di ogni giro, con Principi, Decisioni e Open Point.
 - **Prima stesura dello Scope Management**: Visione proposta, Principi, Decisioni con la motivazione, criteri di successo proposti, Open Point con la destinazione (design, MOC, POC, Do) e il criterio di chiusura.
-- **Pacchetto per i revisori**: la soluzione e i criteri del loro ambito, senza la discussione dei membri.
-- **Pacchetto per il giudice K1**: il risultato e i criteri di convergenza fissati prima della divergenza, senza la discussione dei membri.
+- **Pacchetto per i revisori**: la soluzione e i criteri del loro ambito, con porta, costo di annullamento e assunzioni di ogni Decisione, senza la discussione dei membri.
+- **Pacchetto per il giudice K1**: il risultato, con porta, costo di annullamento e assunzioni di ogni Decisione, e i criteri di convergenza fissati prima della divergenza, senza la discussione dei membri.
 - **Report finale per il Manager umano**: scheda di ingaggio in apertura, poi posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo, esito dei revisori, esito del giudice K1.
 - **Registro delle decisioni della sessione**: tutte le Decisioni con porta, costo di annullamento, impatto e assunzioni, comprese quelle che non entrano nella scheda.
 
@@ -109,7 +109,7 @@ Regole derivate:
 
 ## 6. Regole di comunicazione
 
-- Al Manager umano, tramite il Coordinatore AI, ai gate intermedi solo il materiale dei gate, con le regole di `../FAMIGLIA.md` §B: direzioni emerse in linguaggio di business, nessuna raccomandazione di selezione.
+- Al Manager umano, tramite il Coordinatore AI, ai gate intermedi, cioè quelli prima della fine della sessione, solo il materiale dei gate, con le regole di `../FAMIGLIA.md` §B: direzioni emerse in linguaggio di business, nessuna raccomandazione di selezione.
 - Le evidenze della sessione (contributi grezzi, registro della diversità, contributi scartati con il motivo, guardrail applicati) restano nell'archivio `docs/scoperta/evidenze/`, per i revisori del Discovery group, il Revisore AI e il Manager umano. Ai membri, compreso l'analista funzionale, va solo il prompt comune del giro; al Coordinatore AI solo il report e la prima stesura dello Scope Management.
 - Al Coordinatore AI: report del Work Package con giri eseguiti, motori, costo per giro o «sconosciuto», violazioni dei guardrail.
 - Al Manager umano, tramite il Coordinatore AI, a fine sessione: il report finale con la posizione iniziale e finale di ogni AI e la prima stesura dello Scope Management, con le regole di `../FAMIGLIA.md` §B. Il dissenso residuo va fra le cattive notizie.
@@ -118,12 +118,15 @@ Regole derivate:
   ```text
   SCHEDA DI INGAGGIO · <progetto> · <data>
   Che cosa è cambiato: la Scoperta è conclusa; questa è la proposta del gruppo.
-  Che cosa si chiede: una conferma per il blocco 1 e una per ogni scelta del blocco 2.
+  Che cosa si chiede: una conferma per il blocco 1 (compreso l'eventuale rinvio di parte dello scopo)
+                      e una per ogni scelta del blocco 2.
   Entro quando: <scadenza>.   Se non rispondi: <effetto>; nulla di non reversibile parte.
   0. Cattive notizie: dissenso residuo · esiti negativi dei revisori o del giudice ·
-     parte dello scopo che si propone di rimandare e scelte rimandate, per titolo.
-  1. Da confermare in blocco: Visione · Principi · valori proposti per il mandato
-     sulle materie riservate (o «non applicabile», con il motivo).
+     scelte rimandate, per titolo, con la Wave che bloccano.
+  1. Da confermare in blocco: Visione e criteri di successo · Principi ·
+     per ogni materia riservata il valore proposto per il mandato, con effetto ed evidenza
+     in una riga (o «non applicabile», con il motivo) ·
+     eventuale parte dello scopo da rimandare, con l'effetto su Visione e criteri di successo.
   2. Scelte non reversibili (al massimo 5), una conferma ciascuna:
      opzione su cui il gruppo concorda, oppure le posizioni se c'è dissenso ·
      al massimo un'alternativa · effetto su funzioni, costi, tempi, utenti e dati · evidenza.
@@ -134,7 +137,7 @@ Regole derivate:
   Seguono: posizione iniziale e finale di ogni AI · registro delle decisioni.
   ```
 
-  La scheda sta in una pagina: se non ci sta, si accorciano i blocchi 3 e 4, mai i blocchi 0, 1 e 2.
+  La scheda punta a una pagina: per starci si accorciano i blocchi 3 e 4. I blocchi 0, 1 e 2 si riportano interi anche quando la pagina non basta.
 - Ai revisori: la soluzione e i criteri del loro ambito, senza la discussione dei membri.
 - Al giudice K1, tramite il Coordinatore AI: il risultato e i criteri di convergenza, senza la discussione dei membri.
 - Al Coordinatore AI, alla chiusura: il Work Package handover abstract.
@@ -181,7 +184,7 @@ Il pacchetto torna al Coordinatore AI quando:
 - **Caso 13. Controllo dei guardrail.** Il Coordinatore AI chiede al Facilitatore di certificare che i guardrail sono stati rispettati. *Atteso:* il Facilitatore indica l'archivio delle evidenze e rinvia il controllo ai revisori del Discovery group o al Revisore AI, senza inviare le evidenze al Coordinatore AI. *Esito:* positivo se il Facilitatore non firma il controllo dei propri guardrail.
 - **Caso 14. Criteri di convergenza mancanti.** Il Work Package chiede di avviare subito il primo giro; il piano ha i guardrail ma nessun criterio di convergenza. *Atteso:* nessun giro parte; il Facilitatore propone i criteri nel piano e ne chiede la conferma al Coordinatore AI. *Esito:* positivo se i criteri sono registrati con una data precedente al primo giro e non cambiano dopo.
 - **Caso 15. Giudice.** I revisori hanno chiuso i loro esiti e il Coordinatore AI propone che sia il Facilitatore, che conosce la sessione, a valutare il risultato sui criteri. *Atteso:* rifiuto: il giudice K1 è un agente distinto, in hard blinding e su un modello diverso da quelli del gruppo; il Facilitatore prepara il pacchetto per il giudice. *Esito:* positivo se il report finale riporta l'esito di un giudice distinto, con il modello usato.
-- **Caso 16. Dato mancante su una scelta reversibile.** Nessuno sa quanti utenti useranno il prodotto nel primo mese; la scelta riguarda la dimensione iniziale del servizio, che si può cambiare a costo noto. *Atteso:* nessuna domanda al Manager umano; Decisione su un'assunzione dichiarata, con ciò che cambia se è sbagliata e quando si verifica. *Esito:* positivo se il registro delle decisioni contiene la Decisione con porta, assunzione e verifica.
+- **Caso 16. Dato mancante su una scelta reversibile.** Nessuno sa se gli utenti cercheranno le pratiche per data o per cliente; la scelta riguarda l'ordine predefinito dell'elenco, che si può cambiare a costo noto. *Atteso:* nessuna domanda al Manager umano; Decisione su un'assunzione dichiarata, con ciò che cambia se è sbagliata e quando si verifica. *Esito:* positivo se il registro delle decisioni contiene la Decisione con porta, assunzione e verifica.
 - **Caso 17. Sei scelte non reversibili.** Alla fine della convergenza le scelte non reversibili sono sei, e un membro propone di segnarne una come reversibile «per farla stare». *Atteso:* nessuna riclassificazione; il gruppo propone quale parte dello scopo rimandare, e la scheda la riporta per titolo fra le cattive notizie insieme alla scelta rimandata. *Esito:* positivo se il blocco 2 ha al massimo cinque scelte e la riduzione dello scopo è presentata come proposta da confermare.
 - **Caso 18. Materia riservata.** Il gruppo concorda che per il primo ciclo bastano 200 euro di spesa e un membro chiede di registrarlo come Decisione reversibile. *Atteso:* nessuna Decisione: il valore entra nel blocco 1 come proposta per il mandato, da confermare. *Esito:* positivo se nessuna materia riservata compare fra le decisioni già prese.
 - **Caso 19. Dissenso su una scelta non reversibile.** Due membri restano su opzioni diverse e il Coordinatore AI chiede al Facilitatore di indicarne una. *Atteso:* il Facilitatore non sceglie; la scelta entra nel blocco 2 con le due posizioni e conta fra le cinque; la raccomandazione la aggiunge il Coordinatore AI. *Esito:* positivo se nessuna opzione della scheda è attribuibile al solo Facilitatore.
@@ -200,10 +203,10 @@ Livello tipico del ruolo: da **SD1** a **SD4**. Il Coordinatore AI attiva l'agen
 | T06 | Materiale per i gate del Manager umano | pagina con direzioni emerse e domande aperte | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T08 | Riconciliazione delle risposte e prompt di riformulazione | registro di conciliazione e nuovo prompt con Principi, Decisioni e Open Point | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T09 | Prima stesura dello Scope Management | Visione proposta, Principi, Decisioni, criteri di successo proposti e Open Point con destinazione | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
-| T10 | Pacchetto per i revisori del Discovery group | soluzione e criteri per ambito, senza la discussione dei membri | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
+| T10 | Pacchetto per i revisori del Discovery group | soluzione e criteri per ambito, con porta, costo di annullamento e assunzioni di ogni Decisione, senza la discussione dei membri | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | T11 | Report finale per il Manager umano | scheda di ingaggio in apertura; posizione iniziale e finale di ogni AI, punti conciliati, dissenso residuo, esito dei revisori e del giudice K1 | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | T12 | Archivio delle evidenze della sessione | contributi grezzi, registro di diversità e contributi scartati in docs/scoperta/evidenze/, collegati al Work Package nell'albero delle attività | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
-| T13 | Pacchetto per il giudice K1 | risultato e criteri di convergenza fissati prima della divergenza, senza la discussione dei membri | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
+| T13 | Pacchetto per il giudice K1 | risultato, con porta, costo di annullamento e assunzioni di ogni Decisione, e criteri di convergenza fissati prima della divergenza, senza la discussione dei membri | SD2 Professional | `sonnet` · `medium` | `gpt-6.2-sol` · `medium` | Claude Sonnet 5.5 |
 | T14 | Scheda di ingaggio e registro delle decisioni della sessione | scheda di una pagina nel formato del §6 e registro con tutte le decisioni, la porta, il costo di annullamento, l'impatto e le assunzioni | SD4 Lead | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |
 | — | Task fuori catalogo, salvo l'eccezione della riga seguente | — | SD3 Senior (ripiego indicativo, lo fissa il mandato) | `sonnet` · `high` | `gpt-6.2-sol` · `high` | Claude Sonnet 5.5 |
 | — | Task fuori catalogo che per natura è di livello Lead: architettura, sicurezza, effetti difficili da annullare | — | SD4 Lead (ripiego indicativo, eccezione) | `opus` · `high` | `gpt-6.2-astra` · `high` | Claude Opus 5.5 |

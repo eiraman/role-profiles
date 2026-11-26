@@ -262,7 +262,7 @@
     {
       "id": "T10",
       "task": "Pacchetto per i revisori del Discovery group",
-      "deliverable": "soluzione e criteri per ambito, senza la discussione dei membri",
+      "deliverable": "soluzione e criteri per ambito, con porta, costo di annullamento e assunzioni di ogni Decisione, senza la discussione dei membri",
       "seniority": "SD2",
       "note": ""
     },
@@ -283,7 +283,7 @@
     {
       "id": "T13",
       "task": "Pacchetto per il giudice K1",
-      "deliverable": "risultato e criteri di convergenza fissati prima della divergenza, senza la discussione dei membri",
+      "deliverable": "risultato, con porta, costo di annullamento e assunzioni di ogni Decisione, e criteri di convergenza fissati prima della divergenza, senza la discussione dei membri",
       "seniority": "SD2",
       "note": "Il giudice è un agente distinto, attivato dal Coordinatore AI (Guida §8)."
     },

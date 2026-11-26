@@ -2,7 +2,7 @@
   "id": "revisore-ai",
   "famiglia": "governo",
   "nome": "Revisore AI",
-  "versione": "0.2.1",
+  "versione": "0.3.0",
   "data": "2026-11-26",
   "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, la misura E6 e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
@@ -223,7 +223,7 @@
     {
       "id": "T05",
       "task": "Campionamento delle Wave chiuse",
-      "deliverable": "esito su escalation dovute e chiusure su evidenza",
+      "deliverable": "esito su escalation dovute, chiusure su evidenza e controllo delle fasi prima della costruzione",
       "seniority": "SD4",
       "note": "Estende il process reviewer; almeno al livello del lavoro verificato. Modello diverso da quello del Coordinatore AI obbligatorio (Guida §4)."
     },
