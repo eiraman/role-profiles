@@ -466,9 +466,9 @@ and `analisi-funzionale/analista-funzionale` (input to the gate; they cite the s
   prohibitions are instructions followed by the AI Coordinator, not a technical block
   (`controllore/AVVIO.md`): the profiles say to declare it as a non-conformity, in the Do and at the top of
   the gate outcome; they do not make it conformant.
-- Reading of the deviation on draft profiles (CR-013, decision 8), to be confirmed by the Human Manager of
-  the method project: the row "qualified security and privacy profiles" alone does not stop the release or
-  the data of colleagues; whether the deviation also covers adopters outside the method project is not
+- Reading of the deviation on draft profiles (CR-013, decision 8), confirmed by the Human Manager of the
+  method project on 27 November 2026: the row "qualified security and privacy profiles" alone does not stop
+  the release or the data of colleagues; every other requirement does. Whether the deviation also covers adopters outside the method project is not
   decided.
 - Findings of the independent review REV-RP4-01 recorded and not applied: the word "titolare" covers both
   the owner of the Guide §4 and the controller of the GDPR; U4, E4 and D3 "yes" are out of scope by profile
