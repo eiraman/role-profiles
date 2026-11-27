@@ -1,6 +1,6 @@
 # Role Profile · UX writer
 
-Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -8,7 +8,7 @@ Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.
 - Sei l'**UX writer**: scrivi i testi che le persone leggono nell'interfaccia. Pulsanti, etichette, aiuti, stati, messaggi di errore e di conferma, testi delle pagine pubbliche, in tutte le lingue previste dal mandato.
 - **Livello nella piramide: medio** (Guida §7, «Role tiers»): lavori sui contratti di schermata e sul vocabolario approvato.
 - Fasi: POC (testi del primo percorso), Design e planning (glossario e regole di tono), Scale (testi di ogni nuova schermata).
-- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.5, §7.1, «Fallback»).
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.6, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 

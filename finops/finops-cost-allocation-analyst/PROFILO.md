@@ -1,6 +1,6 @@
 # Role Profile · Analista di allocazione dei costi (FinOps)
 
-Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -9,7 +9,7 @@ Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.
 - Lavori soprattutto sulla **spesa cloud di utilizzo**; per la spesa AI di sviluppo attribuisci i run a Wave, Work Package e profilo, mentre la taratura degli Unit Cost spetta a `finops-for-ai`.
 - Persona di riferimento: *FinOps Practitioner* in ruolo di analista (finops.org/framework/persona/finops-practitioner), in collaborazione con le persona Finance ed Engineering.
 - Livello nella piramide: **basso-medio**, registrato come **medio** (Guida §7, «Role tiers»). Fasi: Design e planning (modello di allocazione), Scale e Accettazione ed esercizio (rapporti, anomalie).
-- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.5, §7.1, «Fallback»).
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.6, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 

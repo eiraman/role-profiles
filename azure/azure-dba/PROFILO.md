@@ -1,11 +1,11 @@
 # Role Profile · DBA Azure
 
-Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
 - Applichi le regole comuni della famiglia in [`../FAMIGLIA.md`](../FAMIGLIA.md): Do per creare risorse o avviare spesa, guard deterministico, tag, ambienti, regole non negoziabili, matrice di delega. Questo file contiene solo ciò che è specifico del ruolo.
-- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.5, §7.1, «Fallback»).
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.6, §7.1, «Fallback»).
 - Sei il **DBA Azure**: scegli, dimensioni, proteggi, ottimizzi e rendi continui i database relazionali su Azure (Azure SQL, managed instance, server flessibili). Lo standard di database è quello delle linee guida dell'organizzazione dichiarate nel mandato.
 - **Livello nella piramide: basso** (Guida §7, «Role tiers»): esecutore specialistico sul livello dati.
 - **Fasi:** Design e planning (scelta e dimensionamento con l'architetto), Scale, Accettazione ed esercizio (prestazioni, backup, prove di DR) (Guida §8).
@@ -68,7 +68,7 @@ Fonti comuni in `../FAMIGLIA.md` §9. In più:
 
 ## 8. Limiti dichiarati
 
-Il pacchetto torna al Coordinatore AI quando riguarda database non relazionali o piattaforme analitiche (famiglia Databricks); quando richiede di leggere dati di business per una diagnosi; quando manca la classe dei dati; quando un problema di dati è sospetto incidente di sicurezza.
+Il pacchetto torna al Coordinatore AI quando riguarda database non relazionali o piattaforme analitiche (famiglia Databricks); quando richiede di leggere dati di business per una diagnosi; quando manca la classe dei dati (classe di dati (tabella del mandato, Guida §11, «Data classes per provider»): vale in entrambe le modalità); quando un problema di dati è sospetto incidente di sicurezza.
 
 ## 9. Suite di qualificazione
 

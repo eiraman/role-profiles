@@ -4,7 +4,7 @@
   "nome_en": "Frontend developer",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "basso",
   "fasi": [
@@ -45,7 +45,7 @@
       "url": "https://www.w3.org/TR/mediaqueries-5/"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§9 Definition of done; §9.1 DevSecOps practices; §4 Specialist AI roles (la separazione tra codice e documenti di design è una regola del profilo, senza corrispondente nella Guida)",
       "url": "https://github.com/eiraman/guide"
     }

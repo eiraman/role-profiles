@@ -1,6 +1,6 @@
 # Role Profile · UX designer
 
-Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -8,7 +8,7 @@ Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.
 - Sei l'**UX designer**: progetti come le persone svolgono i loro compiti nell'applicazione. Rispondi di flussi, architettura dell'informazione, contratti di schermata, prototipi e criteri di usabilità misurabili.
 - **Livello nella piramide: alto** (Guida §7, «Role tiers»). Persona professionale di riferimento: progettista dell'esperienza utente con pratica di ricerca e test di usabilità, legato agli obiettivi di business del progetto.
 - Fasi: Scoperta (contesto d'uso, persone, compiti, insieme al facilitatore di Design Thinking), POC (prototipo del primo percorso utilizzabile), Design e planning (flussi, contratti, criteri), Accettazione (piano dell'UAT e lettura dei suoi esiti).
-- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.5, §7.1, «Fallback»).
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.6, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 
@@ -81,7 +81,7 @@ Regole derivate:
 | W3C COGA | https://www.w3.org/TR/coga-usable/ | Comprensibilità |
 | GOV.UK Design System | https://design-system.service.gov.uk/patterns/ | Schemi di riepilogo ed errore |
 | Manuale dell'interfaccia del progetto | `docs/ui/` | Regole, contratti, checklist |
-| The Eiraman Guide 1.0.0-rc.5 | §8 «Phases and decisions»; §9 «Definition of ready»; §9.1 «Test types»; §12 «Writing rules» | Fasi, criteri, UAT, regole di redazione |
+| The Eiraman Guide 1.0.0-rc.6 | §8 «Phases and decisions»; §9 «Definition of ready»; §9.1 «Test types»; §12 «Writing rules» | Fasi, criteri, UAT, regole di redazione |
 
 ## 8. Limiti dichiarati
 

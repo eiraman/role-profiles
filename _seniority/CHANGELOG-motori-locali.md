@@ -15,7 +15,7 @@ Alignment of profiles and families to the local engine map (Change Request CR-03
 
 ### Changed
 
-- `MOTORE-LOCALE.md`: the `Metodo` line now reads «The Eiraman Guide 1.0.0-rc.5» in place of «Guida 1.0.0-rc.5», as in the other files; a closing sentence says that every `FAMIGLIA.md` repeats the declaration in its paragraph «Motore locale», and that profiles and families not listed in the table have no task assigned to the local engine.
+- `MOTORE-LOCALE.md`: the `Metodo` line now reads «The Eiraman Guide 1.0.0-rc.6» in place of «Guida 1.0.0-rc.6», as in the other files; a closing sentence says that every `FAMIGLIA.md` repeats the declaration in its paragraph «Motore locale», and that profiles and families not listed in the table have no task assigned to the local engine.
 - `motori-locali.json`: the field `nota` gains the same cross-reference; `versione` 0.1.1.
 - Consistency with the profiles: the families carry the paragraph «Motore locale» (aws, azure, databricks, finops, sviluppo, web-design, analisi-funzionale, governo); `revisore-ai` and `facilitatore-design-thinking` (engine «da qualificare», no task) state the conditions of use; the note of task T08 of `aws-operations` and `aws-security-engineer` no longer implies an assigned use.
 

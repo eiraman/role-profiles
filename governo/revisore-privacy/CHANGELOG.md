@@ -11,13 +11,13 @@ All notable changes to the Role Profile `revisore-privacy`, «Revisore di privac
 
 ## [0.4.1] - 2026-11-27
 
-Realignment of the profile to The Eiraman Guide 1.0.0-rc.5 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: PATCH (0.4.0 to 0.4.1), because only source references and metadata change, with the same meaning (VERSIONING.md, section 2.2: «corrected source references with the same meaning»). No rule, limit, task, deliverable or Digital Seniority level is added, removed or changed. The qualification state stays «draft, not qualified».
+Realignment of the profile to The Eiraman Guide 1.0.0-rc.6 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: PATCH (0.4.0 to 0.4.1), because only source references and metadata change, with the same meaning (VERSIONING.md, section 2.2: «corrected source references with the same meaning»). No rule, limit, task, deliverable or Digital Seniority level is added, removed or changed. The qualification state stays «draft, not qualified».
 
 ### Changed
 
-- Method: `metodo` of `profilo.json` and the `Metodo` line of `PROFILO.md` now name The Eiraman Guide 1.0.0-rc.5 and the relevant sections (`§3 «Context Consistency and Independence» e §7 (blinding), §14 «Classification mode» (due modalità di classificazione, rifiuti dei modelli), §13 (limiti dichiarati in modalità informativa), §7.1 «Fallback»`), in place of «Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, le due modalità di classificazione, i limiti dichiarati in modalità informativa, i rifiuti dei modelli e il ripiego della Seniority Digitale».
+- Method: `metodo` of `profilo.json` and the `Metodo` line of `PROFILO.md` now name The Eiraman Guide 1.0.0-rc.6 and the relevant sections (`§3 «Context Consistency and Independence» e §7 (blinding), §14 «Classification mode» (due modalità di classificazione, rifiuti dei modelli), §13 (limiti dichiarati in modalità informativa), §7.1 «Fallback»`), in place of «Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, le due modalità di classificazione, i limiti dichiarati in modalità informativa, i rifiuti dei modelli e il ripiego della Seniority Digitale».
 - Citations: 3 «spec §N» citation(s) in `PROFILO.md` remapped to Guide sections.
-- Guide versions: 3 citation(s) of Guide 1.0.0-rc.1 to rc.4 now cite 1.0.0-rc.5; every cited section and label was checked against the rc.5 text.
+- Guide versions: 3 citation(s) of Guide 1.0.0-rc.1 to rc.4 now cite 1.0.0-rc.6; every cited section and label was checked against the rc.6 text.
 - Section 10 of `PROFILO.md` regenerated with `attiva_profilo.py --scrivi-catalogo`: the generated text names the version of the Digital Seniority map (now 0.2.1); no task, deliverable or level changes.
 - `data` of `profilo.json` set to 2026-11-27.
 - Local engine: no task of this profile is assigned to the local engine; the «modello locale» entry of `motori` stays «da qualificare», as `_seniority/MOTORE-LOCALE.md` and the «Motore locale» paragraph of the family `FAMIGLIA.md` state. No change to this profile's text.

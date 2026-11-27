@@ -1,13 +1,13 @@
 # Famiglia Databricks · regole comuni
 
-Versione 0.3.0 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (modalità di classificazione e rifiuti dei modelli, §14) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (modalità di classificazione e rifiuti dei modelli, §14) · Stato: **bozza non qualificata**
 
 Questo file contiene le regole comuni a tutti i Role Profile della famiglia Databricks. Il Coordinatore AI lo passa all'agente insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la regola più restrittiva; una deroga a una regola di famiglia è sempre un **Do** del Manager umano (Guida §5).
 
-Convenzione delle fonti: «Guida §N» rinvia a The Eiraman Guide 1.0.0-rc.5; «convenzione della famiglia» indica una regola senza fonte esterna, ripresa da una demo precedente dell'autore e da confermare in qualificazione.
+Convenzione delle fonti: «Guida §N» rinvia a The Eiraman Guide 1.0.0-rc.6; «convenzione della famiglia» indica una regola senza fonte esterna, ripresa da una demo precedente dell'autore e da confermare in qualificazione.
 
-**Modalità di classificazione e rifiuti dei modelli** (Guida 1.0.0-rc.5, §14, «Classification mode»). La modalità, bloccante o informativa, è scritta nel mandato e nel registro di progetto e non cambia durante il progetto. In modalità **bloccante** valgono le regole di questo file e dei profili come sono scritte. In modalità **informativa** le regole seguenti prevalgono su questo file e sui profili della famiglia:
-- un criterio di esclusione, un dubbio sulla classe, un caso che non rientra in alcuna classe, una classe non assegnata o un cambio di classe non sono un limite né uno stop e non riducono lo scopo: si segnalano al Coordinatore AI per il Security Report e il lavoro prosegue (Guida §14, «Out of scope in the informative mode»; §14.2, «Class change»);
+**Modalità di classificazione e rifiuti dei modelli** (Guida 1.0.0-rc.6, §14, «Classification mode»). La modalità, bloccante o informativa, è scritta nel mandato e nel registro di progetto e non cambia durante il progetto. In modalità **bloccante** valgono le regole di questo file e dei profili come sono scritte. In modalità **informativa** le regole seguenti prevalgono su questo file e sui profili della famiglia:
+- un criterio di esclusione, un dubbio sulla classe, un caso che non rientra in alcuna classe, una classe di progetto non assegnata o un cambio di classe non sono un limite né uno stop e non riducono lo scopo: si segnalano al Coordinatore AI per il Security Report e il lavoro prosegue (Guida §14, «Out of scope in the informative mode»; §14.2, «Class change»). La classe di dati è altra cosa: la tabella del mandato (Guida §11, «Data classes per provider») vale in entrambe le modalità, e un pacchetto che richiede dati di classe non assegnata o non ammessa si ferma anche in modalità informativa;
 - dati personali e terzi non sono un Do per questo solo motivo, nemmeno se il mandato li riserva. Restano Do tutte le altre voci della Guida §5: porte a senso unico e reversibilità dubbia, impatto su Visione, Principi o criteri di successo, nuovi fornitori, spesa oltre la soglia, cambi di Decisione, nuovi accessi, servizi esterni aggiunti o dati che escono dall'organizzazione, passaggio a un livello di adozione superiore; restano anche i Do di questo file che non dipendono solo da classe o dati personali;
 - l'ambiente blocca (Deny) ciò che il mandato vieta, non ciò che esce soltanto dall'ambito del livello di adozione (Guida §5, «Deny»). Se viene meno un requisito che un'altra regola della Guida impone, il lavoro che ne dipende resta bloccato finché il requisito non torna; il Deny dei rilasci non correttivi a budget di errore esaurito vale in entrambe le modalità (Guida §14; §14.1, «Error budget»);
 - un limite dichiarato che riguarda la classe, i criteri di esclusione o la presenza di dati personali vale solo in modalità bloccante; ogni altro limite dichiarato fa tornare il pacchetto al Coordinatore AI in entrambe le modalità (Guida §13);
@@ -27,7 +27,7 @@ In **entrambe le modalità** un'azione che il modello rifiuta per le proprie reg
 | ML Engineer Databricks | `databricks-ml-engineer/` | MLflow, feature, training, model serving, valutazione, costi di inferenza |
 | Analytics Engineer Databricks | `databricks-analytics-engineer/` | Databricks SQL, warehouse, dashboard AI/BI, modelli semantici |
 
-La competenza di base di tutta la famiglia è **«da qualificare»**: le guide delle certificazioni Databricks citate nei profili indicano i domini, non provano la competenza del motore. Ogni profilo resta bozza finché non supera la propria suite e la revisione di un esperto del dominio dati (regola del profilo; Guida §4, «Specialist AI roles»).
+La competenza di base di tutta la famiglia è **«da qualificare»**: le guide delle certificazioni Databricks citate nei profili indicano i domini, non provano la competenza del motore. Ogni profilo resta bozza finché non supera la propria suite e la revisione di un esperto del dominio dati (regola del profilo; Guida §4, «Specialist AI roles»; §13, «Minimum content»).
 
 ## 2. Regole comuni
 

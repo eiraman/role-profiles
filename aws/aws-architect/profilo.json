@@ -3,7 +3,7 @@
   "nome": "Architetto AWS",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -50,7 +50,7 @@
       "url": "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-workloads-on-aws.html"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§5 Do; §7 Role tiers; §8.1 Who works in each phase (architetture alternative); §9 Definition of ready, Definition of done, High Level Architectural View; §10 Backbone, Brain, Limbs and Senses, Hairs (documento architetturale); §11 Security Risk Posture; §14 Applicability gate",
       "url": "https://github.com/eiraman/guide"
     }
@@ -135,7 +135,7 @@
       "task": "Viste TOGAF dati e tecnologia del documento architetturale",
       "deliverable": "viste del documento architetturale",
       "seniority": "SD4",
-      "note": "con l'architetto applicativo; mappa dei componenti §6 bis"
+      "note": "con l'architetto applicativo; mappa dei componenti (Guida §10)"
     },
     {
       "id": "T04",

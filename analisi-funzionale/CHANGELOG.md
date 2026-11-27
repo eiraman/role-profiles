@@ -11,7 +11,7 @@ All notable changes to the common rules of the family «Analisi funzionale (func
 
 ## [0.5.0] - 2026-11-27
 
-Realignment of the family rules to The Eiraman Guide 1.0.0-rc.5 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: MINOR (0.4.0 to 0.5.0), because the paragraph «Motore locale» adds a stated limit to the family rules (VERSIONING.md, section 2.2: «a rule, limit or task is added or broadened»), even though it restates `_seniority/MOTORE-LOCALE.md`. No rule is removed.
+Realignment of the family rules to The Eiraman Guide 1.0.0-rc.6 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: MINOR (0.4.0 to 0.5.0), because the paragraph «Motore locale» adds a stated limit to the family rules (VERSIONING.md, section 2.2: «a rule, limit or task is added or broadened»), even though it restates `_seniority/MOTORE-LOCALE.md`. No rule is removed.
 
 ### Added
 
@@ -19,10 +19,11 @@ Realignment of the family rules to The Eiraman Guide 1.0.0-rc.5 and to the use o
 
 ### Changed
 
-- Method: the `Metodo` line of `FAMIGLIA.md` now names The Eiraman Guide 1.0.0-rc.5 in place of «Specifica Eiraman 0.3 e Guida 1.0.0-rc.5».
+- Method: the `Metodo` line of `FAMIGLIA.md` now names The Eiraman Guide 1.0.0-rc.6 in place of «Specifica Eiraman 0.3 e Guida 1.0.0-rc.5».
 - Precedence clause: «prevale la specifica Eiraman, poi questo file, poi il profilo» now reads «prevale la Guida (The Eiraman Guide), poi questo file, poi il profilo».
 - Citations: 18 «spec §N» citation(s) remapped to Guide sections; the source table or list that named the specification 0.3 now names the Guide sections.
 - Section numbering and wording of the rules are otherwise unchanged; no rule is removed.
+- The ban on changing architecture documents now also points to Guide §13, «Minimum content».
 
 Remap used for the citations «spec §N» of the Italian specification 0.3, now historical: §1 → Guide §2; §2 → §4; §3 → §5; §4 → §6; §4 bis → §7 (and §7.1); §5 → §8 and §8.1 (Scope Management → §9); §6 → §9 and §9.1; §6 bis → §10; §7 → §11; §8 → §12 (and §9, §14.1); §9 → §13 and §4 (the separation between code and architecture documents is a profile rule); §10 → §14 and §14.1; §11 → §15 and §5. The target is chosen by the content of each citation, using the Guide traceability table.
 

@@ -3,7 +3,7 @@
   "nome": "Security engineer AWS",
   "versione": "0.3.0",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -49,7 +49,7 @@
       "url": "https://genai.owasp.org/"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "url": "https://github.com/eiraman/guide",
       "riferimento": "§4 Specialist AI roles; §5 Do, Urgent containment; §6 Independence of verification; §7 Role tiers; §9.1 DevSecOps practices; §11 Security Risk Posture, Agents section"
     }

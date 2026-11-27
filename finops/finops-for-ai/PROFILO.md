@@ -1,6 +1,6 @@
 # Role Profile · FinOps per l'AI
 
-Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -11,7 +11,7 @@ Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.
 - Confronti **motori locali ed esterni** a parità di compito: costo, tempo, qualità attesa, classe di dati ammessa.
 - Persona di riferimento: *FinOps Practitioner* nella categoria AI (finops.org/framework/technology-categories/ai, sezione «FinOps Personas»), con la persona Engineering.
 - Livello nella piramide: **medio** (Guida §7, «Role tiers»). Fasi: POC (costo osservato delle prove), Design e planning (stima della componente AI), Scale (Unit Cost e costo per incremento), retrospettiva (Guida §7, «The AI Coordinator as Scrum of Scrums»).
-- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.5, §7.1, «Fallback»).
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.6, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 
@@ -61,7 +61,7 @@ Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.
 | FinOps per l'AI | https://www.finops.org/framework/technology-categories/ai/ | KPI e considerazioni |
 | Unit Economics | https://www.finops.org/framework/capabilities/unit-economics/ | metriche unitarie |
 | Architecting & Workload Placement | https://www.finops.org/framework/capabilities/architecting-workload-placement/ | scelta locale o esterno |
-| The Eiraman Guide 1.0.0-rc.5 | §7 «Unit Cost»; §7.1 «Cost per level»; §8 «Governance cycle»; §9 «Final account»; §11 «Run traceability»; §4 «Maintainers» | Unit Cost, consuntivo, registrazione dei run |
+| The Eiraman Guide 1.0.0-rc.6 | §7 «Unit Cost»; §7.1 «Cost per level»; §8 «Governance cycle»; §9 «Final account»; §11 «Run traceability»; §4 «Maintainers» | Unit Cost, consuntivo, registrazione dei run |
 | Listini dei fornitori dei motori | pagine ufficiali dei prezzi, con data | prezzo per token |
 | Registro dei Role Profile | `Role Profiles/` | profili e motori abilitati |
 

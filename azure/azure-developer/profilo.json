@@ -3,7 +3,7 @@
   "nome": "Sviluppatore Azure",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "basso",
   "fasi": [
@@ -38,7 +38,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§9.1 DevSecOps practices; §10 Backbone, Brain; §11 Security Risk Posture, Run traceability",
       "url": "https://github.com/eiraman/guide"
     }
@@ -219,7 +219,7 @@
       "task": "Componente di sicurezza (autenticazione, dati personali)",
       "deliverable": "candidata con test e revisione indipendente",
       "seniority": "SD4",
-      "note": "revisione con modello diverso (Guida §6)"
+      "note": "revisione con modello diverso (Guida §6, «Independence of verification»)"
     },
     {
       "id": "T03",

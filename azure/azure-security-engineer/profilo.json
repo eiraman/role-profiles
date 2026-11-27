@@ -3,7 +3,7 @@
   "nome": "Security engineer Azure",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -39,7 +39,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§6 Independence of verification, Security and personal data; §9 Deterministic anchors; §9.1 DevSecOps practices; §11 Security Risk Posture, Agents section",
       "url": "https://github.com/eiraman/guide"
     }
@@ -218,7 +218,7 @@
       "task": "Revisione di sicurezza di una modifica",
       "deliverable": "revisione in docs/security/ con esito Passa / Condizionato / Blocca",
       "seniority": "SD4",
-      "note": "almeno al livello dell'esecutore; modello diverso (Guida §6)"
+      "note": "almeno al livello dell'esecutore (Guida §6, «Seniority of the verifier»); modello diverso (Guida §6, «Independence of verification»)"
     },
     {
       "id": "T02",

@@ -3,7 +3,7 @@
   "nome": "DBA Azure",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "basso",
   "fasi": [
@@ -34,7 +34,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§9 Definition of done; §11 Data classes per provider",
       "url": "https://github.com/eiraman/guide"
     }

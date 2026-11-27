@@ -5,7 +5,7 @@
   "nome_en": "TypeScript developer",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "basso",
   "fasi": [
@@ -57,8 +57,8 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
-      "riferimento": "§4 Specialist AI roles (limiti del ruolo; la separazione tra codice e documenti di design e architettura è una regola del profilo, senza corrispondente nella Guida); §5 Do, Delegate; §7 Role tiers, Shared context, except for the unit tester; §9 Work Package record, Definition of ready, Definition of done, Deterministic anchors; §9.1 DevSecOps practices, Test types; §11 Run traceability, Hostile-input test",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
+      "riferimento": "§4 Specialist AI roles, §13 Minimum content (limiti del ruolo; la separazione tra codice e documenti di design e architettura è una regola del profilo, senza corrispondente nella Guida); §5 Do, Delegate; §7 Role tiers, Shared context, except for the unit tester; §9 Work Package record, Definition of ready, Definition of done, Deterministic anchors; §9.1 DevSecOps practices, Test types; §11 Run traceability, Hostile-input test",
       "url": "https://github.com/eiraman/guide"
     }
   ],
@@ -306,7 +306,7 @@
       "task": "implementare componenti di sicurezza o trattamento di dati personali",
       "deliverable": "candidata con test negativi e riferimenti ASVS e CWE",
       "seniority": "SD4",
-      "note": "revisione con modello diverso dall'esecutore (Guida §6)"
+      "note": "revisione con modello diverso dall'esecutore (Guida §6, «Independence of verification»)"
     }
   ]
 }

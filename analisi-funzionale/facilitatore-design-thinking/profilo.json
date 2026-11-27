@@ -4,7 +4,7 @@
   "nome": "Facilitatore di Design Thinking",
   "versione": "0.8.0",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §3 «Context Consistency and Independence» e §7 (blinding), §8 «Question round» e «Convergence», §14 «Classification mode», §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §3 «Context Consistency and Independence» e §7 (blinding), §8 «Question round» e «Convergence», §14 «Classification mode», §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -33,7 +33,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§6 K1, K2, K3; §7 Role tiers; §8 Discovery as Design Thinking between models, Divergence, Gates, Convergence; §8.1 Discovery procedure",
       "url": "https://github.com/eiraman/guide"
     },
@@ -43,7 +43,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0001, RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6 (RFC 0001, RFC 0003)",
       "riferimento": "Context Consistency and Independence; hard blinding, soft blinding; Discovery group; convergenza del Design Thinking Facilitator; §8 Gates e Convergence, §8.1 Discovery procedure (RFC 0003): criteri di convergenza fissati prima della divergenza, giudice K1 dopo i revisori",
       "url": "https://github.com/eiraman/guide"
     }
@@ -317,7 +317,7 @@
       "task": "Giro di domande e registro delle domande",
       "deliverable": "prompt comune, registro con parole, argomento, autore, destinatario e scelta non reversibile, risposte, fonti e confidenze delle User Persona, domande per il Manager umano in ordine",
       "seniority": "SD3",
-      "note": "Guida 1.0.0-rc.5, §8, «Question round». La scelta delle domande segue l'ordine del registro, senza giudizio del Facilitatore."
+      "note": "Guida 1.0.0-rc.6, §8, «Question round». La scelta delle domande segue l'ordine del registro, senza giudizio del Facilitatore."
     }
   ]
 }

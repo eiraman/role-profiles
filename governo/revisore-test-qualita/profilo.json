@@ -4,7 +4,7 @@
   "nome": "Revisore di test e qualità",
   "versione": "0.3.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §3 «Context Consistency and Independence» e §7 (blinding), §9.1 (pratiche di test), §7.1 «Fallback», §14 «Classification mode» (due modalità di classificazione, rifiuti dei modelli, verifica obbligatoria rifiutata)",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §3 «Context Consistency and Independence» e §7 (blinding), §9.1 (pratiche di test), §7.1 «Fallback», §14 «Classification mode» (due modalità di classificazione, rifiuti dei modelli, verifica obbligatoria rifiutata)",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -15,12 +15,12 @@
   "descrizione_breve": "Agente AI revisore del dominio test e qualità: nel Discovery group, quando il Coordinatore AI lo sceglie, e nelle altre revisioni affidate, giudica in hard blinding solo i Principi e le Decisioni su criteri, test e qualità, con fonti puntuali; i test non dipendono mai da una persona e le User Persona eseguono i test funzionali; non esegue test e non sostituisce il revisore umano del dominio.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0001, RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6 (RFC 0001, RFC 0003)",
       "riferimento": "§6 Independence of verification e Seniority of the verifier; §7 Hard blinding e Shared context, except for the unit tester; §8 Discovery executors and reviewers; §9 Success criteria, Definition of ready, Definition of done, Dissent or missing proof, Deterministic anchors; §9.1 Test levels, Test types, Who supervises tests; §14 Out of scope at any level",
       "url": "https://github.com/eiraman/guide"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0005)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6 (RFC 0005)",
       "url": "https://github.com/eiraman/guide",
       "riferimento": "§14 Classification mode (rifiuti dei modelli, verifica obbligatoria rifiutata; la classificazione in informativa non ferma nulla), Security Officer in the informative mode"
     },

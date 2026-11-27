@@ -3,7 +3,7 @@
   "nome": "Incident e problem manager Azure",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -37,7 +37,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§5 Urgent containment; §8 Phases and decisions (Acceptance and operation); §14.1 Level 2 · Method (esercizio dal livello 2); §11 Security Risk Posture, Data classes per provider",
       "url": "https://github.com/eiraman/guide"
     }

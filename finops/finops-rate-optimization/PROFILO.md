@@ -1,6 +1,6 @@
 # Role Profile · Ottimizzazione delle tariffe (FinOps)
 
-Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
+Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -9,7 +9,7 @@ Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7.
 - Vale per la spesa cloud di utilizzo e, quando il fornitore offre piani a impegno o crediti prepagati, anche per la spesa dei motori AI di sviluppo.
 - Persone di riferimento: *Procurement* (finops.org/framework/persona/procurement) e *Finance* (finops.org/framework/persona/finance), con cui la capability richiede collaborazione.
 - Livello nella piramide: **medio** (Guida §7, «Role tiers»). Fasi: Design e planning (opzioni di prezzo prima dell'acquisto) e Accettazione ed esercizio (copertura, utilizzo, rinnovi).
-- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.5, §7.1, «Fallback»).
+- Seniority Digitale: vedi sezione 10; un task fuori catalogo si esegue al livello di ripiego fissato nel mandato, con i valori indicativi della sezione 10 (Guida 1.0.0-rc.6, §7.1, «Fallback»).
 
 ## 2. Competenze di base e metodologie
 

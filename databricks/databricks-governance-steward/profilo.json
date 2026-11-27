@@ -4,7 +4,7 @@
   "nome_en": "Databricks data governance steward",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "famiglia": "databricks",
   "regole_famiglia": "../FAMIGLIA.md",
@@ -60,7 +60,7 @@
       "url": null
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§4 Specialist AI roles; §5 Do, Delegate; §7 Role tiers; §8 Phases and decisions; §9 Definition of done; §9.1 DevSecOps practices; §10 Backbone, Brain; §11 Security Risk Posture, Data classes per provider",
       "url": "https://github.com/eiraman/guide"
     }

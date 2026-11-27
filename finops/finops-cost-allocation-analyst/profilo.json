@@ -3,7 +3,7 @@
   "nome": "Analista di allocazione dei costi (FinOps)",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "famiglia": "finops",
   "piramide": "medio",
@@ -20,7 +20,7 @@
       "url": "../FAMIGLIA.md"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§9 Work Package record, Final account; §11 Run traceability",
       "url": "https://github.com/eiraman/guide"
     },

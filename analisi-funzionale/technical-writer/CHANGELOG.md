@@ -11,12 +11,12 @@ All notable changes to the Role Profile `technical-writer`, «Technical writer»
 
 ## [0.3.1] - 2026-11-27
 
-Realignment of the profile to The Eiraman Guide 1.0.0-rc.5 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: PATCH (0.3.0 to 0.3.1), because only source references and metadata change, with the same meaning (VERSIONING.md, section 2.2: «corrected source references with the same meaning»). No rule, limit, task, deliverable or Digital Seniority level is added, removed or changed. The qualification state stays «draft, not qualified».
+Realignment of the profile to The Eiraman Guide 1.0.0-rc.6 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: PATCH (0.3.0 to 0.3.1), because only source references and metadata change, with the same meaning (VERSIONING.md, section 2.2: «corrected source references with the same meaning»). No rule, limit, task, deliverable or Digital Seniority level is added, removed or changed. The qualification state stays «draft, not qualified».
 
 ### Changed
 
-- Method: `metodo` of `profilo.json` and the `Metodo` line of `PROFILO.md` now name The Eiraman Guide 1.0.0-rc.5 and the relevant sections (`§7.1 «Fallback»; §9, §12, §14 (documenti, scheda di progetto e pacchetto per terzi nella modalità informativa)`), in place of «Eiraman 0.3; Guida 1.0.0-rc.5 per il ripiego della Seniority Digitale; documenti, scheda di progetto e pacchetto per terzi nella modalità informativa (§9, §12, §14)».
-- Source: the entry «Specifica Eiraman 0.3» of `competenze_fonti` (`§8 regole di redazione 1-12, Rilascio, Artefatti di governo, Misura; §10 set minimo; §11 pubblicazione`) is now «The Eiraman Guide 1.0.0-rc.5», with the matching Guide sections. Its `url` now points to the Guide repository (it was empty).
+- Method: `metodo` of `profilo.json` and the `Metodo` line of `PROFILO.md` now name The Eiraman Guide 1.0.0-rc.6 and the relevant sections (`§7.1 «Fallback»; §9, §12, §14 (documenti, scheda di progetto e pacchetto per terzi nella modalità informativa)`), in place of «Eiraman 0.3; Guida 1.0.0-rc.5 per il ripiego della Seniority Digitale; documenti, scheda di progetto e pacchetto per terzi nella modalità informativa (§9, §12, §14)».
+- Source: the entry «Specifica Eiraman 0.3» of `competenze_fonti` (`§8 regole di redazione 1-12, Rilascio, Artefatti di governo, Misura; §10 set minimo; §11 pubblicazione`) is now «The Eiraman Guide 1.0.0-rc.6», with the matching Guide sections. Its `url` now points to the Guide repository (it was empty).
 - Citations: 14 «spec §N» citation(s) in `PROFILO.md` remapped to Guide sections.
 - Section 10 of `PROFILO.md` regenerated with `attiva_profilo.py --scrivi-catalogo`: the generated text names the version of the Digital Seniority map (now 0.2.1); no task, deliverable or level changes.
 - `data` of `profilo.json` set to 2026-11-27.

@@ -4,7 +4,7 @@
   "nome_en": "Accessibility specialist",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -46,7 +46,7 @@
       "url": "https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§4 Specialist AI roles; §7 Shared context, except for the unit tester; §6 Seniority of the verifier; §9 Definition of done",
       "url": "https://github.com/eiraman/guide"
     }

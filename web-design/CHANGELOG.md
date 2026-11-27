@@ -11,7 +11,7 @@ All notable changes to the common rules of the family «Web design» (`FAMIGLIA.
 
 ## [0.3.0] - 2026-11-27
 
-Realignment of the family rules to The Eiraman Guide 1.0.0-rc.5 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: MINOR (0.2.0 to 0.3.0), because the paragraph «Motore locale» adds a stated limit to the family rules (VERSIONING.md, section 2.2: «a rule, limit or task is added or broadened»), even though it restates `_seniority/MOTORE-LOCALE.md`. No rule is removed.
+Realignment of the family rules to The Eiraman Guide 1.0.0-rc.6 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: MINOR (0.2.0 to 0.3.0), because the paragraph «Motore locale» adds a stated limit to the family rules (VERSIONING.md, section 2.2: «a rule, limit or task is added or broadened»), even though it restates `_seniority/MOTORE-LOCALE.md`. No rule is removed.
 
 ### Added
 
@@ -19,7 +19,7 @@ Realignment of the family rules to The Eiraman Guide 1.0.0-rc.5 and to the use o
 
 ### Changed
 
-- Method: the `Metodo` line of `FAMIGLIA.md` now names The Eiraman Guide 1.0.0-rc.5 in place of «Specifica Eiraman 0.3 e Guida 1.0.0-rc.5».
+- Method: the `Metodo` line of `FAMIGLIA.md` now names The Eiraman Guide 1.0.0-rc.6 in place of «Specifica Eiraman 0.3 e Guida 1.0.0-rc.5».
 - Precedence clause: «prevale la specifica Eiraman, poi questo file, poi il profilo» now reads «prevale la Guida (The Eiraman Guide), poi questo file, poi il profilo».
 - Citations: 10 «spec §N» citation(s) remapped to Guide sections; the source table or list that named the specification 0.3 now names the Guide sections.
 - Section numbering and wording of the rules are otherwise unchanged; no rule is removed.

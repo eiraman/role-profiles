@@ -4,7 +4,7 @@
   "nome": "Technical writer",
   "versione": "0.3.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»; §9, §12, §14 (documenti, scheda di progetto e pacchetto per terzi nella modalità informativa)",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»; §9, §12, §14 (documenti, scheda di progetto e pacchetto per terzi nella modalità informativa)",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -24,7 +24,7 @@
       "url": "https://www.iso.org/search.html?q=24495-1"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§12 Writing rules (da Business language a Qualified templates), Cost report, Percentages; §9 High Level Architectural View, Risk Log, Log Tracker, Manager View, Shape of control artifacts; §14.1 Release documents, Operational documents; §5 Do (pubblicazione esterna); la «Misura» (minuti di lettura, domande di chiarimento, omissioni intercettate) è una regola del profilo, senza corrispondente nella Guida",
       "url": "https://github.com/eiraman/guide"
     }

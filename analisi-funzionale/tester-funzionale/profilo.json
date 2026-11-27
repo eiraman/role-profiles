@@ -4,7 +4,7 @@
   "nome": "Tester funzionale",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §9.1 (pratiche di test), §6 «Independence of verification», §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §9.1 (pratiche di test), §6 «Independence of verification», §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -35,12 +35,12 @@
       "url": "https://cucumber.io/docs/gherkin/reference/"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§4 Specialist AI roles (tester); §7 Shared context, except for the unit tester; §9 Definition of done, Dissent or missing proof; §9.1 Test levels, Test types, Who supervises tests",
       "url": "https://github.com/eiraman/guide"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6 (RFC 0003)",
       "riferimento": "§9.1 Test types, scripted functional tests; §9 Definition of done; §6 Security and personal data; §5 Delegate",
       "url": "https://github.com/eiraman/guide"
     }

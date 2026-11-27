@@ -1,6 +1,6 @@
 # Famiglia · Web design
 
-Versione 0.3.0 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (modalità di classificazione e rifiuti dei modelli, §14) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (modalità di classificazione e rifiuti dei modelli, §14) · Stato: **bozza non qualificata**
 
 Regole comuni di usabilità e accessibilità per tutti i profili della famiglia. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la Guida (The Eiraman Guide), poi questo file, poi il profilo. Le regole sono derivate dalle linee guida di interfaccia di un progetto pilota e astratte per qualunque applicazione web governata con Eiraman.
 
@@ -14,7 +14,7 @@ Regole comuni di usabilità e accessibilità per tutti i profili della famiglia.
 
 Il test con **utente simulato** resta nel profilo omonimo della famiglia Analisi funzionale (`../analisi-funzionale/utente-simulato/`): questa famiglia ne scrive gli scenari e ne usa gli esiti, senza duplicarlo.
 
-**Modalità di classificazione e rifiuti dei modelli** (Guida 1.0.0-rc.5, §14, «Classification mode»). La modalità, bloccante o informativa, è scritta nel mandato e nel registro di progetto e non cambia durante il progetto. In modalità **bloccante** valgono le regole di questo file e dei profili come sono scritte. In modalità **informativa** le regole seguenti prevalgono su questo file e sui profili della famiglia:
+**Modalità di classificazione e rifiuti dei modelli** (Guida 1.0.0-rc.6, §14, «Classification mode»). La modalità, bloccante o informativa, è scritta nel mandato e nel registro di progetto e non cambia durante il progetto. In modalità **bloccante** valgono le regole di questo file e dei profili come sono scritte. In modalità **informativa** le regole seguenti prevalgono su questo file e sui profili della famiglia:
 - un criterio di esclusione, un dubbio sulla classe, un caso che non rientra in alcuna classe, una classe non assegnata o un cambio di classe non sono un limite né uno stop e non riducono lo scopo: si segnalano al Coordinatore AI per il Security Report e il lavoro prosegue (Guida §14, «Out of scope in the informative mode»; §14.2, «Class change»);
 - dati personali e terzi non sono un Do per questo solo motivo, nemmeno se il mandato li riserva. Restano Do tutte le altre voci della Guida §5: porte a senso unico e reversibilità dubbia, impatto su Visione, Principi o criteri di successo, nuovi fornitori, spesa oltre la soglia, cambi di Decisione, nuovi accessi, servizi esterni aggiunti o dati che escono dall'organizzazione, passaggio a un livello di adozione superiore; restano anche i Do di questo file che non dipendono solo da classe o dati personali;
 - l'ambiente blocca (Deny) ciò che il mandato vieta, non ciò che esce soltanto dall'ambito del livello di adozione (Guida §5, «Deny»). Se viene meno un requisito che un'altra regola della Guida impone, il lavoro che ne dipende resta bloccato finché il requisito non torna; il Deny dei rilasci non correttivi a budget di errore esaurito vale in entrambe le modalità (Guida §14; §14.1, «Error budget»);
@@ -141,4 +141,4 @@ Per ciclo di governo, soglie **da tarare**: fallimenti mandatori aperti; scherma
 | ETSI EN 301 549 V3.2.1 | https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf |
 | Direttiva (UE) 2019/882 | https://eur-lex.europa.eu/eli/dir/2019/882/oj |
 | W3C, limiti degli strumenti di valutazione | https://www.w3.org/WAI/test-evaluate/tools/selecting/ |
-| The Eiraman Guide 1.0.0-rc.5 | §4, §5, §7, §9, §9.1, §11, §12, §13, §14 |
+| The Eiraman Guide 1.0.0-rc.6 | §4, §5, §7, §9, §9.1, §11, §12, §13, §14 |

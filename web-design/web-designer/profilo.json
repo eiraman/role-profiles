@@ -4,7 +4,7 @@
   "nome_en": "Web designer",
   "versione": "0.2.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -36,7 +36,7 @@
       "url": "https://www.nngroup.com/articles/ten-usability-heuristics/"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
       "riferimento": "§12 Writing rules",
       "url": "https://github.com/eiraman/guide"
     }

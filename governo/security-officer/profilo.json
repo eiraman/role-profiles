@@ -4,7 +4,7 @@
   "nome": "Security Officer",
   "versione": "0.4.1",
   "data": "2026-11-27",
-  "metodo": "The Eiraman Guide 1.0.0-rc.5; §3 «Context Consistency and Independence» e §7 (blinding), §14 «Applicability gate» nelle due modalità di classificazione, «Risk profile», §14.2 «Running above the qualified level», §12 «Security Report», §14 «Local engines in the informative mode» (motori locali, rifiuti dei modelli), §7.1 «Fallback»",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §3 «Context Consistency and Independence» e §7 (blinding), §14 «Applicability gate» nelle due modalità di classificazione, «Risk profile», §14.2 «Running above the qualified level», §12 «Security Report», §14 «Local engines in the informative mode» (motori locali, rifiuti dei modelli), §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -20,7 +20,7 @@
   "descrizione_breve_en": "AI agent in the compliance role of the applicability gate: it assigns the project class with a versioned checklist; in the blocking mode, when the class exceeds the level or an exclusion is triggered, it delivers the risk profile with the proposed treatments, residual risk, conditions, questions for the organisation and what remains impossible, and says when the Human Manager's decision to run above the qualified level is available and what it requires; in the informative mode it classifies silently, stopping and reducing nothing, and keeps the Security Report; it does not review, never touches real data and gives no legal opinions.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0001, RFC 0003, RFC 0004, RFC 0005)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6 (RFC 0001, RFC 0003, RFC 0004, RFC 0005)",
       "url": "https://github.com/eiraman/guide",
       "riferimento": "§2 Management applied to AI; §3 Some uses are excluded; §4 Human Manager, Maintainers, Internal accountability, Liability towards third parties; §5 Deny, Do, E3, E5; §6 Security and personal data; §7 Hard blinding; §7.1 (incapacità); §8 Question round; §9 Vision, Shape of control artifacts, Project record, Dissent or missing proof; §11 Data classes per provider, Delegation of data, Hostile-input test; §12 Writing rules, Third-party evidence pack, Security Report; §13 (limiti dichiarati); §14 Classification mode, Principle, Project classes, Deliverables, Out of scope at any level, Out of scope in the informative mode, Applicability gate, Risk profile, Treatments, Questions for the organisation, Dialogue with the Human Manager, Independence of the Security Officer, Security Officer in the informative mode, Local engines in the informative mode, Legal advice; §14.1, Level 0 · Organisation, Level 1 · Method, Level 1 · Organisation, Error budget; §14.2 Moving up, Automatic downgrade, Class change, Running above the qualified level; §15 Conformance"
     },
