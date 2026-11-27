@@ -53,7 +53,10 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
   classification).
 - The mode does not change during the project; another mode needs a new project. Organisation rules that arrive
   during an informative project do not change the version in progress, releases included; they apply to
-  projects and versions opened or approved afterwards.
+  projects and versions opened or approved afterwards. When the SO finds that the recorded ground does not hold,
+  the AIC records it and the mode stays; in the informative mode it goes to the SR.
+- AIC, resumption: a project opened with profiles that have no modes (registry before 0.10.0) stays in the
+  blocking mode, with the ground recorded; the informative mode needs a new project (CR-022).
 - Informative: the gate runs at opening, every Wave and every change of mandate; with unchanged scope the SO
   MAY record it by reference. The classification stops nothing and reduces nothing; class, exclusions, doubts,
   out of scope and class changes are recorded in the SR. **Breaking** (relaxed).
@@ -62,6 +65,9 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
   organisation and the decision to run above the level belong to the blocking mode.
 - Informative: the AIC MAY apply by delegation only protections that are reversible and take nothing from the
   request; the others are recommended in the SR.
+- Informative: what is recorded in the SR raises no message, question or Do of its own; a Do, message or
+  document due on another ground still carries its impact on users and data, with a pointer to the SR (Guide §5,
+  "Content of a Do"; §12). Written in AIC, the `governo/` and analysis families and the Facilitator.
 - Informative: class, class change, personal data and third parties, even if the mandate reserves them, are not
   a Do on that ground alone; a class change is not counted in the drift budget as such, the spending and time it
   causes are. Every other Do of Guide §5 remains. **Breaking** (relaxed).
@@ -75,8 +81,9 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
 - Reviewers, informative: only findings of the security, privacy and legal-compliance reviewers on class,
   presence of personal data and exclusion criteria go to the SR and keep nothing open; all their other findings
   follow Guide §9, defects in handling personal data included. The architecture and the test and quality
-  reviewers send to the SR their out-of-scope signals and findings on class and personal data. **Breaking**
-  (relaxed).
+  reviewers send to the SR their out-of-scope signals and findings on class and personal data. Exposure to the
+  Internet without authentication is an out-of-scope signal only when the request asks for it; a missing
+  authentication by defect is a vulnerability under Guide §9. **Breaking** (relaxed).
 - Declared limits, informative: for the SO and the security, privacy and legal-compliance reviewers they go to
   the SR instead of taking the project out of the method (§13); the SO still stops for a defective environment,
   real data or a missing annex. Family and role limits on class, exclusions or personal data apply in the
@@ -98,6 +105,9 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
   Tracker and cycle review when blocking); the package closes without it if the mandatory checks pass, or is
   re-planned.
 - A refused mandatory check keeps the package open, is not repeated or reassigned, and goes to the HM as a Do.
+  The gate counts as a mandatory check (AIC and SO): when it is refused in the informative mode, its package stays
+  open with the Do, step 2 counts as run with "not determined" in the SR, and the rest of the work, building
+  included, goes on; in the blocking mode step 2 is not passed.
 - An agent declares its own refusal as such. Written in AIC, SO, AI Reviewer, `governo/` family and reviewers,
   Facilitator, AI Scrum Master, User Persona template, the other families, `SENIORITY.md` and the local engine
   rules.
@@ -107,20 +117,25 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
 - New `_seniority/MOTORE-LOCALE.md` and `motori-locali.json`: Gemma 4 31B run locally, loopback only, no
   retrieval, **to be qualified** on every task; it reads, compares and reports and does not decide; bounded
   input, never an undeclared partial reading; declared fallback, never for a refusal and never off the device
-  for real data; run records without the input text; until qualified the outcome is "not verified by a
-  qualified engine". `SENIORITY.md` rule 8: it is not a level of the map.
+  for real data; run records without the input text. A task not yet qualified, or whose qualification failed, is
+  not run on the engine in a project and goes to its fallback (CR-021); qualification runs on known-answer cases
+  outside projects. `SENIORITY.md` rule 8: it is not a level of the map.
 - Informative: no agent uses a local engine before the HM approves it with the mandate or, before it, with a Do,
   gate and Discovery included; a later addition is a change of mandate and a Do; the SR names the engines and
-  says that external providers' limits do not apply to a local one.
+  says that external providers' limits do not apply to a local one. Blocking: the mandate's data class table
+  admits it and, before the mandate, only a Do does, as in the informative mode (registry convention). The AIC
+  proposes that Do only for an engine installed and qualified for the tasks.
 - Real files: only the local engine, started on their own machine by whoever is entitled to the data (in the
   informative mode the approval above counts as the start), returns counts, categories and flags only, checked
-  by a deterministic tool.
-- SO tasks **T11** (reading of real files for the questions of fact) and **T12** (residue check after masking;
-  a residue blocks the result). Blocking: T11 needs the organisation's assent; in a project admitted by
-  decision it does not read colleagues' data before the requirements due for them; while unqualified a finding
-  brings the answer to at least "don't know", no finding gives no "no"; fallback T03. Informative: T11 and T12
-  run only with the approval; T11 has no fallback, and what cannot be determined
-  stays "not determined" in the SR; T12 keeps the deterministic masking tool as its only fallback.
+  by a deterministic tool. Their fallback never takes the data off the device: blocking, the question of fact
+  (T03); informative, "not determined"; residues, the deterministic masking tool only.
+- SO tasks **T11** (reading of real files for the questions of fact) and **T12** (residue check after masking; a
+  residue blocks the result). Both need an engine qualified for the task. Blocking: T11 needs the organisation's
+  assent and an engine admitted by the mandate or a Do; in a project admitted by decision it does not read
+  colleagues' data before the requirements due for them; a finding brings the answer to at least "don't know", no
+  finding gives no "no"; fallback T03. Informative: T11 and T12 run only with the approval; T11 has no fallback, and
+  what cannot be determined stays "not determined" in the SR; T12 keeps the deterministic masking tool as its only
+  fallback.
 - AIC: **every message to the HM MUST be checked before sending** (400 words, no unexplained method words or
   codes, bad news and the §12 questions first, at most five questions and one decision, details attached); a
   failing message is rewritten, or sent with the failure declared; without the counting tool, "check not run" is
@@ -129,7 +144,8 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
 - AIC, blocking: **comparison of the original risk profile with the business version** before presenting it
   (event `confronto_profilo_rischio`). Register summaries for the Manager View on a bounded extract, checked by
   a deterministic tool; AI Reviewer reports, risk profile, SR and decisions are never summarised.
-- User Persona template: tasks T01–T03 run on the local engine when admitted (fallback: the catalogue row).
+- User Persona template: tasks T01–T03 run on the local engine when admitted and qualified (fallback: the
+  catalogue row).
   AI Reviewer and Facilitator `profilo.json`: the engine listed as to be qualified; no task of theirs moves.
 
 **Question round (CR-023; Guide §8)**
@@ -139,11 +155,13 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
   removed; sent without authors to the User Personas for a first answer with source and confidence.
 - Confidence follows the source: high only with a quotation that answers the question, medium if deduced, low if
   supposed; with several Personas the lowest counts and all answers are kept.
-- To the HM go the questions to them or to a person outside the group that are not high, lowest confidence
-  first, then one-way choices, then what the end user sees or does, up to the number set by the mandate (before
-  it, communicated with the gates; five is indicative only), each with the supposed answer. Technical and member
-  questions take no place. Informative: security questions take no place, are not assumptions and go to the SR
-  as not determined.
+- To the HM go the questions to them or to a person outside the group that are not high, lowest confidence first,
+  then one-way choices, then what the end user sees or does, up to the number set by the mandate (before it,
+  communicated with the gates; five is indicative only), each with the supposed answer, added to the question in its
+  register words. Technical and member questions take no place. Informative: security questions take no place, are
+  not assumptions and go to the SR as not determined. A security question is one on the protection of data and
+  product (class, personal data and their protection, exclusions, security controls); one on who sees or does what
+  as a function the user wants stays a candidate; in doubt, a candidate.
 - A question gate follows the round and precedes divergence; the round does not count toward the maximum number
   of rounds. Answers not asked are taken as correct and shown as assumptions; with no answer the session goes on
   and suppositions stay "not confirmed".
@@ -154,22 +172,24 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
   confidence well. Business Analyst and functional analyst: answer the question round (tasks T05, T13).
   `profilo.json`: question counter (Facilitator) and first-answer check (User Persona).
 
-**Qualification cases** (none run): AIC 33; SO 37–62; Facilitator 20–35; User Persona 8–15; Business Analyst
-8–9; functional analyst 11–12; AI Scrum Master 17–18; technical writer 9–10; forecast and budget 8; AI Reviewer,
-security and privacy 13–16; legal-compliance 11–14; cloud 11–13; application and data 13–14; test and quality
-12–14.
+**Qualification cases** (none run): AIC 39; SO 37–64 (37 and 38 reworded for the qualified engine); Facilitator
+20–35; User Persona 8–15; Business Analyst 8–9; functional analyst 11–12; AI Scrum Master 17–18; technical writer
+9–10; forecast and budget 8; AI Reviewer, security and privacy 13–16; legal-compliance 11–14; cloud 11–13;
+application and data 13–14; test and quality 12–14.
 
-**Other.** New `governo/security-officer/ALLEGATO.md` (checklist and criteria, treatments and compensations,
-fixed phrases and examples, cases, SR format, open points); the SO MUST NOT classify without it; `REUSE.toml`
-covers `**/ALLEGATO.md`. Profile template §5 and §8: what to state for the informative mode. `README.md`: the
-annex, the two modes and the local engine files.
+**Other.** New `governo/security-officer/ALLEGATO.md` (checklist and criteria, treatments and compensations, fixed
+phrases and examples, dialogue answer format, cases, SR format, open points); the SO MUST NOT classify without it;
+`REUSE.toml` covers `**/ALLEGATO.md`. Profile template §5 and §8: what to state for the informative mode.
+`README.md`: the annex, the two modes and the local engine files.
 
 ### Changed
 
 - **Breaking.** SO fixed compensations 1 and 2 **relaxed**, in both modes: the input of the local engine on the
   entitled person's machine, in the tasks of SO §3 A5 only, is excepted from "no real personal data in prompts
-  and logs" and from "real data to no engine until the data class table exists". The rule "never touch real
-  personal data" stays and now says that only the local engine works on them.
+  and logs" and from "real data to no engine until the data class table exists" (before the mandate, only with a Do,
+  local engine rule 9). The rule "never touch real personal data" stays and now says that only the local engine
+  works on them. TR-3 keeps "never through agents or external services" for the treatment and says that the
+  gate reading of A5 is not that treatment and follows compensations 1 and 2.
 - **Breaking.** The 0.9.0 rules of the AIC, SO, families and roles on class above the level, exclusions, doubts,
   class Do, risk profile and the decision of §14.2 now say "in the blocking mode", where they are kept. Mandate,
   mandatory order, phase check, engagement card, cycle review and Manager View carry no class approval in the
@@ -179,7 +199,8 @@ annex, the two modes and the local engine files.
 - **Breaking.** Facilitator: "no question to the HM for every point" now holds "besides the question round";
   members get only the common prompt, except the merged register to the User Personas; hard blinding adds the
   HM's answers, the question limit and the mode; the AIC receives the gate material besides report and Scope
-  Management; case 16 reworded. User Persona: its answer to a business question is a supposition.
+  Management; case 16 reworded; out-of-scope signals of the architecture and test reviewers are treated like those
+  of the three reviewers the Guide names. User Persona: its answer to a business question is a supposition.
 - Informative: a starting question touching an exclusion no longer returns the Facilitator's package; the
   functional analyst's limit "sector rules, legal assessment or DPIA" is split (legal assessment stays a limit in
   both modes) and case 4 is qualified.
@@ -190,26 +211,26 @@ annex, the two modes and the local engine files.
   changed (reviewer rule and refusals above). §B binds every domain reviewer (see "Open tensions").
 - SO `profilo.json`: engine, Unit Cost, tools (local outcome format, input split, SR completeness), reserved
   decisions qualified by mode, two added (local engine Do; refused check Do), suite.
-- SO `PROFILO.md` shortened, 16,783 to 10,473 words: text moved to the annex. Digital Seniority fallback for a
-  local engine task: the catalogue level of its fallback.
+- SO `PROFILO.md` shortened, 16,783 to about 10,490 words: text moved to the annex, the dialogue answer format
+  included. Digital Seniority fallback for a local engine task: the catalogue level of its fallback.
 - Guide references and `metodo` fields moved to rc.5, or rc.5 added beside rc.3, in the files touched.
 
 ### Removed
 
-Lines removed against 0.9.0 (diff report: 452 non-blank). No rule is dropped without a replacement; every line is
+Lines removed against 0.9.0 (diff report: 460 non-blank). No rule is dropped without a replacement; every line is
 a version string, date, `metodo` field or Guide reference (rc.1, rc.3, rc.4 → rc.5), or one of these rewritten
 lines. Rewritings that relax a rule are the **breaking** ones above.
 
-- `governo/security-officer/PROFILO.md` (204): 169 now verbatim in `ALLEGATO.md` and 1 still verbatim in the
-  profile; 12 moved to the annex with changes (two assignment rules gain the informative mode; compensations 1
-  and 2 relaxed; open point on masked data widened; the five fixed phrases and their introduction re-indented and
-  reintroduced); 22 rewritten in the profile (header and §1 qualified by mode, sources, write and question
-  permissions, rule on real data, reserved Do, risk profile and dialogue, open points pointer, input package,
-  declared limits, references).
+- `governo/security-officer/PROFILO.md` (211): 175 now verbatim in `ALLEGATO.md` (the six lines of the dialogue
+  format among them) and 1 still verbatim in the profile; 12 moved to the annex with changes (two assignment rules
+  gain the informative mode; compensations 1 and 2 relaxed; open point on masked data widened; the five fixed
+  phrases and their introduction re-indented and reintroduced); 23 rewritten in the profile (header and §1 qualified
+  by mode, sources, the row on data to providers, write and question permissions, rule on real data, reserved Do,
+  risk profile and dialogue, open points pointer, input package, declared limits, references).
 - Its `profilo.json` (17): version fields, descriptions, source and reference, two tool names, seven reserved
   decisions, suite: rewritten.
-- `controllore/CONTROLLORE.md` (33): version; §2 points 2–4 (request, gate, dialogue, form, mandate), mandatory
-  order steps 2 and 4, repeated gate, phase check, new-project outcome, §2 ter opening, run log, competing
+- `controllore/CONTROLLORE.md` (34): version; §2 points 2–5 (request, gate, dialogue, form, mandate, resumption),
+  mandatory order steps 2 and 4, repeated gate, phase check, new-project outcome, §2 ter opening, run log, competing
   candidates, missing proof, gates, convergence, engagement card, limits, no filter, Deny, Do, phase state, cycle
   review, project documents, architectural view, `mandato.md` row, enabled models, CX-17: qualified or widened.
 - `controllore/AVVIO.md` (1, Manager View), `STATO.md` (2, method example and project documents),
@@ -273,26 +294,33 @@ mode.
 ### Profile conventions, not rules of the Guide, to be confirmed by the Human Manager
 
 - Mode: "uses the method for themselves" is read (AIC and SO) as: on their own account, not for or on a mandate
-  of an organisation, with the tool used only by the adopter, whoever owns the data; if others will use it, the
-  case counts as doubt, so blocking applies without a choice. No local engine before the mode is recorded. One line to the HM on organisation
-  rules that arrive during the project, and one on a refused action (informative).
-- The gate counts as a mandatory check for refusals; informative, its open package stops no other work.
-- Informative: what goes to the SR is not repeated in the Discovery final report, in a Do or elsewhere in the
-  Manager View, also for the findings of reviewers the Guide does not name (not the AI Reviewer's). Security
-  findings are not bad news of messages; a gate not run or an SR not updated is a phase not carried out.
+  of an organisation; who will use the tool and whose data it holds do not matter, and others using it do not by
+  themselves create a doubt. No local engine before the mode is recorded. The mode line is sent even when the
+  request came with the start message. One line to the HM on organisation rules that arrive during the project,
+  and one on a refused action (informative). A project opened before 0.10.0 stays blocking at resumption.
+- The gate counts as a mandatory check for refusals (AIC and SO); informative, its open package stops no other
+  work and step 2 counts as run.
+- Informative: what goes to the SR raises no message, question, Do or item of its own in the Discovery final
+  report or the Manager View, also for the findings of reviewers the Guide does not name (not the AI Reviewer's);
+  a Do, message or document due on another ground carries the finding it touches. The phase-state line shows no
+  class or outcome; a gate not run or an SR not updated is a phase not carried out.
 - Informative: the SO identifies case by case which §14.1 requirements another rule also imposes; documents only
   §14.1 requires are still produced unless the HM asks otherwise (stricter than the Guide); the SR may name who
-  in the organisation could answer; the organisation's assent to reading real files "does not appear"; the SR
+  in the organisation could answer; its fixed line names "the organisation you work for, if any" and point 11
+  is a recommendation, not a condition; the organisation's assent to reading real files "does not appear"; the SR
   copy is `eiraman/security-report.md` and `classe` stays `null`; the second fixed sentence of the report is
   among its declarations; the technical writer does not draft the SR.
 - Content of the Do on a local engine before the mandate (engine, tasks, files, provider limits not applying).
   Message check list and its exceptions; consecutive messages for the gate round; summaries.
-- Blocking: T11 needs the organisation's assent. Informative: the approval of the local engine counts as the start
-  by whoever is entitled. The Digital Seniority levels of SO T13 and Facilitator T15 are the executors' choice.
+- Blocking: T11 needs the organisation's assent; before the mandate a local engine needs a Do. Informative: the
+  approval of the local engine counts as the start by whoever is entitled. A finding by the engine brings at least
+  "don't know", no finding gives no "no". The Digital Seniority levels of SO T13 and Facilitator T15 are the
+  executors' choice.
 - Question round: five as indicative number; "Suppose X: is it so?"; how a wrong confidence is corrected;
   assumptions in block 5 of the engagement card; number and mode reach the Facilitator with the guardrails; a
-  security question is the one the register marks so, passed to the SO without authors; limits on class or data
-  in non-security profiles apply in the blocking mode only.
+  security question is one on the protection of data and product, not on how the product works, and in doubt
+  stays a candidate (Facilitator), passed to the SO without authors; limits on class or data in non-security
+  profiles apply in the blocking mode only.
 - Confirmed by the HM (CR-023), recorded as decisions: confidence follows the source; at equal confidence the
   costlier error first; assumptions stay visible; a rejected question is rephrased by the Facilitator.
 
@@ -300,6 +328,10 @@ mode.
 
 - Guide §8 asks the register to keep the questions' words; a rephrased question reaches the HM in other words
   (both forms are kept).
+- Guide §14, "Treatments", keeps real data "never sent to agents"; the profiles treat the SO's gate reading by
+  the local engine (A5) as outside that treatment, and relax compensations 1 and 2 in both modes on decisions
+  D-LOC-1 to D-LOC-4, still provisional: to be confirmed by the HM, with the informative approval counting as the
+  start by whoever is entitled when the data belong to an organisation.
 - Guide §13 exempts only the SO and the security, privacy and legal-compliance profiles in the informative mode,
   while §14 forbids stopping for classification: other profiles apply their class limits in blocking only.
   Whether cloud security engineers or the data governance steward are "security profiles" is not decided.

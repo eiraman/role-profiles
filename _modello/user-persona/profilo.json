@@ -215,7 +215,7 @@
       "task": "Esigenze della persona per il Discovery group (motore locale; ripiego: configurazione della riga)",
       "deliverable": "obiettivi, ostacoli ed esito atteso, con fonte o ipotesi da verificare",
       "seniority": "SD3",
-      "note": "Motore del ruolo nella Scoperta: il motore locale, se il mandato lo ammette e, in modalità informativa, solo dopo l'approvazione del Manager umano con il mandato o con un Do (Guida 1.0.0-rc.5, §14); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché non è qualificato l'esito è «non verificato da motore qualificato».",
+      "note": "Motore del ruolo nella Scoperta: il motore locale, solo dopo l'approvazione del Manager umano con il mandato o, prima del mandato, con un Do (in modalità informativa Guida 1.0.0-rc.5, §14; in bloccante convenzione del registro); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché il task non è qualificato vale il ripiego sulla configurazione della riga (decisione CR-021).",
       "motore": "Gemma 4 31B (densa, locale)"
     },
     {
@@ -223,7 +223,7 @@
       "task": "Risposta a un giro del Design Thinking Facilitator (motore locale; ripiego: configurazione della riga)",
       "deliverable": "posizione della persona sul prompt del giro",
       "seniority": "SD3",
-      "note": "In independent context. Motore del ruolo nella Scoperta: il motore locale, se il mandato lo ammette e, in modalità informativa, solo dopo l'approvazione del Manager umano con il mandato o con un Do (Guida 1.0.0-rc.5, §14); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché non è qualificato l'esito è «non verificato da motore qualificato».",
+      "note": "In independent context. Motore del ruolo nella Scoperta: il motore locale, solo dopo l'approvazione del Manager umano con il mandato o, prima del mandato, con un Do (in modalità informativa Guida 1.0.0-rc.5, §14; in bloccante convenzione del registro); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché il task non è qualificato vale il ripiego sulla configurazione della riga (decisione CR-021).",
       "motore": "Gemma 4 31B (densa, locale)"
     },
     {
@@ -231,7 +231,7 @@
       "task": "Osservazioni su un MOC (mock-up) (motore locale; ripiego: configurazione della riga)",
       "deliverable": "osservazioni della persona collegate alle sue esigenze",
       "seniority": "SD2",
-      "note": "Motore del ruolo nella Scoperta: il motore locale, se il mandato lo ammette e, in modalità informativa, solo dopo l'approvazione del Manager umano con il mandato o con un Do (Guida 1.0.0-rc.5, §14); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché non è qualificato l'esito è «non verificato da motore qualificato». Per un mock-up in forma di immagine serve la capacità visiva, da verificare nella qualificazione; altrimenti ripiego.",
+      "note": "Motore del ruolo nella Scoperta: il motore locale, solo dopo l'approvazione del Manager umano con il mandato o, prima del mandato, con un Do (in modalità informativa Guida 1.0.0-rc.5, §14; in bloccante convenzione del registro); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché il task non è qualificato vale il ripiego sulla configurazione della riga (decisione CR-021). Per un mock-up in forma di immagine serve la capacità visiva, da verificare nella qualificazione; altrimenti ripiego.",
       "motore": "Gemma 4 31B (densa, locale)"
     },
     {

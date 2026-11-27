@@ -275,7 +275,7 @@
     "in modalità bloccante: decisione di far procedere un progetto sopra il livello qualificato",
     "in modalità bloccante: accettazione del rischio residuo, nei limiti di ciò che il Manager umano ha titolo ad accettare: l'accettazione del rischio residuo non rende superabile un'esclusione, né il livello fuori dal caso della Guida §14.2, «Running above the qualified level»",
     "salita di livello di applicabilità, in entrambe le modalità; l'esperienza in informativa non conta",
-    "in modalità informativa: uso di un motore locale non dichiarato nel mandato, prima del mandato o aggiunto dopo (Guida §14, «Local engines in the informative mode»)",
+    "uso di un motore locale prima del mandato, in entrambe le modalità (in bloccante convenzione del registro, _seniority/MOTORE-LOCALE.md, regola 9), o, in modalità informativa, non dichiarato nel mandato o aggiunto dopo (Guida §14, «Local engines in the informative mode»)",
     "in entrambe le modalità: la decisione su una verifica obbligatoria rifiutata da un modello, che il Coordinatore AI porta al Manager umano (Guida §14, «Classification mode»)"
   ],
   "qualificazione": {
@@ -283,7 +283,7 @@
     "revisore": "da assegnare: revisori umani titolari o supplenti dei domini sicurezza e privacy (GOVERNANCE §4.5); la checklist CL-SO va qualificata dai maintainer (Guida §4)",
     "data": null,
     "scadenza": null,
-    "suite": "PROFILO.md §9 (casi 42, 43, 47, 49, 50); ALLEGATO.md, parte 4 (casi 1–41) e parte 5 (casi 44–46, 48, 51–62)"
+    "suite": "PROFILO.md §9 (casi 42, 43, 47, 49, 50); ALLEGATO.md, parte 4 (casi 1–41) e parte 5 (casi 44–46, 48, 51–64)"
   },
   "seniority": {
     "minima": "SD2",
@@ -363,19 +363,19 @@
     },
     {
       "id": "T11",
-      "task": "Lettura dei file reali per la checklist, con il motore locale avviato da chi ha titolo sulla propria macchina (ripiego: T03, domanda di fatto al Manager umano; mai un motore fuori da quella macchina)",
-      "deliverable": "conteggi e categorie per domanda di fatto (nomi di persone, categorie particolari, testo libero, minori), senza valori, con parti lette sul totale e stato «non verificato da motore qualificato» finché manca la qualificazione; in modalità informativa compila le evidenze sul dato del Security Report, solo con il motore locale approvato con il mandato o con un Do e senza ripiego (B7)",
+      "task": "Lettura dei file reali per la checklist, con il motore locale qualificato per il compito, avviato da chi ha titolo sulla propria macchina (ripiego: in bloccante T03, domanda di fatto al Manager umano; in informativa nessuno, «non determinato»; mai i dati fuori da quella macchina)",
+      "deliverable": "conteggi e categorie per domanda di fatto (nomi di persone, categorie particolari, testo libero, minori), senza valori, con parti lette sul totale; finché manca la qualificazione il motore non si usa e vale il ripiego; in modalità informativa compila le evidenze sul dato del Security Report, solo con il motore locale approvato con il mandato o con un Do e senza ripiego (B7)",
       "seniority": "SD3",
       "motore": "Gemma 4 31B (densa, locale)",
       "note": "Il livello è quello del ripiego T03. Il motore locale legge e segnala; risposte e classe restano a T02."
     },
     {
       "id": "T12",
-      "task": "Verifica dei residui dopo il mascheramento, sui dati reali, con il motore locale avviato da chi ha titolo sulla propria macchina (ripiego: solo lo strumento deterministico della regola; mai un motore fuori da quella macchina)",
+      "task": "Verifica dei residui dopo il mascheramento, sui dati reali, con il motore locale qualificato per il compito, avviato da chi ha titolo sulla propria macchina (ripiego: solo lo strumento deterministico della regola; mai i dati fuori da quella macchina)",
       "deliverable": "conteggi per colonna e categoria di nomi o riferimenti riconoscibili rimasti, senza valori; un residuo blocca il risultato mascherato",
       "seniority": "SD4",
       "motore": "Gemma 4 31B (densa, locale)",
-      "note": "Livello della regola di mascheramento che verifica (T05). Finché il motore non è qualificato, un'assenza di residui non vale come verifica. In modalità informativa, solo con il motore locale approvato con il mandato o con un Do (B7)."
+      "note": "Livello della regola di mascheramento che verifica (T05). Finché il motore non è qualificato per il compito non si usa: verifica il solo strumento deterministico della regola. In modalità informativa, solo con il motore locale approvato con il mandato o con un Do (B7)."
     },
     {
       "id": "T13",
