@@ -1,8 +1,8 @@
 # Famiglia · Governo
 
-Versione 0.4.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.5 (RFC 0001, RFC 0003, RFC 0004, RFC 0005); ogni profilo dichiara nel proprio campo `metodo` la versione della Guida che segue · Stato: **bozza non qualificata**
+Versione 0.5.0 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (RFC 0001, RFC 0003, RFC 0004, RFC 0005); ogni profilo dichiara nel proprio campo `metodo` la versione della Guida che segue · Stato: **bozza non qualificata**
 
-Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipendente dal Coordinatore AI: il Revisore AI e i revisori AI dei domini di governo (GOVERNANCE §4.5). La famiglia comprende anche il Security Officer, che non sorveglia ma propone: applica queste regole con le differenze dichiarate nel suo profilo (§1) e riassunte sotto la tabella. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo; fanno eccezione le regole che la Guida 1.0.0-rc.4 e la 1.0.0-rc.5 hanno aggiunto o cambiato (gate di applicabilità, Security Officer, progetto sopra il livello qualificato, modalità di classificazione, Security Report, rifiuti dei modelli, giro di domande della Scoperta), sulle quali prevale la Guida.
+Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipendente dal Coordinatore AI: il Revisore AI e i revisori AI dei domini di governo (GOVERNANCE §4.5). La famiglia comprende anche il Security Officer, che non sorveglia ma propone: applica queste regole con le differenze dichiarate nel suo profilo (§1) e riassunte sotto la tabella. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la Guida (The Eiraman Guide), poi questo file, poi il profilo.
 
 **Proprietà e revisione (RFC 0002, Do-S18).** La famiglia è del gruppo di lavoro **Governance & Assurance**, che scrive e mantiene questo file e gli otto profili e non li pubblica mai. Ogni `revisore-<dominio>` è rivisto e pubblicato dai revisori titolari o supplenti del gruppo del proprio dominio (GOVERNANCE §4.5); `revisore-ai` e questo file sono pubblicati da Test & Quality, in via provvisoria; `security-officer` dai revisori del dominio sicurezza, in via provvisoria e da confermare. Una modifica dei §A–§C vincola tutti i revisori di dominio e richiede anche il lazy consensus dei sei gruppi di dominio (GOVERNANCE §6.1). La RFC 0002 non cambia le regole dei §A–§D; gli ultimi due punti del §B seguono la Guida 1.0.0-rc.5.
 
@@ -21,17 +21,19 @@ Regole comuni ai profili che sorvegliano l'esecuzione del metodo in modo indipen
 
 Il profilo del Coordinatore AI resta in `controllore/`: è il ruolo che i profili di questa famiglia sorvegliano, e ha una struttura propria.
 
-I revisori dei domini di governo sono agenti AI: non sostituiscono il revisore umano titolare o supplente del dominio, perché nessun sistema AI è reviewer of record (GOVERNANCE §1, principio 1). Giudicano solo i Principi e le Decisioni del proprio dominio (Guida 1.0.0-rc.2, §8, «Discovery executors and reviewers»; Do-S09). I sei domini di GOVERNANCE §4.5 hanno ciascuno il proprio profilo (Do-S12).
+I revisori dei domini di governo sono agenti AI: non sostituiscono il revisore umano titolare o supplente del dominio, perché nessun sistema AI è reviewer of record (GOVERNANCE §1, principio 1). Giudicano solo i Principi e le Decisioni del proprio dominio (Guida 1.0.0-rc.5, §8, «Discovery executors and reviewers»; Do-S09). I sei domini di GOVERNANCE §4.5 hanno ciascuno il proprio profilo (Do-S12).
 
 Le regole dei §A–§C valgono per tutti i profili della famiglia, compresi i revisori dei domini di governo (Do-S14).
 
+**Motore locale** (regole in [`MOTORE-LOCALE.md`](../_seniority/MOTORE-LOCALE.md), dichiarazione in [`motori-locali.json`](../_seniority/motori-locali.json)). Nessun compito di questa famiglia è affidato al motore locale, salvo quelli elencati in `_seniority/motori-locali.json`: la lettura dei file reali per la checklist (T11) e la verifica dei residui dopo il mascheramento (T12) del Security Officer, con le regole del suo profilo (B7). Il Revisore AI è tra i profili con motore «da qualificare» e senza compiti (la qualificazione si fa a parte); i revisori dei domini non hanno compiti affidati. Il motore dichiarato è **da qualificare** su ogni compito: finché un compito non è qualificato, e il Manager umano non ha approvato l'uso del motore con il mandato o, prima del mandato, con un Do, il compito segue la riga del catalogo del profilo (ripiego), e un rifiuto di un motore non passa a un altro motore. La riga «modello locale» dell'elenco `motori` di ogni profilo è in stato «da qualificare» e dichiara la taglia minima: non assegna compiti. Un modello locale non è quindi un'opzione libera per l'hard blinding: si usa solo alle condizioni di questo paragrafo.
+
 ## A. Indipendenza dal Coordinatore AI
 
-- I profili della famiglia lavorano in **independent context** e in **hard blinding** (Guida 1.0.0-rc.2, principio di Context Consistency and Independence): l'ambiente dà loro solo i file, gli strumenti e i dati elencati nel profilo, senza retrieval fuori da quel perimetro, e il profilo lo impone come istruzione. Il blinding riguarda le informazioni del progetto, non la conoscenza generale del modello. Un modello locale è un'opzione quando l'hardware lo consente.
+- I profili della famiglia lavorano in **independent context** e in **hard blinding** (Guida 1.0.0-rc.5, principio di Context Consistency and Independence): l'ambiente dà loro solo i file, gli strumenti e i dati elencati nel profilo, senza retrieval fuori da quel perimetro, e il profilo lo impone come istruzione. Il blinding riguarda le informazioni del progetto, non la conoscenza generale del modello. Un motore locale è un'opzione solo alle condizioni del paragrafo «Motore locale» di questo file.
 - Lavorano su un **modello diverso** da quello del Coordinatore AI, in una sessione separata dalla sua.
-  - Per i controlli del process reviewer è obbligatorio (Guida 1.0.0-rc.1, §4, «Process reviewer»): senza un modello diverso quei controlli restano aperti.
+  - Per i controlli del process reviewer è obbligatorio (Guida 1.0.0-rc.5, §4, «Process reviewer»): senza un modello diverso quei controlli restano aperti.
   - Per gli altri compiti vale dove disponibile, e il limite si dichiara.
-  - Per i revisori dei domini di governo vale anche un modello diverso da quello degli esecutori che hanno prodotto il materiale, quando il materiale tocca sicurezza o dati personali (Guida 1.0.0-rc.2, §6, «Security and personal data»); il livello di indipendenza ottenuto si dichiara sempre.
+  - Per i revisori dei domini di governo vale anche un modello diverso da quello degli esecutori che hanno prodotto il materiale, quando il materiale tocca sicurezza o dati personali (Guida 1.0.0-rc.5, §6, «Security and personal data»); il livello di indipendenza ottenuto si dichiara sempre.
 - Non ricevono la discussione del Coordinatore AI né quella delle Squad e dei gruppi: solo registri, schede, report, abstract ed evidenze.
 
 ## B. Segnalazioni, non comandi
@@ -48,15 +50,15 @@ Le regole dei §A–§C valgono per tutti i profili della famiglia, compresi i r
 ## C. Misure
 
 - Ogni KPI ha un valore dichiarato, un valore osservato e la fonte nel registro. Ciò che non è misurato è «sconosciuto, serve evidenza», mai zero.
-- Un valore dichiarato cambia solo alla revisione del ciclo (Guida 1.0.0-rc.1, §8, «Declared and observed values»).
+- Un valore dichiarato cambia solo alla revisione del ciclo (Guida 1.0.0-rc.5, §8, «Declared and observed values»).
 
 ## D. Fonti comuni
 
 | Fonte | Indirizzo |
 |---|---|
-| The Eiraman Guide 1.0.0-rc.1 | §4 «Process reviewer», §5 E6, §6 K8, §8 |
+| The Eiraman Guide 1.0.0-rc.5 | §4 «Process reviewer», §5 E6, §6 K8, §8 |
 | ISO 19011:2018 | https://www.iso.org/standard/70017.html |
 | ISO/IEC/IEEE 15939:2017 | https://www.iso.org/standard/71197.html |
-| Specifica Eiraman 0.3 | §4, §6, §7 |
+| The Eiraman Guide 1.0.0-rc.5 | §6 (indipendenza della verifica), §9 (chiusura su evidenza), §11 (sicurezza degli agenti) |
 
 Le norme ISO si consultano nella copia licenziata dall'organizzazione; non se ne riproduce il testo.
