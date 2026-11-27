@@ -21,535 +21,319 @@ the version.
 
 ## [Unreleased]
 
-This entry holds two Work Packages on the same candidate: WP-LOC-2 (local engine, first part below) and
-WP-SEC-2 (classification in two modes, section "Changed, breaking, WP-SEC-2"). Version numbers in the table
-are those of the end of both.
+## [0.10.0] - 2026-11-27
 
-Scope: Wave LOC-01 of the method project, Work Package WP-LOC-2. Some tasks are given to a **local engine**,
-a language model that runs on the adopter's device with no network, and the AI Coordinator gets two checks
-before it writes to the Human Manager. Origin: test runs of 26 November 2026, in which the AI Coordinator's
-messages often exceeded a page (over 400 words) and carried internal terms of the method, so the Human Manager
-sent them back; the check that the business version of the risk profile says what the Security Officer's
-original says had been removed because no role covered it; every agent ran on the same vendor, which the
-sessions declared as a limit of independence; no agent could read the real data, so the Security Officer had
-to ask the Human Manager what the files contained; the Security Officer read only two thirds of its own
-profile, because it is too long (not addressed here, see "Known gaps").
+Scope: Change Requests CR-022 (security classification in two modes, blocking or informative), CR-023 (question
+round at the start of Discovery) and CR-021 (local engine and the AI Coordinator's checks) of the method
+project. The release brings the profiles it touches to the Guide 1.0.0-rc.5 (RFC 0005, accepted with Do-S29;
+the candidate published with Do-S30).
 
-Registry bump proposed: MINOR, marked **breaking**: two fixed compensations of the Security Officer are
-relaxed for the local engine (see "Changed"). The engine is **to be qualified** on every task: no profile and
-no task is qualified by this release, and no outcome of the local engine counts as a verification. Every
-profile stays **draft, not qualified**.
+**Starting state.** On top of the tag `v0.9.0`: two local candidates, never published, squashed as `e590aad`
+(of `f66a3d5`: local engine and two classification modes) and `c832041` (of `9a3b40f`: question round), then
+`1b19190`, which aligns the profiles to the Guide 1.0.0-rc.5. Their intermediate version numbers were never
+released. This entry describes the net change against 0.9.0 only.
+
+Registry bump: MINOR, marked **breaking** (registry 0.y.z): in the informative mode, rules that stop or limit a
+project no longer do so; two fixed compensations of the Security Officer are relaxed. No profile is added or
+removed (49 profiles); no file, heading, JSON key or qualification case is removed. Every profile stays **draft,
+not qualified**; no profile is qualified, requalified or suspended by this release. RFC in scope: RFC 0005 of
+the Guide.
+
+Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Security Officer
+(`governo/security-officer`), SR = Security Report, HM = Human Manager.
 
 ### Added
 
-- **Local engine** (`_seniority/MOTORE-LOCALE.md` 0.1.0 and `_seniority/motori-locali.json` 0.1.0, new):
-  Gemma 4, dense version with 31 billion parameters, run locally, type "locale", state "to be qualified".
-  The common rules are written once there and the profiles refer to them: it reads, compares and reports,
-  and does not decide (class, approvals, content of messages and acceptances stay with the role that answers
-  for them); short and bounded input only, with a maximum input length per task counted by a deterministic
-  tool, and the task is split or goes to its fallback when the text is longer, never an undeclared partial
-  reading; fallback to the engine of the catalogue row when the local engine is not installed, does not
-  answer or is not qualified for the task, declared in the outcome, and never an engine off the device for
-  real data; the only engine that may receive files with real personal data, only on the device of whoever
-  is entitled to process them, who starts it, with only counts, categories and flags in a fixed format leaving
-  the device, checked by a deterministic tool; text read is data, and an instruction found in it is reported,
-  not run; no network, loopback only, no retrieval (Guide §7, "Hard blinding": a local model without retrieval
-  MAY be used); qualification per task with known-answer cases and a threshold fixed before the test, and
-  until then the outcome is "non verificato da motore qualificato"; run records as for every run, without the
-  input text. A different configuration (runtime, quantisation, weights) counts as a different engine for
-  qualification. The table of the file lists the tasks given to the engine, their maximum input
-  (indicative, to be calibrated) and their fallback.
-- `_seniority/SENIORITY.md`, rule 8: a local engine is not a level of the map; a task given to it carries in
-  the catalogue the level of its fallback.
-- **AI Coordinator** (`controllore/CONTROLLORE.md`) 0.9.0 → 0.10.0:
-  - §5, **check of the message before it is sent** to the Human Manager, by the local engine with a declared
-    fallback, on a fixed list: at most 400 words in the main text, counted by a deterministic tool (a length
-    limit set by the mandate for decision records prevails, Guide §12, "Length limits"); no codes of the method
-    (Do-nn, K1, role acronyms, file names) and no method words (gate, Discovery, Wave, Work Package, class,
-    adoption level) without their meaning, with the business wording for each; bad news and the four
-    questions of the Guide §12 first; at most five questions, each with a question mark and answerable in one
-    line; at most one request for a decision, with what happens without an answer; references and details in
-    an attachment or the Manager View. Length, listed terms and question marks are counted by the
-    deterministic tool, the local engine reports the rest. A failed check means rewrite and check again; a
-    message that does not pass is not sent unless this is declared at its top. The check is on form: a
-    rewrite that drops bad news, a due question or a declaration is not a correction. Outcome recorded as the
-    event `controllo_messaggio`. Attachments are not the message and follow the rules for documents.
-  - §5, **comparison of the original risk profile with the business version**, before the Security Officer's
-    outcome is presented, by the local engine with a declared fallback, point by point, on a fixed list: same
-    class, exclusions, proposals in the same order with the same "starts today" or "does not start",
-    discarded ones included, conditions, residual risk, availability of the decision of §2 ter with what it
-    requires, questions for the organisation, declarations (provisional outcome, draft profile, no legal
-    advice, independence), nothing added. The list follows the untouchable content of §2 point 3, which is
-    wider than the items of the request. Every difference is corrected; an intended difference may only be one
-    of form and is declared to the Human Manager, because the content is not altered (Guide §14, "Dialogue
-    with the Human Manager"). The original stays attached unchanged; the outcome is recorded as the event
-    `confronto_profilo_rischio` and the AI Reviewer may check it. §2 point 3 refers to it. This closes the
-    known gap of 0.9.0 on the equivalence check, removed within 0.9.0 because no role covered it: it is a
-    tool of the AI Coordinator, not a task of the AI Reviewer.
-  - §5 bis, **summaries of the registers** for the Manager View, prepared by the local engine on a bounded
-    extract; a deterministic tool checks that every number, date and identifier of a summary appears in the
-    extract, otherwise the summary is discarded and the register line is shown. The AI Reviewer's reports,
-    the risk profile and the text of a decision to approve are never summarised.
-  - §2 point 3: when the Security Officer asks what the real files contain, the AI Coordinator passes the
-    request, through the Human Manager, to whoever is entitled to the data, who runs the local engine on their
-    own machine; the Security Officer receives only the outcome.
-  - §3, Digital Seniority: the local engine is used only for the tasks the registry gives it, with its common
-    rules; for the AI Coordinator these are the two checks and the summaries.
-  - §8: three qualification cases (a 600-word message with internal terms; a business version that weakens a
-    condition; local engine not installed or not qualified); "Modelli abilitati" names the local engine for
-    those three uses only. §9: row CX-25.
-- **Security Officer** (`governo/security-officer`) 0.2.0 → 0.3.0:
-  - A5 and task **T11**, reading of the real files for the questions of fact of the checklist (names of
-    people, special categories, free text, minors) with the local engine, returning only counts and
-    categories. **Who and where:** whoever is entitled to the data starts the engine on their own machine (the
-    definitions of §1), never the Security Officer or the AI Coordinator. Profile convention, prudent: only
-    with the organisation's assent to the use of those data in a new tool, as for TR-3 (A4); in a project
-    admitted by decision, not on data of colleagues before the requirements due for them (A6). While the
-    engine is not qualified, a finding brings the answer to at least "don't know" and becomes a question of
-    fact in the single round; no finding never gives a "no" and does not replace the proof of absence. The
-    judgment (answers, class, proposals) stays with the Security Officer's current engine. Fallback: the
-    question of fact to the Human Manager (T03).
-  - A5 and task **T12**, check on the real data, locally, that no names or recognisable references remain
-    after masking: a residue blocks the masked result; while the engine is not qualified, no residue is not a
-    verification and the deterministic tool of the masking rule stays the check.
-  - §4, §5, §8: the Security Officer still never touches real data; only the local engine, started by whoever
-    is entitled, works on them, and the Security Officer receives counts, categories and flags; an outcome of
-    the local engine that carries values of the data is not used and the environment is reported as faulty.
-  - §3, open points of the Guide: whether the local reading of real files is already a processing of data of
-    colleagues by the project, which the Guide §14.2 forbids before the requirements of level 1; the masking
-    open point also covers the residue check.
-  - §9: cases 37 to 41. `profilo.json`: the engine, its Unit Cost, two deterministic tools (format check of the
-    local outcome; counting and splitting of the input), tasks T11 and T12 with the field `motore`.
-- **User Persona** template (`_modello/user-persona`) 0.2.0 → 0.3.0: the local engine is the engine of the
-  role for the Discovery tasks T01–T03, with the row of the catalogue as fallback; it brings a vendor
-  different from the other members, which does not count as a level of independence until it is qualified;
-  for a mock-up given as an image, the visual capability is to be verified in the qualification. §1, case 8,
-  engine and Unit Cost in `profilo.json`.
-- `governo/revisore-ai` 0.3.0 → 0.4.0 and `analisi-funzionale/facilitatore-design-thinking` 0.5.0 → 0.6.0:
-  the local engine is added among the engines "to be qualified", with its Unit Cost to be calibrated. No task
-  changes engine; their qualification is separate.
-- `README.md`: the description of `_seniority/` names the local engine files. The profile counts do not change.
+**Classification modes (CR-022; Guide §14, §12)**
+
+- AIC, SO: two modes, blocking and informative. The HM MAY choose at opening; the mandate and the register
+  record mode and ground. Without a choice: informative when the adopter uses the method for themselves,
+  blocking in every other case and in doubt. Informative may be chosen under a formal mandate unless the
+  organisation's rules impose blocking. **Breaking** (relaxed: a project may run without being stopped by the
+  classification).
+- The mode does not change during the project; another mode needs a new project. Organisation rules that arrive
+  during an informative project do not change the version in progress, releases included; they apply to
+  projects and versions opened or approved afterwards.
+- Informative: the gate runs at opening, every Wave and every change of mandate; with unchanged scope the SO
+  MAY record it by reference. The classification stops nothing and reduces nothing; class, exclusions, doubts,
+  out of scope and class changes are recorded in the SR. **Breaking** (relaxed).
+- Informative: the SO is silent. It starts no exchange and asks nothing; it answers the HM's questions
+  (Dialogue); what it cannot determine is "not determined". Risk profile, treatments, questions for the
+  organisation and the decision to run above the level belong to the blocking mode.
+- Informative: the AIC MAY apply by delegation only protections that are reversible and take nothing from the
+  request; the others are recommended in the SR.
+- Informative: class, class change, personal data and third parties, even if the mandate reserves them, are not
+  a Do on that ground alone; a class change is not counted in the drift budget as such, the spending and time it
+  causes are. Every other Do of Guide §5 remains. **Breaking** (relaxed).
+- Informative: Deny stays for what the mandate forbids and for work depending on a lapsed requirement set by
+  another rule; the error budget applies in both modes. Other §14.1 requirements are optional and unmet ones
+  are listed in the SR; the §12 documents stay due. Informative experience does not count for moving up.
+- SR: SO task **T13** and annex part 5. Fixed responsibility line, then what changed, twelve points; updated at
+  every Wave and release; delivered with every release; in the third-party evidence pack and in the Manager
+  View in place of the risk profile. The HM answers for proceeding with what it records, the organisation to
+  third parties for its data; it moves no legal obligation and is not legal advice.
+- Reviewers, informative: only findings of the security, privacy and legal-compliance reviewers on class,
+  presence of personal data and exclusion criteria go to the SR and keep nothing open; all their other findings
+  follow Guide §9, defects in handling personal data included. The architecture and the test and quality
+  reviewers send to the SR their out-of-scope signals and findings on class and personal data. **Breaking**
+  (relaxed).
+- Declared limits, informative: for the SO and the security, privacy and legal-compliance reviewers they go to
+  the SR instead of taking the project out of the method (§13); the SO still stops for a defective environment,
+  real data or a missing annex. Family and role limits on class, exclusions or personal data apply in the
+  blocking mode only: Facilitator, Business Analyst, functional analyst, AI Scrum Master, technical writer and
+  the analysis, development, cloud, data, web and FinOps families. **Breaking** (relaxed).
+- AI Reviewer: no deviation for what is not due in the informative mode (risk profile, class approval, Do on
+  class or personal data grounds alone, under-escalation measure included); checks mode and ground, gate, SR,
+  silent SO, local engine approval and the other Do; its own critical deviations still reach the HM.
+- AIC: events `modalita_classificazione`, `regole_organizzazione`, `gate_scopo_invariato`; mode, ground and
+  local engines in the mandate; mode in the project record and evidence pack (both modes); `AVVIO.md` explains
+  the modes. `STATO.md`: fields `modalita` and `security_report`. `vista_manager.py`: shows the mode, links the
+  SR, adds as bad news a missing mode or, in the informative mode, a missing SR.
+
+**Refusals by a model, both modes (Guide §14)**
+
+- An action a model declines on its own rules is not performed, nor retried with another request, model,
+  candidate, engine or Digital Seniority level; in doubt it is a refusal; it is not a capability failure; with
+  competing candidates every output for that action is discarded. It is recorded (SR when informative; Log
+  Tracker and cycle review when blocking); the package closes without it if the mandatory checks pass, or is
+  re-planned.
+- A refused mandatory check keeps the package open, is not repeated or reassigned, and goes to the HM as a Do.
+- An agent declares its own refusal as such. Written in AIC, SO, AI Reviewer, `governo/` family and reviewers,
+  Facilitator, AI Scrum Master, User Persona template, the other families, `SENIORITY.md` and the local engine
+  rules.
+
+**Local engine (CR-021)**
+
+- New `_seniority/MOTORE-LOCALE.md` and `motori-locali.json`: Gemma 4 31B run locally, loopback only, no
+  retrieval, **to be qualified** on every task; it reads, compares and reports and does not decide; bounded
+  input, never an undeclared partial reading; declared fallback, never for a refusal and never off the device
+  for real data; run records without the input text; until qualified the outcome is "not verified by a
+  qualified engine". `SENIORITY.md` rule 8: it is not a level of the map.
+- Informative: no agent uses a local engine before the HM approves it with the mandate or, before it, with a Do,
+  gate and Discovery included; a later addition is a change of mandate and a Do; the SR names the engines and
+  says that external providers' limits do not apply to a local one.
+- Real files: only the local engine, started on their own machine by whoever is entitled to the data (in the
+  informative mode the approval above counts as the start), returns counts, categories and flags only, checked
+  by a deterministic tool.
+- SO tasks **T11** (reading of real files for the questions of fact) and **T12** (residue check after masking;
+  a residue blocks the result). Blocking: T11 needs the organisation's assent; in a project admitted by
+  decision it does not read colleagues' data before the requirements due for them; while unqualified a finding
+  brings the answer to at least "don't know", no finding gives no "no"; fallback T03. Informative: T11 and T12
+  run only with the approval; T11 has no fallback, and what cannot be determined
+  stays "not determined" in the SR; T12 keeps the deterministic masking tool as its only fallback.
+- AIC: **every message to the HM MUST be checked before sending** (400 words, no unexplained method words or
+  codes, bad news and the §12 questions first, at most five questions and one decision, details attached); a
+  failing message is rewritten, or sent with the failure declared; without the counting tool, "check not run" is
+  declared. Event `controllo_messaggio`. In the blocking mode the single round of gate questions may span
+  consecutive messages when it exceeds five.
+- AIC, blocking: **comparison of the original risk profile with the business version** before presenting it
+  (event `confronto_profilo_rischio`). Register summaries for the Manager View on a bounded extract, checked by
+  a deterministic tool; AI Reviewer reports, risk profile, SR and decisions are never summarised.
+- User Persona template: tasks T01–T03 run on the local engine when admitted (fallback: the catalogue row).
+  AI Reviewer and Facilitator `profilo.json`: the engine listed as to be qualified; no task of theirs moves.
+
+**Question round (CR-023; Guide §8)**
+
+- Facilitator §2, task **T15**: before divergence the same "what we do not know and whom to ask" prompt to all
+  executors; a register keeping words, topic, author, addressee and dependent one-way choice, duplicates only
+  removed; sent without authors to the User Personas for a first answer with source and confidence.
+- Confidence follows the source: high only with a quotation that answers the question, medium if deduced, low if
+  supposed; with several Personas the lowest counts and all answers are kept.
+- To the HM go the questions to them or to a person outside the group that are not high, lowest confidence
+  first, then one-way choices, then what the end user sees or does, up to the number set by the mandate (before
+  it, communicated with the gates; five is indicative only), each with the supposed answer. Technical and member
+  questions take no place. Informative: security questions take no place, are not assumptions and go to the SR
+  as not determined.
+- A question gate follows the round and precedes divergence; the round does not count toward the maximum number
+  of rounds. Answers not asked are taken as correct and shown as assumptions; with no answer the session goes on
+  and suppositions stay "not confirmed".
+- AIC §3 bis: carries the questions in their own message **as they are**; it MUST NOT choose, drop, add or
+  rewrite; it arranges only opening and layout; a question failing the message check goes back to the
+  Facilitator, who rephrases it keeping topic, addressee and supposed answer, with the original in the register.
+- User Persona template: task **T08** (first answer), kept off the local engine until the bench shows it assigns
+  confidence well. Business Analyst and functional analyst: answer the question round (tasks T05, T13).
+  `profilo.json`: question counter (Facilitator) and first-answer check (User Persona).
+
+**Qualification cases** (none run): AIC 33; SO 37–62; Facilitator 20–35; User Persona 8–15; Business Analyst
+8–9; functional analyst 11–12; AI Scrum Master 17–18; technical writer 9–10; forecast and budget 8; AI Reviewer,
+security and privacy 13–16; legal-compliance 11–14; cloud 11–13; application and data 13–14; test and quality
+12–14.
+
+**Other.** New `governo/security-officer/ALLEGATO.md` (checklist and criteria, treatments and compensations,
+fixed phrases and examples, cases, SR format, open points); the SO MUST NOT classify without it; `REUSE.toml`
+covers `**/ALLEGATO.md`. Profile template §5 and §8: what to state for the informative mode. `README.md`: the
+annex, the two modes and the local engine files.
 
 ### Changed
 
-- **Security Officer**, fixed compensations 1 and 2, **relaxed**: the input of the local engine on the
-  machine of whoever is entitled, in the tasks of A5 only, is an exception to "no real personal data in
-  prompts and logs", and the local engine is an exception to "until the table of data classes exists, real
-  data go to no engine". In the mandate the local engine is a row of that table (Guide §11). **Breaking.**
-- **Security Officer**, §5: the rule "Non tocchi dati personali reali" is kept and says who works on the real
-  data instead.
+- **Breaking.** SO fixed compensations 1 and 2 **relaxed**, in both modes: the input of the local engine on the
+  entitled person's machine, in the tasks of SO §3 A5 only, is excepted from "no real personal data in prompts
+  and logs" and from "real data to no engine until the data class table exists". The rule "never touch real
+  personal data" stays and now says that only the local engine works on them.
+- **Breaking.** The 0.9.0 rules of the AIC, SO, families and roles on class above the level, exclusions, doubts,
+  class Do, risk profile and the decision of §14.2 now say "in the blocking mode", where they are kept. Mandate,
+  mandatory order, phase check, engagement card, cycle review and Manager View carry no class approval in the
+  informative mode.
+- AIC: a change adding an external service or moving data outside is a Do in both modes; the High Level
+  Architectural View distinguishes local from external engines.
+- **Breaking.** Facilitator: "no question to the HM for every point" now holds "besides the question round";
+  members get only the common prompt, except the merged register to the User Personas; hard blinding adds the
+  HM's answers, the question limit and the mode; the AIC receives the gate material besides report and Scope
+  Management; case 16 reworded. User Persona: its answer to a business question is a supposition.
+- Informative: a starting question touching an exclusion no longer returns the Facilitator's package; the
+  functional analyst's limit "sector rules, legal assessment or DPIA" is split (legal assessment stays a limit in
+  both modes) and case 4 is qualified.
+- Informative: FinOps drift budget leaves class changes out but counts the spending and time they cause;
+  analysis family and technical writer: content required only by §14.1 may be left out by project decision and is
+  listed in the SR; a third-party document not allowed by the class is signalled, publication stays a Do.
+- `governo/FAMIGLIA.md`: precedence exception widened to the rc.5 rules; Security Officer paragraph and §B
+  changed (reviewer rule and refusals above). §B binds every domain reviewer (see "Open tensions").
+- SO `profilo.json`: engine, Unit Cost, tools (local outcome format, input split, SR completeness), reserved
+  decisions qualified by mode, two added (local engine Do; refused check Do), suite.
+- SO `PROFILO.md` shortened, 16,783 to 10,473 words: text moved to the annex. Digital Seniority fallback for a
+  local engine task: the catalogue level of its fallback.
+- Guide references and `metodo` fields moved to rc.5, or rc.5 added beside rc.3, in the files touched.
 
 ### Removed
 
-Every line removed is a version string or date, or a line replaced by a longer one: the `Versione` lines and
-the fields `versione` and `data` of the six files; in the Security Officer, compensations 1 and 2, the open
-point on masked data, the input package line "sempre", the rule "Non tocchi dati personali reali" and the last
-declared limit; in the User Persona template, the fields `task` and `note` of T01–T03 and their rows in
-section 10, regenerated; in the AI Coordinator, the gate input sentence of §2 point 3, the "Contenuto e
-forma" item, the last bullet of the Digital Seniority list and the "Modelli abilitati" row; the line on
-`_seniority/` in `README.md`. No rule, case, task or file is removed.
+Lines removed against 0.9.0 (diff report: 452 non-blank). No rule is dropped without a replacement; every line is
+a version string, date, `metodo` field or Guide reference (rc.1, rc.3, rc.4 → rc.5), or one of these rewritten
+lines. Rewritings that relax a rule are the **breaking** ones above.
 
-### Changed, breaking, WP-SEC-2: classification in two modes (candidate for an RFC to the Guide)
+- `governo/security-officer/PROFILO.md` (204): 169 now verbatim in `ALLEGATO.md` and 1 still verbatim in the
+  profile; 12 moved to the annex with changes (two assignment rules gain the informative mode; compensations 1
+  and 2 relaxed; open point on masked data widened; the five fixed phrases and their introduction re-indented and
+  reintroduced); 22 rewritten in the profile (header and §1 qualified by mode, sources, write and question
+  permissions, rule on real data, reserved Do, risk profile and dialogue, open points pointer, input package,
+  declared limits, references).
+- Its `profilo.json` (17): version fields, descriptions, source and reference, two tool names, seven reserved
+  decisions, suite: rewritten.
+- `controllore/CONTROLLORE.md` (33): version; §2 points 2–4 (request, gate, dialogue, form, mandate), mandatory
+  order steps 2 and 4, repeated gate, phase check, new-project outcome, §2 ter opening, run log, competing
+  candidates, missing proof, gates, convergence, engagement card, limits, no filter, Deny, Do, phase state, cycle
+  review, project documents, architectural view, `mandato.md` row, enabled models, CX-17: qualified or widened.
+- `controllore/AVVIO.md` (1, Manager View), `STATO.md` (2, method example and project documents),
+  `vista_manager.py` (10: labels, style, header; page-name code moved into `map_docs`).
+- `README.md` (4): layout, `_seniority/`, Security Officer description.
+- `_modello/PROFILO.md` (2: §5, §8) and `profilo.json` (version fields). `_seniority/SENIORITY.md` (2: reference;
+  rule 5).
+- Business Analyst: Do on third-party data, two limits, `do_riservati`, T05 note. User Persona: Discovery and
+  answer rules, business-needs limit, rows, tasks and notes of T01–T03, descriptions.
+- Facilitator: blinding list, engagement card rules, deliverables, context sharing, Do, card block 1, limit on the
+  starting question, case 16, T06; descriptions, prompt-comparison tool, `do_riservati`.
+- Analysis family: always-Do list, minimum documents. Functional analyst: Do, three limit lines, case 4,
+  `do_riservati`, T13 note. AI Scrum Master: Do, limit, `do_riservati`. Technical writer: drafts, third-party limit.
+- FinOps family: rule R5 and drift budget row. Forecast and budget: drift budget rule, output, T03.
+- `governo/FAMIGLIA.md`: precedence, §A–§D sentence, Security Officer paragraph. Security and privacy reviewers:
+  source row, Facilitator line, source and reference in `profilo.json`. Legal-compliance: source row,
+  Facilitator and AIC lines. Test and quality: source row.
+- Remaining lines of the other families and reviewers, and of the technical, cloud and AI Reviewer `profilo.json`:
+  version strings and Guide references only.
 
-Origin: a direction decision of the Human Manager of the method project, in his words: «Dobbiamo modificare
-il metodo. La classificazione di sicurezza può essere bloccante o informativa. Nel caso bloccante lavora come
-oggi. Nel caso di informativa traccia tutte le evidenze che sono state riscontrate in un Security Report
-consegnato con il progetto ed è di responsabilità del Manager. In caso di informativa le uniche azioni che non
-si svolgono sono quelle che per loro natura non eseguono i modelli usati (e.g. violazioni copyright)», after
-«In generale il modello sta diventando troppo concentrato sulla sicurezza». Evidence from test runs with the
-Security Officer: 5 to 14 security questions to the Human Manager per project against 0 to 4 work needs; every
-delivery a reduced version of the request; a family video reduced to photos without people; a personal
-project with no data of others opened with five security questions and a first message over a page; a
-product reduced to company customers then refused the user's real files because they held the forbidden
-column.
+### Fixed
 
-**These changes are a candidate for an RFC to the Guide**, prepared elsewhere. Each profile touched states at
-its top that it is in force only with the Guide that adopts the classification in two modes, and that with
-the Guide 1.0.0-rc.4 its previous version applies. Where a rule of the Guide §14 changes, the profiles write the
-new rule and cite "Guida §14 come modificato dalla RFC". Bump: MINOR, marked **breaking**: under the RFC,
-rules that stopped a project no longer stop it in the informative mode.
+- The known gap of 0.9.0 on checking that the business version of the risk profile matches the original is
+  addressed by the AIC's comparison (an AIC tool, not a task of the AI Reviewer).
 
-**Decisions confirmed by the Human Manager on 27 November 2026** («Si a tutto»; proposals of the AI Coordinator), with point 4 made precise in his words, «Il security officer in informativa è silente»:
-1. the default without a choice: informative for personal use, blocking with a formal mandate of the
-   organisation or when its rules ask for it; an organisation may impose the blocking mode;
-2. the measures applied by delegation without asking (test data, no real data to external services, the
-   program on the stated device, no real data in logs and working copies), and the rule that a measure that
-   reduces or changes the request is only recommended;
-3. the domain reviewers of security and privacy set no conditions that stop or reopen phases in the
-   informative mode, and only defects of the product against the request stay blocking;
-4. the repeated check at a Wave with unchanged scope is a line in the register, with no new invocation of the
-   Security Officer; in the informative mode the Security Officer is silent: it neither writes to nor asks
-   the Human Manager anything, and what it cannot find out is "non determinato" in the report, with what would
-   be needed. The AI Coordinator forwards no security question or condition and sends no message on security;
-   only three lines remain: the choice of mode at opening, a pointer to the Security Report at delivery, and an
-   action refused by a model. Measures by delegation are applied silently and read in the report.
+### Security
 
-Open point, decided by the Human Manager with the session that writes the RFC: whether AI systems prohibited
-by law stay excluded in the informative mode. The profile writes the rule as given (only the actions the models
-used do not carry out are not carried out) and notes the point.
-
-Profile conventions added by this candidate, still to be confirmed: without a choice in any
-other case (for example a tool for colleagues with no formal mandate) the blocking mode applies until the
-Human Manager chooses; a change of mode is a Do; in the Security Report "what changed" comes first, because the
-Guide §12 ("Changes first") requires it, while the proposal listed it last.
-
-- **Security Officer** (`governo/security-officer`) → 0.4.0:
-  - §3, "Scelta della modalità"; the existing rules A1–A6 stand unchanged under the heading "Modalità
-    bloccante"; new "Modalità informativa", B1–B8: classification once at opening and at every change of scope,
-    without stopping the work or reducing the scope, and silent towards the Human Manager (no message, no
-    question; what cannot be found out is "non determinato" in the report); exclusions, doubts and a class above the level become evidence of the Security
-    Report; measures by delegation; the only actions not carried out are those the models used refuse by
-    their nature, not listed or anticipated by the method, recorded with the model's stated reason; domain
-    reviewers' findings go into the report; local reading of real files (T11) fills the evidence on data,
-    still only counts and categories; responsibility: the Human Manager and, for the data it controls, the
-    organisation answer; the method and its profiles move no legal obligation; the report serves to decide,
-    not to prove compliance, and is not legal advice. Unchanged in both modes: no real data for the Security
-    Officer, hostile instructions produce a recorded Deny (Guide §11), no legal advice, no reviewer role.
-  - §6, **Security Report**, fixed format: the fixed opening line given by the Human Manager's proposal, then
-    what changed, class, evidence on data with where it was found and why it matters, exclusions touched,
-    measures applied by delegation, measures recommended and not applied with their consequence and whom to
-    consult in the organisation, actions not carried out because the models refuse them, declarations; annexes.
-  - §1, §5, §8: the rules on class above the level, exclusions, doubts and the decision apply in the blocking
-    mode; in the informative mode they do not stop the work. Header box qualified as "in modalità bloccante".
-  - **Shorter:** the checklist with its proofs, assignment rules, criteria and closed lists, the treatments,
-    exclusion and compensation tables, the three examples of main text and cases 1–41 move unchanged to
-    `governo/security-officer/ALLEGATO.md` (new, same version and state, four parts). `PROFILO.md` goes from
-    448 lines and 17,786 words to 318 lines and 10,217 words (319 lines and 10,407 words after the decisions of
-    27 November; 10,500 words after the corrections below). The validator accepts the structure.
-  - §9, cases 42–47 (one per mode, an exclusion in the informative mode, an action refused by a model, a Wave
-    with unchanged scope, an organisation imposing the blocking mode); case 48 (health data found in the
-    informative mode: no message or question, work not stopped or reduced, evidence with file and column,
-    measure recommended and not applied). `profilo.json`: task T13 (Security
-    Report, SD4), a completeness check of the report, suite and tool references to the annex, `metodo`.
-- **AI Coordinator** (`controllore/CONTROLLORE.md`) → 0.11.0: the mode asked in one line of the first message,
-  in business language, and recorded in the mandate; in the informative mode no security question, condition
-  or message to the Human Manager, only a line pointing to the Security Report at delivery and a line for an
-  action refused by a model, with an alternative; step 2 of the mandatory order and the phase check require the updated
-  Security Report, not an outcome of the gate; at a Wave with unchanged scope a line in the register; a class
-  change is evidence, not a Do; §2 ter, the Deny for actions outside the adoption level and the limits that
-  depend on the class apply in the blocking mode; the Security Report among the delivery documents and the
-  project documents of the Manager View; three qualification cases.
-- `governo/revisore-sicurezza` and `governo/revisore-privacy` 0.3.0 → 0.4.0: in the informative mode their
-  outcomes go into the Security Report and set no condition that stops or reopens a phase; only a defect of
-  the product against the request stays blocking; case 13.
-- `governo/FAMIGLIA.md` 0.3.0 → 0.4.0: the paragraph on the Security Officer's differences (and one point added to
-  §B by the corrections below); the rest of §A–§D unchanged.
-- `README.md` (the annex of the Security Officer, the two modes); `REUSE.toml` covers `**/ALLEGATO.md`.
-
-**Removed, WP-SEC-2.** Nothing is removed: the text that leaves the Security Officer's `PROFILO.md` is in
-`ALLEGATO.md` unchanged (checked line by line against the commit before). Every other line removed is a
-version string, a date, a `metodo` field or a line replaced by a longer one: in the Security Officer the header
-box, "chi può rispondere", the write permission, the opening of "Profilo di rischio", the opening of §8, two
-tool names and the T11 deliverable in `profilo.json` and its row in section 10; in the AI Coordinator §2 point 3,
-step 2, the paragraph on the repeated gate, the phase check, the opening of §2 ter, the Deny item and the
-project documents of §5 bis; in the two reviewers the line to the Design Thinking Facilitator; in
-`governo/FAMIGLIA.md` the paragraph on the Security Officer; two lines of `README.md`.
-
-**Points where this candidate contradicts the Guide 1.0.0-rc.4** (for the RFC):
-- §14 "Principle": "A project MUST NOT run if its class exceeds the qualified level", except by the decision
-  of §14.2. In the informative mode it runs without that decision.
-- §14 "Out of scope at any level": "The method MUST NOT be applied" to those projects. In the informative mode
-  it is applied, and the exclusion is evidence.
-- §14 "Applicability gate": a case with an exclusion or in doubt "MUST be treated as out of scope"; the gate
-  "MUST run ... at every Wave" (a line in the register replaces it when the scope is unchanged).
-- §14 "Risk profile" and "Treatments": no risk profile with treatments in the informative mode.
-- §14 "Questions for the organisation": until the organisation answers, only test data and no release; in
-  the informative mode the questions are not conditions.
-- §14.1 "Level 0 · Method" and §14.2 "Running above the qualified level": the Method and Organisation
-  requirements of level 1 due before release and before data of colleagues, the decision as a Do per project,
-  the declaration in the project record; none apply in the informative mode.
-- §14.2 "Class change" (always a Do, four options) and "Automatic downgrade" (Deny, only corrective releases).
-- §5 "Deny": an action outside the adoption level is blocked by the environment; in the informative mode it is
-  not.
-- §8 "Discovery executors and reviewers" and "Convergence": the domain reviewers' outcomes no longer hold
-  back the elements they find non-conforming.
-- §11 "Hostile-input test" (a recorded Deny) is kept, which is an action not carried out beyond what the
-  models refuse: the candidate reads the Human Manager's "only actions" as limited to the consequences of the
-  security classification; the reserved Do of §5 (publication, spending, new access) and the hard limits of
-  the AI Coordinator are kept for the same reason. To be confirmed.
-- §14 "Dialogue with the Human Manager": the Human Manager MAY question the Security Officer at any time;
-  in the informative mode the Security Officer is silent and puts the answer in the report.
-- §14 "Out of scope at any level", AI systems prohibited by law: excluded by the Guide, not excluded by the
-  rule as given unless the models refuse; open point for the RFC.
-- §11 "Security Risk Posture" stays required; the relation between it and the Security Report is not set.
-- §12 "Writing rules" asks for changes first: the format puts them first, against the order proposed.
-
-Contradictions not declared above, found by the review REV-SEC-LOC:
-- §5 "Silence never approves a Do": when the Human Manager does not answer the line on the mode, a default
-  applies, and for personal use it is the informative mode, in which exclusions and a class above the level do
-  not stop the project. Silence then decides what the Guide treats as a Do (class, running above the level).
-  The measures by delegation are also applied in silence.
-- §4 "Internal accountability" and "Liability towards third parties": the Security Report states that the
-  organisation answers for the data it controls, while in the informative mode nobody asks or informs the
-  organisation (no formal mandate, questions for the organisation not sent, no assent of the organisation).
-  The Guide ties the Human Manager's accountability to "using the method within the qualified scope".
-- §14, §14.2 and §11 "Data classes per provider", real data to a local engine: in the informative mode the
-  local engine reads the real files on the Human Manager's explicit assent alone, given at opening: without the
-  organisation's assent, before the level 1 requirements due for data of colleagues, and when the table of data
-  classes per provider does not exist yet. The profile of 0.3.0 asked for the organisation's assent (A5).
-- §14 "Applicability gate": with an exclusion or a doubt "the Human Manager [MUST be] informed". In the
-  informative mode he is informed only by the Security Report at delivery, not when the exclusion is found.
-- §15 "Conformance" and "Partial application": a project run in the informative mode does not respect several
-  MUST rules of §14. Whether it conforms, or owes a declaration of partial conformity, is not set.
-
-### Corrections after the independent review REV-SEC-LOC (WP-SEC-2)
-
-The independent review REV-SEC-LOC failed the candidate at `495b67e`: the informative mode was neither silent
-nor uninterrupted. These corrections change text and propagate the rule and do not restructure. In the blocking mode no rule is
-removed and no sentence loses words, except those listed under "Removed by the corrections"; general sentences
-gain the words "in modalità bloccante". The blocking text is **not identical** to `495b67e`: two new rules also
-apply in the blocking mode (the single round of the gate over consecutive messages; the line of assent in the
-first message, asked before the mode is known) and are listed among the choices to be confirmed. Decision of the Human Manager added
-after the review: in the informative mode with a local engine, one explicit assent is asked at opening for the
-reading of the real files; nothing else on security reaches him.
-
-**What reaches the Human Manager on security in the informative mode, after the corrections:** the line on the
-mode and, when a local engine is installed, the line of assent, both in the first message; the pointer to the
-Security Report at delivery; an action refused by a model (kept from the decision of 27 November).
-
-- **Rule 1, signals of exclusion or doubt from the squads.** `analisi-funzionale/FAMIGLIA.md` 0.3.1 → 0.4.0 (§D,
-  one point), `analisi-funzionale/analista-funzionale` 0.3.0 → 0.4.0 (declared limit and case 4): in the
-  informative mode the signal goes to the AI Coordinator for the Security Report and the agent goes on. AI
-  Coordinator, §2 point 3: it records the signals and hands them to the Security Officer at the next update of
-  the report, and writes the rule in the package of the Facilitator, the reviewers and the squads.
-- **Rule 2, security and privacy outcomes.** `governo/FAMIGLIA.md` §B (one point added), `revisore-sicurezza`,
-  `revisore-privacy` (§1, §6, case 13), `revisore-ai` (§6, one point): in the informative mode those outcomes go
-  to the AI Coordinator and only into the Security Report; not into the final report of the Discovery, not into
-  a Do, not into the Manager View, even when critical or not accepted. The AI Reviewer does not report the
-  missing blocking gate, risk profile or class Do as deviations, and checks the mode in the register, the
-  updated report and that only the allowed lines reached the Human Manager. A change of §B binds every domain
-  reviewer and needs the lazy consensus of the six domain groups (GOVERNANCE §6.1).
-- **Rule 3, assignment rules.** Security Officer, §3 and `ALLEGATO.md` part 1 (two lines): where the rules ask
-  for a question to the Human Manager or the organisation, or to inform him, the informative mode writes "non
-  determinato" in the report; "out of scope" is evidence.
-- **Rule 4, class and local reading.** In the informative mode the class is not brought to the Human Manager
-  and is not approved as a Do: it stays in the report and the register (AI Coordinator: §2 points 3 and 4, step
-  4 of the mandatory order, engagement card; Security Officer: B2, §5). T11 runs only on the explicit assent
-  asked at opening, which counts as the start by whoever is entitled; no other request to the Human Manager or
-  to the organisation; without it T11 is not run, with no fallback to T03, and "where" is "non determinato"
-  (Security Officer A5, B7; AI Coordinator §2 points 2 and 3).
-- **Rule 5, other reviewers.** `revisore-legale-compliance`, `revisore-architettura-cloud`,
-  `revisore-architettura-applicativa-dati`, `revisore-test-qualita` 0.2.0 → 0.3.0 and `_modello/business-analyst`
-  0.2.0 → 0.3.0: the same line. For these profiles it covers the out-of-scope signals and the findings on
-  security, personal data, class and exclusions; the other outcomes of their domain keep the usual rules.
-- **Rule 6, "where found".** Security Report, point 3: only what the Security Officer received (request, Scope
-  Management, outcome of T11), otherwise "non determinato". Case 48 rewritten accordingly: the Security Officer
-  does not find data in a file, the outcome of T11 reports the category.
-- **Rule 7, general sentences qualified "in modalità bloccante".** Security Officer §1 (gate at every Wave,
-  purpose, honesty on the class), §4 (asking a question), §5 (the reserved Do); AI Coordinator §4 (Do for class
-  change, decision above the level, and external service or data leaving the organisation when no spending
-  beyond the mandate or new access is involved) and §5 bis (High Level Architectural View).
-- **Rule 8, declared limits.** Security Officer §8 has two lists: in the informative mode it stops only for the
-  environment and real data (no hard blinding, real data in the package or values in a local outcome, annex
-  missing); everything else goes into the report.
-- **Rule 9, mode and personal use.** The mode is written in `registro.jsonl` at opening (event
-  `modalita_classificazione`), before the Security Officer is invoked; the mandate reports it. "Personal use" is
-  what the Human Manager declares in the request (only he uses the tool), not the class and not whose data.
-- **Rule 10, check of the message.** Without the deterministic tool the AI Coordinator records and declares
-  "controllo non eseguito" in a line at the end of the message and sends it. The single round of the blocking
-  gate stays one round when it has more than five questions: it takes consecutive messages, each within the
-  limit, with no other content.
-- **Rule 11, annex.** Security Officer §8 and §7: without `ALLEGATO.md` it does not classify, in either mode; the
-  AI Coordinator hands it over (§2 point 3); note in `controllore/AVVIO.md`. `attiva_profilo.py` is not in this
-  repository (`_strumenti/` is a local copy of the `tools` repository, excluded from Git), so it is not changed:
-  the gap stays in "Known gaps".
-- **Rule 12, Security Report.** Fixed sentence after the fixed line: the notice gives no legal basis and does not
-  protect the people concerned. Ten points: bad news and changes first; class and level explained in half a
-  line; new point 8, what the method has not put in place at this level; new point 9, what to do before use
-  with real data. Content of the register line at a Wave with unchanged scope (event
-  `security_report_invariato`: date, Wave, date of the report referred to, what was compared). AI Coordinator,
-  "Stato delle fasi": in the informative mode the security check is never a phase not carried out; it appears
-  as "rapporto di sicurezza aggiornato al [data]", with no class and no outcome.
-- **Rule 13, minor.** `profilo.json` of the Security Officer: suite with cases 42–48, T11 and T13 deliverables,
-  completeness check with ten points; section 10 regenerated. Word and line counts of this changelog corrected.
-  Known gap added on the completeness tool. Undeclared contradictions with the Guide added to the list above.
-- **Length.** To stay within 10,500 words, the fixed format of the Security Report and cases 45 and 46 (content
-  of the report) move from `PROFILO.md` §6 and §9 of the Security Officer to `ALLEGATO.md`, new part 5; cases
-  45 and 46 are unchanged. `PROFILO.md` of the Security Officer: 310 lines, 10,500 words; `ALLEGATO.md`: 228 lines,
-  9,997 words, part 5 added.
-- AI Coordinator, §5 and §5 bis: in the informative mode class changes are not an item of the cycle review, and
-  the Manager View shows no class and no security outcome (`classe` stays `null` in `stato.json`).
-- AI Coordinator, §8: two qualification cases (informative mode with the local engine, squad signal and reviewer
-  outcome; deterministic counter missing).
-
-**Versions.** Profiles already bumped in this unreleased entry keep their number (AI Coordinator 0.11.0, Security
-Officer 0.4.0, `revisore-sicurezza` and `revisore-privacy` 0.4.0, `revisore-ai` 0.4.0, `governo/FAMIGLIA.md` 0.4.0),
-as for the corrections inside 0.9.0; profiles touched here for the first time are bumped (table below).
-
-**Removed by the corrections** (both commits; every other change is an addition). No rule, case, task or file
-is removed.
-- Security Officer `PROFILO.md`: "registrata nel mandato" (§1; now "all'apertura"); in §3 "si registra nel mandato
-  di progetto" (now the register, and the mandate reports it) and the two sentences on the default («Senza scelta
-  vale: informativa per l'uso personale; bloccante quando c'è un mandato formale dell'organizzazione o le sue
-  regole lo chiedono. Negli altri casi, senza scelta, vale la bloccante finché il Manager umano non sceglie
-  (convenzione del profilo)», replaced by the decision of the Human Manager); in B5 "nel formato del §6" and, from the line of `95adcc3` on the register row, «"scopo invariato" rispetto al
-  report di quale data» and «(utenti, dati, esposizione, fornitori)», cut on purpose for the word limit: the full
-  content of the row is in the AI Coordinator, event `security_report_invariato`; in §8, from the sentence of
-  `95adcc3`, «qui sotto» and «come evidenza, "non determinato" o dichiarazione», cut on purpose for the same reason; in B7
-  "con le regole di A5: la avvia chi ha titolo sulla propria macchina" (the assent at opening counts as that
-  start, informative mode only); the heading of B6 "Revisori di dominio" (now "e squadre"); the opening sentence
-  of §8 («In modalità informativa i limiti che riguardano classe, esclusioni e dubbi non fermano il lavoro:
-  diventano evidenze del Security Report (B2). Restano gli altri.», replaced by the two lists); in §6 the Security
-  Report format with eight points (moved to `ALLEGATO.md` part 5 and rewritten with ten); in §9 cases 45 and 46
-  (moved to part 5 unchanged), in case 42 "Mandato con la modalità bloccante", in case 48 «Il Security Officer
-  trova dati sanitari nella colonna «Note» di un file del progetto»; in §9 and §7 the wording of the pointers to
-  the annex; in section 10 and `profilo.json` the list of contents in the T13 deliverable and "(casi 42–47)".
-- Security Officer `ALLEGATO.md`: "spostato senza modifiche;" (now with the exceptions named).
-- AI Coordinator: "la scelta va nel mandato" and "Senza risposta vale la regola del profilo del Security Officer"
-  (now the default in the words of the decision, and the register); "Restano solo tre righe" (now the lines
-  listed, with the assent); in §4, list of the Do, the sentence of `95adcc3` «Il cambio di classe, la decisione del
-  §2 ter e, quando non comportano spesa oltre mandato né un nuovo accesso, le modifiche che aggiungono un servizio
-  esterno o portano dati fuori dall'organizzazione sono Do in modalità bloccante; in modalità informativa sono
-  evidenze del Security Report», rewritten twice: its content is kept and widened with the decision (ii); in §5
-  bis «è un Do (§4)» reworded with the mode. The other changed lines only gain words.
-- `governo/FAMIGLIA.md`: «Cambia solo il paragrafo sulle differenze del Security Officer; i §A–§D non cambiano»;
-  "registrate nel mandato".
-- `revisore-sicurezza` and `revisore-privacy`: "Quando il mandato registra", "Mandato in modalità informativa"
-  (now the register); "l'esito va nel Security Report" in §6 (now: the card goes to the AI Coordinator).
-- `analisi-funzionale/analista-funzionale`, case 4: nothing removed, the sentence gains "in modalità bloccante".
-- `_seniority/MOTORE-LOCALE.md`, `motori-locali.json`, the four cloud and web families, the Facilitator, the AI
-  Scrum Master, the other reviewers, the Business Analyst template: additions only, plus version strings and dates.
-
-**Choices of the executor, to be confirmed by the Human Manager.** The text of these points is as at `495b67e`,
-not changed by the corrections; each is a choice the candidate made and the Human Manager has not confirmed in
-these terms:
-1. the fourth blocking case of B6: a defect of the product against what was asked stays blocking for the domain
-   reviewers in the informative mode;
-2. the limits kept beyond the refusals of the models: the recorded Deny for hostile instructions (Guide §11,
-   "Hostile-input test") and the reserved Do for spending and publication, with the other hard limits of the AI
-   Coordinator;
-3. T13 (Security Report) at SD4;
-4. the report updated at every change of scope and before every release, and only a line in the register at a
-   Wave with unchanged scope;
-5. the exception to the 400 words: a message that fails the check may be sent with the failed point declared at
-   its top;
-6. no confirmation that the Human Manager has read the Security Report is asked;
-7. no notice to the Human Manager when the first Security Report is ready: he gets the pointer at delivery only;
-8. what the line on the choice of mode says («I controlli di sicurezza possono fermare il lavoro quando trovano un
-   rischio, oppure annotarlo in un rapporto che ricevi con il progetto e di cui rispondi tu: quale preferisci?»).
-
-Choices made by the executor of these corrections, also to be confirmed: the wording of the line of assent for
-the local engine, asked only when a local engine is installed, valid only with an explicit yes; the assent counts
-as the start of the engine by whoever is entitled, on the files the Human Manager gave to the project; "controllo
-non eseguito" is declared in a line at the end of the message; for the reviewers other than security and privacy
-the line covers only out-of-scope signals and findings on security, personal data, class and exclusions; a
-process deviation reported by the AI Reviewer on these controls (for example a missing Security Report) keeps
-the usual route, which may reach the Manager View; the line for an action refused by a model is kept among the
-lines that reach the Human Manager; in the informative mode the line "rapporto di sicurezza aggiornato al" appears
-in the phase line at delivery only. **Two new rules that also apply in the blocking mode:** the single round of
-questions of the gate may take consecutive messages when it has more than five questions; the line of assent for
-the local engine is in the first message, before the mode is known, so a Human Manager who then chooses the
-blocking mode has read it too (there it has no effect: the blocking rules of A5 apply).
-
-**Second review of `95adcc3`: pass with corrections.** Decisions of the Human Manager of 27 November 2026, applied
-and no longer among the choices to be confirmed: (i) without a choice, the informative mode applies by itself only
-when the adopter uses the method for himself; in every other case the blocking mode applies; (ii) in the
-informative mode personal data and data of others generate no reserved decisions and go into the Security Report;
-irreversible actions, spending, new accesses and changes of Decision stay decisions of the Human Manager; (iii)
-the refusal of a model holds: the AI Coordinator does not pass the action to another model to have it carried out.
-- (i): Security Officer §3 and AI Coordinator §2 point 2, in the words of the decision. Rules of the organisation
-  that impose the blocking mode and emerge after opening: from then the blocking mode applies, the AI Coordinator
-  records it and invokes the gate.
-- (ii): AI Coordinator §3 bis (engagement card: no "classe (dal gate)"; data, data classes, data of others,
-  external services and data leaving the organisation are not in the reserved block, except for spending, new
-  accesses and irreversible choices) and §4 (Do list); `analisi-funzionale/FAMIGLIA.md` §D.
-- (iii): Security Officer B4 and AI Coordinator §2 point 3.
-- `analisi-funzionale/facilitatore-design-thinking`, one point added to §8 and nothing else changed, because
-  another candidate edits the same profile on another branch: in the informative mode it prevails on the rest of
-  the profile (engagement card, reserved block, reviewers' cards to the Security Report, session closed without
-  them, starting question touching an exclusion). Version unchanged, 0.6.0, already bumped in this entry.
-- `analisi-funzionale/scrum-master-ai` 0.2.0 → 0.3.0 (§5 and §8) and `analista-funzionale` (§5 and §8, still 0.4.0):
-  class change and personal data are not a Do or a stop in the informative mode.
-- `aws/FAMIGLIA.md` and `azure/FAMIGLIA.md` 0.2.1 → 0.3.0, `databricks/FAMIGLIA.md` and `web-design/FAMIGLIA.md` 0.1.0 →
-  0.2.0: one paragraph, the rule of the AI Coordinator's package prevails on the family file and its profiles in
-  the informative mode. The profiles of those families are not edited.
-- `_seniority/MOTORE-LOCALE.md` and `motori-locali.json` (still 0.1.0, new in this entry): rule 4 and the T11 row
-  aligned with B7. `governo/FAMIGLIA.md`, cases 13 and 42: the mode is in the register. AI Coordinator §3 ter
-  ("Nessun filtro") qualified; phase line as above.
-- Security Officer `PROFILO.md`: 310 lines, within 10,500 words.
-
-**Third check, of `1d92038`: pass with corrections.** AI Coordinator §4: in the informative mode class change, the
-decision of §2 ter and external services or data leaving the organisation are evidence of the Security Report
-again, except for spending beyond the mandate, new accesses and irreversible choices. Facilitator: the point
-becomes a paragraph before the list of §8 and also covers the Do for new sources with data of others, the
-negative outcomes of the security and privacy reviewers in the card and case 12. `scrum-master-ai/profilo.json`:
-`do_riservati` aligned with the profile. `sviluppo/FAMIGLIA.md` and `finops/FAMIGLIA.md` 0.2.1 → 0.3.0: the same
-paragraph as the other families; in `sviluppo` sending real data to an engine or service off the device stays a
-stop in both modes; in `finops` it covers the two returns tied to the class. Removals not declared before are
-now in the list above.
+- Informative mode: exclusions, special categories and children's data included, no longer stop a project; they
+  are recorded in a report that gives no legal basis and does not protect the people concerned. Protections that
+  would change the request are only recommended; the remaining limits include the Deny for hostile instructions,
+  the Do of §5, the data class table per provider and the refusals of the models in use, which differ by vendor.
+- Real files can be read by the local engine (conditions above).
 
 ### Profile versions
 
-| Profile | Version | Date | State |
-|---|---|---|---|
-| AI Coordinator (`controllore/CONTROLLORE.md`) | 0.9.0 → 0.11.0, **breaking** (0.10.0 after WP-LOC-2, not released) | 2026-11-27 | draft, not qualified; candidate for the RFC on the two modes |
-| `governo/security-officer` | 0.2.0 → 0.4.0, **breaking** (0.3.0 after WP-LOC-2, not released); new `ALLEGATO.md` | 2026-11-27 | draft, not qualified; candidate for the RFC on the two modes |
-| `governo/revisore-sicurezza` | 0.3.0 → 0.4.0, **breaking** | 2026-11-27 | draft, not qualified; candidate for the RFC on the two modes |
-| `governo/revisore-privacy` | 0.3.0 → 0.4.0, **breaking** | 2026-11-27 | draft, not qualified; candidate for the RFC on the two modes |
-| `governo/revisore-legale-compliance`, `governo/revisore-architettura-cloud`, `governo/revisore-architettura-applicativa-dati`, `governo/revisore-test-qualita` | 0.2.0 → 0.3.0, **breaking** (one line on the informative mode) | 2026-11-27 | draft, not qualified; the line is a candidate for the RFC on the two modes |
-| `analisi-funzionale/analista-funzionale` | 0.3.0 → 0.4.0, **breaking** (declared limit and case 4) | 2026-11-27 | draft, not qualified; candidate for the RFC on the two modes for those lines |
-| `_modello/business-analyst` | 0.2.0 → 0.3.0, **breaking** (one declared limit) | 2026-11-27 | draft, not qualified; candidate for the RFC on the two modes for that line |
-| `analisi-funzionale/scrum-master-ai` | 0.2.0 → 0.3.0, **breaking** (two lines on the informative mode) | 2026-11-27 | draft, not qualified; candidate for the RFC on the two modes for those lines |
-| `_modello/user-persona` | 0.2.0 → 0.3.0 | 2026-11-27 | draft, not qualified |
-| `governo/revisore-ai` | 0.3.0 → 0.4.0 | 2026-11-27 | draft, not qualified |
-| `analisi-funzionale/facilitatore-design-thinking` | 0.5.0 → 0.6.0 | 2026-11-27 | draft, not qualified |
+All dated 2026-11-27; state: draft, not qualified.
 
-Local engine: `_seniority/MOTORE-LOCALE.md` and `motori-locali.json`, new, 0.1.0, engine to be qualified on
-every task. The Digital Seniority map `seniority.json` is unchanged (0.2.0), so section 10 of the other
-profiles does not change; `SENIORITY.md` gains rule 8. Family files: `governo/FAMIGLIA.md` 0.3.0 → 0.4.0 (candidate for the RFC on the two modes) and
-`analisi-funzionale/FAMIGLIA.md` 0.3.1 → 0.4.0 (one point added to §D, candidate for the same RFC); `aws/FAMIGLIA.md` and `azure/FAMIGLIA.md` 0.2.1 → 0.3.0,
-`databricks/FAMIGLIA.md` and `web-design/FAMIGLIA.md` 0.1.0 → 0.2.0, `sviluppo/FAMIGLIA.md` and `finops/FAMIGLIA.md`
-0.2.1 → 0.3.0 (one paragraph, same RFC). `metodo` is unchanged in
-every profile.
+| Profile or file | Version |
+|---|---|
+| AI Coordinator (`controllore/CONTROLLORE.md`) | 0.9.0 → 0.12.0, **breaking** |
+| `governo/security-officer` (and new `ALLEGATO.md` 0.4.0) | 0.2.0 → 0.4.0, **breaking** |
+| `governo/revisore-sicurezza`, `governo/revisore-privacy` | 0.3.0 → 0.4.0, **breaking** |
+| `governo/revisore-ai` | 0.3.0 → 0.4.0, **breaking** |
+| `governo/revisore-legale-compliance`, `-architettura-cloud`, `-architettura-applicativa-dati`, `-test-qualita` | 0.2.0 → 0.3.0, **breaking** |
+| `analisi-funzionale/facilitatore-design-thinking` | 0.5.0 → 0.7.0, **breaking** |
+| `analisi-funzionale/analista-funzionale` | 0.3.0 → 0.4.0, **breaking** |
+| `analisi-funzionale/scrum-master-ai`, `technical-writer`; `finops/finops-forecast-budget` | 0.2.0 → 0.3.0, **breaking** |
+| `_modello/user-persona` | 0.2.0 → 0.4.0 |
+| `_modello/business-analyst` | 0.2.0 → 0.3.0, **breaking** |
+| `_modello/profilo.json` (profile template) | 0.1.0 → 0.2.0 |
+| `governo/FAMIGLIA.md` | 0.3.0 → 0.4.0, **breaking** |
+| `analisi-funzionale/FAMIGLIA.md` | 0.3.1 → 0.4.0, **breaking** |
+| `aws/`, `azure/`, `sviluppo/`, `finops/FAMIGLIA.md` | 0.2.1 → 0.3.0, **breaking** |
+| `databricks/`, `web-design/FAMIGLIA.md` | 0.1.0 → 0.2.0, **breaking** |
+| `_seniority/MOTORE-LOCALE.md`, `motori-locali.json` | new, 0.1.0 |
+
+`seniority.json` (0.2.0) is unchanged; `SENIORITY.md` and the `controllore/` support files have no version line.
+The gate checklist stays CL-SO 0.2.0, although two of its assignment rules gain a sentence on the informative
+mode.
+
+### Profile conventions, not rules of the Guide, to be confirmed by the Human Manager
+
+- Mode: "uses the method for themselves" is read (AIC and SO) as: on their own account, not for or on a mandate
+  of an organisation, with the tool used only by the adopter, whoever owns the data; if others will use it, the
+  case counts as doubt, so blocking applies without a choice. No local engine before the mode is recorded. One line to the HM on organisation
+  rules that arrive during the project, and one on a refused action (informative).
+- The gate counts as a mandatory check for refusals; informative, its open package stops no other work.
+- Informative: what goes to the SR is not repeated in the Discovery final report, in a Do or elsewhere in the
+  Manager View, also for the findings of reviewers the Guide does not name (not the AI Reviewer's). Security
+  findings are not bad news of messages; a gate not run or an SR not updated is a phase not carried out.
+- Informative: the SO identifies case by case which §14.1 requirements another rule also imposes; documents only
+  §14.1 requires are still produced unless the HM asks otherwise (stricter than the Guide); the SR may name who
+  in the organisation could answer; the organisation's assent to reading real files "does not appear"; the SR
+  copy is `eiraman/security-report.md` and `classe` stays `null`; the second fixed sentence of the report is
+  among its declarations; the technical writer does not draft the SR.
+- Content of the Do on a local engine before the mandate (engine, tasks, files, provider limits not applying).
+  Message check list and its exceptions; consecutive messages for the gate round; summaries.
+- Blocking: T11 needs the organisation's assent. Informative: the approval of the local engine counts as the start
+  by whoever is entitled. The Digital Seniority levels of SO T13 and Facilitator T15 are the executors' choice.
+- Question round: five as indicative number; "Suppose X: is it so?"; how a wrong confidence is corrected;
+  assumptions in block 5 of the engagement card; number and mode reach the Facilitator with the guardrails; a
+  security question is the one the register marks so, passed to the SO without authors; limits on class or data
+  in non-security profiles apply in the blocking mode only.
+- Confirmed by the HM (CR-023), recorded as decisions: confidence follows the source; at equal confidence the
+  costlier error first; assumptions stay visible; a rejected question is rephrased by the Facilitator.
+
+### Open tensions
+
+- Guide §8 asks the register to keep the questions' words; a rephrased question reaches the HM in other words
+  (both forms are kept).
+- Guide §13 exempts only the SO and the security, privacy and legal-compliance profiles in the informative mode,
+  while §14 forbids stopping for classification: other profiles apply their class limits in blocking only.
+  Whether cloud security engineers or the data governance steward are "security profiles" is not decided.
+- A change of §A–§C of `governo/FAMIGLIA.md` (here §B) needs the lazy consensus of the six domain groups
+  (GOVERNANCE §6.1), which do not exist: not obtained.
+- Left by the Guide or RFC 0005 to later work, and not resolved: when a new version and its class are approved;
+  where the question round's assumptions are shown; the open points listed in annex part 6.
+- The open points for the Author of the Guide recorded in 0.9.0 for the blocking mode were not re-examined.
 
 ### Known gaps
 
-- No task of the local engine is qualified: the known-answer cases are in the suites, the thresholds are "to
-  be fixed before the test" in `motori-locali.json`, and the maximum input lengths are indicative. Until a
-  task is qualified its outcome is "non verificato da motore qualificato".
-- The deterministic tools the rules name (word and term counter of the message, format check of the local
-  outcome, input splitter, check of the numbers of a summary) are not in the `tools` repository yet; the
-  local service setup (loopback only) is asked of the environment and is not enforced by the profiles.
-- The generated section 10 shows, for T11 and T12 of the Security Officer, the cloud configuration of their
-  SD level: for those tasks the row is not an engine that may receive the real files. The task text says so;
-  the generator has no column for the local engine.
-- `analisi-funzionale/utente-simulato` is unchanged: the simulated user of Discovery is the User Persona
-  template, which derives from it.
-- The Security Officer profile grows by about a dozen long lines (two tasks, an open point, five cases), while
-  test runs showed that it is already read only in part. Shortening it is not part of this release.
-- `controllore/STATO.md` and `controllore/tools/vista_manager.py` have no field for the outcome of the two
-  checks or for the state of a summary; they are recorded in `registro.jsonl`.
-- `governo/revisore-ai` has no task that names the check of the event `confronto_profilo_rischio`: it falls
-  under its existing sampling of the register.
-- WP-SEC-2: `attiva_profilo.py` builds the activation file from `FAMIGLIA.md` and `PROFILO.md` only, so the
-  Security Officer's `ALLEGATO.md` is not in it: the AI Coordinator must hand it over until the tool includes
-  `ALLEGATO.md` when present. The validator accepts the layout but does not check that the annex exists, nor
-  counts its cases. Proposal for the `tools` repository, not made here: include `ALLEGATO*.md` in `istruzioni()`
-  and, in `valida_profilo.py`, fail when `PROFILO.md` links an annex that is missing.
-- WP-SEC-2: profiles whose other lines still read an exclusion as a stop, corrected only by one added point:
-  `analisi-funzionale/scrum-master-ai` and `analisi-funzionale/facilitatore-design-thinking` (declared limit: the
-  starting question touches an exclusion criterion; final report with "the reviewers' outcomes"; session open
-  until the security and privacy reviewers answer), and the other profiles of the `analisi-funzionale` family,
-  which get the rule only through `FAMIGLIA.md` §D. The Facilitator and the AI Scrum Master get one point each
-  (second review); the profiles of the `aws`, `azure`, `databricks` and `web-design` families get it only through
-  one paragraph of their `FAMIGLIA.md`, as do `sviluppo` and `finops`.
-- WP-SEC-2: no deterministic tool checks the completeness of the Security Report (fixed line and sentence, ten
-  points in order, "where found" limited to what was received): `profilo.json` names the check, the `tools`
-  repository does not have it. Until it exists the check is done by the Security Officer itself and is not an
-  independent verification.
-- WP-SEC-2: with `classe` null the Manager View still prints the empty label of the class; `STATO.md` and
-  `vista_manager.py` are not changed.
-- WP-SEC-2: `registro.jsonl` gains two events, `modalita_classificazione` and `security_report_invariato`, that
-  no tool reads or validates.
-- WP-SEC-2: `ALLEGATO.md` of the Security Officer changes in two lines of the assignment rules and gains part 5;
-  it is no longer "the text of 0.3.0 moved unchanged" for those lines.
-- WP-SEC-2: `controllore/STATO.md` and `vista_manager.py` have no field for the mode or the Security Report; the
-  report is listed among `documenti`.
-- WP-SEC-2: with the informative mode, special categories of data and data of children can be processed with
-  a written notice only. A notice gives no legal basis, does not replace a mandatory impact assessment and does
-  not protect the people concerned; the measures by delegation do not apply when they would change the
-  request (for example a product that sends health notes to a cloud model by design); the safety boundary
-  moves to the refusals of the models in use, which differ by vendor and may be weaker in a local engine.
+- The local engine is qualified on no task; thresholds and input limits are to be fixed. The loopback-only setup
+  is asked of the environment.
+- Deterministic tools named by the profiles are missing from the `tools` repository (message counter, local
+  outcome format, input splitter, summary check, SR completeness); the SO's own completeness check is not an
+  independent verification. No tool validates the new register events.
+- `attiva_profilo.py` does not include `ALLEGATO.md`: the AIC adds it by hand; the validator does not check it.
+- Nothing was tried on the test bench; the new qualification cases were never run; `vista_manager.py` was tried
+  only on synthetic cases; kit defaults for the local engine were not checked.
+- Generated section 10 shows a cloud configuration for T11 and T12. The AI Reviewer has no task naming the
+  comparison event. `STATO.md` has no field for the outcome of the checks.
+- `controllore/CONTROLLORE.md` grows further (about 11,900 to 18,200 words) and the risk of partial reading is
+  not addressed. The single User Persona built from the request alone is not addressed.
+- Question-round executors without a line of their own (for example the UX designer and cloud architects) and
+  `utente-simulato` rely on the Facilitator's prompt or the family file; several untouched profiles and some
+  touched lines still cite rc.1 or rc.3.
+- Still open from 0.9.0: the SO and CL-SO are unqualified and gate outcomes provisional; thresholds and closed
+  lists are indicative; in the blocking mode X4 and other questions often wait for the organisation, and the
+  qualified security and privacy profiles requirement cannot be met (declared deviation; its extension to
+  adopters outside the method project is undecided); Deny and hard blinding are instructions, not a technical
+  block; the Manager View has no field for running above the level; the AI Scrum Master's Do list does not name
+  that decision; the findings of REV-RP4-01 not applied then; `governo-coreview.yml` does not map the SO.
+  The `tools` baseline and `community/VERSIONING.md` gaps were not re-checked.
+- Independent review of this release: see the release record.
 
 ## [0.9.0] - 2026-11-27
 

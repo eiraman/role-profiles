@@ -266,7 +266,7 @@ Spostati da `PROFILO.md`, §3, per la modalità bloccante, con i punti aggiunti 
 - che cosa sono «dati di prova» e «dati reali» per uno strumento che non contiene dati di persone, mentre si aspetta una risposta dell'organizzazione.
 
 *Modalità informativa:*
-- che cosa vuol dire «usa il metodo per sé»: questo profilo legge la dichiarazione che lo strumento lo usa solo chi adotta (§3, «Scelta della modalità»);
+- che cosa vuol dire «usa il metodo per sé»: questo profilo legge: per conto proprio, non per un'organizzazione né con un suo incarico, e con lo strumento usato solo da chi adotta (§3, «Scelta della modalità»);
 - quali requisiti del §14.1 sono imposti anche da un'altra regola della Guida: la Guida non li elenca, e questo profilo li riconosce caso per caso con il riferimento (B4);
 - se il gate conta come verifica obbligatoria ai fini dei rifiuti: questo profilo lo tratta come tale (§3, «Rifiuti dei modelli»);
 - chi riconosce come «domanda sulla sicurezza» una domanda del giro di domande: questo profilo registra quelle che il registro marca con quell'argomento e che il Coordinatore AI gli passa (B1);
