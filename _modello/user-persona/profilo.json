@@ -4,8 +4,8 @@
   "modello_di_istanza": true,
   "deriva_da": "analisi-funzionale/utente-simulato",
   "nome": "User Persona (modello)",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
+  "versione": "0.3.0",
+  "data": "2026-11-27",
   "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "alto",
@@ -90,6 +90,13 @@
       "tipo": "locale",
       "minimo": "almeno 30B parametri con capacità visiva; da tarare",
       "stato": "da qualificare"
+    },
+    {
+      "motore": "Gemma 4 31B (densa, locale)",
+      "tipo": "locale",
+      "fornitore": "Google (pesi aperti, esecuzione locale)",
+      "minimo": "Gemma 4, versione densa da 31 miliardi di parametri; regole comuni in _seniority/MOTORE-LOCALE.md",
+      "stato": "da qualificare"
     }
   ],
   "ragionamento": [
@@ -153,6 +160,13 @@
       "unita": "EUR per ora macchina",
       "valore": "da tarare",
       "base": "ore macchina per tariffa dichiarata"
+    },
+    {
+      "motore": "Gemma 4 31B (densa, locale)",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
     }
   ],
   "strumenti_deterministici": [
@@ -194,24 +208,27 @@
   "catalogo": [
     {
       "id": "T01",
-      "task": "Esigenze della persona per il Discovery group",
+      "task": "Esigenze della persona per il Discovery group (motore locale; ripiego: configurazione della riga)",
       "deliverable": "obiettivi, ostacoli ed esito atteso, con fonte o ipotesi da verificare",
       "seniority": "SD3",
-      "note": ""
+      "note": "Motore del ruolo nella Scoperta: il motore locale, con le regole di _seniority/MOTORE-LOCALE.md; finché non è qualificato l'esito è «non verificato da motore qualificato».",
+      "motore": "Gemma 4 31B (densa, locale)"
     },
     {
       "id": "T02",
-      "task": "Risposta a un giro del Design Thinking Facilitator",
+      "task": "Risposta a un giro del Design Thinking Facilitator (motore locale; ripiego: configurazione della riga)",
       "deliverable": "posizione della persona sul prompt del giro",
       "seniority": "SD3",
-      "note": "In independent context."
+      "note": "In independent context. Motore del ruolo nella Scoperta: il motore locale, con le regole di _seniority/MOTORE-LOCALE.md; finché non è qualificato l'esito è «non verificato da motore qualificato».",
+      "motore": "Gemma 4 31B (densa, locale)"
     },
     {
       "id": "T03",
-      "task": "Osservazioni su un MOC (mock-up)",
+      "task": "Osservazioni su un MOC (mock-up) (motore locale; ripiego: configurazione della riga)",
       "deliverable": "osservazioni della persona collegate alle sue esigenze",
       "seniority": "SD2",
-      "note": ""
+      "note": "Motore del ruolo nella Scoperta: il motore locale, con le regole di _seniority/MOTORE-LOCALE.md; finché non è qualificato l'esito è «non verificato da motore qualificato». Per un mock-up in forma di immagine serve la capacità visiva, da verificare nella qualificazione; altrimenti ripiego.",
+      "motore": "Gemma 4 31B (densa, locale)"
     },
     {
       "id": "T04",

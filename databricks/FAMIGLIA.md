@@ -1,10 +1,12 @@
 # Famiglia Databricks · regole comuni
 
-Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
+Versione 0.2.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
 
 Questo file contiene le regole comuni a tutti i Role Profile della famiglia Databricks. Il Coordinatore AI lo passa all'agente insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la regola più restrittiva; una deroga a una regola di famiglia è sempre un **Do** del Manager umano (spec §3).
 
 Convenzione delle fonti: «spec §N» rinvia alla Specifica Eiraman 0.3; «convenzione della famiglia» indica una regola senza fonte esterna, ripresa da una demo precedente dell'autore e da confermare in qualificazione.
+
+**Modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti vale la versione 0.1.0 di questo file). Quando il registro di progetto la riporta, vale la regola del pacchetto del Coordinatore AI e prevale su questo file e sui profili della famiglia: un criterio di esclusione, un dubbio, una classe non assegnata o un uso di dati personali o di terzi non è un limite, uno stop né un Do; si segnala al Coordinatore AI per il Security Report e il lavoro prosegue. Restano Do le azioni irreversibili, la spesa, i nuovi accessi e i cambi di Decisione.
 
 ## 1. Profili della famiglia
 

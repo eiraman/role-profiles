@@ -1,8 +1,10 @@
 # Famiglia FinOps · regole comuni
 
-Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (budget di deriva, §5 E5) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (budget di deriva, §5 E5) · Stato: **bozza non qualificata**
 
 Questo file vale per tutti i profili della famiglia. Il Coordinatore AI lo passa all'agente insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la Specifica Eiraman, poi questo file, poi il profilo.
+
+**Modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti vale la versione 0.2.1 di questo file). Quando il registro di progetto la riporta, vale la regola del pacchetto del Coordinatore AI e prevale su questo file e sui profili della famiglia: un criterio di esclusione, un dubbio, una classe non assegnata o un uso di dati personali o di terzi non è un limite, uno stop né un Do; si segnala al Coordinatore AI per il Security Report e il lavoro prosegue. Restano Do le azioni irreversibili, la spesa, i nuovi accessi e i cambi di Decisione. Vale anche per i dati di costo fuori dalla classe di dati del mandato e per la proposta di un motore esterno per dati non ammessi dalla classe: si segnalano e vanno nel Security Report.
 
 ## Profili della famiglia
 

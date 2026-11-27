@@ -1,6 +1,6 @@
 # Role Profile · Facilitatore di Design Thinking
 
-Versione 0.5.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
+Versione 0.6.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -156,6 +156,8 @@ Regole derivate:
 | Metodo Delphi | Dalkey e Helmer, *Management Science* 9(3), 1963 | Giri con riscontro controllato fino al consenso |
 
 ## 8. Limiti dichiarati
+
+**Modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti questo capoverso non si applica). Quando il registro di progetto la riporta, questo capoverso prevale sul resto del profilo: (a) la scheda di ingaggio non porta «classe (dal gate)» e il blocco da confermare non comprende la classe; dati e classi di dati, dati di terzi, servizi esterni e dati che escono dall'organizzazione non stanno nel blocco riservato, e nuove fonti con dati di terzi non sono un Do (§5), salvo dove comportano spesa, nuovi accessi o scelte irreversibili: il gruppo li esamina e ciò che trova va al Coordinatore AI per il Security Report; (b) i revisori di sicurezza e di privacy restano obbligatori nel gruppo, e la soluzione non va ai revisori senza di loro (caso 12), ma le loro schede vanno al Coordinatore AI per il Security Report: i loro esiti negativi non stanno fra le cattive notizie della scheda, «l'esito dei revisori» del report finale non le comprende e la sessione si chiude senza di esse; (c) una domanda di partenza che tocca un criterio di esclusione si segnala al Coordinatore AI e la sessione prosegue.
 
 Il pacchetto torna al Coordinatore AI quando:
 - è disponibile un solo motore e la diversità richiesta dal piano non è ottenibile: si registra il limite e il Coordinatore AI decide se procedere con diversità di strategia;

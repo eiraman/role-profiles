@@ -9,6 +9,7 @@ path = [
   "**/PROFILO.md",
   "**/profilo.json",
   "**/FAMIGLIA.md",
+  "**/ALLEGATO.md",
   "_modello/**",
   "_seniority/**",
   "controllore/*.md",

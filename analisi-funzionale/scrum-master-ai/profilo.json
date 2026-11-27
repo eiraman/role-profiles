@@ -2,8 +2,8 @@
   "id": "scrum-master-ai",
   "famiglia": "analisi-funzionale",
   "nome": "Scrum Master AI",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
+  "versione": "0.3.0",
+  "data": "2026-11-27",
   "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di squadra e di contesto e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "medio",
@@ -163,10 +163,10 @@
   ],
   "do_riservati": [
     "le porte a senso unico e ogni caso di reversibilità dubbia",
-    "le materie riservate del mandato: Visione, Principi, criteri di successo, dati personali, terzi, nuovi fornitori, spesa oltre la soglia",
+    "le materie riservate del mandato: Visione, Principi, criteri di successo, dati personali, terzi, nuovi fornitori, spesa oltre la soglia (in modalità informativa i dati personali non sono un Do: vanno al Coordinatore AI per il Security Report)",
     "il cambiamento di una Decisione approvata",
     "i nuovi accessi",
-    "il cambio di classe del progetto e il passaggio a un livello di adozione superiore"
+    "il cambio di classe del progetto (solo in modalità bloccante) e il passaggio a un livello di adozione superiore"
   ],
   "qualificazione": {
     "curatore": "Coordinatore AI, Wave SM-01, pacchetto SM-PROFILO",

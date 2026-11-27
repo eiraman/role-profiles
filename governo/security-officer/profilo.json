@@ -2,9 +2,9 @@
   "id": "security-officer",
   "famiglia": "governo",
   "nome": "Security Officer",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.4 per le regole di contesto, il gate di applicabilità, il profilo di rischio, la decisione di procedere sopra il livello qualificato e il ripiego della Seniority Digitale",
+  "versione": "0.4.0",
+  "data": "2026-11-27",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.4 per le regole di contesto, il gate di applicabilità, il profilo di rischio, la decisione di procedere sopra il livello qualificato e il ripiego della Seniority Digitale; candidata per la RFC sulla classificazione in due modalità (bloccante e informativa): in vigore solo con la Guida che la recepisce",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -148,6 +148,13 @@
       "tipo": "locale",
       "minimo": "almeno 30B parametri; da tarare",
       "stato": "da qualificare"
+    },
+    {
+      "motore": "Gemma 4 31B (densa, locale)",
+      "tipo": "locale",
+      "fornitore": "Google (pesi aperti, esecuzione locale)",
+      "minimo": "Gemma 4, versione densa da 31 miliardi di parametri; regole comuni in _seniority/MOTORE-LOCALE.md",
+      "stato": "da qualificare"
     }
   ],
   "ragionamento": [
@@ -210,6 +217,13 @@
       "unita": "EUR per ora macchina",
       "valore": "da tarare",
       "base": "ore macchina per tariffa dichiarata"
+    },
+    {
+      "motore": "Gemma 4 31B (densa, locale)",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata; sulla macchina di chi ha titolo"
     }
   ],
   "strumenti_deterministici": [
@@ -218,11 +232,11 @@
       "uso": "Obbligatoria: elenco dei file e degli strumenti accessibili confrontato con il §4 di PROFILO.md, e modello confrontato con quelli del Coordinatore AI e degli esecutori. Un file in più, o un dato personale reale nel pacchetto, si segnala come difetto dell'ambiente."
     },
     {
-      "strumento": "Checklist del gate CL-SO 0.2.0 (PROFILO.md §3, A1)",
+      "strumento": "Checklist del gate CL-SO 0.2.0 (ALLEGATO.md, parte 1)",
       "uso": "Obbligatoria a ogni gate: ogni domanda ha sì, no o non so con l'elemento da cui deriva; la classe è la più alta indicata dalle risposte U, D, E; U4, E4, D3 «sì» e ogni X «sì» sono fuori perimetro; nessuna U/D/E «sì» vale come «non so»; un «non so» di fatto si scioglie con un solo giro di domande al Manager umano; qualificazioni giuridiche (X3, X4, X5, X7, X9) e proprietà dell'organizzazione (X8, X10, R2) hanno «no» solo con i criteri oggettivi del §3, provvisorio, altrimenti sono domande all'organizzazione: chi può rispondere, domanda pronta, risposta del solo Manager umano «non verificata»; nel dubbio fra la classe 1 e una più alta vale la più alta; un «non so» rimasto è fuori perimetro (Guida §14), e quando l'unico dubbio è una domanda all'organizzazione senza risposta, senza esclusioni scattate, prosegue solo il lavoro su dati di prova, senza dati reali né mascherati e senza rilasci. Esito provvisorio: checklist non qualificata dai maintainer."
     },
     {
-      "strumento": "prova di assenza di dati personali di altri e prova di classe 0 (PROFILO.md §3, A1)",
+      "strumento": "prova di assenza di dati personali di altri e prova di classe 0 (ALLEGATO.md, parte 1)",
       "uso": "Obbligatorie. Prova di assenza, per D1, X3, X4: nessun identificatore diretto, nessun identificatore riconducibile a una persona con le fonti abituali, nessun aggregato sotto N persone (indicativo 10), ingresso già aggregato. Prova di classe 0, richiesta anche per il «no» provvisorio di X8 e X10: la prova di assenza più U1 ed E1 «sì». Una condizione non verificabile fa fallire la prova."
     },
     {
@@ -236,6 +250,18 @@
     {
       "strumento": "prova della regola di mascheramento su dati di esempio",
       "uso": "Obbligatoria per TR-2 con dati mascherati: la regola si applica a dati di esempio creati per la prova; l'esito si confronta con le colonne attese e con i tre criteri WP216. Mai su dati reali."
+    },
+    {
+      "strumento": "controllo di formato dell'esito del motore locale",
+      "uso": "Obbligatorio per T11 e T12, sulla macchina di chi ha titolo, prima che l'esito ne esca: ammessi solo i campi fissi (domanda, colonna o sezione, categoria dell'elenco chiuso, conteggio, segnalazione, parti lette sul totale, stato di qualificazione); un valore dei dati o un testo libero scarta l'esito, che si segnala. Regole comuni in _seniority/MOTORE-LOCALE.md."
+    },
+    {
+      "strumento": "conteggio e divisione dell'ingresso del motore locale",
+      "uso": "Obbligatorio per T11 e T12: il file si divide in parti entro la lunghezza massima del compito; l'esito riporta le parti lette sul totale; una parte non letta rende l'esito «non concluso»."
+    },
+    {
+      "strumento": "controllo di completezza del Security Report",
+      "uso": "Obbligatorio in modalità informativa: riga e frase fisse in testa identiche a quelle dell'allegato, parte 5; i dieci punti nell'ordine; ogni evidenza con dove è stata trovata (solo richiesta, Scope Management o esito di T11, altrimenti «non determinato») e perché conta, senza valori dei dati; ogni misura non applicata con che cosa comporta e chi andrebbe sentito; ogni rifiuto di un modello con il motivo dichiarato. Convenzione del profilo."
     }
   ],
   "scritture_consentite": [
@@ -255,7 +281,7 @@
     "revisore": "da assegnare: revisori umani titolari o supplenti dei domini sicurezza e privacy (GOVERNANCE §4.5); la checklist CL-SO va qualificata dai maintainer (Guida §4)",
     "data": null,
     "scadenza": null,
-    "suite": "PROFILO.md §9"
+    "suite": "PROFILO.md §9 (casi 42–44, 47 e 48) e ALLEGATO.md, parte 4 (casi 1–41) e parte 5 (casi 45 e 46)"
   },
   "seniority": {
     "minima": "SD2",
@@ -332,6 +358,29 @@
       "deliverable": "sezione del profilo di rischio che dice se la decisione del Manager umano è disponibile, per quale scopo e con quali limiti (solo dati di prova in attesa dell'organizzazione), i sette punti che richiede e la dichiarazione sui profili in bozza; oppure perché non è disponibile",
       "seniority": "SD4",
       "note": "Guida §14 «Risk profile» e §14.2 «Running above the qualified level»; la decisione non è un trattamento."
+    },
+    {
+      "id": "T11",
+      "task": "Lettura dei file reali per la checklist, con il motore locale avviato da chi ha titolo sulla propria macchina (ripiego: T03, domanda di fatto al Manager umano; mai un motore fuori da quella macchina)",
+      "deliverable": "conteggi e categorie per domanda di fatto (nomi di persone, categorie particolari, testo libero, minori), senza valori, con parti lette sul totale e stato «non verificato da motore qualificato» finché manca la qualificazione; in modalità informativa compila le evidenze sul dato del Security Report, solo con l'assenso dato all'apertura e senza ripiego (B7)",
+      "seniority": "SD3",
+      "motore": "Gemma 4 31B (densa, locale)",
+      "note": "Il livello è quello del ripiego T03. Il motore locale legge e segnala; risposte e classe restano a T02."
+    },
+    {
+      "id": "T12",
+      "task": "Verifica dei residui dopo il mascheramento, sui dati reali, con il motore locale avviato da chi ha titolo sulla propria macchina (ripiego: solo lo strumento deterministico della regola; mai un motore fuori da quella macchina)",
+      "deliverable": "conteggi per colonna e categoria di nomi o riferimenti riconoscibili rimasti, senza valori; un residuo blocca il risultato mascherato",
+      "seniority": "SD4",
+      "motore": "Gemma 4 31B (densa, locale)",
+      "note": "Livello della regola di mascheramento che verifica (T05). Finché il motore non è qualificato, un'assenza di residui non vale come verifica."
+    },
+    {
+      "id": "T13",
+      "task": "Security Report in modalità informativa",
+      "deliverable": "report nel formato fisso dell'allegato, parte 5 (dieci punti), all'apertura, a ogni cambio di scopo e prima di ogni rilascio",
+      "seniority": "SD4",
+      "note": "Giudizio sulle evidenze e sulle misure; nessuna riduzione dello scopo e nessuna domanda obbligatoria."
     }
   ]
 }

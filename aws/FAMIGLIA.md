@@ -1,10 +1,12 @@
 # Famiglia AWS · Regole comuni
 
-Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
 
 Queste regole valgono per tutti i profili della famiglia AWS: architetto, sviluppatore, DevOps engineer, security engineer, database specialist, operations. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la regola più restrittiva. Una regola del profilo non allarga mai una regola di famiglia.
 
 Convenzione delle fonti: «spec §N» rinvia alla Specifica Eiraman 0.3; «convenzione della famiglia» indica una regola senza fonte esterna, ripresa da una demo precedente dell'autore su un altro cloud e da confermare in qualificazione.
+
+**Modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti vale la versione 0.2.1 di questo file). Quando il registro di progetto la riporta, vale la regola del pacchetto del Coordinatore AI e prevale su questo file e sui profili della famiglia: un criterio di esclusione, un dubbio, una classe non assegnata o un uso di dati personali o di terzi non è un limite, uno stop né un Do; si segnala al Coordinatore AI per il Security Report e il lavoro prosegue. Restano Do le azioni irreversibili, la spesa, i nuovi accessi e i cambi di Decisione.
 
 ## 1. Principio
 

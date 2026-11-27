@@ -1,6 +1,6 @@
 # Famiglia Azure · regole comuni
 
-Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
 
 Questo file vale per tutti i profili della famiglia Azure. Il Coordinatore AI lo passa all'agente insieme al `PROFILO.md` del ruolo. In caso di conflitto prevalgono, nell'ordine: Specifica Eiraman, mandato del progetto, questo file, il profilo del ruolo.
 
@@ -17,6 +17,8 @@ Convenzione delle fonti: «spec §N» rinvia alla Specifica Eiraman 0.3; «conve
 | Cloud operations Azure | `azure-cloud-operations/` | alto | Landing zone, sottoscrizioni, linee guida dell'organizzazione e loro allineamento |
 
 Il gestore dei costi appartiene alla famiglia FinOps; il data engineer Databricks alla famiglia Databricks. La pianificazione del progetto spetta al Coordinatore AI.
+
+**Modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti vale la versione 0.2.1 di questo file). Quando il registro di progetto la riporta, vale la regola del pacchetto del Coordinatore AI e prevale su questo file e sui profili della famiglia: un criterio di esclusione, un dubbio, una classe non assegnata o un uso di dati personali o di terzi non è un limite, uno stop né un Do; si segnala al Coordinatore AI per il Security Report e il lavoro prosegue. Restano Do le azioni irreversibili, la spesa, i nuovi accessi e i cambi di Decisione.
 
 ## 1. Creare risorse o avviare spesa è sempre un Do
 

@@ -1,6 +1,6 @@
 # Famiglia Sviluppo · Regole comuni
 
-Versione 0.2.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (indipendenza della verifica, §6) · Stato: **bozza non qualificata**
 
 Queste regole valgono per tutti gli sviluppatori AI di linguaggio. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi la regola più restrittiva tra famiglie, poi il profilo. Una regola del profilo non allarga mai una regola di famiglia.
 
@@ -15,6 +15,8 @@ Convenzione delle fonti: «spec §N» rinvia alla Specifica Eiraman 0.3; «conve
 | Go developer | `go-developer/` | Go, servizi, CLI e librerie | basso |
 | SQL developer | `sql-developer/` | SQL, viste, procedure e migrazioni di schema | basso |
 | Shell e IaC developer | `shell-iac-developer/` | Bash, PowerShell, Terraform, Bicep | basso |
+
+**Modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti vale la versione 0.2.1 di questo file). Quando il registro di progetto la riporta, vale la regola del pacchetto del Coordinatore AI e prevale su questo file e sui profili della famiglia: un criterio di esclusione, un dubbio, una classe non assegnata o un uso di dati personali o di terzi non è un limite, uno stop né un Do; si segnala al Coordinatore AI per il Security Report e il lavoro prosegue. Restano Do le azioni irreversibili, la spesa, i nuovi accessi e i cambi di Decisione. Resta uno stop in entrambe le modalità mandare dati reali a un motore o a un servizio fuori dal dispositivo indicato: questo paragrafo riguarda solo classe, esclusioni e Do sui dati.
 
 ## 1. Principio: uno sviluppatore Eiraman non è «lasciare scrivere un LLM»
 

@@ -2,8 +2,8 @@
   "id": "revisore-ai",
   "famiglia": "governo",
   "nome": "Revisore AI",
-  "versione": "0.3.0",
-  "data": "2026-11-26",
+  "versione": "0.4.0",
+  "data": "2026-11-27",
   "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, la misura E6 e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "medio",
@@ -90,6 +90,13 @@
       "tipo": "locale",
       "minimo": "almeno 30B parametri; da tarare",
       "stato": "da qualificare"
+    },
+    {
+      "motore": "Gemma 4 31B (densa, locale)",
+      "tipo": "locale",
+      "fornitore": "Google (pesi aperti, esecuzione locale)",
+      "minimo": "Gemma 4, versione densa da 31 miliardi di parametri; regole comuni in _seniority/MOTORE-LOCALE.md",
+      "stato": "da qualificare"
     }
   ],
   "ragionamento": [
@@ -149,6 +156,13 @@
     },
     {
       "motore": "modello locale",
+      "livello": "locale",
+      "unita": "EUR per ora macchina",
+      "valore": "da tarare",
+      "base": "ore macchina per tariffa dichiarata"
+    },
+    {
+      "motore": "Gemma 4 31B (densa, locale)",
       "livello": "locale",
       "unita": "EUR per ora macchina",
       "valore": "da tarare",

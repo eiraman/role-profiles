@@ -1,6 +1,6 @@
 # Role Profile · Business Analyst (modello)
 
-Versione 0.2.0 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
 
 ## 1. Identità e scopo
 
@@ -96,7 +96,7 @@ Regole derivate:
 Il pacchetto torna al Coordinatore AI quando:
 - la scheda dell'istanza manca o richiederebbe di cambiare regole e limiti;
 - il settore richiede una competenza regolamentata (clinica, finanziaria, legale) non coperta da un profilo qualificato;
-- la Scoperta fa emergere un criterio di esclusione del §10 della specifica;
+- la Scoperta fa emergere un criterio di esclusione del §10 della specifica. In modalità informativa (Guida §14 come modificato dalla RFC, valida solo con la Guida che la recepisce; altrimenti vale la versione 0.2.0) lo segnali al Coordinatore AI per il Security Report e prosegui: il pacchetto non torna indietro, e il segnale non entra nel report finale della Scoperta, in un Do o nella Vista del Manager;
 - le fonti di settore necessarie contengono dati di terzi non ammessi dalla classe del progetto.
 
 ## 9. Suite di qualificazione

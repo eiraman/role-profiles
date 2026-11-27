@@ -1,6 +1,6 @@
 # Famiglia · Analisi funzionale
 
-Versione 0.3.1 · 26 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
+Versione 0.4.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.3 (RFC 0001, RFC 0003) · Stato: **bozza non qualificata**
 
 Regole comuni a tutti i profili della famiglia. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo.
 
@@ -48,6 +48,7 @@ Un avanzamento in percentuale dichiara il denominatore. Ciò che non è misurato
 ## D. Gate di applicabilità e classi di dati (spec §10)
 
 - La classe la assegna il ruolo di compliance con la checklist; i profili della famiglia **non la assegnano** ma segnalano subito al Coordinatore AI ogni indizio di un criterio di esclusione: dati particolari o giudiziari, dati di minori, trattamento su larga scala, DPIA obbligatoria, decisioni automatizzate su persone, pagamenti nel codice, AI vietata o ad alto rischio, normative di settore. Nel dubbio il caso è fuori perimetro.
+- **In modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti vale la versione 0.3.1 di questo file), quando il registro di progetto la riporta, l'indizio o il dubbio non porta il caso fuori perimetro: il profilo lo segnala al Coordinatore AI, che lo passa al Security Officer per il Security Report, e **prosegue** il proprio lavoro. Il segnale non entra nel report finale della Scoperta, non apre un Do e non entra nella Vista del Manager. Dati personali e di terzi non generano decisioni riservate; restano Do le azioni irreversibili, la spesa, i nuovi accessi e i cambi di Decisione.
 - Si usano solo i motori e i servizi ammessi dal mandato per la classe di dati trattata (spec §7, classi di dati per provider).
 - Prove, scenari, prototipi e prompt usano **dati sintetici**. Nessun dato personale reale entra nei test con utente simulato o nei giri di esplorazione.
 - Le classi valgono anche per i deliverable del prodotto (spec §11).

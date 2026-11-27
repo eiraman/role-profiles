@@ -1,6 +1,6 @@
 # Famiglia · Web design
 
-Versione 0.1.0 · 25 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
+Versione 0.2.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
 
 Regole comuni di usabilità e accessibilità per tutti i profili della famiglia. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo. Le regole sono derivate dalle linee guida di interfaccia di un progetto pilota e astratte per qualunque applicazione web governata con Eiraman.
 
@@ -13,6 +13,8 @@ Regole comuni di usabilità e accessibilità per tutti i profili della famiglia.
 | Frontend developer | `frontend-developer/` | basso | Scale, Accettazione ed esercizio |
 
 Il test con **utente simulato** resta nel profilo omonimo della famiglia Analisi funzionale (`../analisi-funzionale/utente-simulato/`): questa famiglia ne scrive gli scenari e ne usa gli esiti, senza duplicarlo.
+
+**Modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti vale la versione 0.1.0 di questo file). Quando il registro di progetto la riporta, vale la regola del pacchetto del Coordinatore AI e prevale su questo file e sui profili della famiglia: un criterio di esclusione, un dubbio, una classe non assegnata o un uso di dati personali o di terzi non è un limite, uno stop né un Do; si segnala al Coordinatore AI per il Security Report e il lavoro prosegue. Restano Do le azioni irreversibili, la spesa, i nuovi accessi e i cambi di Decisione.
 
 ## A. Rapporto con il Manager umano
 

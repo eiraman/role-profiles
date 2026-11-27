@@ -15,7 +15,7 @@ when and how to use it. This repository is the registry of the Eiraman Role Prof
 
 ## Layout
 
-Each profile is a folder `<family>/<profile-id>/` with two files:
+Each profile is a folder `<family>/<profile-id>/` with two files (the Security Officer also has `ALLEGATO.md`, an annex with its checklist, criteria tables, examples and cases):
 
 | File | For | Content |
 |---|---|---|
@@ -39,7 +39,8 @@ across the registry and matches its folder name.
 Total: 49 profiles. Also included: `_modello/` (the template every profile starts from, and the templates
 `business-analyst` and `user-persona`, from which the AI Coordinator creates project instances without
 changing their rules and limits),
-`_seniority/` (the Digital Seniority map, `seniority.json`, and its explanation) and `controllore/`
+`_seniority/` (the Digital Seniority map, `seniority.json`, and its explanation; the local engine,
+declared in `motori-locali.json` with its common rules in `MOTORE-LOCALE.md`) and `controllore/`
 (the AI Coordinator profile, see below).
 
 The profile texts are in Italian; file and section names are Italian (`PROFILO.md`, `profilo.json`,
@@ -81,7 +82,8 @@ the AI reviewers of the six governance domains (`governo/revisore-sicurezza/`, `
 `governo/revisore-test-qualita/`, `governo/revisore-legale-compliance/`), who review the Discovery group's
 Principles and Decisions of their own domain;
 they are AI agents and do not replace the human reviewer of the domain. The family also holds the
-**Security Officer** (`governo/security-officer/`), the AI compliance role of the applicability gate: it
+**Security Officer** (`governo/security-officer/`), the AI compliance role of the applicability gate (in the candidate for the RFC on the two modes, blocking
+or informative, see the CHANGELOG): it
 assigns the project class with a versioned checklist and, when the class exceeds the level or an exclusion
 is triggered, delivers a risk profile with treatments that bring the scope back within the permitted class,
 only where the re-classification shows it; it also says when the Human Manager's decision to run a class 1
