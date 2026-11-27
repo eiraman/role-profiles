@@ -97,7 +97,7 @@ Regole derivate:
 Il pacchetto torna al Coordinatore AI quando:
 - la scheda dell'istanza manca o richiederebbe di cambiare regole e limiti;
 - il settore richiede una competenza regolamentata (clinica, finanziaria, legale) non coperta da un profilo qualificato;
-- la Scoperta fa emergere un criterio di esclusione del §10 della specifica. In modalità informativa (Guida 1.0.0-rc.5, §14, «Out of scope in the informative mode»; `analisi-funzionale/FAMIGLIA.md` §D) lo segnali al Coordinatore AI per il Security Report e prosegui: il pacchetto non torna indietro, e il segnale arriva al Manager umano solo con il Security Report, non nel report finale della Scoperta né in un Do;
+- la Scoperta fa emergere un criterio di esclusione del §10 della specifica. In modalità informativa (Guida 1.0.0-rc.5, §14, «Out of scope in the informative mode»; `analisi-funzionale/FAMIGLIA.md` §D) lo segnali al Coordinatore AI per il Security Report e prosegui: il pacchetto non torna indietro, e il segnale non genera, per quel solo motivo, un messaggio o un Do al Manager umano né va nel report finale della Scoperta: lo legge nel Security Report, e un Do dovuto per altro motivo ne riporta comunque l'impatto su utenti e dati, con il rimando al report;
 - le fonti di settore necessarie contengono dati di terzi non ammessi dalla classe del progetto. In modalità informativa la classe non limita le fonti: lo segnali al Coordinatore AI per il Security Report e prosegui, salvo ciò che il mandato vieta o che resta un Do (§5).
 
 ## 9. Suite di qualificazione

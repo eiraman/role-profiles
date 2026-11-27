@@ -89,6 +89,8 @@ Short names below: AIC = AI Coordinator (`controllore/CONTROLLORE.md`), SO = Sec
   real data or a missing annex. Family and role limits on class, exclusions or personal data apply in the
   blocking mode only: Facilitator, Business Analyst, functional analyst, AI Scrum Master, technical writer and
   the analysis, development, cloud, data, web and FinOps families. **Breaking** (relaxed).
+- AI Reviewer, both modes: **MUST check** on the evidence that a local engine was used only if admitted by the
+  mandate or, before it, by a Do, and only for tasks it is qualified for; otherwise the declared fallback.
 - AI Reviewer: no deviation for what is not due in the informative mode (risk profile, class approval, Do on
   class or personal data grounds alone, under-escalation measure included); checks mode and ground, gate, SR,
   silent SO, local engine approval and the other Do; its own critical deviations still reach the HM.
@@ -221,10 +223,11 @@ Lines removed against 0.9.0 (diff report: 460 non-blank). No rule is dropped wit
 a version string, date, `metodo` field or Guide reference (rc.1, rc.3, rc.4 → rc.5), or one of these rewritten
 lines. Rewritings that relax a rule are the **breaking** ones above.
 
-- `governo/security-officer/PROFILO.md` (211): 175 now verbatim in `ALLEGATO.md` (the six lines of the dialogue
-  format among them) and 1 still verbatim in the profile; 12 moved to the annex with changes (two assignment rules
+- `governo/security-officer/PROFILO.md` (211): 174 now verbatim in `ALLEGATO.md` (the six lines of the dialogue
+  format among them) and 1 still verbatim in the profile; 13 moved to the annex with changes (two assignment rules
   gain the informative mode; compensations 1 and 2 relaxed; open point on masked data widened; the five fixed
-  phrases and their introduction re-indented and reintroduced); 23 rewritten in the profile (header and §1 qualified
+  phrases and their introduction re-indented and reintroduced; TR-3 separates the gate reading and the residue check
+  from the treatment); 23 rewritten in the profile (header and §1 qualified
   by mode, sources, the row on data to providers, write and question permissions, rule on real data, reserved Do,
   risk profile and dialogue, open points pointer, input package, declared limits, references).
 - Its `profilo.json` (17): version fields, descriptions, source and reference, two tool names, seven reserved
@@ -353,7 +356,7 @@ mode.
   only on synthetic cases; kit defaults for the local engine were not checked.
 - Generated section 10 shows a cloud configuration for T11 and T12. The AI Reviewer has no task naming the
   comparison event. `STATO.md` has no field for the outcome of the checks.
-- `controllore/CONTROLLORE.md` grows further (about 11,900 to 18,200 words) and the risk of partial reading is
+- `controllore/CONTROLLORE.md` grows further (about 11,900 to 19,150 words) and the risk of partial reading is
   not addressed. The single User Persona built from the request alone is not addressed.
 - Question-round executors without a line of their own (for example the UX designer and cloud architects) and
   `utente-simulato` rely on the Facilitator's prompt or the family file; several untouched profiles and some
