@@ -1,6 +1,6 @@
 # Role Profile · ML Engineer Databricks
 
-Versione 0.2.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
+Versione 0.3.0 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.6 (§7.1 «Fallback», ripiego della Seniority Digitale) · Stato: **bozza non qualificata**
 
 Convenzione delle fonti: «Guida §N» rinvia a The Eiraman Guide 1.0.0-rc.6; «F N» rinvia alle regole comuni di `../FAMIGLIA.md`; «convenzione del profilo» indica una regola senza fonte esterna, da confermare in qualificazione.
 

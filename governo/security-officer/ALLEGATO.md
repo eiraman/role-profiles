@@ -1,6 +1,6 @@
 # Allegato del profilo · Security Officer
 
-Versione 0.4.0 · 27 novembre 2026 · Allegato di [`PROFILO.md`](PROFILO.md), con la stessa versione e lo stesso stato: **bozza non qualificata** · Metodo: Guida 1.0.0-rc.6 (RFC 0005 compresa).
+Versione 0.4.1 · 27 novembre 2026 · Allegato di [`PROFILO.md`](PROFILO.md), con la stessa versione e lo stesso stato: **bozza non qualificata** · Metodo: Guida 1.0.0-rc.6 (RFC 0005 compresa).
 
 Il Coordinatore AI consegna questo file all'agente insieme a `PROFILO.md` e a `../FAMIGLIA.md`. Senza questo file il Security Officer non classifica (`PROFILO.md`, §8). Le parti 5 e 6 sono nuove. Il testo delle prime quattro parti viene da `PROFILO.md` 0.2.0, l'ultima versione pubblicata, ed è spostato senza modifiche salvo: due rimandi alla modalità informativa nelle regole di assegnazione; le compensazioni fisse 1 e 2, con l'eccezione del motore locale; TR-3, che distingue la lettura del gate dal trattamento; i casi 37 e 38, riscritti per la regola sul motore non qualificato. Le frasi fisse del punto 1 del profilo di rischio sono spostate qui da `PROFILO.md`, §6, senza modifiche; la parte 6 riporta, spostati da `PROFILO.md`, §3, i punti aperti della modalità bloccante, con il punto sui dati mascherati esteso alla verifica dei residui. Il formato fisso delle risposte al dialogo, in fondo alla parte 3, è spostato da `PROFILO.md`, §6, senza modifiche. I rimandi «§3», «A1», «A6», «B1»–«B9» e «§6» sono a `PROFILO.md`.
 

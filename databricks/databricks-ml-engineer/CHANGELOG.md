@@ -9,9 +9,9 @@ All notable changes to the Role Profile `databricks-ml-engineer`, «ML Engineer 
 
 ## [Unreleased]
 
-## [0.2.1] - 2026-11-27
+## [0.3.0] - 2026-11-27
 
-Realignment of the profile to The Eiraman Guide 1.0.0-rc.6 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: PATCH (0.2.0 to 0.2.1), because only source references and metadata change, with the same meaning (VERSIONING.md, section 2.2: «corrected source references with the same meaning»). No rule, limit, task, deliverable or Digital Seniority level is added, removed or changed. The qualification state stays «draft, not qualified».
+Realignment of the profile to The Eiraman Guide 1.0.0-rc.6 and to the use of the local engine (Change Request CR-030, work package WP-30C). Bump: MINOR, marked **breaking** (0.2.0 to 0.3.0; profile at 0.y.z: VERSIONING.md, sections 2.2 and 2.6). The reserved Do «uso di dati personali nel training» no longer applies in every case: it applies in the blocking mode or when the data leaves the organisation, so an obligation that was required before is no longer required in the informative mode when the data stay in the organisation (a requirement narrowed, which would be MAJOR and at 0.y.z is MINOR, breaking). The rest of the change is source references and metadata with the same meaning. No other rule, limit, task, deliverable or Digital Seniority level is added, removed or changed. The qualification state stays «draft, not qualified».
 
 ### Changed
 
@@ -23,7 +23,7 @@ Realignment of the profile to The Eiraman Guide 1.0.0-rc.6 and to the use of the
 - `data` of `profilo.json` set to 2026-11-27.
 - Local engine: no task of this profile is assigned to the local engine; the «modello locale» entry of `motori` stays «da qualificare», as `_seniority/MOTORE-LOCALE.md` and the «Motore locale» paragraph of the family `FAMIGLIA.md` state. No change to this profile's text.
 - Where the profile stops for a missing data class, the text now says «classe di dati (tabella del mandato, Guida §11, «Data classes per provider»): vale in entrambe le modalità» and no longer cites §14 «Applicability gate», which does not stop in the informative mode.
-- Reserved Do «uso di dati personali nel training» (`PROFILO.md` and `do_riservati`) now reads «in modalità bloccante oppure se il dato esce dall'organizzazione (Guida §5, «Do»)»: in the informative mode personal data go to the Security Report and are not a Do on that ground alone. This narrows the profile's reserved Do to what the Guide §5 requires; no other reserved Do changes.
+- Reserved Do «uso di dati personali nel training» (`PROFILO.md` and `do_riservati`) now reads «in modalità bloccante oppure se il dato esce dall'organizzazione (Guida §5, «Do»)»: in the informative mode personal data go to the Security Report and are not a Do on that ground alone. **Breaking**: this narrows the profile's reserved Do to what the Guide §5 requires, and is the reason for the 0.3.0 bump; no other reserved Do changes.
 
 Remap used for the citations «spec §N» of the Italian specification 0.3, now historical: §1 → Guide §2; §2 → §4; §3 → §5; §4 → §6; §4 bis → §7 (and §7.1); §5 → §8 and §8.1 (Scope Management → §9); §6 → §9 and §9.1; §6 bis → §10; §7 → §11; §8 → §12 (and §9, §14.1); §9 → §13 and §4 (the separation between code and architecture documents is a profile rule); §10 → §14 and §14.1; §11 → §15 and §5. The target is chosen by the content of each citation, using the Guide traceability table.
 

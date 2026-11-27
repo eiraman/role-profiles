@@ -35,7 +35,8 @@ Written against: The Eiraman Guide 1.0.0-rc.6 (candidate, not measured).
 
 **Starting state.** On top of `v0.10.0` (0963f1d): the merge of two reviewed branches with disjoint files,
 `cr-030-controllore` (AI Coordinator 0.13.0, `controllore/CHANGELOG.md`) and `cr-030-profili` (profiles, families,
-templates, maps and the per-artifact changelogs), then one integration commit (this entry, README, `TOOLS_REF`).
+templates, maps and the per-artifact changelogs), then two integration commits (this entry, README and `TOOLS_REF`; then the
+corrections to the Security Officer annex, to `databricks-ml-engineer` and to the citation count).
 The branches `integrazione-motore-locale` (WP-LOC-2 and WP-SEC-2) and `gov-01` are **superseded**: their content is
 already in v0.10.0 / 0.5.1; only the items listed under "Carried from
 `integrazione-motore-locale`" are added here.
@@ -61,8 +62,8 @@ qualified, requalified or suspended. RFC in scope: none new.
 - Distinction between the data class (mandate table, Guide §11) and the project class (§14) in nine profiles and
   four family files (azure, databricks, sviluppo and their profiles), where the word "class" stood for both.
 - `databricks/databricks-ml-engineer`: the reserved Do "personal data in training" applies in the blocking mode or
-  when the data leaves the organisation (Guide §5, "Do"); in the informative mode they go to the Security Report
-  (see its changelog).
+  when the data leaves the organisation (Guide §5, "Do"); in the informative mode they go to the Security Report.
+  A requirement narrowed: version 0.3.0, MINOR, **breaking** (see its changelog).
 - Per-artifact changelogs are written in English; the profile texts stay in Italian.
 
 ### Changed
@@ -72,9 +73,10 @@ qualified, requalified or suspended. RFC in scope: none new.
   of Guide rules grouped by RFC; every "spec §N" remapped to the Guide paragraph that carries it; local-engine
   paragraphs referred to `_seniority/MOTORE-LOCALE.md`; label "PA-6" and "P4" removed. Details in
   `controllore/CHANGELOG.md`.
-- About 400 citations of the specification 0.3 ("Eiraman 0.3", "spec §N") and of earlier Guide candidates
-  (rc.1 to rc.5) in the profiles, families, templates and maps remapped to the Guide 1.0.0-rc.6 paragraph that
-  carries the same rule, chosen by the content of each citation and checked against the rc.6 text (the remap table is in the changelogs of
+- 979 citations replaced, counted by script on `git diff 0963f1d HEAD` (changelogs excluded; AI Coordinator
+  included), in 575 removed lines: 412 "spec §N", 183 mentions of "Eiraman 0.3" (130 of them "Specifica Eiraman
+  0.3") and 384 mentions of Guide 1.0.0-rc.1 to rc.5. They now name the Guide 1.0.0-rc.6 (416 mentions added) or
+  the Guide paragraph that carries the same rule, chosen by the content of each citation and checked against the rc.6 text (the remap table is in the changelogs of
   the families and of the profiles). Same meaning: PATCH for the profiles, the maps and the templates.
 - `metodo` of every `profilo.json` and `Metodo` line of every `PROFILO.md` name The Eiraman Guide 1.0.0-rc.6; each
   `FAMIGLIA.md` keeps stating that every profile declares in `metodo` the Guide version it follows.
@@ -85,7 +87,8 @@ qualified, requalified or suspended. RFC in scope: none new.
   version of the Digital Seniority map (0.2.1). No task, deliverable or level changes.
 - MINOR where a rule or limit was added or broadened: the eight families (the local-engine paragraph and the
   precedence clause), `governo/revisore-ai` 0.4.0 → 0.5.0, `analisi-funzionale/facilitatore-design-thinking`
-  0.7.0 → 0.8.0, `aws/aws-operations` and `aws/aws-security-engineer` 0.2.0 → 0.3.0. See their changelogs.
+  0.7.0 → 0.8.0, `aws/aws-operations` and `aws/aws-security-engineer` 0.2.0 → 0.3.0, and `databricks/databricks-ml-engineer` 0.2.0 → 0.3.0
+  (**breaking**: a reserved Do is narrowed). See their changelogs.
 - `README.md`: "Layout" now lists three files per profile (`PROFILO.md`, `profilo.json`, `CHANGELOG.md`) and
   describes the per-artifact changelogs, including those of the families, the templates, `_seniority/` and
   `controllore/`.
@@ -110,7 +113,7 @@ each `FAMIGLIA.md`, `CONTROLLORE.md`, `MOTORE-LOCALE.md` and `ALLEGATO.md`. PATC
 | AI Coordinator (`controllore/CONTROLLORE.md`) | 0.12.0 → 0.13.0, MINOR, **breaking** |
 | `governo/revisore-ai` | 0.4.0 → 0.5.0, MINOR |
 | `governo/security-officer`, `revisore-sicurezza`, `revisore-privacy` | 0.4.0 → 0.4.1 |
-| `governo/security-officer/ALLEGATO.md` | 0.4.0, unchanged |
+| `governo/security-officer/ALLEGATO.md` | 0.4.0 → 0.4.1 (follows the profile; citations only) |
 | `governo/revisore-legale-compliance`, `-architettura-cloud`, `-architettura-applicativa-dati`, `-test-qualita` | 0.3.0 → 0.3.1 |
 | `analisi-funzionale/facilitatore-design-thinking` | 0.7.0 → 0.8.0, MINOR |
 | `analisi-funzionale/analista-funzionale` | 0.4.0 → 0.4.1 |
@@ -119,7 +122,8 @@ each `FAMIGLIA.md`, `CONTROLLORE.md`, `MOTORE-LOCALE.md` and `ALLEGATO.md`. PATC
 | `aws/aws-operations`, `aws/aws-security-engineer` | 0.2.0 → 0.3.0, MINOR |
 | `aws/aws-architect`, `aws-database-specialist`, `aws-developer`, `aws-devops-engineer` | 0.2.0 → 0.2.1 |
 | `azure/` (7 profiles: `azure-architect`, `azure-cloud-operations`, `azure-dba`, `azure-developer`, `azure-incident-manager`, `azure-release-engineer`, `azure-security-engineer`) | 0.2.0 → 0.2.1 |
-| `databricks/` (5 profiles: `databricks-analytics-engineer`, `-data-engineer`, `-governance-steward`, `-ml-engineer`, `-platform-admin`) | 0.2.0 → 0.2.1 |
+| `databricks/databricks-ml-engineer` | 0.2.0 → 0.3.0, MINOR, **breaking** (reserved Do on personal data in training narrowed) |
+| `databricks/databricks-analytics-engineer`, `-data-engineer`, `-governance-steward`, `-platform-admin` | 0.2.0 → 0.2.1 |
 | `finops/finops-cost-allocation-analyst`, `finops-for-ai`, `finops-practitioner`, `finops-rate-optimization` | 0.2.0 → 0.2.1 |
 | `sviluppo/` (7 profiles: `dotnet-developer`, `go-developer`, `java-developer`, `python-developer`, `shell-iac-developer`, `sql-developer`, `typescript-developer`) | 0.2.0 → 0.2.1 |
 | `web-design/` (5 profiles: `accessibility-specialist`, `frontend-developer`, `ux-designer`, `ux-writer`, `web-designer`) | 0.2.0 → 0.2.1 |
