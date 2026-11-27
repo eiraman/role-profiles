@@ -294,7 +294,28 @@ All dated 2026-11-27; state: draft, not qualified.
 The gate checklist stays CL-SO 0.2.0, although two of its assignment rules gain a sentence on the informative
 mode.
 
-### Profile conventions, not rules of the Guide, to be confirmed by the Human Manager
+### Choices confirmed by the Human Manager on 27 November 2026
+
+Put to the HM as a list in business terms and confirmed as applied. They stay profile conventions, not rules of
+the Guide.
+
+- The local engine is not used until qualified, and before the mandate needs a Do in the blocking mode too.
+- Files with real personal data may be read by the local engine once qualified; in the informative mode the HM's
+  approval is enough, without the organisation's.
+- "Uses the method for themselves" means on their own account, also when others will use the tool.
+- A security check refused by a model goes to the HM.
+- A security question of the question round is only one on the protection of data and product.
+- Every Do states the effect on data, in the informative mode too.
+- Projects already open stay blocking.
+- Documents only the level requirements ask for are still produced in the informative mode.
+- In the informative mode the HM gets one line on a refused action.
+- A rejected question is rephrased and the original stays in the register (tension with the Guide below).
+- The change of the common reviewer rules (§B) goes ahead without the domain groups' consensus (deviation).
+- The local engine (CR-021) is part of this release.
+
+### Profile conventions, not rules of the Guide
+
+Those not listed above were not put to the Human Manager one by one and remain to be confirmed.
 
 - Mode: "uses the method for themselves" is read (AIC and SO) as: on their own account, not for or on a mandate
   of an organisation; who will use the tool and whose data it holds do not matter, and others using it do not by
@@ -333,13 +354,13 @@ mode.
   (both forms are kept).
 - Guide §14, "Treatments", keeps real data "never sent to agents"; the profiles treat the SO's gate reading by
   the local engine (A5) as outside that treatment, and relax compensations 1 and 2 in both modes on decisions
-  D-LOC-1 to D-LOC-4, still provisional: to be confirmed by the HM, with the informative approval counting as the
-  start by whoever is entitled when the data belong to an organisation.
+  D-LOC-1 to D-LOC-4, recorded as provisional. The HM confirmed the reading and the sufficiency of their approval
+  in the informative mode (above); the four decisions were not put to them one by one.
 - Guide §13 exempts only the SO and the security, privacy and legal-compliance profiles in the informative mode,
   while §14 forbids stopping for classification: other profiles apply their class limits in blocking only.
   Whether cloud security engineers or the data governance steward are "security profiles" is not decided.
 - A change of §A–§C of `governo/FAMIGLIA.md` (here §B) needs the lazy consensus of the six domain groups
-  (GOVERNANCE §6.1), which do not exist: not obtained.
+  (GOVERNANCE §6.1), which do not exist: not obtained; deviation accepted by the HM (above).
 - Left by the Guide or RFC 0005 to later work, and not resolved: when a new version and its class are approved;
   where the question round's assumptions are shown; the open points listed in annex part 6.
 - The open points for the Author of the Guide recorded in 0.9.0 for the blocking mode were not re-examined.
