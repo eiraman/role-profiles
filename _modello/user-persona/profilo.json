@@ -4,9 +4,9 @@
   "modello_di_istanza": true,
   "deriva_da": "analisi-funzionale/utente-simulato",
   "nome": "User Persona (modello)",
-  "versione": "0.3.0",
+  "versione": "0.4.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale; la prima risposta alle domande del gruppo (CR-023) vale solo con la Guida che la recepisce",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -14,7 +14,7 @@
     "Scale",
     "Accettazione ed esercizio"
   ],
-  "descrizione_breve": "Modello da cui il Coordinatore AI crea le User Persona del progetto: porta le esigenze di un utente tipo nel Discovery group ed esegue i test funzionali Human Supervised come utente finale simulato.",
+  "descrizione_breve": "Modello da cui il Coordinatore AI crea le User Persona del progetto: porta le esigenze di un utente tipo nel Discovery group, dà la prima risposta alle domande del gruppo con fonte e confidenza, ed esegue i test funzionali Human Supervised come utente finale simulato.",
   "competenze_fonti": [
     {
       "fonte": "A. Cooper, R. Reimann, D. Cronin, C. Noessel, About Face, 4ª ed. (2014)",
@@ -181,6 +181,10 @@
     {
       "strumento": "controllo della scheda dell'istanza",
       "uso": "Obbligatorio alla creazione: la scheda contiene solo i campi del modello, nessun dato di persone reali e nessuna regola. Un campo in più blocca l'istanza. Convenzione del profilo."
+    },
+    {
+      "strumento": "controllo delle prime risposte",
+      "uso": "Obbligatorio prima della consegna al Facilitatore: ogni domanda ha risposta, fonte e confidenza; un'«alta» senza citazione blocca la consegna."
     }
   ],
   "scritture_consentite": [
@@ -199,7 +203,7 @@
     "suite": "PROFILO.md §9"
   },
   "nome_en": "User Persona (template)",
-  "descrizione_breve_en": "Template from which the AI Coordinator creates the project's User Personas: brings a typical user's needs to the Discovery group and runs the Human Supervised functional tests as a simulated end user.",
+  "descrizione_breve_en": "Template from which the AI Coordinator creates the project's User Personas: brings a typical user's needs to the Discovery group, gives a first answer to the group's questions with source and confidence, and runs the Human Supervised functional tests as a simulated end user.",
   "seniority": {
     "minima": "SD1",
     "massima": "SD3",
@@ -257,6 +261,13 @@
       "deliverable": "scheda difetto con passi di riproduzione",
       "seniority": "SD2",
       "note": ""
+    },
+    {
+      "id": "T08",
+      "task": "Prima risposta alle domande del gruppo",
+      "deliverable": "per ogni domanda risposta breve, fonte e confidenza (alta, media, bassa)",
+      "seniority": "SD3",
+      "note": "In independent context. La confidenza segue la fonte."
     }
   ]
 }

@@ -2,15 +2,15 @@
   "id": "facilitatore-design-thinking",
   "famiglia": "analisi-funzionale",
   "nome": "Facilitatore di Design Thinking",
-  "versione": "0.6.0",
+  "versione": "0.7.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, la convergenza della Scoperta (§8) e il ripiego della Seniority Digitale",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, la convergenza della Scoperta (§8) e il ripiego della Seniority Digitale; il giro di domande (CR-023) vale solo con la Guida che lo recepisce",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
     "Scoperta"
   ],
-  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management.",
+  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: giro di domande con al massimo cinque domande al Manager umano, divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management.",
   "competenze_fonti": [
     {
       "fonte": "Stanford d.school, Design Thinking",
@@ -190,7 +190,11 @@
     },
     {
       "strumento": "confronto dei prompt di giro",
-      "uso": "Obbligatorio prima di ogni giro: i prompt inviati ai membri devono essere identici; una differenza blocca il giro."
+      "uso": "Obbligatorio prima di ogni giro: i prompt inviati ai membri devono essere identici; una differenza blocca il giro. Fa eccezione l'elenco unito delle domande, che va alle sole User Persona."
+    },
+    {
+      "strumento": "contatore delle domande per il Manager umano",
+      "uso": "Obbligatorio dopo il giro di domande: al massimo cinque, tutte sotto «alta», rivolte al Manager umano o al cliente e ciascuna con la supposizione della Persona; una sesta domanda, una domanda tecnica o rivolta a un membro, o un'«alta» senza citazione che risponde all'argomento blocca la consegna."
     }
   ],
   "scritture_consentite": [
@@ -210,7 +214,7 @@
     "suite": "PROFILO.md §9"
   },
   "nome_en": "Design Thinking Facilitator",
-  "descrizione_breve_en": "Runs the mandatory Design Thinking session with the Discovery group under hard blinding: divergence across models, convergence to consensus in Principles, Decisions and Open Points, first draft of Scope Management.",
+  "descrizione_breve_en": "Runs the mandatory Design Thinking session with the Discovery group under hard blinding: question round with at most five questions to the Human Manager, divergence across models, convergence to consensus in Principles, Decisions and Open Points, first draft of Scope Management.",
   "seniority": {
     "minima": "SD1",
     "massima": "SD4",
@@ -255,7 +259,7 @@
     {
       "id": "T06",
       "task": "Materiale per i gate del Manager umano",
-      "deliverable": "pagina con direzioni emerse e domande aperte",
+      "deliverable": "pagina con direzioni emerse e domande aperte; al gate delle domande, al massimo cinque domande",
       "seniority": "SD4",
       "note": "Documento che prepara una decisione del Manager umano."
     },
