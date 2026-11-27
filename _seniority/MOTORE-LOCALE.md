@@ -1,6 +1,6 @@
 # Motore locale
 
-Versione 0.1.0 · 27 novembre 2026 · Metodo: Guida 1.0.0-rc.5 (§7 «Hard blinding», §7.1, §11, §12, §14, «Local engines in the informative mode» e rifiuti dei modelli) · Stato: **bozza**; il motore è **da qualificare** su ogni compito
+Versione 0.1.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (§7 «Hard blinding», §7.1, §11, §12, §14, «Local engines in the informative mode» e rifiuti dei modelli) · Stato: **bozza**; il motore è **da qualificare** su ogni compito
 
 Un **motore locale** è un modello linguistico che gira sul dispositivo di chi adotta il metodo, senza rete. Questo file contiene le regole comuni a ogni compito che il registro gli affida: i profili non le ripetono, rimandano qui. La dichiarazione leggibile da strumenti è in `motori-locali.json`.
 
@@ -44,3 +44,5 @@ Il motore locale ha un fornitore dei pesi diverso dai motori cloud dei profili. 
 Motore fra quelli «da qualificare», senza compiti assegnati: `governo/revisore-ai` e `analisi-funzionale/facilitatore-design-thinking`. La loro qualificazione si fa a parte.
 
 Non si affidano al motore locale: il giudizio del Coordinatore AI e del Security Officer, i progettisti, gli sviluppatori, il Revisore AI e il Facilitatore.
+
+Ogni `FAMIGLIA.md` ripete questa dichiarazione nel paragrafo «Motore locale»: i profili e le famiglie non elencati sopra non hanno compiti affidati al motore locale, e la riga «modello locale» dei loro `profilo.json` dichiara solo la taglia minima.

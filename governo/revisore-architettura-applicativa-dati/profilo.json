@@ -2,9 +2,9 @@
   "id": "revisore-architettura-applicativa-dati",
   "famiglia": "governo",
   "nome": "Revisore di architettura applicativa e dei dati",
-  "versione": "0.3.0",
+  "versione": "0.3.1",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, l'architettura componibile (§10) e il ripiego della Seniority Digitale; Guida 1.0.0-rc.5 per le due modalità di classificazione e i rifiuti dei modelli",
+  "metodo": "The Eiraman Guide 1.0.0-rc.5; §3 «Context Consistency and Independence» e §7 (blinding), §10 (architettura componibile), §7.1 «Fallback», §14 «Classification mode» (due modalità di classificazione, rifiuti dei modelli)",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -15,7 +15,7 @@
   "descrizione_breve": "Agente AI revisore del dominio architettura applicativa e dei dati: nel Discovery group, quando il Coordinatore AI lo sceglie, e nelle altre revisioni affidate, giudica in hard blinding solo i Principi e le Decisioni su componenti, contratti e architettura dei dati, con fonti puntuali; lascia la protezione dei dati personali al revisore di privacy e non sostituisce il revisore umano del dominio.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0001, RFC 0003)",
       "riferimento": "§7 Hard blinding; §8 Discovery executors and reviewers; §9 Decisions, Decision record, Definition of ready, Open points, Two links, High Level Architectural View; §10 Backbone, Brain, Limbs and Senses, Hairs, Component contract; §11 Untrusted tasks; §14 Out of scope at any level",
       "url": "https://github.com/eiraman/guide"
     },

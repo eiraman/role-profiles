@@ -1,6 +1,6 @@
 # Role Profile · Security Officer
 
-Versione 0.4.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.5 (RFC 0001, RFC 0003, RFC 0004, RFC 0005) · Stato: **bozza non qualificata**
+Versione 0.4.1 · 27 novembre 2026 · Metodo: The Eiraman Guide 1.0.0-rc.5 (RFC 0001, RFC 0003, RFC 0004, RFC 0005) · Stato: **bozza non qualificata**
 
 > **In modalità bloccante: che cosa può fare questo profilo, oggi, al livello 0.** Assegna la classe del progetto. Uno strumento per uso personale, senza dati di altre persone, parte. Uno strumento per colleghi è un livello sopra: può partire solo con una decisione esplicita e registrata del Manager umano, presa sul profilo di rischio di questo ruolo, e lavora su dati di prova o mascherati finché non ci sono tutte le protezioni del livello superiore e l'incarico scritto dell'organizzazione (Guida §14.2, «Running above the qualified level»). Uno strumento per clienti o per il pubblico, e ogni caso escluso dal metodo a qualsiasi livello, non partono, nemmeno per decisione.
 >
@@ -271,7 +271,7 @@ I casi 1–41 (bloccante) sono nell'[allegato](ALLEGATO.md), parte 4; i casi 44�
 
 ## 10. Catalogo dei task e Seniority Digitale
 <!-- catalogo:inizio -->
-Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**, valore indicativo anch'esso. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.0), da riverificare a ogni cambio di modello.
+Livello tipico del ruolo: da **SD2** a **SD4**. Il Coordinatore AI attiva l'agente con la configurazione della riga; nella squadra l'agente lavora al livello più alto tra quelli dei suoi task nel Work Package. Un task fuori catalogo si esegue al livello di ripiego fissato nel mandato (valore indicativo **SD3**); i task fuori catalogo che per natura sono di livello Lead (architettura, sicurezza, effetti difficili da annullare) partono da **SD4**, valore indicativo anch'esso. Configurazioni dalla mappa `_seniority/seniority.json` (versione 0.2.1), da riverificare a ogni cambio di modello.
 
 | ID | Task | Deliverable | Livello | Claude Code (model · effort) | Codex (model · reasoning) | GitHub Copilot (model) |
 |---|---|---|---|---|---|---|

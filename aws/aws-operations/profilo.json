@@ -1,9 +1,9 @@
 {
   "id": "aws-operations",
   "nome": "Operations AWS",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per il ripiego della Seniority Digitale",
+  "versione": "0.3.0",
+  "data": "2026-11-27",
+  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -43,9 +43,9 @@
       "url": "https://www.axelos.com/certifications/itil-service-management"
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "url": null,
-      "riferimento": "§3, §4, §4 bis, §6, §7, §9"
+      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "url": "https://github.com/eiraman/guide",
+      "riferimento": "§4 Specialist AI roles; §5 Do, Urgent containment; §6 Independence of verification; §7 Role tiers; §9 Definition of done; §11 Security Risk Posture, Data classes per provider"
     }
   ],
   "motori": [
@@ -163,7 +163,7 @@
       "task": "Sintesi di log, metriche e KPI operativi",
       "deliverable": "riepilogo e indicatori",
       "seniority": "SD1",
-      "note": "il modello locale per log con dati non ammessi ai provider esterni"
+      "note": "candidato per il motore locale (per log con dati non ammessi ai provider esterni), non ancora affidato: finché il compito non è tra quelli di _seniority/motori-locali.json e qualificato, segue la riga del catalogo e solo con dati ammessi dal mandato per il fornitore (_seniority/MOTORE-LOCALE.md)"
     }
   ],
   "mode_role": [

@@ -2,9 +2,9 @@
   "id": "revisore-sicurezza",
   "famiglia": "governo",
   "nome": "Revisore di sicurezza",
-  "versione": "0.4.0",
+  "versione": "0.4.1",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, le due modalità di classificazione, i limiti dichiarati in modalità informativa, i rifiuti dei modelli e il ripiego della Seniority Digitale",
+  "metodo": "The Eiraman Guide 1.0.0-rc.5; §3 «Context Consistency and Independence» e §7 (blinding), §14 «Classification mode» (due modalità di classificazione, rifiuti dei modelli), §13 (limiti dichiarati in modalità informativa), §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [

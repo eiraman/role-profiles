@@ -1,7 +1,7 @@
 {
-  "versione": "0.1.0",
+  "versione": "0.1.1",
   "data": "2026-11-27",
-  "nota": "Motori locali del registro. Le regole comuni sono in MOTORE-LOCALE.md e valgono per ogni compito. Un motore locale non è un livello di Seniority Digitale: il compito porta nel catalogo del profilo il livello del suo ripiego. Nessun compito è qualificato: finché manca la qualificazione, non ancora provata o fallita, il motore non si usa per quel compito in un progetto e vale il ripiego (decisione CR-021); le prove di qualificazione si fanno su casi a risposta nota, fuori da ogni progetto. Un motore locale si usa solo dopo che il Manager umano ne ha approvato l'uso con il mandato o, prima del mandato, con un Do: in modalità informativa per la Guida 1.0.0-rc.5, §14; in bloccante per convenzione del registro. Un rifiuto non apre il ripiego e non passa a un altro motore.",
+  "nota": "Motori locali del registro. Le regole comuni sono in MOTORE-LOCALE.md e valgono per ogni compito. Un motore locale non è un livello di Seniority Digitale: il compito porta nel catalogo del profilo il livello del suo ripiego. Nessun compito è qualificato: finché manca la qualificazione, non ancora provata o fallita, il motore non si usa per quel compito in un progetto e vale il ripiego (decisione CR-021); le prove di qualificazione si fanno su casi a risposta nota, fuori da ogni progetto. Un motore locale si usa solo dopo che il Manager umano ne ha approvato l'uso con il mandato o, prima del mandato, con un Do: in modalità informativa per la Guida 1.0.0-rc.5, §14; in bloccante per convenzione del registro. Un rifiuto non apre il ripiego e non passa a un altro motore. Ogni FAMIGLIA.md dichiara lo stesso nel paragrafo «Motore locale»: i profili e le famiglie non elencati qui non hanno compiti affidati.",
   "motori": [
     {
       "id": "gemma-4-31b-locale",

@@ -2,9 +2,9 @@
   "id": "security-officer",
   "famiglia": "governo",
   "nome": "Security Officer",
-  "versione": "0.4.0",
+  "versione": "0.4.1",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, il gate di applicabilità nelle due modalità di classificazione (bloccante e informativa), il profilo di rischio, la decisione di procedere sopra il livello qualificato, il Security Report, i rifiuti dei modelli, i motori locali e il ripiego della Seniority Digitale",
+  "metodo": "The Eiraman Guide 1.0.0-rc.5; §3 «Context Consistency and Independence» e §7 (blinding), §14 «Applicability gate» nelle due modalità di classificazione, «Risk profile», §14.2 «Running above the qualified level», §12 «Security Report», §14 «Local engines in the informative mode» (motori locali, rifiuti dei modelli), §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [

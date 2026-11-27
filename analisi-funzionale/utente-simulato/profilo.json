@@ -2,9 +2,9 @@
   "id": "utente-simulato",
   "famiglia": "analisi-funzionale",
   "nome": "Utente simulato",
-  "versione": "0.3.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale",
+  "versione": "0.3.1",
+  "data": "2026-11-27",
+  "metodo": "The Eiraman Guide 1.0.0-rc.5; §3 «Context Consistency and Independence» e §7 (blinding), §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "basso",
   "fasi": [
@@ -29,13 +29,13 @@
       "url": "https://www.w3.org/TR/WCAG22/"
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§6 DevSecOps e test, test funzionale con utente simulato; §4 bis indipendenza del tester",
-      "url": null
+      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "riferimento": "§9.1 Test types (simulated-user functional tests), Who supervises tests; §7 Shared context, except for the unit tester; §4 Specialist AI roles",
+      "url": "https://github.com/eiraman/guide"
     },
     {
-      "fonte": "The Eiraman Guide",
-      "riferimento": "1.0.0-rc.1 §9.1 Who supervises tests; 1.0.0-rc.2 (RFC 0001) Context Consistency and Independence, User Persona come istanze di progetto",
+      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "riferimento": "§9.1 Who supervises tests; §3 Context Consistency and Independence; §8 Business Analyst and User Personas (User Persona come istanze di progetto)",
       "url": "https://github.com/eiraman/guide"
     }
   ],

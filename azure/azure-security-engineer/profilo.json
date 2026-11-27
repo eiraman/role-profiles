@@ -1,9 +1,9 @@
 {
   "id": "azure-security-engineer",
   "nome": "Security engineer Azure",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per il ripiego della Seniority Digitale",
+  "versione": "0.2.1",
+  "data": "2026-11-27",
+  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -39,9 +39,9 @@
       "url": null
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§4 (indipendenza delle verifiche), §6, §7 (Security Risk Posture)",
-      "url": null
+      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "riferimento": "§6 Independence of verification, Security and personal data; §9 Deterministic anchors; §9.1 DevSecOps practices; §11 Security Risk Posture, Agents section",
+      "url": "https://github.com/eiraman/guide"
     }
   ],
   "motori": [
@@ -180,7 +180,7 @@
     },
     {
       "strumento": "analisi statica e scansione dinamica del prodotto",
-      "uso": "a ogni rilascio; la scansione dinamica dal livello 2 (spec §6)"
+      "uso": "a ogni rilascio; la scansione dinamica dal livello 2 (Guida §14.1, «Level 2 · Method»; §9, «Deterministic anchors»)"
     }
   ],
   "scritture_consentite": [
@@ -218,7 +218,7 @@
       "task": "Revisione di sicurezza di una modifica",
       "deliverable": "revisione in docs/security/ con esito Passa / Condizionato / Blocca",
       "seniority": "SD4",
-      "note": "almeno al livello dell'esecutore; modello diverso (P6)"
+      "note": "almeno al livello dell'esecutore; modello diverso (Guida §6)"
     },
     {
       "id": "T02",

@@ -1,9 +1,9 @@
 {
   "id": "azure-architect",
   "nome": "Architetto Azure",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per il ripiego della Seniority Digitale",
+  "versione": "0.2.1",
+  "data": "2026-11-27",
+  "metodo": "The Eiraman Guide 1.0.0-rc.5; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -65,9 +65,9 @@
       "url": null
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§3, §4 bis, §5, §6, §6 bis, §7, §8, §9",
-      "url": null
+      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "riferimento": "§5 Do; §7 Role tiers; §8.1 Design and planning; §9 Definition of ready, High Level Architectural View; §10 Backbone, Brain, Limbs and Senses, Hairs; §11 Security Risk Posture, Data classes per provider; §12 Writing rules; §4 Specialist AI roles",
+      "url": "https://github.com/eiraman/guide"
     }
   ],
   "motori": [
@@ -256,7 +256,7 @@
       "task": "Contributo alla Security Risk Posture e sezione Agenti",
       "deliverable": "sezione della Security Risk Posture",
       "seniority": "SD4",
-      "note": "revisione con modello diverso (P6)"
+      "note": "revisione con modello diverso (Guida §6)"
     },
     {
       "id": "T04",

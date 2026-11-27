@@ -1,9 +1,9 @@
 {
   "id": "finops-forecast-budget",
   "nome": "Forecast e budget (FinOps)",
-  "versione": "0.3.0",
+  "versione": "0.3.1",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per il budget di deriva (§5, E5) nelle due modalità di classificazione (§14.2, «Class change»), la revisione del ciclo (§8) e il ripiego della Seniority Digitale",
+  "metodo": "The Eiraman Guide 1.0.0-rc.5; §5 E5 (budget di deriva) nelle due modalità di classificazione (§14.2 «Class change»), §8 «Governance cycle», §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "famiglia": "finops",
   "piramide": "medio",
@@ -21,9 +21,9 @@
       "url": "../FAMIGLIA.md"
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§5 Wave, soglie 80% e 100%, criteri di arresto; §3 E5 budget di deriva",
-      "url": "registro del metodo, framework/Eiraman.md"
+      "fonte": "The Eiraman Guide 1.0.0-rc.5",
+      "riferimento": "§8 Wave (le soglie le fissa il mandato; 80% e 100% sono valori indicativi del profilo), Governance cycle; §9 Stop criteria; §5 E5 Drift budget",
+      "url": "https://github.com/eiraman/guide"
     },
     {
       "fonte": "FinOps Framework · Planning & Estimating",
