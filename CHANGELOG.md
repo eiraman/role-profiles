@@ -23,6 +23,27 @@ the version.
 
 ## [Unreleased]
 
+## [0.11.1] - 2026-11-27
+
+Scope: Change Request CR-032 of the method project (follow-ups of the release Do-S35). Version bump: PATCH. The
+registry is the artifact, so a change outside the versioned texts, here a CI workflow, is a PATCH of the repository
+(VERSIONING.md, section 1, notes). **No profile, family, template, map or AI Coordinator file changes**: every
+profile and family keeps the version listed under 0.11.0, every profile stays **draft, not qualified**, and the
+"Profile versions" table of 0.11.0 still holds. No RFC in scope.
+
+Written against: The Eiraman Guide 1.0.0-rc.6 (not measured); tools 0.4.0.
+
+### Changed
+
+- `.github/workflows/validate-profiles.yml`: `TOOLS_REF` moves from tools 0.3.2 (`485cdac`) to tools 0.4.0
+  (`420f0b038ee63d8196eff0ae12811de90c93d0b6`, the commit of the tag `v0.4.0`), so that the CI validates with the
+  validator that requires the field `metodo` to cite the Guide with a version (tools 0.4.0, which accepts registries
+  >= 0.11.0 only). Verified locally with `valida_profilo.py` 0.4.0, laid out as the workflow lays it out
+  (`_strumenti/` next to `_seniority/`): all 49 profiles pass, and a profile whose `metodo` is "Eiraman 0.3" is
+  rejected.
+
+**Dependency.** Publish this release before `community` 0.6.1, whose version table names registry 0.11.1.
+
 ## [0.11.0] - 2026-11-27
 
 Scope: Change Requests CR-030 (the Guide as the base of the registry: realignment of the AI Coordinator and of the
