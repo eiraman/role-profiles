@@ -5,7 +5,7 @@
   "nome": "Business Analyst (modello)",
   "versione": "0.3.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, il giro di domande della Scoperta (§8), la modalità di classificazione (§14) e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -172,7 +172,7 @@
   "do_riservati": [
     "approvazione o cambiamento della Visione",
     "cambi di scopo, Principi o criteri di successo",
-    "nuove fonti con dati di terzi"
+    "nuove fonti con dati di terzi (in modalità informativa non per questo solo motivo: vanno nel Security Report, salvo servizi esterni, fornitori, dati fuori dall'organizzazione, accessi o spesa)"
   ],
   "qualificazione": {
     "curatore": "Coordinatore AI, Wave DT-01, pacchetto DT-PROFILES",
@@ -222,7 +222,7 @@
       "task": "Risposta a un giro del Design Thinking Facilitator",
       "deliverable": "posizione del Business Analyst sul prompt del giro",
       "seniority": "SD4",
-      "note": "In independent context."
+      "note": "In independent context. Comprende la risposta al prompt del giro di domande (Guida 1.0.0-rc.5, §8, «Question round»)."
     },
     {
       "id": "T06",

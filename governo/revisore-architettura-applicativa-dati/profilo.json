@@ -4,7 +4,7 @@
   "nome": "Revisore di architettura applicativa e dei dati",
   "versione": "0.3.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, l'architettura componibile (§10) e il ripiego della Seniority Digitale; la riga sulla modalità informativa è candidata per la RFC sulla classificazione in due modalità e vale solo con la Guida che la recepisce",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, l'architettura componibile (§10) e il ripiego della Seniority Digitale; Guida 1.0.0-rc.5 per le due modalità di classificazione e i rifiuti dei modelli",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -18,6 +18,11 @@
       "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001, RFC 0003)",
       "riferimento": "§7 Hard blinding; §8 Discovery executors and reviewers; §9 Decisions, Decision record, Definition of ready, Open points, Two links, High Level Architectural View; §10 Backbone, Brain, Limbs and Senses, Hairs, Component contract; §11 Untrusted tasks; §14 Out of scope at any level",
       "url": "https://github.com/eiraman/guide"
+    },
+    {
+      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0005)",
+      "url": "https://github.com/eiraman/guide",
+      "riferimento": "§14 Classification mode (la classificazione in informativa non ferma nulla; rifiuti dei modelli), Security Officer in the informative mode"
     },
     {
       "fonte": "Eiraman community, GOVERNANCE.md",

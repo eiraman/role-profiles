@@ -4,13 +4,13 @@
   "nome": "Facilitatore di Design Thinking",
   "versione": "0.7.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, la convergenza della Scoperta (§8) e il ripiego della Seniority Digitale; il giro di domande (CR-023) vale solo con la Guida che lo recepisce",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, il giro di domande e la convergenza della Scoperta (§8), la modalità di classificazione (§14) e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
     "Scoperta"
   ],
-  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: giro di domande con al massimo cinque domande al Manager umano, divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management.",
+  "descrizione_breve": "Conduce la sessione di Design Thinking obbligatoria con il Discovery group, in hard blinding: giro di domande con al Manager umano le domande a confidenza più bassa, fino al numero del mandato, divergenza tra più modelli, convergenza fino al consenso in Principi, Decisioni e Open Point sui criteri fissati prima della divergenza, pacchetto per i revisori e per il giudice K1, prima stesura dello Scope Management.",
   "competenze_fonti": [
     {
       "fonte": "Stanford d.school, Design Thinking",
@@ -194,7 +194,7 @@
     },
     {
       "strumento": "contatore delle domande per il Manager umano",
-      "uso": "Obbligatorio dopo il giro di domande: al massimo cinque, tutte sotto «alta», rivolte al Manager umano o al cliente e ciascuna con la supposizione della Persona; una sesta domanda, una domanda tecnica o rivolta a un membro, o un'«alta» senza citazione che risponde all'argomento blocca la consegna."
+      "uso": "Obbligatorio dopo il giro di domande: non più del numero del mandato o, prima del mandato, di quello comunicato dal Coordinatore AI con i gate; tutte sotto «alta», rivolte al Manager umano o a una persona fuori dal Discovery group, nessuna tecnica o rivolta a un membro e, in modalità informativa, nessuna di sicurezza; ciascuna con la risposta supposta, tutte le risposte se le Persona non concordano. Una domanda in più, una domanda esclusa o un'«alta» senza una citazione che risponde alla domanda blocca la consegna."
     }
   ],
   "scritture_consentite": [
@@ -203,7 +203,7 @@
   "do_riservati": [
     "rilancio di un giro oltre il piano",
     "aumento del budget di divergenza",
-    "nuove fonti con dati di terzi",
+    "nuove fonti con dati di terzi (in modalità informativa non per questo solo motivo: restano Do se aggiungono un servizio esterno o un fornitore, portano dati fuori dall'organizzazione, chiedono nuovi accessi o spesa oltre la soglia)",
     "nuovi fornitori di motori"
   ],
   "qualificazione": {
@@ -214,7 +214,7 @@
     "suite": "PROFILO.md §9"
   },
   "nome_en": "Design Thinking Facilitator",
-  "descrizione_breve_en": "Runs the mandatory Design Thinking session with the Discovery group under hard blinding: question round with at most five questions to the Human Manager, divergence across models, convergence to consensus in Principles, Decisions and Open Points, first draft of Scope Management.",
+  "descrizione_breve_en": "Runs the mandatory Design Thinking session with the Discovery group under hard blinding: question round sending the Human Manager the lowest-confidence questions, up to the number the mandate sets, divergence across models, convergence to consensus in Principles, Decisions and Open Points, first draft of Scope Management.",
   "seniority": {
     "minima": "SD1",
     "massima": "SD4",
@@ -259,7 +259,7 @@
     {
       "id": "T06",
       "task": "Materiale per i gate del Manager umano",
-      "deliverable": "pagina con direzioni emerse e domande aperte; al gate delle domande, al massimo cinque domande",
+      "deliverable": "pagina con direzioni emerse e domande aperte; al gate delle domande, le domande per il Manager umano fino al numero del mandato",
       "seniority": "SD4",
       "note": "Documento che prepara una decisione del Manager umano."
     },
@@ -311,6 +311,13 @@
       "deliverable": "scheda di una pagina nel formato del §6 e registro con tutte le decisioni, la porta, il costo di annullamento, l'impatto e le assunzioni",
       "seniority": "SD4",
       "note": "Base delle conferme del Manager umano. Convenzione del profilo."
+    },
+    {
+      "id": "T15",
+      "task": "Giro di domande e registro delle domande",
+      "deliverable": "prompt comune, registro con parole, argomento, autore, destinatario e scelta non reversibile, risposte, fonti e confidenze delle User Persona, domande per il Manager umano in ordine",
+      "seniority": "SD3",
+      "note": "Guida 1.0.0-rc.5, §8, «Question round». La scelta delle domande segue l'ordine del registro, senza giudizio del Facilitatore."
     }
   ]
 }

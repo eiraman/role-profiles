@@ -4,7 +4,7 @@
   "nome": "Security Officer",
   "versione": "0.4.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.4 per le regole di contesto, il gate di applicabilità, il profilo di rischio, la decisione di procedere sopra il livello qualificato e il ripiego della Seniority Digitale; candidata per la RFC sulla classificazione in due modalità (bloccante e informativa): in vigore solo con la Guida che la recepisce",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, il gate di applicabilità nelle due modalità di classificazione (bloccante e informativa), il profilo di rischio, la decisione di procedere sopra il livello qualificato, il Security Report, i rifiuti dei modelli, i motori locali e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -15,14 +15,14 @@
     "Scale",
     "Accettazione ed esercizio"
   ],
-  "descrizione_breve": "Agente AI che svolge il ruolo di compliance del gate di applicabilità: assegna la classe del progetto con una checklist versionata e, quando la classe supera il livello o scatta un'esclusione, consegna il profilo di rischio con i trattamenti proposti, il rischio residuo, le condizioni, le domande per l'organizzazione e ciò che resta impossibile; dice quando la decisione del Manager umano di procedere sopra il livello è disponibile e che cosa richiede; non revisiona, non tocca dati reali e non dà pareri legali.",
+  "descrizione_breve": "Agente AI che svolge il ruolo di compliance del gate di applicabilità: assegna la classe del progetto con una checklist versionata; in modalità bloccante, quando la classe supera il livello o scatta un'esclusione, consegna il profilo di rischio con i trattamenti proposti, il rischio residuo, le condizioni, le domande per l'organizzazione e ciò che resta impossibile, e dice quando la decisione del Manager umano di procedere sopra il livello è disponibile e che cosa richiede; in modalità informativa classifica in silenzio, senza fermare né ridurre nulla, e tiene il Security Report; non revisiona, non tocca dati reali e non dà pareri legali.",
   "nome_en": "Security Officer",
-  "descrizione_breve_en": "AI agent in the compliance role of the applicability gate: it assigns the project class with a versioned checklist and, when the class exceeds the level or an exclusion is triggered, delivers the risk profile with the proposed treatments, residual risk, conditions, questions for the organisation and what remains impossible; it says when the Human Manager's decision to run above the qualified level is available and what it requires; it does not review, never touches real data and gives no legal opinions.",
+  "descrizione_breve_en": "AI agent in the compliance role of the applicability gate: it assigns the project class with a versioned checklist; in the blocking mode, when the class exceeds the level or an exclusion is triggered, it delivers the risk profile with the proposed treatments, residual risk, conditions, questions for the organisation and what remains impossible, and says when the Human Manager's decision to run above the qualified level is available and what it requires; in the informative mode it classifies silently, stopping and reducing nothing, and keeps the Security Report; it does not review, never touches real data and gives no legal opinions.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.4 (RFC 0001, RFC 0003, RFC 0004)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0001, RFC 0003, RFC 0004, RFC 0005)",
       "url": "https://github.com/eiraman/guide",
-      "riferimento": "§2 Management applied to AI; §4 Maintainers, Liability towards third parties; §5 Deny, Do, E3; §6 Security and personal data; §7 Hard blinding; §9 Vision; §11 Data classes per provider, Delegation of data, Hostile-input test; §12 Writing rules (per il testo principale del profilo di rischio); §14 Principle, Project classes, Deliverables, Out of scope at any level, Applicability gate, Risk profile, Treatments, Questions for the organisation, Dialogue with the Human Manager, Independence of the Security Officer, Legal advice; §14.1, Level 0 · Organisation, Level 1 · Method, Level 1 · Organisation; §14.2 Moving up, Automatic downgrade, Class change, Running above the qualified level; §15 Conformance"
+      "riferimento": "§2 Management applied to AI; §3 Some uses are excluded; §4 Human Manager, Maintainers, Internal accountability, Liability towards third parties; §5 Deny, Do, E3, E5; §6 Security and personal data; §7 Hard blinding; §7.1 (incapacità); §8 Question round; §9 Vision, Shape of control artifacts, Project record, Dissent or missing proof; §11 Data classes per provider, Delegation of data, Hostile-input test; §12 Writing rules, Third-party evidence pack, Security Report; §13 (limiti dichiarati); §14 Classification mode, Principle, Project classes, Deliverables, Out of scope at any level, Out of scope in the informative mode, Applicability gate, Risk profile, Treatments, Questions for the organisation, Dialogue with the Human Manager, Independence of the Security Officer, Security Officer in the informative mode, Local engines in the informative mode, Legal advice; §14.1, Level 0 · Organisation, Level 1 · Method, Level 1 · Organisation, Error budget; §14.2 Moving up, Automatic downgrade, Class change, Running above the qualified level; §15 Conformance"
     },
     {
       "fonte": "Eiraman community, GOVERNANCE.md",
@@ -261,27 +261,29 @@
     },
     {
       "strumento": "controllo di completezza del Security Report",
-      "uso": "Obbligatorio in modalità informativa: riga e frase fisse in testa identiche a quelle dell'allegato, parte 5; i dieci punti nell'ordine; ogni evidenza con dove è stata trovata (solo richiesta, Scope Management o esito di T11, altrimenti «non determinato») e perché conta, senza valori dei dati; ogni misura non applicata con che cosa comporta e chi andrebbe sentito; ogni rifiuto di un modello con il motivo dichiarato. Convenzione del profilo."
+      "uso": "Obbligatorio in modalità informativa: riga fissa in testa identica a quella dell'allegato, parte 5, seguita da che cosa è cambiato dall'ultima lettura; i dodici punti nell'ordine; nessuna domanda al lettore; classe o «fuori perimetro» e classe dei deliverable; ogni rilievo con dove è stato trovato (solo richiesta, Scope Management o esito di T11, altrimenti «non determinato») e perché conta, senza riprodurre i dati; motori usati, con la frase fissa per ogni motore locale; protezioni applicate; protezioni raccomandate e non applicate, con i requisiti dei livelli non soddisfatti fino al livello dovuto (PROFILO.md, B4); limiti dichiarati registrati; ogni rifiuto di un modello con il motivo; ciò che non è determinato, con le domande sulla sicurezza del giro di domande. Data e Wave dell'aggiornamento: uno per Wave e uno per rilascio. Convenzione del profilo."
     }
   ],
   "scritture_consentite": [
     "docs/gate/profili/"
   ],
   "do_riservati": [
-    "classe del progetto e ogni cambio di classe",
-    "scelta fra le proposte di trattamento e fra le opzioni della Guida §14.2",
-    "riduzione dello scopo",
-    "nuovo fornitore per un componente critico",
-    "decisione di far procedere un progetto sopra il livello qualificato",
-    "accettazione del rischio residuo, nei limiti di ciò che il Manager umano ha titolo ad accettare: l'accettazione del rischio residuo non rende superabile un'esclusione, né il livello fuori dal caso della Guida §14.2, «Running above the qualified level»",
-    "salita di livello di applicabilità"
+    "classe del progetto e ogni cambio di classe, solo in modalità bloccante; in informativa si registrano nel Security Report e non sono un Do per questo solo motivo (Guida §5; §14.2, «Class change»)",
+    "in modalità bloccante: scelta fra le proposte di trattamento e fra le opzioni della Guida §14.2",
+    "in modalità bloccante: riduzione dello scopo; in informativa lo scopo non si riduce per motivi di classificazione",
+    "nuovo fornitore per un componente critico, in entrambe le modalità",
+    "in modalità bloccante: decisione di far procedere un progetto sopra il livello qualificato",
+    "in modalità bloccante: accettazione del rischio residuo, nei limiti di ciò che il Manager umano ha titolo ad accettare: l'accettazione del rischio residuo non rende superabile un'esclusione, né il livello fuori dal caso della Guida §14.2, «Running above the qualified level»",
+    "salita di livello di applicabilità, in entrambe le modalità; l'esperienza in informativa non conta",
+    "in modalità informativa: uso di un motore locale non dichiarato nel mandato, prima del mandato o aggiunto dopo (Guida §14, «Local engines in the informative mode»)",
+    "in entrambe le modalità: la decisione su una verifica obbligatoria rifiutata da un modello, che il Coordinatore AI porta al Manager umano (Guida §14, «Classification mode»)"
   ],
   "qualificazione": {
     "curatore": "Coordinatore AI del progetto di gestione del metodo",
     "revisore": "da assegnare: revisori umani titolari o supplenti dei domini sicurezza e privacy (GOVERNANCE §4.5); la checklist CL-SO va qualificata dai maintainer (Guida §4)",
     "data": null,
     "scadenza": null,
-    "suite": "PROFILO.md §9 (casi 42–44, 47 e 48) e ALLEGATO.md, parte 4 (casi 1–41) e parte 5 (casi 45 e 46)"
+    "suite": "PROFILO.md §9 (casi 42, 43, 47, 49, 50); ALLEGATO.md, parte 4 (casi 1–41) e parte 5 (casi 44–46, 48, 51–62)"
   },
   "seniority": {
     "minima": "SD2",
@@ -362,7 +364,7 @@
     {
       "id": "T11",
       "task": "Lettura dei file reali per la checklist, con il motore locale avviato da chi ha titolo sulla propria macchina (ripiego: T03, domanda di fatto al Manager umano; mai un motore fuori da quella macchina)",
-      "deliverable": "conteggi e categorie per domanda di fatto (nomi di persone, categorie particolari, testo libero, minori), senza valori, con parti lette sul totale e stato «non verificato da motore qualificato» finché manca la qualificazione; in modalità informativa compila le evidenze sul dato del Security Report, solo con l'assenso dato all'apertura e senza ripiego (B7)",
+      "deliverable": "conteggi e categorie per domanda di fatto (nomi di persone, categorie particolari, testo libero, minori), senza valori, con parti lette sul totale e stato «non verificato da motore qualificato» finché manca la qualificazione; in modalità informativa compila le evidenze sul dato del Security Report, solo con il motore locale approvato con il mandato o con un Do e senza ripiego (B7)",
       "seniority": "SD3",
       "motore": "Gemma 4 31B (densa, locale)",
       "note": "Il livello è quello del ripiego T03. Il motore locale legge e segnala; risposte e classe restano a T02."
@@ -373,14 +375,14 @@
       "deliverable": "conteggi per colonna e categoria di nomi o riferimenti riconoscibili rimasti, senza valori; un residuo blocca il risultato mascherato",
       "seniority": "SD4",
       "motore": "Gemma 4 31B (densa, locale)",
-      "note": "Livello della regola di mascheramento che verifica (T05). Finché il motore non è qualificato, un'assenza di residui non vale come verifica."
+      "note": "Livello della regola di mascheramento che verifica (T05). Finché il motore non è qualificato, un'assenza di residui non vale come verifica. In modalità informativa, solo con il motore locale approvato con il mandato o con un Do (B7)."
     },
     {
       "id": "T13",
       "task": "Security Report in modalità informativa",
-      "deliverable": "report nel formato fisso dell'allegato, parte 5 (dieci punti), all'apertura, a ogni cambio di scopo e prima di ogni rilascio",
+      "deliverable": "report nel formato fisso dell'allegato, parte 5, all'apertura, a ogni Wave e a ogni rilascio; a scopo invariato, gate ripetuto registrato per rinvio all'ultima esecuzione",
       "seniority": "SD4",
-      "note": "Giudizio sulle evidenze e sulle misure; nessuna riduzione dello scopo e nessuna domanda obbligatoria."
+      "note": "Giudizio sulle evidenze e sulle protezioni; nessuna riduzione dello scopo e nessuna domanda al Manager umano."
     }
   ]
 }

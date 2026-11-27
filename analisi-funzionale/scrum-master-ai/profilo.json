@@ -4,7 +4,7 @@
   "nome": "Scrum Master AI",
   "versione": "0.3.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di squadra e di contesto e il ripiego della Seniority Digitale",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di squadra e di contesto, la modalità di classificazione e i rifiuti dei modelli (§14) e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -163,7 +163,7 @@
   ],
   "do_riservati": [
     "le porte a senso unico e ogni caso di reversibilità dubbia",
-    "le materie riservate del mandato: Visione, Principi, criteri di successo, dati personali, terzi, nuovi fornitori, spesa oltre la soglia (in modalità informativa i dati personali non sono un Do: vanno al Coordinatore AI per il Security Report)",
+    "le materie riservate del mandato: Visione, Principi, criteri di successo, dati personali, terzi, nuovi fornitori, spesa oltre la soglia (in modalità informativa dati personali e terzi non sono un Do per questo solo motivo: vanno al Coordinatore AI per il Security Report)",
     "il cambiamento di una Decisione approvata",
     "i nuovi accessi",
     "il cambio di classe del progetto (solo in modalità bloccante) e il passaggio a un livello di adozione superiore"

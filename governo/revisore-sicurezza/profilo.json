@@ -4,7 +4,7 @@
   "nome": "Revisore di sicurezza",
   "versione": "0.4.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.4 per le regole di contesto e il ripiego della Seniority Digitale; candidata per la RFC sulla classificazione in due modalità: in vigore solo con la Guida che la recepisce",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, le due modalità di classificazione, i limiti dichiarati in modalità informativa, i rifiuti dei modelli e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -15,9 +15,9 @@
   "descrizione_breve": "Agente AI revisore del dominio sicurezza: nel Discovery group, e nelle altre revisioni affidate dal Coordinatore AI, giudica in hard blinding solo i Principi e le Decisioni di sicurezza, con fonti puntuali; non esegue test di penetrazione né scrive codice e non sostituisce il revisore umano del dominio.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.4 (RFC 0001, RFC 0004)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0001, RFC 0004, RFC 0005)",
       "url": "https://github.com/eiraman/guide",
-      "riferimento": "§6 Independence of verification e Security and personal data; §7 Hard blinding; §8 Discovery executors and reviewers; §11 Security Risk Posture, Agents section, Hostile-input test, Project opening; §14 Out of scope at any level, Applicability gate, Independence of the Security Officer; §14.1 Level 2 · Method"
+      "riferimento": "§6 Independence of verification e Security and personal data; §7 Hard blinding; §8 Discovery executors and reviewers; §11 Security Risk Posture, Agents section, Hostile-input test, Project opening; §14 Out of scope at any level, Applicability gate, Independence of the Security Officer; §14.1 Level 2 · Method; §13 limiti dichiarati in modalità informativa; §14 Classification mode (rifiuti dei modelli), Security Officer in the informative mode (rilievi dei revisori di sicurezza, privacy e legale e compliance)"
     },
     {
       "fonte": "Eiraman community, GOVERNANCE.md",

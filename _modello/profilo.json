@@ -1,9 +1,9 @@
 {
   "id": "slug-del-ruolo",
   "nome": "Nome del ruolo",
-  "versione": "0.1.0",
-  "data": "2026-11-25",
-  "metodo": "Eiraman 0.3",
+  "versione": "0.2.0",
+  "data": "2026-11-27",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per i limiti dichiarati (§13) e la modalità di classificazione (§5, §14)",
   "stato": "bozza non qualificata",
   "piramide": "alto | medio | basso",
   "fasi": [

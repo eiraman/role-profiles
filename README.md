@@ -82,12 +82,13 @@ the AI reviewers of the six governance domains (`governo/revisore-sicurezza/`, `
 `governo/revisore-test-qualita/`, `governo/revisore-legale-compliance/`), who review the Discovery group's
 Principles and Decisions of their own domain;
 they are AI agents and do not replace the human reviewer of the domain. The family also holds the
-**Security Officer** (`governo/security-officer/`), the AI compliance role of the applicability gate (in the candidate for the RFC on the two modes, blocking
-or informative, see the CHANGELOG): it
+**Security Officer** (`governo/security-officer/`), the AI compliance role of the applicability gate. In the
+blocking mode of the Guide 1.0.0-rc.5, §14, it
 assigns the project class with a versioned checklist and, when the class exceeds the level or an exclusion
 is triggered, delivers a risk profile with treatments that bring the scope back within the permitted class,
 only where the re-classification shows it; it also says when the Human Manager's decision to run a class 1
-project from level 0 (Guide 1.0.0-rc.4, §14.2) is available and what it requires; it is not a reviewer. The templates in
+project from level 0 (§14.2) is available and what it requires. In the informative mode it stops nothing and
+records the class and every finding in the Security Report (§12). It is not a reviewer. The templates in
 `_modello/` are not selected by CI, which skips folders starting with `_`: validate them locally.
 
 ## Rules for writing a profile

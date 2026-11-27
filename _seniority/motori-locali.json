@@ -1,7 +1,7 @@
 {
   "versione": "0.1.0",
   "data": "2026-11-27",
-  "nota": "Motori locali del registro. Le regole comuni sono in MOTORE-LOCALE.md e valgono per ogni compito. Un motore locale non è un livello di Seniority Digitale: il compito porta nel catalogo del profilo il livello del suo ripiego. Nessun compito è qualificato: finché manca la qualificazione l'esito è «non verificato da motore qualificato».",
+  "nota": "Motori locali del registro. Le regole comuni sono in MOTORE-LOCALE.md e valgono per ogni compito. Un motore locale non è un livello di Seniority Digitale: il compito porta nel catalogo del profilo il livello del suo ripiego. Nessun compito è qualificato: finché manca la qualificazione l'esito è «non verificato da motore qualificato». In modalità informativa un motore locale si usa solo dopo che il Manager umano ne ha approvato l'uso con il mandato o, prima del mandato, con un Do (Guida 1.0.0-rc.5, §14). Un rifiuto non apre il ripiego e non passa a un altro motore.",
   "motori": [
     {
       "id": "gemma-4-31b-locale",
@@ -12,7 +12,7 @@
       "stato": "da qualificare",
       "rete": "solo loopback; nessun accesso in uscita; nessun retrieval",
       "configurazione": "runtime, quantizzazione e versione dei pesi da registrare a ogni esecuzione; una configurazione diversa da quella qualificata è un motore diverso ai fini della qualificazione",
-      "dati_personali_reali": "ammessi solo sul dispositivo di chi ha titolo a trattarli, che avvia il motore (in modalità informativa vale come avvio l'assenso esplicito del Manager umano all'apertura); in uscita solo conteggi, categorie e segnalazioni in formato fisso, controllato da uno strumento deterministico"
+      "dati_personali_reali": "ammessi solo sul dispositivo di chi ha titolo a trattarli, che avvia il motore (in modalità informativa vale come avvio l'approvazione del motore locale con il mandato o, prima del mandato, con un Do); in uscita solo conteggi, categorie e segnalazioni in formato fisso, controllato da uno strumento deterministico"
     }
   ],
   "compiti": [
@@ -21,7 +21,7 @@
     {"profilo": "controllore", "compito": "riassunti dei registri per la Vista del Manager", "ingresso_max": "2.000 parole di registro, indicativo, da tarare", "ripiego": "testo del registro senza riassunto", "qualificazione": {"soglia": "da fissare prima della prova", "esito": null, "data": null}},
     {"profilo": "governo/security-officer", "task": "T11", "compito": "lettura dei file reali per la checklist", "ingresso_max": "3.000 parole o 200 righe per parte, indicativo, da tarare", "ripiego": "in modalità informativa nessun ripiego, «non determinato» nel Security Report (B7); in modalità bloccante domanda di fatto al Manager umano (T03); mai un motore fuori dal dispositivo", "qualificazione": {"soglia": "da fissare prima della prova", "esito": null, "data": null}},
     {"profilo": "governo/security-officer", "task": "T12", "compito": "verifica dei residui dopo il mascheramento", "ingresso_max": "3.000 parole o 200 righe per parte, indicativo, da tarare", "ripiego": "solo lo strumento deterministico della regola di mascheramento; mai un motore fuori dal dispositivo", "qualificazione": {"soglia": "da fissare prima della prova", "esito": null, "data": null}},
-    {"profilo": "_modello/user-persona", "task": "T01, T02, T03", "compito": "esigenze, risposte ai giri e osservazioni su un mock-up nella Scoperta", "ingresso_max": "4.000 parole, indicativo, da tarare", "ripiego": "configurazione della riga del catalogo", "qualificazione": {"soglia": "da fissare prima della prova", "esito": null, "data": null}}
+    {"profilo": "_modello/user-persona", "task": "T01, T02, T03", "nota": "non comprende T08, la prima risposta alle domande del gruppo, che resta sulla configurazione della riga (decisione CR-023)", "compito": "esigenze, risposte ai giri e osservazioni su un mock-up nella Scoperta", "ingresso_max": "4.000 parole, indicativo, da tarare", "ripiego": "configurazione della riga del catalogo", "qualificazione": {"soglia": "da fissare prima della prova", "esito": null, "data": null}}
   ],
   "da_qualificare_senza_compiti": ["governo/revisore-ai", "analisi-funzionale/facilitatore-design-thinking"]
 }

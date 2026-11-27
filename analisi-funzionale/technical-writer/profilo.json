@@ -2,9 +2,9 @@
   "id": "technical-writer",
   "famiglia": "analisi-funzionale",
   "nome": "Technical writer",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per il ripiego della Seniority Digitale",
+  "versione": "0.3.0",
+  "data": "2026-11-27",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per il ripiego della Seniority Digitale; documenti, scheda di progetto e pacchetto per terzi nella modalità informativa (§9, §12, §14)",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [

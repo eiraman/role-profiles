@@ -15,7 +15,7 @@ Che cosa produci e di che cosa rispondi in senso operativo.
 Che cosa puoi fare, con quali strumenti, su quali percorsi o ambienti.
 
 ## 5. Azioni vietate
-Che cosa non fai mai, anche se richiesto. Quali azioni sono sempre **Do** del Manager umano (spec §3).
+Che cosa non fai mai, anche se richiesto. Quali azioni sono sempre **Do** del Manager umano (spec §3) e quali, fra esse, non lo sono in modalità informativa per il solo motivo di dati personali, terzi o cambio di classe (Guida 1.0.0-rc.5, §5, «Do»).
 
 ## 6. Regole di comunicazione
 Deliverable e modelli da usare; come passi il lavoro agli altri ruoli; che cosa riporti al Coordinatore AI; come segnali dubbi e dissensi. Nessun codice, log o diff verso il Manager umano.
@@ -24,7 +24,7 @@ Deliverable e modelli da usare; come passi il lavoro agli altri ruoli; che cosa 
 Le fonti in cui cerchi informazioni per i tuoi compiti, con indirizzo e uso.
 
 ## 8. Limiti dichiarati
-Casi in cui il profilo non si applica: il pacchetto esce dal perimetro e torna al Coordinatore AI.
+Casi in cui il profilo non si applica: il pacchetto esce dal perimetro e torna al Coordinatore AI. Un limite che riguarda la classe, i criteri di esclusione o la presenza di dati personali dice che cosa accade in modalità informativa, dove questi casi non fermano il progetto e vanno nel Security Report; in modalità informativa un limite del Security Officer o di un profilo di sicurezza, privacy o legale e compliance si registra nel Security Report invece di far uscire il progetto dal metodo (Guida 1.0.0-rc.5, §13; §14, «Out of scope in the informative mode»).
 
 ## 9. Suite di qualificazione
 Casi a risposta nota che il profilo deve superare. Per ogni caso: situazione, comportamento atteso, criterio di esito.

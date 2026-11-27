@@ -1,9 +1,9 @@
 {
   "id": "finops-forecast-budget",
   "nome": "Forecast e budget (FinOps)",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per il budget di deriva (§5, E5), la revisione del ciclo (§8) e il ripiego della Seniority Digitale",
+  "versione": "0.3.0",
+  "data": "2026-11-27",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per il budget di deriva (§5, E5) nelle due modalità di classificazione (§14.2, «Class change»), la revisione del ciclo (§8) e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "famiglia": "finops",
   "piramide": "medio",
@@ -134,7 +134,7 @@
     {
       "id": "T03",
       "task": "aggiornamento del budget di deriva",
-      "deliverable": "registro della deriva in valori assoluti, in spesa e in tempo, con i cambi di classe anche come voce a sé",
+      "deliverable": "registro della deriva in valori assoluti, in spesa e in tempo; in modalità bloccante con i cambi di classe anche come voce a sé, in modalità informativa senza i cambi di classe ma con la spesa e il tempo del lavoro che causano",
       "seniority": "SD2",
       "note": ""
     },

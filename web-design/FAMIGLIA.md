@@ -1,6 +1,6 @@
 # Famiglia · Web design
 
-Versione 0.2.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 · Stato: **bozza non qualificata**
+Versione 0.2.0 · 27 novembre 2026 · Metodo: Specifica Eiraman 0.3 e Guida 1.0.0-rc.5 (modalità di classificazione e rifiuti dei modelli, §14) · Stato: **bozza non qualificata**
 
 Regole comuni di usabilità e accessibilità per tutti i profili della famiglia. Il Coordinatore AI passa all'agente questo file insieme al `PROFILO.md` del ruolo. In caso di conflitto prevale la specifica Eiraman, poi questo file, poi il profilo. Le regole sono derivate dalle linee guida di interfaccia di un progetto pilota e astratte per qualunque applicazione web governata con Eiraman.
 
@@ -14,7 +14,14 @@ Regole comuni di usabilità e accessibilità per tutti i profili della famiglia.
 
 Il test con **utente simulato** resta nel profilo omonimo della famiglia Analisi funzionale (`../analisi-funzionale/utente-simulato/`): questa famiglia ne scrive gli scenari e ne usa gli esiti, senza duplicarlo.
 
-**Modalità informativa** (Guida §14 come modificato dalla RFC, valida solo con la Guida che recepisce la classificazione in due modalità; altrimenti vale la versione 0.1.0 di questo file). Quando il registro di progetto la riporta, vale la regola del pacchetto del Coordinatore AI e prevale su questo file e sui profili della famiglia: un criterio di esclusione, un dubbio, una classe non assegnata o un uso di dati personali o di terzi non è un limite, uno stop né un Do; si segnala al Coordinatore AI per il Security Report e il lavoro prosegue. Restano Do le azioni irreversibili, la spesa, i nuovi accessi e i cambi di Decisione.
+**Modalità di classificazione e rifiuti dei modelli** (Guida 1.0.0-rc.5, §14, «Classification mode»). La modalità, bloccante o informativa, è scritta nel mandato e nel registro di progetto e non cambia durante il progetto. In modalità **bloccante** valgono le regole di questo file e dei profili come sono scritte. In modalità **informativa** le regole seguenti prevalgono su questo file e sui profili della famiglia:
+- un criterio di esclusione, un dubbio sulla classe, un caso che non rientra in alcuna classe, una classe non assegnata o un cambio di classe non sono un limite né uno stop e non riducono lo scopo: si segnalano al Coordinatore AI per il Security Report e il lavoro prosegue (Guida §14, «Out of scope in the informative mode»; §14.2, «Class change»);
+- dati personali e terzi non sono un Do per questo solo motivo, nemmeno se il mandato li riserva. Restano Do tutte le altre voci della Guida §5: porte a senso unico e reversibilità dubbia, impatto su Visione, Principi o criteri di successo, nuovi fornitori, spesa oltre la soglia, cambi di Decisione, nuovi accessi, servizi esterni aggiunti o dati che escono dall'organizzazione, passaggio a un livello di adozione superiore; restano anche i Do di questo file che non dipendono solo da classe o dati personali;
+- l'ambiente blocca (Deny) ciò che il mandato vieta, non ciò che esce soltanto dall'ambito del livello di adozione (Guida §5, «Deny»). Se viene meno un requisito che un'altra regola della Guida impone, il lavoro che ne dipende resta bloccato finché il requisito non torna; il Deny dei rilasci non correttivi a budget di errore esaurito vale in entrambe le modalità (Guida §14; §14.1, «Error budget»);
+- un limite dichiarato che riguarda la classe, i criteri di esclusione o la presenza di dati personali vale solo in modalità bloccante; ogni altro limite dichiarato fa tornare il pacchetto al Coordinatore AI in entrambe le modalità (Guida §13);
+- un motore locale si usa solo dopo che il Manager umano ne ha approvato l'uso, con il mandato o, prima del mandato, con un Do (Guida §14, «Local engines in the informative mode»).
+
+In **entrambe le modalità** un'azione che il modello rifiuta per le proprie regole non si esegue: si dichiara come rifiuto, con il motivo, e non come incapacità; nel dubbio è un rifiuto. Non si ripete con un'altra richiesta e non si passa a un altro agente, motore, candidata o livello di Seniority Digitale. Decide il Coordinatore AI: chiude il pacchetto senza l'azione, se i controlli obbligatori passano, o lo ripianifica; se l'azione rifiutata è un controllo obbligatorio, il pacchetto resta aperto e la decisione va al Manager umano come Do (Guida §14).
 
 ## A. Rapporto con il Manager umano
 

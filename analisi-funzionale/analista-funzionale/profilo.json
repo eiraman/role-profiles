@@ -4,7 +4,7 @@
   "nome": "Analista funzionale",
   "versione": "0.4.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, il giro di domande della Scoperta (§8), la modalità di classificazione (§14) e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -200,7 +200,7 @@
     "cambi di scopo, Principi o criteri di successo",
     "cambi di Decisione",
     "esito negativo del POC o POC che richiede nuovi accessi o spesa",
-    "uso di dati personali di terzi",
+    "uso di dati personali di terzi (in modalità informativa non per questo solo motivo: va nel Security Report)",
     "spesa oltre soglia",
     "accettazione UAT"
   ],
@@ -294,7 +294,7 @@
       "task": "Risposta a un giro del Design Thinking Facilitator",
       "deliverable": "posizione dell'analista con le evidenze degli utenti",
       "seniority": "SD3",
-      "note": "In independent context, senza le risposte degli altri membri."
+      "note": "In independent context, senza le risposte degli altri membri. Comprende la risposta al prompt del giro di domande (Guida 1.0.0-rc.5, §8, «Question round»)."
     },
     {
       "id": "T14",

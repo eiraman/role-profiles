@@ -6,7 +6,7 @@
   "nome": "User Persona (modello)",
   "versione": "0.4.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto e il ripiego della Seniority Digitale; la prima risposta alle domande del gruppo (CR-023) vale solo con la Guida che la recepisce",
+  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, il giro di domande della Scoperta (§8), i motori locali e i rifiuti dei modelli (§14) e il ripiego della Seniority Digitale",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -184,7 +184,7 @@
     },
     {
       "strumento": "controllo delle prime risposte",
-      "uso": "Obbligatorio prima della consegna al Facilitatore: ogni domanda ha risposta, fonte e confidenza; un'«alta» senza citazione blocca la consegna."
+      "uso": "Obbligatorio prima della consegna al Facilitatore: ogni domanda ha risposta, fonte e confidenza; un'«alta» senza una citazione che risponde alla domanda blocca la consegna."
     }
   ],
   "scritture_consentite": [
@@ -215,7 +215,7 @@
       "task": "Esigenze della persona per il Discovery group (motore locale; ripiego: configurazione della riga)",
       "deliverable": "obiettivi, ostacoli ed esito atteso, con fonte o ipotesi da verificare",
       "seniority": "SD3",
-      "note": "Motore del ruolo nella Scoperta: il motore locale, con le regole di _seniority/MOTORE-LOCALE.md; finché non è qualificato l'esito è «non verificato da motore qualificato».",
+      "note": "Motore del ruolo nella Scoperta: il motore locale, se il mandato lo ammette e, in modalità informativa, solo dopo l'approvazione del Manager umano con il mandato o con un Do (Guida 1.0.0-rc.5, §14); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché non è qualificato l'esito è «non verificato da motore qualificato».",
       "motore": "Gemma 4 31B (densa, locale)"
     },
     {
@@ -223,7 +223,7 @@
       "task": "Risposta a un giro del Design Thinking Facilitator (motore locale; ripiego: configurazione della riga)",
       "deliverable": "posizione della persona sul prompt del giro",
       "seniority": "SD3",
-      "note": "In independent context. Motore del ruolo nella Scoperta: il motore locale, con le regole di _seniority/MOTORE-LOCALE.md; finché non è qualificato l'esito è «non verificato da motore qualificato».",
+      "note": "In independent context. Motore del ruolo nella Scoperta: il motore locale, se il mandato lo ammette e, in modalità informativa, solo dopo l'approvazione del Manager umano con il mandato o con un Do (Guida 1.0.0-rc.5, §14); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché non è qualificato l'esito è «non verificato da motore qualificato».",
       "motore": "Gemma 4 31B (densa, locale)"
     },
     {
@@ -231,7 +231,7 @@
       "task": "Osservazioni su un MOC (mock-up) (motore locale; ripiego: configurazione della riga)",
       "deliverable": "osservazioni della persona collegate alle sue esigenze",
       "seniority": "SD2",
-      "note": "Motore del ruolo nella Scoperta: il motore locale, con le regole di _seniority/MOTORE-LOCALE.md; finché non è qualificato l'esito è «non verificato da motore qualificato». Per un mock-up in forma di immagine serve la capacità visiva, da verificare nella qualificazione; altrimenti ripiego.",
+      "note": "Motore del ruolo nella Scoperta: il motore locale, se il mandato lo ammette e, in modalità informativa, solo dopo l'approvazione del Manager umano con il mandato o con un Do (Guida 1.0.0-rc.5, §14); regole di _seniority/MOTORE-LOCALE.md; un rifiuto non apre il ripiego; finché non è qualificato l'esito è «non verificato da motore qualificato». Per un mock-up in forma di immagine serve la capacità visiva, da verificare nella qualificazione; altrimenti ripiego.",
       "motore": "Gemma 4 31B (densa, locale)"
     },
     {
@@ -267,7 +267,7 @@
       "task": "Prima risposta alle domande del gruppo",
       "deliverable": "per ogni domanda risposta breve, fonte e confidenza (alta, media, bassa)",
       "seniority": "SD3",
-      "note": "In independent context. La confidenza segue la fonte."
+      "note": "In independent context. La confidenza segue la fonte. Resta sulla configurazione della riga, non sul motore locale, finché il banco non mostra che il motore locale assegna bene la confidenza (decisione CR-023)."
     }
   ]
 }

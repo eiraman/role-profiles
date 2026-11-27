@@ -26,7 +26,10 @@ L = {
    missing="mancante", nav_view="Vista", nav_docs="Documenti di progetto", docs_title="Documenti di progetto", docs_hint="Documenti strategici e manageriali del progetto. I documenti tecnici restano agli agenti.", strategic="Strategici", managerial="Manageriali", absent="non ancora prodotto", refused="non mostrato: percorso non ammesso", back="Torna ai documenti", d_mandato="Mandato", d_decisioni="Registro delle decisioni", d_piano="High Level Plan", d_arch="High Level Architectural View", d_rischi="Risk Log", d_exec="Executive Description", d_perf="Performance Analysis", d_ciclo="Revisione del ciclo", tree="Albero del progetto", tree_hint="Clicca un Work Package per vederne deliverable e squad. Sui rami: stima di costo per eseguirlo.", done_s="completato", prog_s="in corso", todo_s="da fare", est="Stima", actual="Costo effettivo", deliverable="Deliverable", squad="AI Squad", role="Ruolo", profile="Role Profile", model="Modello", reasoning="Ragionamento", desc="Descrizione", progress="Avanzamento", legend_done="Completati", legend_prog="In corso, con i controlli obbligatori superati sul totale", checks="controlli obbligatori superati", gov_share="Quota di governo", off_cat="Task fuori catalogo", of="su", unk="sconosciuta", no_den="avanzamento non dichiarato: mancano i controlli superati e il totale", auto_phase="Lavoro di costruzione avviato con una fase non chiusa", ph_disc="Scoperta", ph_design="Design e planning", auto_nophase="Pacchetti in corso o completati senza la fase dichiarata: non si può verificare che Scoperta e Design e planning siano chiusi.", legend_todo="Da fare", unknown_spend="Spesa non misurata: il tetto non è verificabile.", auto_late="Decisione scaduta senza risposta", auto_80="La spesa ha superato l'80% del tetto.", auto_100="La spesa ha raggiunto il tetto: nessun nuovo lavoro.", auto_missing="Decisione incompleta (mancano scadenza o effetto della mancata risposta)",
    foot="Pagina generata dal Coordinatore AI dal registro del progetto. Per rispondere a una decisione scrivi nella chat della sessione.",
    rp_title="Role Profile attivati dal Coordinatore", rp_hint="I ruoli AI che il Coordinatore ha attivato per eseguire il progetto, con il motore usato e il lavoro svolto.", rp_qual="Qualificazione", rp_tasks="Compiti", rp_wp="Work Package", rp_runs="Esecuzioni", rp_none="Nessun Role Profile registrato.",
-   expired="scaduta", today="oggi", days="giorni", do_count="Do in questo ciclo", ref="riferimento", runs="Esecuzioni registrate", no_reg="Registro delle esecuzioni non presente."),
+   expired="scaduta", today="oggi", days="giorni", do_count="Do in questo ciclo", ref="riferimento", runs="Esecuzioni registrate", no_reg="Registro delle esecuzioni non presente.",
+   mode="Controlli di sicurezza", mode_block="bloccante: fermano il lavoro quando trovano un rischio", mode_info="informativa: annotano i rischi nel Security Report, di cui rispondi tu", mode_none="modalità non registrata",
+   d_sr="Security Report", sr_link="Leggi il Security Report", sr_date="aggiornato al", cls_sr="nel Security Report",
+   auto_nomode="La modalità dei controlli di sicurezza non è registrata: il mandato deve riportarla.", auto_nosr="Modalità informativa: il Security Report corrente non è disponibile nella cartella del progetto."),
  "en": dict(title="Manager view", proj="Project", phase="Phase", cls="Class", lvl="Level", cycle="Cycle",
    review="review", updated="Updated", bad="Bad news first", none_bad="No bad news recorded.",
    dos="Decisions for you", none_do="No decision pending.", deadline="Deadline", rec="Recommendation",
@@ -37,7 +40,10 @@ L = {
    missing="missing", nav_view="View", nav_docs="Project documents", docs_title="Project documents", docs_hint="Strategic and managerial documents of the project. Technical documents stay with the agents.", strategic="Strategic", managerial="Managerial", absent="not produced yet", refused="not shown: path not allowed", back="Back to documents", d_mandato="Mandate", d_decisioni="Decision log", d_piano="High Level Plan", d_arch="High Level Architectural View", d_rischi="Risk Log", d_exec="Executive Description", d_perf="Performance Analysis", d_ciclo="Cycle review", tree="Project tree", tree_hint="Click a Work Package to see its deliverables and squad. On the branches: estimated cost to run it.", done_s="completed", prog_s="in progress", todo_s="to do", est="Estimate", actual="Actual cost", deliverable="Deliverables", squad="AI Squad", role="Role", profile="Role Profile", model="Model", reasoning="Reasoning", desc="Description", progress="Progress", legend_done="Completed", legend_prog="In progress, with mandatory checks passed over the total", checks="mandatory checks passed", gov_share="Governance share", off_cat="Tasks outside the catalogue", of="of", unk="unknown", no_den="progress not declared: checks passed and total are missing", auto_phase="Build work started with a phase not closed", ph_disc="Discovery", ph_design="Design and planning", auto_nophase="Packages in progress or completed without a declared phase: it cannot be checked that Discovery and Design and planning are closed.", legend_todo="To do", unknown_spend="Spend not measured: the cap cannot be checked.", auto_late="Decision overdue without an answer", auto_80="Spend is over 80% of the cap.", auto_100="Spend has reached the cap: no new work.", auto_missing="Incomplete decision (deadline or effect of no answer missing)",
    foot="Page generated by the AI Coordinator from the project registry. To answer a decision, write in the session chat.",
    rp_title="Role Profiles activated by the Coordinator", rp_hint="The AI roles the Coordinator activated to run the project, with the engine used and the work done.", rp_qual="Qualification", rp_tasks="Tasks", rp_wp="Work Packages", rp_runs="Runs", rp_none="No Role Profile recorded.",
-   expired="overdue", today="today", days="days", do_count="Do this cycle", ref="reference", runs="Recorded runs", no_reg="No run log available."),
+   expired="overdue", today="today", days="days", do_count="Do this cycle", ref="reference", runs="Recorded runs", no_reg="No run log available.",
+   mode="Security checks", mode_block="blocking: they stop the work when they find a risk", mode_info="informative: they record the risks in the Security Report, for which you answer", mode_none="mode not recorded",
+   d_sr="Security Report", sr_link="Read the Security Report", sr_date="updated on", cls_sr="in the Security Report",
+   auto_nomode="The mode of the security checks is not recorded: the mandate must state it.", auto_nosr="Informative mode: the current Security Report is not available in the project folder."),
 }
 
 import re as _re
@@ -70,6 +76,20 @@ def money(v, cur):
         return f"{float(v):,.2f} {cur}".replace(",", " ")
     except Exception:
         return str(v)
+
+def mode_of(s):
+    """Modalità della classificazione: «bloccante», «informativa» oppure None se non registrata o non riconosciuta."""
+    m = " ".join(str(s.get("modalita") or s.get("mode") or "").lower().split())
+    if m in ("bloccante", "blocking"): return "bloccante"
+    if m in ("informativa", "informative"): return "informativa"
+    return None
+
+def sr_info(s):
+    """(percorso relativo a eiraman/, data) della copia corrente del Security Report."""
+    sr = s.get("security_report")
+    if isinstance(sr, dict): return (str(sr.get("percorso") or "security-report.md"), sr.get("aggiornato"))
+    if isinstance(sr, str) and sr.strip(): return (sr.strip(), None)
+    return ("security-report.md", None)
 
 
 def _slug(x):
@@ -359,6 +379,11 @@ def collect_docs(s, reg, t):
         if os.path.isdir(cdir):
             for f in sorted(os.listdir(cdir), reverse=True):
                 if f.endswith(".md"): items.append((f"ciclo/{f}", f'{t["d_ciclo"]} · {f[:-3]}', "manageriale", None))
+    if mode_of(s) == "informativa":
+        srel = sr_info(s)[0]
+        known = {_safe_rel(reg, x[0]) for x in items}
+        if _safe_rel(reg, srel) is None or _safe_rel(reg, srel) not in known:
+            items.insert(1, (srel, t["d_sr"], "manageriale", None))
     res = []
     for rel, title, lvl, nota in items:
         r = _safe_rel(reg, rel)
@@ -411,8 +436,25 @@ def main():
 
     bad = [x for x in as_list(s.get("cattive_notizie")) if x not in (None, "")]
 
+    md = mode_of(s)
+    map_docs(collect_docs(s, reg, t))
+    sr_rel_raw, sr_date = sr_info(s)
+    sr_rel = _safe_rel(reg, sr_rel_raw)
+    sr_page = _DOCMAP.get(sr_rel) if (md == "informativa" and sr_rel) else None
+    sr_html = ""
+    if sr_page:
+        sr_html = (f'<a href="doc/{e(sr_page)}">{e(t["sr_link"])}</a>'
+                   + (f' <span class="muted">· {e(t["sr_date"])} {e(sr_date)}</span>' if sr_date else ""))
+    mode_txt = {"bloccante": t["mode_block"], "informativa": t["mode_info"]}.get(md, t["mode_none"])
+    if md == "informativa" and s.get("classe") in (None, ""):
+        cls_html = (f'<a href="doc/{e(sr_page)}">{e(t["cls_sr"])}</a>' if sr_page else e(t["cls_sr"]))
+    else:
+        cls_html = e(s.get("classe"))
+
     dos_open, dos_done = [], []
     auto = phase_alerts(s, t)
+    if md is None: auto.insert(0, t["auto_nomode"])
+    elif md == "informativa" and not sr_page: auto.insert(0, t["auto_nosr"])
     for d in as_list(s.get("decisioni")):
         d = as_dict(d)
         st = str(d.get("stato") or "aperto").strip().lower()
@@ -492,13 +534,14 @@ th{{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;l
 .wplist{{display:grid;gap:8px;margin-top:12px}}.wpc{{border:1px solid var(--rule);border-radius:8px;padding:8px 12px}}.wpc summary{{cursor:pointer}}
 .wpc.sel{{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}}
 .nav{{display:flex;gap:18px;font-size:14px}}.nav a{{color:var(--accent)}}.doc h2,.doc h3,.doc h4{{margin:18px 0 8px}}.doc li.i1{{margin-left:20px}}.doc li.i2{{margin-left:40px}}.doc li.i3{{margin-left:60px}}.doc img{{max-width:100%;height:auto;background:#fff;border-radius:6px}}.doc pre{{overflow-x:auto;background:var(--bg);padding:10px;border-radius:6px}}.doclist li{{margin:6px 0}}.doclist .na{{color:var(--muted)}}
-.tbl{{overflow-x:auto}}footer{{color:var(--muted);font-size:13px}}
+.mode{{margin:8px 0 0}}.mode a{{color:var(--accent)}}.tbl{{overflow-x:auto}}footer{{color:var(--muted);font-size:13px}}
 </style></head><body><div class="wrap">
 <nav class="nav"><b>{e(t['nav_view'])}</b><a href="documenti.html">{e(t['nav_docs'])}</a></nav>
 <header><h1>{e(t['title'])} · {e(s.get('progetto'))}</h1>
-<div class="top"><span>{e(t['phase'])}: <b>{e(s.get('fase'))}</b></span><span>{e(t['cls'])}: <b>{e(s.get('classe'))}</b></span>
+<div class="top"><span>{e(t['phase'])}: <b>{e(s.get('fase'))}</b></span><span>{e(t['cls'])}: <b>{cls_html}</b></span>
 <span>{e(t['lvl'])}: <b>{e(s.get('livello'))}</b></span><span>{e(t['cycle'])}: <b>{e(cyc.get('numero'))}</b> ({e(cyc.get('inizio'))} → {e(t['review'])} {e(cyc.get('revisione'))})</span>
 <span>{e(t['updated'])}: <b>{e(s.get('aggiornato'))}</b></span></div>
+<p class="mode"><span class="lbl">{e(t['mode'])}</span> <b>{e(mode_txt)}</b>{(' · ' + sr_html) if sr_html else ""}</p>
 {f'<p class="muted">{e(t["vision"])}: {e(s.get("visione"))}</p>' if s.get("visione") else ""}</header>
 <section class="card bad"><h2>{e(t['bad'])}</h2><ul>{bad_html}</ul></section>
 <div class="grid">
@@ -529,6 +572,15 @@ th{{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;l
     write_docs(s, reg, t, out_dir, page)
     print(out)
 
+def map_docs(docs):
+    """Nome della pagina generata per ogni documento presente: lo stesso in index.html e in documenti.html."""
+    _DOCMAP.clear(); used = set()
+    for d in docs:
+        if d["ok"]:
+            base = _doc_page(d["rel"])[:-5]; name = base + ".html"; k = 2
+            while name.lower() in used: name = f"{base}-{k}.html"; k += 1
+            used.add(name.lower()); _DOCMAP[d["rel"]] = name
+
 def write_docs(s, reg, t, out_dir, page):
     head = page.split("<body>", 1)[0].replace(f"<title>", "<title>", 1)
     _tt = f"<title>{e(t['docs_title'])} · {e(s.get('progetto'))}</title>"
@@ -537,12 +589,7 @@ def write_docs(s, reg, t, out_dir, page):
     for f in os.listdir(ddir):
         if f.endswith(".html"): os.remove(os.path.join(ddir, f))
     docs = collect_docs(s, reg, t)
-    _DOCMAP.clear(); used = set()
-    for d in docs:
-        if d["ok"]:
-            base = _doc_page(d["rel"])[:-5]; name = base + ".html"; k = 2
-            while name.lower() in used: name = f"{base}-{k}.html"; k += 1
-            used.add(name.lower()); _DOCMAP[d["rel"]] = name
+    map_docs(docs)
     def li(d):
         if not d["ok"]:
             return f'<li class="na">{e(d["title"])} · {e(t["refused"] if d.get("refused") else t["absent"])}</li>'
