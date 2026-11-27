@@ -2,9 +2,9 @@
   "id": "technical-writer",
   "famiglia": "analisi-funzionale",
   "nome": "Technical writer",
-  "versione": "0.3.0",
+  "versione": "0.3.1",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per il ripiego della Seniority Digitale; documenti, scheda di progetto e pacchetto per terzi nella modalità informativa (§9, §12, §14)",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»; §9, §12, §14 (documenti, scheda di progetto e pacchetto per terzi nella modalità informativa)",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -24,9 +24,9 @@
       "url": "https://www.iso.org/search.html?q=24495-1"
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§8 regole di redazione 1-12, Rilascio, Artefatti di governo, Misura; §10 set minimo; §11 pubblicazione",
-      "url": null
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
+      "riferimento": "§12 Writing rules (da Business language a Qualified templates), Cost report, Percentages; §9 High Level Architectural View, Risk Log, Log Tracker, Manager View, Shape of control artifacts; §14.1 Release documents, Operational documents; §5 Do (pubblicazione esterna); la «Misura» (minuti di lettura, domande di chiarimento, omissioni intercettate) è una regola del profilo, senza corrispondente nella Guida",
+      "url": "https://github.com/eiraman/guide"
     }
   ],
   "motori": [

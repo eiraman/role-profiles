@@ -3,9 +3,9 @@
   "famiglia": "_modello",
   "modello_di_istanza": true,
   "nome": "Business Analyst (modello)",
-  "versione": "0.3.0",
+  "versione": "0.3.1",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, il giro di domande della Scoperta (§8), la modalità di classificazione (§14) e il ripiego della Seniority Digitale",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §3 «Context Consistency and Independence» e §7 (blinding), §8 «Question round», §14 «Classification mode», §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -37,8 +37,8 @@
       "url": "https://www.strategyzer.com/library"
     },
     {
-      "fonte": "The Eiraman Guide",
-      "riferimento": "1.0.0-rc.1 §7 High tier, §8 Discovery, §9 Vision; 1.0.0-rc.2 (RFC 0001) Context Consistency and Independence, Discovery group",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
+      "riferimento": "§7 Role tiers (High tier); §8 Discovery group, Business Analyst and User Personas; §9 Vision; §3 Context Consistency and Independence",
       "url": "https://github.com/eiraman/guide"
     }
   ],
@@ -222,7 +222,7 @@
       "task": "Risposta a un giro del Design Thinking Facilitator",
       "deliverable": "posizione del Business Analyst sul prompt del giro",
       "seniority": "SD4",
-      "note": "In independent context. Comprende la risposta al prompt del giro di domande (Guida 1.0.0-rc.5, §8, «Question round»)."
+      "note": "In independent context. Comprende la risposta al prompt del giro di domande (Guida 1.0.0-rc.6, §8, «Question round»)."
     },
     {
       "id": "T06",

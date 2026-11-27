@@ -1,9 +1,9 @@
 {
   "id": "finops-practitioner",
   "nome": "FinOps Practitioner",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per la revisione del ciclo (§8) e il ripiego della Seniority Digitale",
+  "versione": "0.2.1",
+  "data": "2026-11-27",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §8 «Governance cycle», §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "famiglia": "finops",
   "piramide": "medio",
@@ -22,9 +22,9 @@
       "url": "../FAMIGLIA.md"
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§5 Wave e ciclo di governo; §8 Rilascio; §3 E5",
-      "url": "registro del metodo, framework/Eiraman.md"
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
+      "riferimento": "§8 Wave, Governance cycle; §12 Cost report, Percentages; §5 E5 Drift budget",
+      "url": "https://github.com/eiraman/guide"
     },
     {
       "fonte": "FinOps Framework · Persona FinOps Practitioner",

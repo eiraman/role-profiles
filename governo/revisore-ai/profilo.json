@@ -2,9 +2,9 @@
   "id": "revisore-ai",
   "famiglia": "governo",
   "nome": "Revisore AI",
-  "versione": "0.4.0",
+  "versione": "0.5.0",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per le regole di contesto, la misura E6 e il ripiego della Seniority Digitale; Guida 1.0.0-rc.5 per le due modalità di classificazione, i rifiuti dei modelli e il giro di domande della Scoperta",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §3 «Context Consistency and Independence» e §7 (blinding), §5 E6 (misura), §7.1 «Fallback», §8 «Question round», §14 «Classification mode» (due modalità di classificazione, rifiuti dei modelli)",
   "stato": "bozza non qualificata",
   "piramide": "medio",
   "fasi": [
@@ -17,17 +17,17 @@
   "descrizione_breve": "Lavora in parallelo al Coordinatore AI, in hard blinding e su un modello diverso (obbligatorio per i controlli del process reviewer); monitora i KPI del framework e di progetto e riporta tutti gli scostamenti al Coordinatore AI, quelli critici o non accolti anche al Manager umano.",
   "competenze_fonti": [
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.1",
-      "riferimento": "§4 Process reviewer; §5 E6 Measurement e Calibration; §6 K8 High divergence; §5 E6 Measurement nel testo della 1.0.0-rc.3 (RFC 0003)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
+      "riferimento": "§4 Process reviewer; §5 E6 Measurement e Calibration; §6 K8 High divergence",
       "url": "https://github.com/eiraman/guide"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6 (RFC 0001)",
       "riferimento": "principio di Context Consistency and Independence; hard blinding, soft blinding, context RACI; AI Reviewer",
       "url": "https://github.com/eiraman/guide"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.5 (RFC 0005)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6 (RFC 0005)",
       "url": "https://github.com/eiraman/guide",
       "riferimento": "§5 Do ed E5 nella modalità informativa; §8 Question round, Gates; §12 Security Report; §14 Classification mode, Security Officer in the informative mode, Local engines in the informative mode (rifiuti dei modelli e verifica obbligatoria rifiutata)"
     },

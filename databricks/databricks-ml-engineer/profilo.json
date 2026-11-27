@@ -2,9 +2,9 @@
   "id": "databricks-ml-engineer",
   "nome": "ML Engineer Databricks",
   "nome_en": "Databricks ML engineer",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per il ripiego della Seniority Digitale",
+  "versione": "0.2.1",
+  "data": "2026-11-27",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "famiglia": "databricks",
   "regole_famiglia": "../FAMIGLIA.md",
@@ -60,9 +60,9 @@
       "url": null
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§3, §4 bis, §5, §6, §6 bis, §7, §9",
-      "url": null
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
+      "riferimento": "§4 Specialist AI roles; §5 Do, Delegate; §7 Role tiers; §8 Phases and decisions; §9 Definition of done; §9.1 DevSecOps practices; §10 Brain; §11 Untrusted tasks, Security Risk Posture, Data classes per provider",
+      "url": "https://github.com/eiraman/guide"
     }
   ],
   "motori": [
@@ -225,7 +225,7 @@
     "rilascio in produzione di un modello o di un endpoint",
     "uso di un modello di fondazione esterno o di un nuovo provider",
     "throughput provisionato o capacità GPU riservata",
-    "uso di dati personali nel training",
+    "uso di dati personali nel training, in modalità bloccante oppure se il dato esce dall'organizzazione (Guida §5, «Do»)",
     "modello che decide con effetto su persone"
   ],
   "esegue_dopo_do": [

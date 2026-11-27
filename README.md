@@ -83,7 +83,7 @@ the AI reviewers of the six governance domains (`governo/revisore-sicurezza/`, `
 Principles and Decisions of their own domain;
 they are AI agents and do not replace the human reviewer of the domain. The family also holds the
 **Security Officer** (`governo/security-officer/`), the AI compliance role of the applicability gate. In the
-blocking mode of the Guide 1.0.0-rc.5, §14, it
+blocking mode of the Guide 1.0.0-rc.6, §14, it
 assigns the project class with a versioned checklist and, when the class exceeds the level or an exclusion
 is triggered, delivers a risk profile with treatments that bring the scope back within the permitted class,
 only where the re-classification shows it; it also says when the Human Manager's decision to run a class 1

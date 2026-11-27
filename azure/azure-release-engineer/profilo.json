@@ -1,9 +1,9 @@
 {
   "id": "azure-release-engineer",
   "nome": "Release engineer Azure",
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.3 per il ripiego della Seniority Digitale",
+  "versione": "0.2.1",
+  "data": "2026-11-27",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "basso",
   "fasi": [
@@ -33,9 +33,9 @@
       "url": null
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§3, §5 (ciclo di produzione), §6, §7",
-      "url": null
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
+      "riferimento": "§5 Do; §8 Phases and decisions; §9 Definition of done, Deterministic anchors; §11 Security Risk Posture, Run traceability",
+      "url": "https://github.com/eiraman/guide"
     }
   ],
   "motori": [

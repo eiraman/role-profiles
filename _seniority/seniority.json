@@ -1,7 +1,7 @@
 {
-  "versione": "0.2.0",
-  "data": "2026-11-26",
-  "nota": "Mappa della Seniority Digitale: livello -> configurazione di attivazione. La corrispondenza tra livelli e configurazioni è una valutazione dei manutentori della mappa, non l'esito di una prova (Guida 1.0.0-rc.3, §7.1, «Catalogue»). I nomi di modello seguono la documentazione dei fornitori al 25/11/2026 e vanno riverificati a ogni cambio di modello. Una configurazione è «provata» quando il registro conserva una prova che esegue i compiti del livello; le configurazioni con \"provata\": false non sono ancora state provate.",
+  "versione": "0.2.1",
+  "data": "2026-11-27",
+  "nota": "Mappa della Seniority Digitale: livello -> configurazione di attivazione. La corrispondenza tra livelli e configurazioni è una valutazione dei manutentori della mappa, non l'esito di una prova (Guida 1.0.0-rc.6, §7.1, «Catalogue»). I nomi di modello seguono la documentazione dei fornitori al 25/11/2026 e vanno riverificati a ogni cambio di modello. Una configurazione è «provata» quando il registro conserva una prova che esegue i compiti del livello; le configurazioni con \"provata\": false non sono ancora state provate.",
   "fallback": "SD3",
   "fallback_indicativo": true,
   "fallback_eccezione": {"livello": "SD4", "compiti": "architettura, sicurezza, effetti difficili da annullare"},

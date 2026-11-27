@@ -2,9 +2,9 @@
   "id": "analista-funzionale",
   "famiglia": "analisi-funzionale",
   "nome": "Analista funzionale",
-  "versione": "0.4.0",
+  "versione": "0.4.1",
   "data": "2026-11-27",
-  "metodo": "Eiraman 0.3; Guida 1.0.0-rc.5 per le regole di contesto, il giro di domande della Scoperta (§8), la modalità di classificazione (§14) e il ripiego della Seniority Digitale",
+  "metodo": "The Eiraman Guide 1.0.0-rc.6; §3 «Context Consistency and Independence» e §7 (blinding), §8 «Question round», §14 «Classification mode», §7.1 «Fallback»",
   "stato": "bozza non qualificata",
   "piramide": "alto",
   "fasi": [
@@ -51,12 +51,12 @@
       "url": "https://cucumber.io/docs/gherkin/reference/"
     },
     {
-      "fonte": "Specifica Eiraman 0.3",
-      "riferimento": "§1, §4 K1-K2, §4 bis, §5, §6 P2, §6 bis, §8, §10, §11",
-      "url": null
+      "fonte": "The Eiraman Guide 1.0.0-rc.6",
+      "riferimento": "§2 Management applied to AI; §6 K1, K2; §7 Role tiers; §8 Discovery at every start, Question round; §8.1 Discovery procedure; §9 Definition of ready, Product Backlog, Decisions; §10 Backbone, Brain, Limbs and Senses, Hairs; §12 Writing rules, Qualified templates; §14 Applicability gate, Project classes; §14.1 Release documents; §15 Proposal",
+      "url": "https://github.com/eiraman/guide"
     },
     {
-      "fonte": "The Eiraman Guide 1.0.0-rc.3 (RFC 0001)",
+      "fonte": "The Eiraman Guide 1.0.0-rc.6 (RFC 0001)",
       "riferimento": "Context Consistency and Independence; soft blinding e context RACI; Discovery group",
       "url": "https://github.com/eiraman/guide"
     }
@@ -231,7 +231,7 @@
       "task": "Input al gate di applicabilità",
       "deliverable": "segnalazione di classi di dati, utenti, esposizione e indizi di esclusione",
       "seniority": "SD4",
-      "note": "Giudizio su criteri di esclusione del §10."
+      "note": "Giudizio su criteri di esclusione (Guida §14, «Out of scope at any level»)."
     },
     {
       "id": "T05",
@@ -243,7 +243,7 @@
     {
       "id": "T06",
       "task": "Product Backlog e workstream etichettati per componente",
-      "deliverable": "backlog ordinato per componente e priorità (spec §6 bis)",
+      "deliverable": "backlog ordinato per componente e priorità (Guida §9, «Product Backlog»; §10)",
       "seniority": "SD3",
       "note": "Con l'architetto applicativo."
     },
@@ -294,7 +294,7 @@
       "task": "Risposta a un giro del Design Thinking Facilitator",
       "deliverable": "posizione dell'analista con le evidenze degli utenti",
       "seniority": "SD3",
-      "note": "In independent context, senza le risposte degli altri membri. Comprende la risposta al prompt del giro di domande (Guida 1.0.0-rc.5, §8, «Question round»)."
+      "note": "In independent context, senza le risposte degli altri membri. Comprende la risposta al prompt del giro di domande (Guida 1.0.0-rc.6, §8, «Question round»)."
     },
     {
       "id": "T14",
