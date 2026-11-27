@@ -8,7 +8,7 @@
 2. Copia nella cartella:
    - `CONTROLLORE.md` e `STATO.md`;
    - `tools/vista_manager.py`, il generatore della Vista del Manager;
-   - la Guida, come `guide/EIRAMAN-GUIDE.md` (The Eiraman Guide 1.0.0-rc.5, testo canonico inglese) e `guide/EIRAMAN-GUIDE.it.md` (traduzione italiana curata).
+   - la Guida, come `guide/EIRAMAN-GUIDE.md` (The Eiraman Guide 1.0.0-rc.6, testo canonico inglese) e `guide/EIRAMAN-GUIDE.it.md` (traduzione italiana curata).
 3. Apri una sessione di **Claude Code** o di **Codex** in quella cartella.
 4. Incolla questo messaggio, sostituendo la parte tra parentesi:
 

@@ -19,7 +19,7 @@ versions" of each release. This file starts with 0.13.0.
 ## [0.13.0] - 2026-11-27
 
 Scope: Change Request CR-030 of the method project, Work Package WP-30B. The profile's normative base becomes
-The Eiraman Guide 1.0.0-rc.5 alone, instead of the Italian specification 0.3 plus four blocks of Guide deltas.
+The Eiraman Guide 1.0.0-rc.6 alone, instead of the Italian specification 0.3 plus four blocks of Guide deltas.
 
 Bump: MINOR, marked **breaking** (profile at 0.y.z; VERSIONING.md 2.2 and 2.6). The precedence rule is
 reversed: the specification 0.3 (`framework/Eiraman.md`) no longer prevails over the profile and is no longer
@@ -30,10 +30,10 @@ The profile stays **draft, not qualified**; no qualification case is added or re
 
 ### Changed
 
-- `CONTROLLORE.md`, header: "Metodo: The Eiraman Guide 1.0.0-rc.5" (was "Specifica Eiraman 0.3 e The Eiraman
+- `CONTROLLORE.md`, header: "Metodo: The Eiraman Guide 1.0.0-rc.6" (was "Specifica Eiraman 0.3 e The Eiraman
   Guide 1.0.0-rc.5").
-- `CONTROLLORE.md` §1: the AI Coordinator applies The Eiraman Guide 1.0.0-rc.5 (canonical English text; curated
-  Italian translation 1.0.0-rc.5+it.1); `guide/EIRAMAN-GUIDE.md` in the working folder, when present, prevails
+- `CONTROLLORE.md` §1: the AI Coordinator applies The Eiraman Guide 1.0.0-rc.6 (canonical English text; curated
+  Italian translation 1.0.0-rc.6+it.1); `guide/EIRAMAN-GUIDE.md` in the working folder, when present, prevails
   over the profile in a conflict. **Breaking** (was: the specification 0.3 in `framework/Eiraman.md` prevailed,
   except for the Guide rules listed in §1).
 - `CONTROLLORE.md` §1: the four delta blocks (Guide 1.0.0-rc.2 to rc.5, "on these points this profile prevails
@@ -44,7 +44,7 @@ The profile stays **draft, not qualified**; no qualification case is added or re
   to the mandate, the profile names the Guidance of the Extended Framework (`guidance/VALUES.md`, fallback SD3)
   or states its own indicative value (one page per decision record). The rule on the project that maintains the
   method, and the list of what the High Level Architectural View leaves out, are stated as profile rules.
-- `CONTROLLORE.md`: "Guida 1.0.0-rc.5, §N" is written "Guida §N", since the Guide 1.0.0-rc.5 is the base.
+- `CONTROLLORE.md`: "Guida 1.0.0-rc.5, §N" is written "Guida §N", since the Guide 1.0.0-rc.6 is the base.
 - `CONTROLLORE.md` §7: the hostile-input rule cites Guide §11, "Hostile-input test" (was "P4", a label with no
   source in the Guide or the specification 0.3).
 - `CONTROLLORE.md` §1 bis, §3 and §8: the local engine is referred to `_seniority/MOTORE-LOCALE.md` and to the
@@ -63,11 +63,19 @@ The profile stays **draft, not qualified**; no qualification case is added or re
 - `AVVIO.md`: the reference to the Guide is written "Guida §14" (was "Guida 1.0.0-rc.5, §14").
 - `AVVIO.md`: the kit carries the Guide as `guide/EIRAMAN-GUIDE.md` and `guide/EIRAMAN-GUIDE.it.md`, and the
   start message reads `guide/EIRAMAN-GUIDE.md` (was the specification as `framework/Eiraman.md`).
-- `STATO.md`: example `"metodo": "The Eiraman Guide 1.0.0-rc.5"` (was "Eiraman 0.3; Guida 1.0.0-rc.5"); the
+- `STATO.md`: example `"metodo": "The Eiraman Guide 1.0.0-rc.6"` (was "Eiraman 0.3; Guida 1.0.0-rc.5"); the
   denominator rule cites Guide §12 only.
+
+- Decision D-031 of the Human Manager: the release targets The Eiraman Guide 1.0.0-rc.6 (candidate), not rc.5.
+  rc.6 changes only Guide §2 and §15 and the Status line; numbering and labels are unchanged, so no rule of the
+  profile changes.
+- `CONTROLLORE.md` §2 bis: one parenthetical sentence cites Guide §2, "The method applies to itself" (the Human
+  Manager gives the direction, the AI Coordinator translates it into change requests, choices and suggestions,
+  the Human Manager decides by Do). It restates the existing procedure and adds no rule. Guide §15, "Measuring
+  the method", binds the maintainers of the method, not the AI Coordinator of a project: nothing is added for it.
 
 ### Open points
 
-- `CONTROLLORE.md` and `AVVIO.md` cite the curated Italian translation 1.0.0-rc.5+it.1
+- `CONTROLLORE.md` and `AVVIO.md` cite the curated Italian translation 1.0.0-rc.6+it.1
   (`guide/EIRAMAN-GUIDE.it.md`). It is not released yet: it ships with the next release of the `guide`
   repository, and this version depends on that release.
