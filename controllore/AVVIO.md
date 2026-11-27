@@ -8,12 +8,12 @@
 2. Copia nella cartella:
    - `CONTROLLORE.md` e `STATO.md`;
    - `tools/vista_manager.py`, il generatore della Vista del Manager;
-   - la specifica, come `framework/Eiraman.md`.
+   - la Guida, come `guide/EIRAMAN-GUIDE.md` (The Eiraman Guide 1.0.0-rc.6, testo canonico inglese) e `guide/EIRAMAN-GUIDE.it.md` (traduzione italiana curata).
 3. Apri una sessione di **Claude Code** o di **Codex** in quella cartella.
 4. Incolla questo messaggio, sostituendo la parte tra parentesi:
 
 ```text
-Leggi CONTROLLORE.md e framework/Eiraman.md. Da ora sei il Coordinatore AI Eiraman di questo progetto e io sono il Manager umano. Segui la procedura di avvio del profilo e apri la Vista del Manager. [Visione, se già disponibile: problema, utenti, beneficio atteso.]
+Leggi CONTROLLORE.md e guide/EIRAMAN-GUIDE.md. Da ora sei il Coordinatore AI Eiraman di questo progetto e io sono il Manager umano. Segui la procedura di avvio del profilo e apri la Vista del Manager. [Visione, se già disponibile: problema, utenti, beneficio atteso.]
 ```
 
 Per far partire il Coordinatore AI in automatico, rinomina o collega `CONTROLLORE.md` come istruzioni permanenti della cartella:
@@ -24,7 +24,7 @@ Per far partire il Coordinatore AI in automatico, rinomina o collega `CONTROLLOR
 
 **Security Officer.** Il suo profilo (`governo/security-officer`) ha un allegato, `ALLEGATO.md`, con la checklist, i criteri e il formato del rapporto di sicurezza: il Coordinatore AI lo consegna all'agente insieme a `PROFILO.md` e a `FAMIGLIA.md`. Lo strumento `attiva_profilo.py` oggi non lo include nel file di attivazione: va aggiunto a mano. Senza l'allegato il Security Officer non classifica.
 
-**Controlli di sicurezza: fermare o annotare.** Nel primo messaggio il Coordinatore AI ti chiede se i controlli di sicurezza devono fermare il lavoro quando trovano un rischio (modalità bloccante) o annotarlo in un rapporto, il Security Report, che ricevi con ogni rilascio e di cui rispondi tu (modalità informativa). Se non scegli, vale l'informativa quando usi il metodo per conto tuo, non per un'organizzazione né con un suo incarico, anche se lo strumento lo useranno altri, per esempio i tuoi clienti; vale la bloccante in ogni altro caso, o nel dubbio; le regole della tua organizzazione possono imporre la bloccante. La modalità vale per tutto il progetto: per cambiarla serve un nuovo progetto. Un motore AI che gira su questo computer si usa solo per i compiti su cui ha superato le prove (oggi nessuno) e dopo la tua approvazione, con il mandato o con una decisione che il Coordinatore AI ti chiede prima (Guida 1.0.0-rc.5, §14).
+**Controlli di sicurezza: fermare o annotare.** Nel primo messaggio il Coordinatore AI ti chiede se i controlli di sicurezza devono fermare il lavoro quando trovano un rischio (modalità bloccante) o annotarlo in un rapporto, il Security Report, che ricevi con ogni rilascio e di cui rispondi tu (modalità informativa). Se non scegli, vale l'informativa quando usi il metodo per conto tuo, non per un'organizzazione né con un suo incarico, anche se lo strumento lo useranno altri, per esempio i tuoi clienti; vale la bloccante in ogni altro caso, o nel dubbio; le regole della tua organizzazione possono imporre la bloccante. La modalità vale per tutto il progetto: per cambiarla serve un nuovo progetto. Un motore AI che gira su questo computer si usa solo per i compiti su cui ha superato le prove (oggi nessuno) e dopo la tua approvazione, con il mandato o con una decisione che il Coordinatore AI ti chiede prima (Guida §14).
 
 Per riprendere un progetto, apri una nuova sessione nella stessa cartella e scrivi: «Riprendi come Coordinatore AI Eiraman». Il registro in `eiraman/` conserva lo stato.
 
