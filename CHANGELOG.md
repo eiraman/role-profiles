@@ -14,12 +14,177 @@ and the version of **each profile** (field `versione` in `profilo.json`, repeate
 `PROFILO.md`). The profile template (`_modello/`) has no change-history section, and adding one would
 change the template every profile must follow, so per-profile changes are recorded here, in the table
 "Profile versions" of each release (VERSIONING.md, "Role Profiles").
+From 0.11.0 (decision D-VER-2) each artifact with a version of its own also has a `CHANGELOG.md` next to its
+version source; this file stays the summary of each release, with the table "Profile versions".
 
 The qualification state of a profile ("draft, not qualified", qualified, maintained, suspended) is not a
 version: it is recorded in the profile and in release notes, and a change of state alone does not bump
 the version.
 
 ## [Unreleased]
+
+## [0.11.0] - 2026-11-27
+
+Scope: Change Requests CR-030 (the Guide as the base of the registry: realignment of the AI Coordinator and of the
+profiles to The Eiraman Guide 1.0.0-rc.6) and CR-031 (change history per artifact) of the method project;
+decisions D-031 (the release targets the Guide 1.0.0-rc.6, not rc.5), D-031-B and D-VER-2 (one `CHANGELOG.md` per
+artifact of the registry). Work Packages WP-30A (carried items, see below), WP-30B (AI Coordinator), WP-30C
+(profiles, families, templates, maps and per-artifact changelogs).
+
+Written against: The Eiraman Guide 1.0.0-rc.6 (candidate, not measured).
+
+**Starting state.** On top of `v0.10.0` (0963f1d): the merge of two reviewed branches with disjoint files,
+`cr-030-controllore` (AI Coordinator 0.13.0, `controllore/CHANGELOG.md`) and `cr-030-profili` (profiles, families,
+templates, maps and the per-artifact changelogs), then one integration commit (this entry, README, `TOOLS_REF`).
+The branches `integrazione-motore-locale` (WP-LOC-2 and WP-SEC-2) and `gov-01` are **superseded**: their content is
+already in v0.10.0 / 0.5.1; only the items listed under "Carried from
+`integrazione-motore-locale`" are added here.
+
+Registry bump: MINOR, marked **breaking** (registry 0.y.z; VERSIONING.md 2.2 and 2.6): the AI Coordinator 0.13.0
+reverses the precedence rule (the Guide is the base; the Italian specification 0.3 is historical and no longer read;
+a rule that only the specification set, and that neither the Guide nor the profile carries, is no longer required;
+see `controllore/CHANGELOG.md`). No profile is added or removed (49 profiles); no file is removed; every profile stays **draft, not qualified**; no profile is
+qualified, requalified or suspended. RFC in scope: none new.
+
+### Added
+
+- `CHANGELOG.md` in every folder of an artifact with a version of its own (decision D-VER-2; VERSIONING.md 2.2):
+  each of the 49 profiles, the 8 family folders (for `FAMIGLIA.md`), `_modello/` (template `profilo.json`),
+  `_modello/business-analyst/`, `_modello/user-persona/`, `_seniority/` (`CHANGELOG-seniority.md` for
+  `seniority.json` and `CHANGELOG-motori-locali.md` for `motori-locali.json` with `MOTORE-LOCALE.md`) and
+  `controllore/`. Each starts with the current version and refers to this file for the history up to 0.10.0. This
+  file stays the summary of each release and the version source of the registry.
+- Paragraph "Motore locale" in the `FAMIGLIA.md` of the 8 families: no task of the family goes to the local engine
+  except those of `_seniority/motori-locali.json`; the engine is "da qualificare" on every task; until a task is
+  qualified and the Human Manager has approved the engine the catalogue row applies; a refusal does not pass to
+  another engine. It restates `_seniority/MOTORE-LOCALE.md` and adds no task.
+- Distinction between the data class (mandate table, Guide §11) and the project class (§14) in nine profiles and
+  four family files (azure, databricks, sviluppo and their profiles), where the word "class" stood for both.
+- `databricks/databricks-ml-engineer`: the reserved Do "personal data in training" applies in the blocking mode or
+  when the data leaves the organisation (Guide §5, "Do"); in the informative mode they go to the Security Report
+  (see its changelog).
+- Per-artifact changelogs are written in English; the profile texts stay in Italian.
+
+### Changed
+
+- AI Coordinator 0.12.0 → 0.13.0, **breaking**: rebased on The Eiraman Guide 1.0.0-rc.6 alone (instead of the
+  specification 0.3 plus four blocks of Guide deltas); precedence inverted; the four delta blocks become one list
+  of Guide rules grouped by RFC; every "spec §N" remapped to the Guide paragraph that carries it; local-engine
+  paragraphs referred to `_seniority/MOTORE-LOCALE.md`; label "PA-6" and "P4" removed. Details in
+  `controllore/CHANGELOG.md`.
+- About 400 citations of the specification 0.3 ("Eiraman 0.3", "spec §N") and of earlier Guide candidates
+  (rc.1 to rc.5) in the profiles, families, templates and maps remapped to the Guide 1.0.0-rc.6 paragraph that
+  carries the same rule, chosen by the content of each citation and checked against the rc.6 text (the remap table is in the changelogs of
+  the families and of the profiles). Same meaning: PATCH for the profiles, the maps and the templates.
+- `metodo` of every `profilo.json` and `Metodo` line of every `PROFILO.md` name The Eiraman Guide 1.0.0-rc.6; each
+  `FAMIGLIA.md` keeps stating that every profile declares in `metodo` the Guide version it follows.
+- Precedence clause of the families (and of the profiles that restate it): "the Guide prevails, then the family file,
+  then the profile" in place of "the specification 0.3 prevails"; the exception clause of `governo/` is dropped
+  because it is now the general rule.
+- Section 10 of every changed `PROFILO.md` regenerated with `attiva_profilo.py --scrivi-catalogo`; it names the
+  version of the Digital Seniority map (0.2.1). No task, deliverable or level changes.
+- MINOR where a rule or limit was added or broadened: the eight families (the local-engine paragraph and the
+  precedence clause), `governo/revisore-ai` 0.4.0 → 0.5.0, `analisi-funzionale/facilitatore-design-thinking`
+  0.7.0 → 0.8.0, `aws/aws-operations` and `aws/aws-security-engineer` 0.2.0 → 0.3.0. See their changelogs.
+- `README.md`: "Layout" now lists three files per profile (`PROFILO.md`, `profilo.json`, `CHANGELOG.md`) and
+  describes the per-artifact changelogs, including those of the families, the templates, `_seniority/` and
+  `controllore/`.
+- `.github/workflows/validate-profiles.yml`: `TOOLS_REF` moves from tools 0.3.0 (4901fcf) to tools 0.3.2
+  (485cdac), the version the registry is validated against.
+- The intro of this file: per-artifact history now lives in each artifact's `CHANGELOG.md` from 0.11.0; the table
+  "Profile versions" stays in every release entry.
+
+### Removed
+
+- Nothing. The independent diff against `v0.10.0` (`release_diff.py`) found every removed line covered by an entry
+  of this file or of a per-artifact changelog.
+
+### Profile versions
+
+All dated 2026-11-27; state: draft, not qualified. Derived with a script from `git diff 0963f1d HEAD` on the
+`versione` field of each `profilo.json` and `seniority.json`, `motori-locali.json`, and on the `Versione` line of
+each `FAMIGLIA.md`, `CONTROLLORE.md`, `MOTORE-LOCALE.md` and `ALLEGATO.md`. PATCH where not marked.
+
+| Profile or file | Version |
+|---|---|
+| AI Coordinator (`controllore/CONTROLLORE.md`) | 0.12.0 → 0.13.0, MINOR, **breaking** |
+| `governo/revisore-ai` | 0.4.0 → 0.5.0, MINOR |
+| `governo/security-officer`, `revisore-sicurezza`, `revisore-privacy` | 0.4.0 → 0.4.1 |
+| `governo/security-officer/ALLEGATO.md` | 0.4.0, unchanged |
+| `governo/revisore-legale-compliance`, `-architettura-cloud`, `-architettura-applicativa-dati`, `-test-qualita` | 0.3.0 → 0.3.1 |
+| `analisi-funzionale/facilitatore-design-thinking` | 0.7.0 → 0.8.0, MINOR |
+| `analisi-funzionale/analista-funzionale` | 0.4.0 → 0.4.1 |
+| `analisi-funzionale/scrum-master-ai`, `technical-writer`, `utente-simulato`; `finops/finops-forecast-budget` | 0.3.0 → 0.3.1 |
+| `analisi-funzionale/tester-funzionale` | 0.2.0 → 0.2.1 |
+| `aws/aws-operations`, `aws/aws-security-engineer` | 0.2.0 → 0.3.0, MINOR |
+| `aws/aws-architect`, `aws-database-specialist`, `aws-developer`, `aws-devops-engineer` | 0.2.0 → 0.2.1 |
+| `azure/` (7 profiles: `azure-architect`, `azure-cloud-operations`, `azure-dba`, `azure-developer`, `azure-incident-manager`, `azure-release-engineer`, `azure-security-engineer`) | 0.2.0 → 0.2.1 |
+| `databricks/` (5 profiles: `databricks-analytics-engineer`, `-data-engineer`, `-governance-steward`, `-ml-engineer`, `-platform-admin`) | 0.2.0 → 0.2.1 |
+| `finops/finops-cost-allocation-analyst`, `finops-for-ai`, `finops-practitioner`, `finops-rate-optimization` | 0.2.0 → 0.2.1 |
+| `sviluppo/` (7 profiles: `dotnet-developer`, `go-developer`, `java-developer`, `python-developer`, `shell-iac-developer`, `sql-developer`, `typescript-developer`) | 0.2.0 → 0.2.1 |
+| `web-design/` (5 profiles: `accessibility-specialist`, `frontend-developer`, `ux-designer`, `ux-writer`, `web-designer`) | 0.2.0 → 0.2.1 |
+| `_modello/profilo.json` (profile template) | 0.2.0 → 0.2.1 |
+| `_modello/business-analyst` | 0.3.0 → 0.3.1 |
+| `_modello/user-persona` | 0.4.0 → 0.4.1 |
+| `governo/FAMIGLIA.md`, `analisi-funzionale/FAMIGLIA.md` | 0.4.0 → 0.5.0, MINOR |
+| `aws/`, `azure/`, `finops/`, `sviluppo/FAMIGLIA.md` | 0.3.0 → 0.4.0, MINOR |
+| `databricks/`, `web-design/FAMIGLIA.md` | 0.2.0 → 0.3.0, MINOR |
+| `_seniority/seniority.json` | 0.2.0 → 0.2.1 |
+| `_seniority/motori-locali.json`, `MOTORE-LOCALE.md` | 0.1.0 → 0.1.1 |
+
+`SENIORITY.md` and the `controllore/` support files (`AVVIO.md`, `STATO.md`) have no version line. The gate
+checklist stays CL-SO 0.2.0.
+
+### Validation
+
+- `valida_profilo.py` (tools 0.3.2) on a copy laid out as the registry: 49 of 49 profiles pass.
+- `attiva_profilo.py --scrivi-catalogo` on a copy produces no difference.
+- Every `profilo.json`, `seniority.json` and `motori-locali.json` is valid JSON.
+- Independent review of the two branches: PASS (see the release record). The independent review of the diff of
+  this release against `v0.10.0` is recorded in the release record.
+- Not done: the profiles were not run on the test bench; no qualification case was run or added.
+
+### Carried from `integrazione-motore-locale` (WP-30A)
+
+Items of the superseded branch that 0.10.0 did not state and that stay open or are conventions of the profile.
+
+#### Decisions on the local engine
+
+Provisional, recorded here for the Human Manager; the status of every task is "da qualificare".
+
+- D-LOC-1: the local engine is Gemma 4, 31B dense, installed only from official sources and only if it fits the
+  memory of the machine.
+- D-LOC-2: tasks given to the local engine: reading real data for the security check; masking verification on real
+  data; check of messages to the Human Manager; comparison between the original risk profile and the business
+  version; simulated user; log summaries for the Manager View. (The literal tester is a bench role, not a
+  registry role.)
+- D-LOC-3: the local engine does not decide: it reads, compares and flags; class, approvals and the content of
+  messages stay with the accountable roles.
+- D-LOC-4: the AI Coordinator, the Security Officer for judgement, the designers and the developers stay on the
+  current engines.
+
+#### Profile conventions (additions)
+
+- No confirmation by the Human Manager that the Security Report was read.
+- No notice to the Human Manager when the first Security Report is ready.
+- The exact wording of the line on the mode choice is the profile's, not the Guide's.
+
+#### Open tensions (additions)
+
+- In the informative mode the organisation answers for the data (Security Officer, point B9 of its annex), but no
+  rule informs it.
+- Guide §15, "Partial application": whether a project in informative mode owes a partial-conformance statement is
+  not fixed.
+
+### Known follow-up
+
+- The `tools` repository will have a later release; `TOOLS_REF` in `.github/workflows/validate-profiles.yml` needs
+  another reviewed bump then.
+- `REUSE.toml` needs no new pattern: every new `CHANGELOG.md` carries its own SPDX header (CC-BY-4.0), and the
+  existing patterns for `_modello/**`, `_seniority/**` and `controllore/*.md` agree with it.
+- The Italian translation `1.0.0-rc.6+it.1` of the Guide, cited by the AI Coordinator, ships with the next
+  release of the `guide` repository.
+- Everything listed in "Known gaps" and "Open tensions" of 0.10.0 that this entry does not mention stays open.
 
 ## [0.10.0] - 2026-11-27
 

@@ -15,14 +15,15 @@ when and how to use it. This repository is the registry of the Eiraman Role Prof
 
 ## Layout
 
-Each profile is a folder `<family>/<profile-id>/` with two files (the Security Officer also has `ALLEGATO.md`, an annex with its checklist, criteria tables, examples and cases):
+Each profile is a folder `<family>/<profile-id>/` with three files (the Security Officer also has `ALLEGATO.md`, an annex with its checklist, criteria tables, examples and cases):
 
 | File | For | Content |
 |---|---|---|
 | `PROFILO.md` | the LLM engine that takes the role | identity and purpose, core competences and methods with sources, responsibilities, allowed and forbidden actions, communication rules, document repository, declared limits, qualification suite, task catalogue (section 10, generated) |
 | `profilo.json` | the AI Coordinator | task and deliverable catalogue with Digital Seniority level (SD1–SD5), enabled engines, Mode and Role per vendor, Unit Cost per engine, deterministic tools, allowed writes, qualification |
+| `CHANGELOG.md` | maintainers and adopters | the history of the profile, in English, one entry per version (decision D-VER-2) |
 
-Each family folder has a `FAMIGLIA.md` with the rules shared by its profiles. A profile `id` is unique
+Each family folder has a `FAMIGLIA.md` with the rules shared by its profiles and a `CHANGELOG.md` of its own. A profile `id` is unique
 across the registry and matches its folder name.
 
 | Family | Folder | Profiles |
@@ -42,6 +43,12 @@ changing their rules and limits),
 `_seniority/` (the Digital Seniority map, `seniority.json`, and its explanation; the local engine,
 declared in `motori-locali.json` with its common rules in `MOTORE-LOCALE.md`) and `controllore/`
 (the AI Coordinator profile, see below).
+
+Change history (decision D-VER-2, from registry 0.11.0): every artifact with a version of its own has its own
+`CHANGELOG.md` next to its version source: each profile, each family folder (for `FAMIGLIA.md`), the templates in
+`_modello/`, `_seniority/` (`CHANGELOG-seniority.md` and `CHANGELOG-motori-locali.md`) and `controllore/`. The
+registry `CHANGELOG.md` at the root is the summary of each release, the table "Profile versions" and the version
+source of the registry as a whole.
 
 The profile texts are in Italian; file and section names are Italian (`PROFILO.md`, `profilo.json`,
 `FAMIGLIA.md`). An English registry with English file names is an open item of the DevSecOps & Tooling
@@ -63,6 +70,7 @@ specialist Role Profile and does not follow the `PROFILO.md` + `profilo.json` st
 | `CONTROLLORE.md` | the instructions the AI engine loads to act as AI Coordinator: mandate, its own hard blinding, session start, Change Requests and Scope Management, Waves, delegation, context rules (Context Consistency and Independence, context RACI, a new agent per Work Package with its handover abstract), Discovery group, AI Reviewer, versioning, Digital Seniority, closure, escalation, Manager View, project registry, hard limits, qualification, context audit |
 | `AVVIO.md` | how a Human Manager starts the AI Coordinator in a project folder |
 | `STATO.md` | format of `eiraman/stato.json`, the snapshot read by the Manager View |
+| `CHANGELOG.md` | the history of the AI Coordinator profile (version source: the `Versione` line of `CONTROLLORE.md`) |
 | `tools/vista_manager.py` | generator of the Manager View (code, Apache-2.0) |
 
 Why it is not forced into the `PROFILO.md` structure: the ten sections of the template describe a
